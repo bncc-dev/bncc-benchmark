@@ -1,0 +1,40 @@
+/** Contrato dos adapters de provedor (fetch puro, DECISOES.md D1). */
+
+export interface ChamadaModelo {
+  prompt: string;
+  /** true = conectar ao bncc.dev (MCP ou tool-use); ver METODOLOGIA. */
+  grounded: boolean;
+  maxTokens: number;
+}
+
+export interface RespostaModelo {
+  texto: string;
+  versaoModelo: string;
+  tokens: { entrada: number; saida: number };
+  custoUsd: number;
+  /** Chamadas de tool na rodada grounded (0 = não usou o grounding). */
+  toolsChamadas: number;
+  /** Ex.: 'mcp:mcp.bncc.dev'; null na rodada seca. */
+  mecanismoGrounding: string | null;
+}
+
+export interface Provedor {
+  id: string;
+  completar(chamada: ChamadaModelo): Promise<RespostaModelo>;
+}
+
+export interface DefModelo {
+  /** Identificador curto usado em --modelos e nos nomes de arquivo. */
+  id: string;
+  provedor: 'anthropic' | 'openai-compat' | 'google';
+  /** Nome do modelo na API do provedor. */
+  modelo: string;
+  /** Variável de ambiente com a key. */
+  envKey: string;
+  /** USD por milhão de tokens; custo é informativo, conferir antes do M5. */
+  precos: { entrada: number; saida: number };
+  /** Base URL para provedores openai-compat. */
+  baseUrl?: string;
+  /** true quando o adapter implementa a rodada grounded. */
+  suportaGrounded: boolean;
+}
