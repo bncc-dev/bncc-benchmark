@@ -20,7 +20,7 @@ dependências.
 | Tarefa | Itens | Composição |
 |---|---|---|
 | A · lookup direto | 80 | códigos reais |
-| B · discriminação de existência | 120 | 60 reais + 60 falsos (30 lacuna interna, 20 extensão de sequência, 10 combinação inexistente) |
+| B · discriminação de existência | 120 | 60 reais + 60 falsos (30 extensão de borda, 20 profundos, 10 combinação inexistente; ver D8) |
 | C · geração aberta | 40 | pedidos estratificados por etapa/componente |
 | D · lookup inverso | 50 | códigos reais |
 | Especiais | ~10 | typo EF05CO011/EF05CO11 (D6) e pares vizinhos de texto similar |
@@ -41,15 +41,17 @@ I/O-bound e cabe em qualquer máquina; a credibilidade vem dos artefatos
 publicados (JSONL brutos + harness reproduzível), não do lugar onde o loop
 rodou.
 
-## D4 · Computação: JSON bruto + gramática própria
+## D4 · Computação: vendorizada com proveniência + gramática própria
 
-O `@bncc/dados` 0.2.0 publica `computacao.json` via subpath
-(`@bncc/dados/dados/computacao.json`), mas sem API tipada, e o `decodificar`
-do pacote não reconhece códigos CO (o módulo entra na API na 1.0). O benchmark
-carrega o JSON bruto do próprio pacote (nunca cópia local) e mantém em
-`harness/lib/codigos.ts` as três gramáticas CO (EI0[123]CO\d{2}, EF\d{2}CO\d{2},
-EM13CO\d{2}) ao lado das quatro gramáticas da BNCC-2018. Quando o pacote 1.0
-expuser Computação na API tipada, esta camada encolhe.
+O `@bncc/dados@0.2.0` publicado no npm (09/jul/2026) antecede a extração de
+Computação (11/jul/2026): não embute `computacao.json`, não tem API tipada
+para o módulo e o `decodificar` não reconhece códigos CO (tudo isso entra na
+1.0). Até lá, o benchmark vendoriza `computacao.json` do repositório
+bncc-dados em `dados-vendorizados/`, com commit de origem e SHA-256
+registrados em `PROVENIENCIA.md` e fixados em teste. As três gramáticas CO
+(EI0[123]CO\d{2}, EF\d{2}CO\d{2}, EM13CO\d{2}) vivem em
+`harness/lib/codigos.ts`, ao lado das quatro da BNCC-2018. Quando o pacote
+1.0 expuser Computação, o diretório vendorizado sai e esta camada encolhe.
 
 ## D5 · Held-out privado fora do repositório
 
@@ -76,3 +78,24 @@ em `itens-v1.json` depende de duas coisas: verificação anti-vexame manual de
 cada código falso (nenhum pode existir em currículo estadual ou material
 derivado; o gerador emite o checklist com status `pendente`) e ratificação da
 distribuição D2 pelo time.
+
+## D8 · A numeração da BNCC é contígua: estratos de falsos redefinidos
+
+Achado empírico de 12/jul/2026, verificado por teste: em todos os 1.721
+códigos do dataset (BNCC-2018 + Computação), toda sequência numerada vai de 01
+ao máximo sem nenhum buraco interno. O desenho original do benchmark previa
+"lacunas internas da numeração" como armadilha principal da tarefa B; elas não
+existem nos dados atuais. Os estratos de códigos falsos foram redefinidos:
+
+1. **Extensão de borda** (`falso-extensao`): máximo + 1 de uma sequência real
+   (ex.: EF67LP39 quando a série termina em 38). A armadilha mais difícil,
+   inclusive nas fronteiras de competência do EM (EM13LGG106 quando a
+   competência 1 termina em 105).
+2. **Profundo** (`falso-profundo`): máximo + 2 a + 15. Plausível, mas mais
+   distante da borda.
+3. **Combinação inexistente** (`falso-combinacao`): prefixo gramaticalmente
+   válido sem nenhum código (ex.: EF01AR01, porque Arte numera por blocos).
+
+A detecção de buracos internos permanece no código e no CI como invariante:
+se uma versão futura do dataset introduzir buracos (habilidades revogadas,
+por exemplo), eles voltam a ser o estrato mais forte.

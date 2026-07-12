@@ -9,9 +9,10 @@ implementado no harness, e mudanças relevantes passam por `DECISOES.md`.
 Para medir alucinação sobre a BNCC é preciso do gabarito completo e verificado.
 O gabarito é o dataset do bncc.dev: 1.721 aprendizagens (1.580 da BNCC 2018 +
 141 do complemento de Computação, Parecer CNE/CEB 2/2022), cada uma com fonte
-oficial rastreável. Em particular, as lacunas legítimas na numeração dos
-códigos, conhecidas apenas por quem tem o dado verificado, permitem construir
-códigos falsos-mas-plausíveis com segurança.
+oficial rastreável. Em particular, as bordas exatas de cada sequência numerada
+(onde termina cada série de códigos), conhecidas apenas por quem tem o dado
+completo e verificado, permitem construir códigos falsos-mas-plausíveis com
+segurança.
 
 ## Taxonomia
 
@@ -43,10 +44,11 @@ acertos de metadado não pontuam.
   (T1), e o texto associado contra o canônico (T2).
 - **D · lookup inverso** (códigos reais): dado o texto canônico, pedir o código.
 
-Códigos falsos da tarefa B em três estratos: lacuna interna da numeração
-(mais difícil), extensão de sequência (o número seguinte ao último real),
-combinação gramaticalmente válida sem aquele código (ex.: componente que só
-tem códigos em bloco de anos, citado com ano individual).
+Códigos falsos da tarefa B em três estratos (ver DECISOES.md D8; a numeração
+real é contígua, então as armadilhas são as bordas): extensão de borda (o
+número seguinte ao último real de uma sequência, ex.: EF67LP39), profundo
+(alguns números além da borda) e combinação gramaticalmente válida sem nenhum
+código (ex.: EF01AR01, porque Arte no Fundamental numera por blocos de anos).
 
 ## Condições de execução
 
