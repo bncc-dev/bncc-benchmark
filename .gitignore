@@ -1,0 +1,9 @@
+node_modules/
+cache/
+.env
+.env.*
+
+# O held-out NUNCA entra neste repositório (defesa em profundidade;
+# ele é gravado em ~/Dev/bncc-benchmark-heldout/, fora daqui)
+*heldout*
+*held-out*

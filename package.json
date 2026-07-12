@@ -1,0 +1,26 @@
+{
+  "name": "bncc-benchmark",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Benchmark público de alucinação de LLMs sobre a BNCC. Metodologia, banco de itens, harness e resultados.",
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@10.28.2",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "gerar": "tsx harness/gerar-itens.ts",
+    "executar": "tsx harness/executar.ts",
+    "avaliar": "tsx harness/avaliar.ts",
+    "agregar": "tsx harness/agregar.ts"
+  },
+  "dependencies": {
+    "@bncc/dados": "0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0",
+    "vitest": "^3.0.0"
+  }
+}
