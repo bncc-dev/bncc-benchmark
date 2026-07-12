@@ -170,6 +170,19 @@ export function detectarLacunas(codigos: Iterable<string>): Lacunas {
   return { internas, extensoes };
 }
 
+/**
+ * Anos cobertos por um segmento de anos de código EF: "07" → [7];
+ * bloco "67" → [6,7]; "15" → [1..5].
+ */
+export function anosDe(segmento: string): number[] {
+  const d1 = Number(segmento[0]);
+  const d2 = Number(segmento[1]);
+  if (d1 === 0) return [d2];
+  const anos: number[] = [];
+  for (let a = d1; a <= d2; a++) anos.push(a);
+  return anos;
+}
+
 /** Maior sequência de cada prefixo real; insumo dos falsos "profundos". */
 export function maximosPorPrefixo(codigos: Iterable<string>): Map<string, number> {
   const maximos = new Map<string, number>();
@@ -195,10 +208,10 @@ export function prefixosInexistentes(codigosReais: Iterable<string>): string[] {
 
   const candidatos: string[] = [];
   for (const anos of [...ANOS_EF, ...BLOCOS_EF]) {
-    for (const comp of COMPONENTES_EF) candidatos.push(`EF${anos}${comp}`);
+    for (const comp of [...COMPONENTES_EF, 'CO']) candidatos.push(`EF${anos}${comp}`);
   }
   for (const grupo of ['01', '02', '03']) {
-    for (const campo of CAMPOS_EI) candidatos.push(`EI${grupo}${campo}`);
+    for (const campo of [...CAMPOS_EI, 'CO']) candidatos.push(`EI${grupo}${campo}`);
   }
   // Competências específicas plausíveis por área (1 a 7 cobre todas as reais).
   for (const area of AREAS_EM) {
