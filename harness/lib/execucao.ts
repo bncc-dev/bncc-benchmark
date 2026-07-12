@@ -32,7 +32,7 @@ export interface ResultadoExecucao {
   custoUsd: number;
 }
 
-async function comRetry<T>(
+export async function comRetry<T>(
   fn: () => Promise<T>,
   tentativas: number,
   esperaBaseMs: number,
