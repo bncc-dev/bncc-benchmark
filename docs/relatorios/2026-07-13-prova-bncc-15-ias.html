@@ -1,0 +1,392 @@
+<title>Prova BNCC × 15 IAs · teste interno</title>
+<style>
+  :root {
+    --papel: #F7F6F1; --cartao: #FFFFFF; --tinta: #22322C; --tinta2: #5C6B63;
+    --linha: #DDDCD2; --acento: #0B8060; --acento-suave: #0B806018;
+    --erro: #B3462E; --alerta: #9A6B00; --marca-agua: #ECEAE0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --papel: #15211D; --cartao: #1B2A25; --tinta: #E6ECE7; --tinta2: #9DABA2;
+      --linha: #2C3D36; --acento: #2E8A67; --acento-suave: #2E8A6726;
+      --erro: #C05A3C; --alerta: #A8842B; --marca-agua: #1A2620;
+    }
+  }
+  :root[data-theme="dark"] {
+    --papel: #15211D; --cartao: #1B2A25; --tinta: #E6ECE7; --tinta2: #9DABA2;
+    --linha: #2C3D36; --acento: #2E8A67; --acento-suave: #2E8A6726;
+    --erro: #C05A3C; --alerta: #A8842B; --marca-agua: #1A2620;
+  }
+  :root[data-theme="light"] {
+    --papel: #F7F6F1; --cartao: #FFFFFF; --tinta: #22322C; --tinta2: #5C6B63;
+    --linha: #DDDCD2; --acento: #0B8060; --acento-suave: #0B806018;
+    --erro: #B3462E; --alerta: #9A6B00; --marca-agua: #ECEAE0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--papel); color: var(--tinta);
+    font-family: "Iowan Old Style", "Palatino Nova", Palatino, Georgia, serif;
+    font-size: 17px; line-height: 1.65;
+  }
+  .display { font-family: "Avenir Next", Avenir, Futura, "Century Gothic", "Trebuchet MS", sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  main { max-width: 780px; margin: 0 auto; padding: 40px 22px 80px; }
+  .selo {
+    display: inline-block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--acento); border: 1.5px solid var(--acento); border-radius: 3px;
+    padding: 3px 10px; font-weight: 600;
+  }
+  .selo.vermelho { color: var(--erro); border-color: var(--erro); }
+  h1 {
+    font-size: clamp(30px, 5.5vw, 44px); line-height: 1.12; margin: 18px 0 10px;
+    letter-spacing: -0.015em; font-weight: 700; text-wrap: balance;
+  }
+  .sub { color: var(--tinta2); font-size: 19px; margin: 0 0 6px; max-width: 60ch; }
+  .meta { color: var(--tinta2); font-size: 14px; }
+  h2 {
+    font-size: 15px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;
+    color: var(--tinta2); margin: 56px 0 16px; padding-top: 20px; border-top: 1px solid var(--linha);
+  }
+  p { max-width: 66ch; }
+  section > p:first-of-type { margin-top: 0; }
+
+  /* Perguntas da prova */
+  .provas { display: grid; gap: 14px; }
+  .prova { background: var(--cartao); border: 1px solid var(--linha); border-radius: 8px; padding: 18px 20px; }
+  .prova .rotulo { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--acento); font-weight: 700; }
+  .prova .pergunta { font-size: 17px; margin: 6px 0 8px; font-style: italic; }
+  .prova .nota-p { font-size: 14.5px; color: var(--tinta2); margin: 0; }
+
+  /* Ranking */
+  .ranking { display: grid; gap: 0; margin-top: 8px; }
+  .linha-r {
+    display: grid; grid-template-columns: minmax(150px, 210px) 1fr 52px;
+    gap: 12px; align-items: center; padding: 9px 8px; border-radius: 6px;
+  }
+  .linha-r:hover { background: var(--acento-suave); }
+  .linha-r .nome { font-size: 14.5px; font-weight: 600; line-height: 1.3; }
+  .linha-r .empresa { display: block; font-weight: 400; font-size: 12px; color: var(--tinta2); }
+  .trilho { background: var(--marca-agua); border-radius: 4px; height: 18px; position: relative; overflow: visible; }
+  .barra {
+    position: absolute; inset: 0 auto 0 0; background: var(--acento);
+    border-radius: 3px 4px 4px 3px; min-width: 2px;
+  }
+  .barra.fase2 { opacity: .62; }
+  .nota { text-align: right; font-size: 15px; font-weight: 700; }
+  .tags { display: flex; gap: 6px; margin-top: 4px; flex-wrap: wrap; }
+  .tag {
+    font-size: 11px; padding: 1px 7px; border-radius: 10px; font-weight: 600;
+    letter-spacing: .02em; font-family: "Avenir Next", Avenir, sans-serif;
+  }
+  .tag.corte { color: var(--alerta); border: 1px solid var(--alerta); }
+  .tag.inventou { color: var(--erro); border: 1px solid var(--erro); }
+  .tag.excesso { color: var(--tinta2); border: 1px solid var(--linha); }
+  .legenda-r { display: flex; gap: 18px; margin: 14px 4px 0; font-size: 13px; color: var(--tinta2); flex-wrap: wrap; }
+  .chip { display: inline-block; width: 22px; height: 10px; border-radius: 3px; background: var(--acento); vertical-align: baseline; margin-right: 6px; }
+  .chip.f2 { opacity: .62; }
+
+  /* Exemplo */
+  .exemplo { background: var(--cartao); border: 1px solid var(--linha); border-left: 4px solid var(--erro); border-radius: 8px; padding: 18px 20px; }
+  .exemplo .fala { margin: 8px 0; padding-left: 14px; border-left: 2px solid var(--linha); font-size: 15.5px; }
+  .exemplo .quem { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--tinta2); font-weight: 700; }
+  .certo { color: var(--acento); font-weight: 700; }
+  .errado { color: var(--erro); font-weight: 700; }
+
+  /* Avisos */
+  .aviso {
+    background: var(--acento-suave); border: 1px solid var(--acento); border-radius: 8px;
+    padding: 16px 20px; margin: 20px 0; font-size: 15.5px;
+  }
+  .aviso strong:first-child { color: var(--acento); }
+
+  ul.achados { padding-left: 20px; display: grid; gap: 10px; max-width: 68ch; }
+  ul.achados li::marker { color: var(--acento); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--linha); }
+  th { font-family: "Avenir Next", Avenir, sans-serif; font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--tinta2); }
+  td.num, th.num { text-align: right; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-variant-numeric: tabular-nums; }
+  .rolagem { overflow-x: auto; border: 1px solid var(--linha); border-radius: 8px; background: var(--cartao); }
+  details summary { cursor: pointer; color: var(--acento); font-weight: 600; }
+
+
+  /* Linhas expansíveis */
+  details.lw { border-bottom: 1px solid var(--linha); }
+  details.lw:last-of-type { border-bottom: none; }
+  details.lw summary { list-style: none; cursor: pointer; }
+  details.lw summary::-webkit-details-marker { display: none; }
+  details.lw summary:focus-visible { outline: 2px solid var(--acento); border-radius: 6px; }
+  .seta { display: inline-block; font-size: 10px; color: var(--tinta2); margin-left: 6px; transition: transform .2s; }
+  details.lw[open] .seta { transform: rotate(180deg); }
+  .painel { padding: 4px 8px 16px; display: grid; gap: 8px; background: var(--acento-suave); border-radius: 0 0 8px 8px; margin: 0 0 6px; }
+  .prow { display: grid; grid-template-columns: minmax(150px, 230px) 1fr; gap: 12px; align-items: baseline; padding: 2px 6px; }
+  .plab { font-size: 12px; color: var(--tinta2); font-weight: 600; letter-spacing: .02em; }
+  .pchips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .rc { font-size: 12px; padding: 2px 8px; border-radius: 4px; font-family: "Avenir Next", Avenir, sans-serif; font-weight: 600; border: 1px solid; }
+  .rc.ok { color: var(--acento); border-color: var(--acento); background: var(--cartao); }
+  .rc.ruim { color: var(--erro); border-color: var(--erro); background: var(--cartao); }
+  .rc.meio { color: var(--alerta); border-color: var(--alerta); background: var(--cartao); }
+  .rc.neutro { color: var(--tinta2); border-color: var(--linha); background: var(--cartao); }
+  .pnota { font-size: 12.5px; color: var(--tinta2); margin: 2px 6px 0; }
+  @media (max-width: 560px) { .prow, .linha-r { grid-template-columns: 1fr; gap: 4px; } .linha-r { grid-template-columns: 1fr 60px; } .linha-r .trilho { grid-column: 1 / -1; } }
+  footer { margin-top: 60px; padding-top: 16px; border-top: 1px solid var(--linha); font-size: 13px; color: var(--tinta2); }
+  @media (prefers-reduced-motion: no-preference) {
+    .barra { transition: width .8s cubic-bezier(.2,.7,.3,1); }
+  }
+</style>
+
+<main>
+  <header>
+    <span class="selo display">bncc.dev · benchmark de alucinação</span>
+    <span class="selo vermelho display">uso interno</span>
+    <h1 class="display">Demos uma prova sobre a BNCC para 15 inteligências artificiais</h1>
+    <p class="sub">Nenhuma podia consultar nada: só a memória. Este é o teste de aquecimento do nosso benchmark, com 3 perguntas por modelo, antes do exame completo de 300.</p>
+    <p class="meta mono">13/jul/2026 · 135 respostas · custo total US$ 1,37</p>
+  </header>
+
+  <section>
+    <h2 class="display">Como foi a prova</h2>
+    <p>Escolhemos 3 perguntas do nosso banco oficial e fizemos cada uma <strong>3 vezes, com palavras diferentes</strong> (IAs mudam de resposta conforme o fraseado). São 9 respostas por modelo, corrigidas automaticamente contra o dataset verificado do bncc.dev, o gabarito com as 1.721 aprendizagens oficiais.</p>
+    <div class="provas">
+      <div class="prova">
+        <span class="rotulo display">Pergunta 1 · transcrição</span>
+        <p class="pergunta">"Qual é o texto exato da habilidade EM13LP50 da BNCC?"</p>
+        <p class="nota-p">Acerto: reproduzir o texto oficial. Erro típico: inventar um texto que soa plausível.</p>
+      </div>
+      <div class="prova">
+        <span class="rotulo display">Pergunta 2 · existência</span>
+        <p class="pergunta">"O código EF03CO05 existe na BNCC? Responda sim ou não."</p>
+        <p class="nota-p">Ele existe (é de Computação, incluída em 2022). Muitos modelos negam códigos reais com toda a confiança.</p>
+      </div>
+      <div class="prova">
+        <span class="rotulo display">Pergunta 3 · lista para planejamento</span>
+        <p class="pergunta">"Liste 5 objetivos de aprendizagem da BNCC do campo 'Corpo, gestos e movimentos', com código e texto."</p>
+        <p class="nota-p">É o uso real de um professor. Corrigimos cada código citado: existe? é do escopo pedido? o texto confere?</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="display">O ranking desta prova</h2>
+    <p>Nota de 0 a 9: um ponto por transcrição fiel (P1), um por acerto no sim/não (P2) e até 3 pelos textos corretos na lista (P3), somando as 3 formas de perguntar. <strong>Não é o ranking oficial</strong>: com 3 perguntas, é uma foto de aquecimento. <strong>Clique em qualquer modelo</strong> para abrir as 9 respostas dele, pergunta por pergunta.</p>
+
+    <div class="ranking display">
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">GPT-5.6 Sol <span class="empresa">OpenAI · topo de linha</span></span><div class="trilho"><div class="barra" style="width:88.9%"></div></div><span class="nota mono">8,0<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ok">✓ transcreveu certo</span><span class="rc ok">✓ transcreveu certo</span><span class="rc ruim">✗ texto de outra habilidade</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ok">✓ acertou</span><span class="rc ok">✓ acertou</span><span class="rc ok">✓ acertou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.165</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">GPT-5.6 Luna <span class="empresa">OpenAI · econômico</span></span><div class="trilho"><div class="barra fase2" style="width:77.8%"></div></div><span class="nota mono">7,0<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ok">✓ transcreveu certo</span><span class="rc ok">✓ transcreveu certo</span><span class="rc ruim">✗ texto de outra habilidade</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ok">✓ acertou</span><span class="rc ruim">✗ errou</span><span class="rc ok">✓ acertou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.031</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">DeepSeek V4 Pro <span class="empresa">DeepSeek · topo de linha</span></span><div class="trilho"><div class="barra" style="width:66.7%"></div></div><span class="nota mono">6,0<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ inventou o texto</span><span class="rc ok">✓ transcreveu certo</span><span class="rc neutro">⌀ cortada (limite técnico)</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ok">✓ acertou</span><span class="rc ok">✓ acertou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.007</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Grok 4.5 <span class="empresa">xAI · topo de linha</span><span class="tags"><span class="tag excesso">listou 28 quando pedimos 15</span></span></span><div class="trilho"><div class="barra" style="width:62.2%"></div></div><span class="nota mono">5,6<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ok">✓ acertou</span><span class="rc ok">✓ acertou</span><span class="rc ok">✓ acertou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc ok">5 citados · 5 textos certos</span><span class="rc meio">11 citados · 4 textos certos</span><span class="rc meio">12 citados · 4 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.070</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Claude Fable 5 <span class="empresa">Anthropic · topo de linha</span><span class="tags"><span class="tag corte">2 respostas cortadas</span></span></span><div class="trilho"><div class="barra" style="width:55.6%"></div></div><span class="nota mono">5,0<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span><span class="rc neutro">⌀ cortada (limite técnico)</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ok">✓ acertou</span><span class="rc ok">✓ acertou</span><span class="rc ok">✓ acertou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc ok">5 citados · 5 textos certos</span><span class="rc neutro">⌀ cortada (limite técnico)</span><span class="rc meio">9 citados · 5 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.527</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">DeepSeek V4 Flash <span class="empresa">DeepSeek · econômico</span></span><div class="trilho"><div class="barra fase2" style="width:48.9%"></div></div><span class="nota mono">4,4<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc meio">~ parcial</span><span class="rc neutro">− não quis responder</span><span class="rc meio">~ parcial</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ok">✓ acertou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span><span class="rc meio">5 citados · 2 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.001</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Claude Sonnet 5 <span class="empresa">Anthropic · topo de linha</span></span><div class="trilho"><div class="barra" style="width:38.9%"></div></div><span class="nota mono">3,5<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span><span class="rc meio">~ parcial</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ok">✓ acertou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc meio">5 citados · 3 textos certos</span><span class="rc meio">5 citados · 4 textos certos</span><span class="rc meio">5 citados · 3 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.032</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Gemini 3.1 Pro <span class="empresa">Google · topo de linha</span><span class="tags"><span class="tag corte">2 respostas cortadas</span></span></span><div class="trilho"><div class="barra" style="width:36.7%"></div></div><span class="nota mono">3,3<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc meio">~ parcial</span><span class="rc neutro">⌀ cortada (limite técnico)</span><span class="rc neutro">⌀ cortada (limite técnico)</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc meio">5 citados · 4 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.147</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Gemini 3.5 Flash <span class="empresa">Google · econômico</span></span><div class="trilho"><div class="barra fase2" style="width:34.4%"></div></div><span class="nota mono">3,1<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc meio">~ parcial</span><span class="rc meio">~ parcial</span><span class="rc meio">~ parcial</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc meio">5 citados · 3 textos certos</span><span class="rc meio">5 citados · 2 textos certos</span><span class="rc meio">5 citados · 3 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.018</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Claude Opus 4.8 <span class="empresa">Anthropic · topo de linha</span></span><div class="trilho"><div class="barra" style="width:33.3%"></div></div><span class="nota mono">3,0<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ok">5 citados · 5 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.101</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Qwen 3.7 Max <span class="empresa">Alibaba · topo de linha</span><span class="tags"><span class="tag inventou">inventou 5 códigos</span></span></span><div class="trilho"><div class="barra" style="width:22.2%"></div></div><span class="nota mono">2,0<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ texto de outra habilidade</span><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc ok">5 citados · 5 textos certos</span><span class="rc ruim">5 citados · 0 textos certos, 5 inventados</span><span class="rc ok">5 citados · 5 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.104</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Claude Haiku 4.5 <span class="empresa">Anthropic · econômico</span></span><div class="trilho"><div class="barra fase2" style="width:20.0%"></div></div><span class="nota mono">1,8<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc meio">5 citados · 3 textos certos</span><span class="rc meio">5 citados · 3 textos certos</span><span class="rc meio">5 citados · 3 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.009</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Qwen 3.7 Plus <span class="empresa">Alibaba · econômico</span></span><div class="trilho"><div class="barra fase2" style="width:2.2%"></div></div><span class="nota mono">0,2<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc meio">5 citados · 1 textos certos</span><span class="rc meio">5 citados · 0 textos certos</span><span class="rc meio">5 citados · 0 textos certos</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.029</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Kimi K2.6 <span class="empresa">Moonshot · topo de linha</span><span class="tags"><span class="tag corte">3 respostas cortadas</span></span></span><div class="trilho"><div class="barra" style="width:0.5%"></div></div><span class="nota mono">0,0<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc neutro">⌀ cortada (limite técnico)</span><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc neutro">⌀ cortada (limite técnico)</span><span class="rc meio">1 citados · 0 textos certos</span><span class="rc neutro">⌀ cortada (limite técnico)</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.073</p>
+      </div>
+      </details>
+      <details class="lw"><summary>
+        <div class="linha-r"><span class="nome">Kimi K2.5 <span class="empresa">Moonshot · econômico</span><span class="tags"><span class="tag corte">2 respostas cortadas</span></span></span><div class="trilho"><div class="barra fase2" style="width:0.5%"></div></div><span class="nota mono">0,0<span class="seta">▾</span></span></div>
+      </summary>
+      <div class="painel">
+        <div class="prow"><span class="plab display">P1 · transcrever o texto da EM13LP50</span><span class="pchips"><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span><span class="rc ruim">✗ inventou o texto</span></span></div>
+        <div class="prow"><span class="plab display">P2 · "EF03CO05 existe?" (existe)</span><span class="pchips"><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span><span class="rc ruim">✗ errou</span></span></div>
+        <div class="prow"><span class="plab display">P3 · listar 5 de "Corpo, gestos e movimentos"</span><span class="pchips"><span class="rc neutro">− não citou códigos</span><span class="rc neutro">⌀ cortada (limite técnico)</span><span class="rc neutro">⌀ cortada (limite técnico)</span></span></div>
+        <p class="pnota">Cada célula é um dos 3 fraseados da mesma pergunta · custo deste modelo na prova: US$ 0.026</p>
+      </div>
+      </details>
+    </div>
+    <div class="legenda-r">
+      <span><span class="chip"></span>Topo de linha</span>
+      <span><span class="chip f2"></span>Econômico (o que escolas e apps usam por custo)</span>
+      <span>Etiquetas nas barras marcam ocorrências que a nota sozinha não conta.</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="display">Um exemplo real do problema</h2>
+    <div class="exemplo">
+      <p style="margin-top:0"><strong>Pergunta:</strong> o código EF03CO05 existe na BNCC? <span class="certo">Existe</span>: é uma habilidade oficial de Computação do 3º ano, incluída pelo MEC em 2022.</p>
+      <div class="fala"><span class="quem">Claude Sonnet 4.6</span><br>"<span class="errado">Não</span>"</div>
+      <div class="fala"><span class="quem">Claude Haiku 4.5</span><br>"<span class="errado">Não</span>"</div>
+      <p class="nota-p" style="margin-bottom:0">Sem hesitação, sem "não tenho certeza". Para essas IAs, uma parte oficial do currículo brasileiro simplesmente não existe. É este tipo de erro, invisível para quem pergunta, que o benchmark mede em escala.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="display">O que este aquecimento já mostrou</h2>
+    <ul class="achados">
+      <li><strong>O conhecimento sobre a BNCC varia brutalmente entre empresas.</strong> Os dois GPTs transcreveram habilidades de cor e reconheceram Computação; os Claude e o Gemini negaram códigos reais e inventaram textos plausíveis.</li>
+      <li><strong>Preço não prevê nota.</strong> O DeepSeek V4 Pro fez 6,0 gastando US$ 0,007; o Claude Opus 4.8, um dos mais caros do mundo, fez 3,0.</li>
+      <li><strong>Modelo econômico não é sinônimo de pior.</strong> O GPT Luna (barato) fez 7,0, acima de quase todos os topos de linha.</li>
+      <li><strong>Primeiro flagra de código inventado:</strong> o Qwen Max citou 5 códigos que não existem na BNCC ao montar uma lista de planejamento, o erro mais perigoso para um professor.</li>
+      <li><strong>Nosso corretor automático se pagou:</strong> ele detectou respostas cortadas pelo limite técnico (Fable, Gemini Pro e os dois Kimi) e as excluiu da nota em vez de contar como erro. Os zeros dos Kimi são "prova incompleta", não burrice; no exame completo aumentaremos o limite.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="aviso">
+      <strong>Leia antes de tirar conclusões:</strong> esta prova tem 3 perguntas por modelo. O exame completo (300 perguntas × 3 fraseados, com armadilhas de códigos falsos) é o que produz o ranking com validade estatística. Estes resultados são internos e não devem circular fora da equipe até o lançamento do benchmark.
+    </div>
+    <details>
+      <summary class="display">Dados completos por modelo (para quem quiser conferir)</summary>
+      <div class="rolagem" style="margin-top:12px">
+        <table>
+          <thead><tr><th>Modelo</th><th class="num">P1 fiel</th><th class="num">P2 acertos</th><th class="num">P3 códigos citados</th><th class="num">inventados</th><th class="num">textos ok</th><th class="num">cortadas</th><th class="num">custo US$</th></tr></thead>
+          <tbody>
+            <tr><td>GPT-5.6 Sol</td><td class="num">2/3</td><td class="num">3/3</td><td class="num">15</td><td class="num">0</td><td class="num">15</td><td class="num">0</td><td class="num">0,165</td></tr>
+            <tr><td>GPT-5.6 Luna</td><td class="num">2/3</td><td class="num">2/3</td><td class="num">15</td><td class="num">0</td><td class="num">15</td><td class="num">0</td><td class="num">0,031</td></tr>
+            <tr><td>DeepSeek V4 Pro</td><td class="num">1/3</td><td class="num">2/3</td><td class="num">15</td><td class="num">0</td><td class="num">15</td><td class="num">1</td><td class="num">0,007</td></tr>
+            <tr><td>Grok 4.5</td><td class="num">0/3</td><td class="num">3/3</td><td class="num">28</td><td class="num">0</td><td class="num">13</td><td class="num">0</td><td class="num">0,070</td></tr>
+            <tr><td>Claude Fable 5</td><td class="num">0/3</td><td class="num">3/3</td><td class="num">14</td><td class="num">0</td><td class="num">10</td><td class="num">2</td><td class="num">0,527</td></tr>
+            <tr><td>DeepSeek V4 Flash</td><td class="num">0/3</td><td class="num">1/3</td><td class="num">15</td><td class="num">0</td><td class="num">12</td><td class="num">0</td><td class="num">0,001</td></tr>
+            <tr><td>Claude Sonnet 5</td><td class="num">0/3</td><td class="num">1/3</td><td class="num">15</td><td class="num">0</td><td class="num">10</td><td class="num">0</td><td class="num">0,032</td></tr>
+            <tr><td>Gemini 3.1 Pro</td><td class="num">0/3</td><td class="num">0/3</td><td class="num">15</td><td class="num">0</td><td class="num">14</td><td class="num">2</td><td class="num">0,147</td></tr>
+            <tr><td>Gemini 3.5 Flash</td><td class="num">0/3</td><td class="num">0/3</td><td class="num">15</td><td class="num">0</td><td class="num">8</td><td class="num">0</td><td class="num">0,018</td></tr>
+            <tr><td>Claude Opus 4.8</td><td class="num">0/3</td><td class="num">0/3</td><td class="num">15</td><td class="num">0</td><td class="num">15</td><td class="num">0</td><td class="num">0,101</td></tr>
+            <tr><td>Qwen 3.7 Max</td><td class="num">0/3</td><td class="num">0/3</td><td class="num">15</td><td class="num">5</td><td class="num">10</td><td class="num">0</td><td class="num">0,104</td></tr>
+            <tr><td>Claude Haiku 4.5</td><td class="num">0/3</td><td class="num">0/3</td><td class="num">15</td><td class="num">0</td><td class="num">9</td><td class="num">0</td><td class="num">0,009</td></tr>
+            <tr><td>Qwen 3.7 Plus</td><td class="num">0/3</td><td class="num">0/3</td><td class="num">15</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0,029</td></tr>
+            <tr><td>Kimi K2.6</td><td class="num">0/3</td><td class="num">0/3</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">3</td><td class="num">0,073</td></tr>
+            <tr><td>Kimi K2.5</td><td class="num">0/3</td><td class="num">0/3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0,026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2 class="display">Próximos passos</h2>
+    <p>1º: concluir a verificação manual dos 60 códigos-armadilha (bloqueio da rodada oficial). 2º: rodar o exame completo dos topos de linha (~US$ 70) e dos econômicos (~US$ 8). 3º: repetir tudo com os modelos conectados ao bncc.dev, a comparação "sem fonte × com fonte" que é a tese do projeto.</p>
+  </section>
+
+  <footer>
+    Gerado a partir do harness bncc-benchmark (avaliador v2, juiz automático com trilha auditável) · gabarito: dataset bncc.dev, versão dados-2026.07, 1.721 aprendizagens verificadas · rodada "smoke-elenco", 13/jul/2026 · execução via AWS Bedrock e OpenRouter, sem acesso a fontes externas pelos modelos (modo seco).
+  </footer>
+</main>
