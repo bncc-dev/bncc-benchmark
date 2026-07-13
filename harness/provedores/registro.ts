@@ -8,6 +8,25 @@
 import type { DefModelo } from './tipos.js';
 
 export const MODELOS: Record<string, DefModelo> = {
+  // Bedrock (Converse API, bearer token AWS_BEARER_TOKEN_BEDROCK; região via
+  // AWS_REGION, default us-east-1). IDs de modelo idênticos aos usados em
+  // projetos irmãos da equipe; conferir/pinar no M5.
+  'sonnet-bedrock': {
+    id: 'sonnet-bedrock',
+    provedor: 'bedrock',
+    modelo: 'us.anthropic.claude-sonnet-4-6',
+    envKey: 'AWS_BEARER_TOKEN_BEDROCK',
+    precos: { entrada: 3, saida: 15 },
+    suportaGrounded: true, // loop de tool-use com o mini-cliente MCP
+  },
+  'haiku-bedrock': {
+    id: 'haiku-bedrock',
+    provedor: 'bedrock',
+    modelo: 'us.anthropic.claude-haiku-4-5-20251001-v1:0',
+    envKey: 'AWS_BEARER_TOKEN_BEDROCK',
+    precos: { entrada: 1, saida: 5 },
+    suportaGrounded: true,
+  },
   'claude-sonnet': {
     id: 'claude-sonnet',
     provedor: 'anthropic',

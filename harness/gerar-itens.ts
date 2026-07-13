@@ -19,6 +19,7 @@ const SEED_PUBLICA = 20260712;
 const DESLOCAMENTO_HELDOUT = 104729; // primo arbitrário; seed do held-out = pública + este valor
 
 const { values: args } = parseArgs({
+  allowPositionals: true, // o pnpm repassa o separador "--" como posicional
   options: {
     seed: { type: 'string', default: String(SEED_PUBLICA) },
     saida: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1-rc.json') },

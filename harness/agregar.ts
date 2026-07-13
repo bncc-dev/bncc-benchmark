@@ -16,6 +16,7 @@ import type { Agregados, BancoItens, Julgamento } from './lib/tipos.js';
 const RAIZ = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const { values: args } = parseArgs({
+  allowPositionals: true, // o pnpm repassa o separador "--" como posicional
   options: {
     rodada: { type: 'string', default: 'smoke' },
     itens: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1-rc.json') },

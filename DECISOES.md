@@ -99,3 +99,17 @@ existem nos dados atuais. Os estratos de códigos falsos foram redefinidos:
 A detecção de buracos internos permanece no código e no CI como invariante:
 se uma versão futura do dataset introduzir buracos (habilidades revogadas,
 por exemplo), eles voltam a ser o estrato mais forte.
+
+## D9 · AWS Bedrock como provedor, grounded via loop de tool-use próprio
+
+Os modelos Claude podem rodar via AWS Bedrock (Converse API) com API
+key/bearer token (`AWS_BEARER_TOKEN_BEDROCK`), o que mantém o adapter em
+fetch puro, sem SigV4 nem SDK (coerente com D1). Como o Bedrock não tem o MCP
+connector da API direta da Anthropic, a rodada grounded usa um loop de
+tool-use explícito com um mini-cliente MCP falando com mcp.bncc.dev
+(stateless, JSON-RPC por HTTP). O mecanismo fica registrado por chamada nos
+brutos (`mcp:...` para o connector nativo, `mcp-loop:...` para o loop), e o
+mesmo loop é a base do grounded de OpenAI/Google no M5. Ao comparar
+resultados, rodadas pelo mesmo modelo em provedores diferentes são medições
+distintas (versões e serving podem divergir); o leaderboard identifica o
+provedor.
