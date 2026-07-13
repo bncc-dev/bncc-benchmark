@@ -82,6 +82,29 @@ describe('executarBateria', () => {
     expect(segunda.registros).toEqual(primeira.registros);
   });
 
+  it('RB-3: maxTokens diferente NÃO reutiliza o cache', async () => {
+    const itens = selecionarBalanceado(banco.itens, 2);
+    const cache = new CacheDisco(join(dirTemporario, 'c-rb3'));
+    const contador = { chamadas: 0 };
+    const base = { banco, itens, def: DEF, modo: 'seco' as const, parafrases: 1, cache };
+
+    await executarBateria({ ...base, provedor: provedorFake(contador), maxTokens: 256 });
+    const segunda = await executarBateria({
+      ...base,
+      provedor: provedorFake(contador),
+      maxTokens: 1024,
+    });
+    expect(segunda.doCache).toBe(0); // chave inclui maxTokens
+    expect(contador.chamadas).toBe(4);
+
+    const terceira = await executarBateria({
+      ...base,
+      provedor: provedorFake(contador),
+      maxTokens: 1024,
+    });
+    expect(terceira.doCache).toBe(2); // mesma config volta a acertar o cache
+  });
+
   it('faz retry em erro transitório e desiste em erro permanente', async () => {
     const itens = selecionarBalanceado(banco.itens, 1);
     let tentativas = 0;
