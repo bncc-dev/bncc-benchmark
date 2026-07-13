@@ -10,8 +10,14 @@ export interface ChamadaModelo {
 export interface RespostaModelo {
   texto: string;
   versaoModelo: string;
-  tokens: { entrada: number; saida: number };
+  tokens: { entrada: number; saida: number; reasoning?: number };
   custoUsd: number;
+  /**
+   * RB-4: por que a geração parou, normalizado entre provedores:
+   * 'fim' (resposta completa), 'max_tokens' (truncada), 'bloqueado' (safety),
+   * ou o valor bruto do provedor para casos não mapeados.
+   */
+  finishReason: string;
   /** Chamadas de tool na rodada grounded (0 = não usou o grounding). */
   toolsChamadas: number;
   /** Ex.: 'mcp:mcp.bncc.dev'; null na rodada seca. */

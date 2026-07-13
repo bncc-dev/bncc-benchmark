@@ -58,10 +58,18 @@ export function criarProvedorAnthropic(def: DefModelo, key: string): Provedor {
         .map((b) => b.text ?? '')
         .join('\n');
       const toolsChamadas = dados.content.filter((b) => b.type === 'mcp_tool_use').length;
+      // RB-4: end_turn/stop_sequence = completa; max_tokens = truncada.
+      const finishReason =
+        dados.stop_reason === 'end_turn' || dados.stop_reason === 'stop_sequence'
+          ? 'fim'
+          : dados.stop_reason === 'max_tokens'
+            ? 'max_tokens'
+            : dados.stop_reason;
 
       return {
         texto,
         versaoModelo: dados.model,
+        finishReason,
         tokens: { entrada: dados.usage.input_tokens, saida: dados.usage.output_tokens },
         custoUsd:
           (dados.usage.input_tokens * def.precos.entrada +

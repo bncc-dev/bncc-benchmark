@@ -29,6 +29,7 @@ function provedorFake(contador: { chamadas: number }): Provedor {
       return {
         texto: `resposta para: ${prompt.slice(0, 40)}`,
         versaoModelo: 'fake-1',
+        finishReason: 'fim',
         tokens: { entrada: 100, saida: 20 },
         custoUsd: 0.0002,
         toolsChamadas: 0,

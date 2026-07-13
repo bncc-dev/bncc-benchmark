@@ -113,10 +113,20 @@ export function criarProvedorBedrock(def: DefModelo, token: string): Provedor {
         .filter((b) => b.text)
         .map((b) => b.text)
         .join('\n');
+      // RB-4: Converse usa end_turn/stop_sequence/max_tokens/content_filtered.
+      const finishReason =
+        ultima.stopReason === 'end_turn' || ultima.stopReason === 'stop_sequence'
+          ? 'fim'
+          : ultima.stopReason === 'max_tokens'
+            ? 'max_tokens'
+            : ultima.stopReason === 'content_filtered'
+              ? 'bloqueado'
+              : ultima.stopReason;
 
       return {
         texto,
         versaoModelo: def.modelo,
+        finishReason,
         tokens: { entrada, saida },
         custoUsd: (entrada * def.precos.entrada + saida * def.precos.saida) / 1_000_000,
         toolsChamadas,

@@ -112,6 +112,7 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
             timestamp: new Date().toISOString(),
             custo_usd: resposta.custoUsd,
             tokens: resposta.tokens,
+            finish_reason: resposta.finishReason,
             tools_chamadas: resposta.toolsChamadas,
             dataset_versao: banco.dataset_versao,
             itens_versao: banco.versao,
