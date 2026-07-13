@@ -1,4 +1,5 @@
 import { criarProvedorAnthropic } from './anthropic.js';
+import { criarProvedorBedrock } from './bedrock.js';
 import { criarProvedorGoogle } from './google.js';
 import { criarProvedorOpenAiCompat } from './openai-compat.js';
 import type { DefModelo, Provedor } from './tipos.js';
@@ -9,6 +10,8 @@ export function criarProvedor(def: DefModelo, ambiente: Record<string, string | 
   switch (def.provedor) {
     case 'anthropic':
       return criarProvedorAnthropic(def, key);
+    case 'bedrock':
+      return criarProvedorBedrock(def, key);
     case 'openai-compat':
       return criarProvedorOpenAiCompat(def, key);
     case 'google':

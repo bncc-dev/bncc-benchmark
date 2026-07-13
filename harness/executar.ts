@@ -22,6 +22,7 @@ import { MODELOS } from './provedores/registro.js';
 const RAIZ = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const { values: args } = parseArgs({
+  allowPositionals: true, // o pnpm repassa o separador "--" como posicional
   options: {
     rodada: { type: 'string', default: 'smoke' },
     modelos: { type: 'string', default: 'claude-haiku' },

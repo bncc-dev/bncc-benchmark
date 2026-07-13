@@ -26,7 +26,7 @@ export interface Provedor {
 export interface DefModelo {
   /** Identificador curto usado em --modelos e nos nomes de arquivo. */
   id: string;
-  provedor: 'anthropic' | 'openai-compat' | 'google';
+  provedor: 'anthropic' | 'bedrock' | 'openai-compat' | 'google';
   /** Nome do modelo na API do provedor. */
   modelo: string;
   /** Variável de ambiente com a key. */
