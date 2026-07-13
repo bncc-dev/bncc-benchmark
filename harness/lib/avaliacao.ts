@@ -57,13 +57,19 @@ function julgamentoBase(item: Item, registro: RegistroBruto): Omit<Julgamento, '
   };
 }
 
-/** Tarefa B: primeira ocorrência de sim/não decide; sem decisão vira abstenção. */
+/**
+ * Tarefa B: abstenção tem precedência (respostas como "não tenho como
+ * confirmar" começam com "não" e seriam contadas como negação); depois, a
+ * primeira ocorrência de sim/não decide. Achado do piloto de 12/jul/2026.
+ */
 export function julgarB(item: Item, registro: RegistroBruto): Julgamento {
   if (item.gabarito.tipo !== 'existencia') throw new Error(`Item ${item.id} não é da tarefa B`);
   const norm = normalizarTexto(registro.resposta);
   const m = norm.match(/\b(sim|nao)\b/);
   let veredito: Julgamento['veredito'];
-  if (!m) {
+  if (detectarAbstencao(registro.resposta)) {
+    veredito = 'abstencao';
+  } else if (!m) {
     veredito = 'abstencao';
   } else {
     const disseQueExiste = m[1] === 'sim';

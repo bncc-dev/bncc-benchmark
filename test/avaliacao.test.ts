@@ -38,12 +38,17 @@ describe('tarefa B', () => {
     expect(julgar(itemBFalso, registroCom(itemBFalso, 'Não.')).veredito).toBe('correto');
   });
 
-  it('sem sim/não vira abstenção', () => {
+  it('abstenção tem precedência sobre o "não" das frases de incerteza', () => {
     expect(
       julgar(itemBReal, registroCom(itemBReal, 'Não tenho como verificar isso com segurança.'))
         .veredito,
-      // "não" aparece na frase de abstenção; o parser pega o primeiro token sim/nao.
-    ).toBe(itemBReal.gabarito.tipo === 'existencia' && itemBReal.gabarito.existe ? 'incorreto' : 'correto');
+    ).toBe('abstencao');
+    // Negação seguida de recomendação de conferência ainda é abstenção (hedging).
+    expect(
+      julgar(itemBFalso, registroCom(itemBFalso, 'Não. Mas recomendo consultar o documento oficial.'))
+        .veredito,
+    ).toBe('abstencao');
+    expect(julgar(itemBReal, registroCom(itemBReal, 'Talvez exista.')).veredito).toBe('abstencao');
   });
 });
 
