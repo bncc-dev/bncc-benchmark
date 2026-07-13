@@ -7,6 +7,7 @@
 import { ErroProvedor } from '../provedores/erro.js';
 import type { DefModelo, Provedor } from '../provedores/tipos.js';
 import { CacheDisco, chaveCache } from './cache.js';
+import { URL_MCP } from './mcp-cliente.js';
 import { criarLimitador } from './concorrencia.js';
 import type { BancoItens, Item, Modo, RegistroBruto } from './tipos.js';
 
@@ -74,6 +75,9 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
     const nParafrases = Math.min(parafrases, item.parafrases.length);
     for (let p = 0; p < nParafrases; p++) {
       const prompt = item.parafrases[p];
+      // RB-3: maxTokens e o mecanismo de grounding fazem parte da identidade
+      // da chamada; sem eles, uma re-execução com config diferente reutilizaria
+      // respostas incompatíveis (ex.: truncadas) em silêncio.
       const chave = chaveCache({
         modelo: def.id,
         modeloApi: def.modelo,
@@ -82,6 +86,8 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
         modo,
         prompt,
         itensVersao: banco.versao,
+        maxTokens,
+        grounding: modo === 'grounded' ? `${def.provedor}:${URL_MCP}` : null,
       });
 
       trabalhos.push(

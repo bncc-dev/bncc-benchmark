@@ -8,10 +8,11 @@
  * Keys em .env (nunca commitado). Execução é sempre local (DECISOES.md D3).
  */
 
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
+import { gravarBrutos } from './lib/brutos.js';
 import { CacheDisco } from './lib/cache.js';
 import { carregarEnv } from './lib/env.js';
 import { executarBateria, selecionarBalanceado } from './lib/execucao.js';
@@ -32,6 +33,7 @@ const { values: args } = parseArgs({
     parafrases: { type: 'string', default: '3' },
     concorrencia: { type: 'string', default: '5' },
     'max-tokens': { type: 'string', default: '1024' },
+    'aceitar-antivexame-pendente': { type: 'boolean', default: false },
   },
 });
 
@@ -45,6 +47,24 @@ const limite = args.limite ? Number(args.limite) : banco.itens.length;
 const itens = selecionarBalanceado(banco.itens, limite);
 const ambiente = carregarEnv(resolve(RAIZ, '.env'));
 const cache = new CacheDisco(resolve(RAIZ, 'cache'));
+
+// RB-9: gabarito "existe: false" só vale depois da verificação anti-vexame.
+// Rodar bateria paga com falsos pendentes arrisca contar acerto como alucinação.
+const pendentes = itens.filter((i) => i.verificacao_antivexame?.status === 'pendente');
+if (pendentes.length > 0 && !args['aceitar-antivexame-pendente']) {
+  throw new Error(
+    `${pendentes.length} item(ns) com verificação anti-vexame PENDENTE na seleção (ex.: ${pendentes
+      .slice(0, 3)
+      .map((i) => `${i.id}/${i.codigo}`)
+      .join(', ')}). ` +
+      'Conclua a verificação manual dos falsos ou use --aceitar-antivexame-pendente (só para smokes/pilotos).',
+  );
+}
+if (pendentes.length > 0) {
+  console.warn(
+    `AVISO: rodando com ${pendentes.length} falso(s) de anti-vexame pendente (override explícito).`,
+  );
+}
 
 const ids = args.modelos!.split(',').map((m) => m.trim());
 for (const id of ids) {
@@ -86,10 +106,15 @@ for (const id of ids) {
   const dir = resolve(RAIZ, 'resultados', args.rodada!);
   mkdirSync(dir, { recursive: true });
   const arquivo = resolve(dir, `brutos-${id}-${modo}.jsonl`);
-  writeFileSync(arquivo, resultado.registros.map((r) => JSON.stringify(r)).join('\n') + '\n');
+  const balanco = gravarBrutos(arquivo, resultado.registros);
+  if (balanco.preservados > 0) {
+    console.log(
+      `  AVISO: seleção parcial; o arquivo mantém ${balanco.preservados} registro(s) de execuções anteriores (total ${balanco.total}).`,
+    );
+  }
 
   const segundos = ((Date.now() - inicio) / 1000).toFixed(1);
   console.log(
-    `  ${arquivo}\n  ${resultado.registros.length} registros · ${resultado.chamadas} chamadas novas · ${resultado.doCache} do cache · US$ ${resultado.custoUsd.toFixed(4)} · ${segundos}s`,
+    `  ${arquivo}\n  ${resultado.registros.length} registros gravados · ${resultado.chamadas} chamadas novas · ${resultado.doCache} do cache · US$ ${resultado.custoUsd.toFixed(4)} · ${segundos}s`,
   );
 }
