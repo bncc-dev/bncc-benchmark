@@ -55,6 +55,38 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 5, saida: 30 },
     suportaGrounded: false, // porte do loop MCP pendente (M5)
   },
+  // POLÍTICA (decisão do time, 13/jul/2026): modelos Anthropic rodam via
+  // Bedrock sempre que a conta tiver acesso (sonnet-bedrock/haiku-bedrock
+  // acima). Os três abaixo estão 403 no Bedrock da conta ("contact AWS
+  // Sales"); ficam via OpenRouter como EXCEÇÃO TEMPORÁRIA até a liberação.
+  // Quando liberar: migrar para provedor 'bedrock' e aposentar estas entradas.
+  'sonnet-5': {
+    id: 'sonnet-5',
+    provedor: 'openai-compat',
+    modelo: 'anthropic/claude-sonnet-5',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    precos: { entrada: 2, saida: 10 },
+    suportaGrounded: false,
+  },
+  'opus-4.8': {
+    id: 'opus-4.8',
+    provedor: 'openai-compat',
+    modelo: 'anthropic/claude-opus-4.8',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    precos: { entrada: 5, saida: 25 },
+    suportaGrounded: false,
+  },
+  'fable-5': {
+    id: 'fable-5',
+    provedor: 'openai-compat',
+    modelo: 'anthropic/claude-fable-5',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    precos: { entrada: 10, saida: 50 },
+    suportaGrounded: false,
+  },
   'gpt-luna': {
     id: 'gpt-luna',
     provedor: 'openai-compat',
