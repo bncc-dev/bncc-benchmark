@@ -106,6 +106,40 @@ describe('executarBateria', () => {
     expect(terceira.doCache).toBe(2); // mesma config volta a acertar o cache
   });
 
+  it('escalada: resposta cortada por max_tokens ganha retry com o dobro do orçamento', async () => {
+    const itens = selecionarBalanceado(banco.itens, 1);
+    const orcamentosVistos: number[] = [];
+    const cortadorUmaVez: Provedor = {
+      id: 'fake',
+      async completar({ maxTokens }) {
+        orcamentosVistos.push(maxTokens);
+        const cortada = orcamentosVistos.length === 1;
+        return {
+          texto: cortada ? 'resposta pela met' : 'resposta completa',
+          versaoModelo: 'fake-1',
+          finishReason: cortada ? 'max_tokens' : 'fim',
+          tokens: { entrada: 100, saida: 20 },
+          custoUsd: 0.0002,
+          toolsChamadas: 0,
+          mecanismoGrounding: null,
+        };
+      },
+    };
+    const resultado = await executarBateria({
+      banco,
+      itens,
+      def: { ...DEF, maxTokensPadrao: 2048 },
+      provedor: cortadorUmaVez,
+      modo: 'seco',
+      parafrases: 1,
+      cache: new CacheDisco(join(dirTemporario, 'c-escalada')),
+      maxTokens: 1024,
+    });
+    expect(orcamentosVistos).toEqual([2048, 4096]); // padrão do modelo vence a config; corte dobra
+    expect(resultado.registros[0].finish_reason).toBe('fim');
+    expect(resultado.registros[0].resposta).toBe('resposta completa');
+  });
+
   it('faz retry em erro transitório e desiste em erro permanente', async () => {
     const itens = selecionarBalanceado(banco.itens, 1);
     let tentativas = 0;

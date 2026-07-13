@@ -1,6 +1,6 @@
 {
  "rodada": "smoke-elenco",
- "gerado_em": "2026-07-13T18:14:23.334Z",
+ "gerado_em": "2026-07-13T19:08:40.110Z",
  "dataset_versao": "dados-2026.07",
  "itens_versao": "v1-rc",
  "por_modelo": {
@@ -65,16 +65,13 @@
      "tarefas": {
       "A": {
        "total": 3,
-       "veredito:inventado": 1,
-       "veredito:fiel_exato": 1,
-       "veredito:resposta_invalida": 1
+       "veredito:inventado": 2,
+       "veredito:parcial": 1
       },
       "B": {
        "total": 3,
-       "veredito:incorreto": 1,
-       "tipo:real:incorreto": 1,
-       "veredito:correto": 2,
-       "tipo:real:correto": 2
+       "veredito:correto": 3,
+       "tipo:real:correto": 3
       },
       "C": {
        "total": 3,
@@ -83,17 +80,18 @@
        "codigos_inventados": 0,
        "codigos_forma_invalida": 0,
        "codigos_fora_escopo": 0,
-       "texto:ok": 15
+       "texto:ok": 14,
+       "texto:divergente": 1
       }
      },
      "estratos": {
       "bncc-2018": {
        "total": 6,
-       "alucinacoes": 1
+       "alucinacoes": 2
       },
       "etapa:EM": {
        "total": 3,
-       "alucinacoes": 1
+       "alucinacoes": 2
       },
       "computacao-2022": {
        "total": 3,
@@ -118,8 +116,8 @@
      "tarefas": {
       "A": {
        "total": 3,
-       "veredito:inventado": 2,
-       "veredito:resposta_invalida": 1
+       "veredito:inventado": 1,
+       "veredito:fiel_exato": 2
       },
       "B": {
        "total": 3,
@@ -128,15 +126,14 @@
       },
       "C": {
        "total": 3,
-       "veredito:avaliado": 2,
-       "codigos_citados": 14,
-       "codigos_inventados": 0,
+       "veredito:avaliado": 3,
+       "codigos_citados": 27,
+       "codigos_inventados": 1,
        "codigos_forma_invalida": 0,
        "codigos_fora_escopo": 0,
-       "texto:ok": 10,
-       "veredito:resposta_invalida": 1,
-       "texto:ausente": 2,
-       "texto:divergente": 2
+       "texto:ok": 15,
+       "texto:ausente": 6,
+       "texto:divergente": 5
       }
      },
      "estratos": {
@@ -146,7 +143,7 @@
       },
       "etapa:EM": {
        "total": 3,
-       "alucinacoes": 2
+       "alucinacoes": 1
       },
       "computacao-2022": {
        "total": 3,
@@ -158,7 +155,7 @@
       },
       "etapa:EI": {
        "total": 3,
-       "alucinacoes": 0
+       "alucinacoes": 1
       }
      },
      "total_julgamentos": 9
@@ -221,8 +218,8 @@
      "tarefas": {
       "A": {
        "total": 3,
-       "veredito:parcial": 1,
-       "veredito:resposta_invalida": 2
+       "veredito:fiel_parafrase": 1,
+       "veredito:parcial": 2
       },
       "B": {
        "total": 3,
@@ -475,8 +472,7 @@
      "tarefas": {
       "A": {
        "total": 3,
-       "veredito:resposta_invalida": 1,
-       "veredito:inventado": 2
+       "veredito:inventado": 3
       },
       "B": {
        "total": 3,
@@ -485,23 +481,23 @@
       },
       "C": {
        "total": 3,
-       "veredito:resposta_invalida": 2,
-       "codigos_citados": 1,
-       "codigos_inventados": 0,
+       "veredito:avaliado": 3,
+       "codigos_citados": 21,
+       "codigos_inventados": 1,
        "codigos_forma_invalida": 0,
-       "codigos_fora_escopo": 1,
-       "veredito:avaliado": 1,
-       "texto:divergente": 1
+       "codigos_fora_escopo": 0,
+       "texto:divergente": 16,
+       "texto:ausente": 4
       }
      },
      "estratos": {
       "bncc-2018": {
        "total": 6,
-       "alucinacoes": 2
+       "alucinacoes": 4
       },
       "etapa:EM": {
        "total": 3,
-       "alucinacoes": 2
+       "alucinacoes": 3
       },
       "computacao-2022": {
        "total": 3,
@@ -513,7 +509,7 @@
       },
       "etapa:EI": {
        "total": 3,
-       "alucinacoes": 0
+       "alucinacoes": 1
       }
      },
      "total_julgamentos": 9
@@ -535,12 +531,13 @@
       },
       "C": {
        "total": 3,
-       "veredito:sem_codigos": 1,
-       "codigos_citados": 0,
+       "veredito:avaliado": 1,
+       "codigos_citados": 5,
        "codigos_inventados": 0,
        "codigos_forma_invalida": 0,
        "codigos_fora_escopo": 0,
-       "veredito:resposta_invalida": 2
+       "texto:divergente": 5,
+       "veredito:sem_codigos": 2
       }
      },
      "estratos": {

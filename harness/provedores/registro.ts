@@ -47,6 +47,7 @@ export const MODELOS: Record<string, DefModelo> = {
   // endpoint que serviu fica registrado no versao_modelo).
   'gpt-sol': {
     id: 'gpt-sol',
+    maxTokensPadrao: 4096,
     provedor: 'openai-compat',
     modelo: 'openai/gpt-5.6-sol',
     envKey: 'OPENROUTER_API_KEY',
@@ -62,6 +63,7 @@ export const MODELOS: Record<string, DefModelo> = {
   // Quando liberar: migrar para provedor 'bedrock' e aposentar estas entradas.
   'sonnet-5': {
     id: 'sonnet-5',
+    maxTokensPadrao: 4096,
     provedor: 'openai-compat',
     modelo: 'anthropic/claude-sonnet-5',
     envKey: 'OPENROUTER_API_KEY',
@@ -71,6 +73,7 @@ export const MODELOS: Record<string, DefModelo> = {
   },
   'opus-4.8': {
     id: 'opus-4.8',
+    maxTokensPadrao: 4096,
     provedor: 'openai-compat',
     modelo: 'anthropic/claude-opus-4.8',
     envKey: 'OPENROUTER_API_KEY',
@@ -80,6 +83,7 @@ export const MODELOS: Record<string, DefModelo> = {
   },
   'fable-5': {
     id: 'fable-5',
+    maxTokensPadrao: 8192,
     provedor: 'openai-compat',
     modelo: 'anthropic/claude-fable-5',
     envKey: 'OPENROUTER_API_KEY',
@@ -103,6 +107,7 @@ export const MODELOS: Record<string, DefModelo> = {
   // Gemini pelo próprio Google e registra o endpoint nos brutos.
   'gemini-pro': {
     id: 'gemini-pro',
+    maxTokensPadrao: 8192,
     provedor: 'openai-compat',
     modelo: 'google/gemini-3.1-pro-preview',
     envKey: 'OPENROUTER_API_KEY',
@@ -112,6 +117,7 @@ export const MODELOS: Record<string, DefModelo> = {
   },
   'gemini-flash': {
     id: 'gemini-flash',
+    maxTokensPadrao: 8192,
     provedor: 'openai-compat',
     modelo: 'google/gemini-3.5-flash',
     envKey: 'OPENROUTER_API_KEY',
@@ -122,6 +128,7 @@ export const MODELOS: Record<string, DefModelo> = {
   // Fronteira dos demais provedores, via OpenRouter (bateria piloto).
   'deepseek-pro': {
     id: 'deepseek-pro',
+    maxTokensPadrao: 4096,
     provedor: 'openai-compat',
     modelo: 'deepseek/deepseek-v4-pro',
     envKey: 'OPENROUTER_API_KEY',
@@ -140,6 +147,7 @@ export const MODELOS: Record<string, DefModelo> = {
   },
   kimi: {
     id: 'kimi',
+    maxTokensPadrao: 8192,
     provedor: 'openai-compat',
     modelo: 'moonshotai/kimi-k2.6',
     envKey: 'OPENROUTER_API_KEY',
@@ -149,6 +157,7 @@ export const MODELOS: Record<string, DefModelo> = {
   },
   'qwen-max': {
     id: 'qwen-max',
+    maxTokensPadrao: 4096,
     provedor: 'openai-compat',
     modelo: 'qwen/qwen3.7-max',
     envKey: 'OPENROUTER_API_KEY',
@@ -177,6 +186,7 @@ export const MODELOS: Record<string, DefModelo> = {
   },
   'kimi-k25': {
     id: 'kimi-k25',
+    maxTokensPadrao: 8192,
     provedor: 'openai-compat',
     modelo: 'moonshotai/kimi-k2.5',
     envKey: 'OPENROUTER_API_KEY',
