@@ -200,7 +200,7 @@ function candidatosPedidosC(): PedidoC[] {
   for (const comp of ['AR', 'CI', 'EF', 'ER', 'GE', 'HI', 'LI', 'LP', 'MA']) {
     for (let ano = 1; ano <= 9; ano++) {
       adicionar(
-        `${NOMES[comp]} do ${ano}º ano do Ensino Fundamental`,
+        `de ${NOMES[comp]} do ${ano}º ano do Ensino Fundamental`,
         { etapa: 'EF', modulo: 'bncc-2018', componente: comp, ano },
         (a) =>
           a.estrato.modulo === 'bncc-2018' &&
@@ -235,15 +235,15 @@ function candidatosPedidosC(): PedidoC[] {
   }
   // Computação: quatro recortes.
   const co = (a: Aprendizagem) => a.estrato.modulo === 'computacao-2022';
-  adicionar('Computação na Educação Infantil', { etapa: 'EI', modulo: 'computacao-2022' }, (a) => co(a) && a.estrato.etapa === 'EI', 3);
+  adicionar('de Computação na Educação Infantil', { etapa: 'EI', modulo: 'computacao-2022' }, (a) => co(a) && a.estrato.etapa === 'EI', 3);
   for (let ano = 1; ano <= 9; ano++) {
     adicionar(
-      `Computação no ${ano}º ano do Ensino Fundamental`,
+      `de Computação no ${ano}º ano do Ensino Fundamental`,
       { etapa: 'EF', modulo: 'computacao-2022', componente: 'CO', ano },
       (a) => co(a) && a.estrato.etapa === 'EF' && anosDe(a.codigo.slice(2, 4)).includes(ano),
     );
   }
-  adicionar('Computação no Ensino Médio', { etapa: 'EM', modulo: 'computacao-2022' }, (a) => co(a) && a.estrato.etapa === 'EM');
+  adicionar('de Computação no Ensino Médio', { etapa: 'EM', modulo: 'computacao-2022' }, (a) => co(a) && a.estrato.etapa === 'EM');
 
   return pedidos;
 }

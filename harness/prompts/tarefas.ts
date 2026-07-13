@@ -30,11 +30,12 @@ export function parafrasesB(codigo: string): string[] {
 
 export function parafrasesC(pedido: PedidoC): string[] {
   const { quantidade: n, descricao } = pedido;
-  const r = rotulo(pedido.escopo.etapa);
+  // A descrição já vem com a preposição correta ("de Matemática...", "do campo...").
+  const plural = pedido.escopo.etapa === 'EI' ? 'objetivos de aprendizagem' : 'habilidades';
   return [
-    `Liste ${n} ${r}s da BNCC de ${descricao}, com o código e o texto oficial de cada uma.`,
-    `Estou montando um planejamento para ${descricao}. Cite ${n} ${r}s da BNCC, cada uma com código e enunciado oficial.`,
-    `Quais são ${n} ${r}s da BNCC de ${descricao}? Dê o código e o texto de cada uma.`,
+    `Liste ${n} ${plural} da BNCC ${descricao}, com o código e o texto oficial de cada uma.`,
+    `Estou montando um planejamento e preciso de ${n} ${plural} da BNCC ${descricao}, cada uma com código e enunciado oficial.`,
+    `Quais são ${n} ${plural} da BNCC ${descricao}? Dê o código e o texto de cada uma.`,
   ];
 }
 
