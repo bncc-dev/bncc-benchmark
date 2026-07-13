@@ -8,8 +8,12 @@ import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos
 
 interface RespostaApi {
   modelVersion?: string;
-  candidates: Array<{ content: { parts: Array<{ text?: string }> } }>;
-  usageMetadata: { promptTokenCount: number; candidatesTokenCount: number };
+  candidates?: Array<{ content?: { parts?: Array<{ text?: string }> }; finishReason?: string }>;
+  usageMetadata: {
+    promptTokenCount: number;
+    candidatesTokenCount?: number;
+    thoughtsTokenCount?: number;
+  };
 }
 
 export function criarProvedorGoogle(def: DefModelo, key: string): Provedor {
@@ -33,19 +37,34 @@ export function criarProvedorGoogle(def: DefModelo, key: string): Provedor {
         throw new ErroProvedor(resposta.status, `${def.id} ${resposta.status}: ${detalhe.slice(0, 300)}`);
       }
       const dados = (await resposta.json()) as RespostaApi;
-      const texto = (dados.candidates[0]?.content.parts ?? [])
-        .map((p) => p.text ?? '')
-        .join('');
+      const candidato = dados.candidates?.[0];
+      const texto = (candidato?.content?.parts ?? []).map((p) => p.text ?? '').join('');
+      // RB-4: STOP = completa; MAX_TOKENS = truncada; SAFETY etc. = bloqueada.
+      // candidates vazio (bloqueio de prompt) nunca vira resposta válida.
+      const bruto = candidato?.finishReason;
+      const finishReason =
+        bruto === 'STOP'
+          ? 'fim'
+          : bruto === 'MAX_TOKENS'
+            ? 'max_tokens'
+            : bruto === undefined
+              ? 'bloqueado'
+              : bruto === 'SAFETY' || bruto === 'PROHIBITED_CONTENT' || bruto === 'BLOCKLIST'
+                ? 'bloqueado'
+                : bruto;
+      const reasoning = dados.usageMetadata.thoughtsTokenCount;
       return {
         texto,
         versaoModelo: dados.modelVersion ?? def.modelo,
+        finishReason,
         tokens: {
           entrada: dados.usageMetadata.promptTokenCount,
-          saida: dados.usageMetadata.candidatesTokenCount,
+          saida: dados.usageMetadata.candidatesTokenCount ?? 0,
+          ...(reasoning !== undefined ? { reasoning } : {}),
         },
         custoUsd:
           (dados.usageMetadata.promptTokenCount * def.precos.entrada +
-            dados.usageMetadata.candidatesTokenCount * def.precos.saida) /
+            (dados.usageMetadata.candidatesTokenCount ?? 0) * def.precos.saida) /
           1_000_000,
         toolsChamadas: 0,
         mecanismoGrounding: null,

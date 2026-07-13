@@ -113,6 +113,16 @@ for (const id of ids) {
     );
   }
 
+  // RB-4: respostas incompletas não entram nas taxas; melhor saber já na execução.
+  const incompletas = resultado.registros.filter(
+    (r) => r.finish_reason !== undefined && r.finish_reason !== 'fim',
+  ).length;
+  if (incompletas > 0) {
+    console.warn(
+      `  AVISO: ${incompletas} resposta(s) truncada(s)/bloqueada(s) (finish_reason != fim); considere --max-tokens maior.`,
+    );
+  }
+
   const segundos = ((Date.now() - inicio) / 1000).toFixed(1);
   console.log(
     `  ${arquivo}\n  ${resultado.registros.length} registros gravados · ${resultado.chamadas} chamadas novas · ${resultado.doCache} do cache · US$ ${resultado.custoUsd.toFixed(4)} · ${segundos}s`,
