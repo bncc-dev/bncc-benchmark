@@ -229,14 +229,42 @@ export function prefixosInexistentes(codigosReais: Iterable<string>): string[] {
 const RE_EXTRACAO =
   /\b(?:EI0[1-9](?:EO|CG|TS|EF|ET|CO)\d{2,3}|EF\d{2}(?:AR|CI|EF|ER|GE|HI|LI|LP|MA|CO)\d{2,3}|EM\d{2}(?:LGG|MAT|CNT|CHS)\d{2,4}|EM\d{2}(?:LP|CO)\d{2,3})\b/g;
 
+export interface Citacao {
+  codigo: string;
+  formaValida: boolean;
+  /** Posição do início da citação no texto original. */
+  posicao: number;
+  /** Posição imediatamente após o fim da citação. */
+  fim: number;
+}
+
+/**
+ * Todas as ocorrências, em ordem, com posições (RB-6). O matchAll consome
+ * cada citação como token único, então EF05CO01 nunca casa "dentro" de um
+ * EF05CO011 citado antes (a colisão de prefixo do indexOf).
+ */
+export function extrairCitacoes(texto: string): Citacao[] {
+  const citacoes: Citacao[] = [];
+  for (const m of texto.toUpperCase().matchAll(RE_EXTRACAO)) {
+    const codigo = m[0];
+    citacoes.push({
+      codigo,
+      formaValida: analisar(codigo) !== null,
+      posicao: m.index,
+      fim: m.index + codigo.length,
+    });
+  }
+  return citacoes;
+}
+
+/** Códigos únicos citados, na ordem da primeira ocorrência. */
 export function extrairCodigos(texto: string): Array<{ codigo: string; formaValida: boolean }> {
   const vistos = new Set<string>();
   const achados: Array<{ codigo: string; formaValida: boolean }> = [];
-  for (const m of texto.toUpperCase().matchAll(RE_EXTRACAO)) {
-    const codigo = m[0];
-    if (vistos.has(codigo)) continue;
-    vistos.add(codigo);
-    achados.push({ codigo, formaValida: analisar(codigo) !== null });
+  for (const c of extrairCitacoes(texto)) {
+    if (vistos.has(c.codigo)) continue;
+    vistos.add(c.codigo);
+    achados.push({ codigo: c.codigo, formaValida: c.formaValida });
   }
   return achados;
 }

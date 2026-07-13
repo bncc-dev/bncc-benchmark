@@ -13,7 +13,7 @@ import {
   pad2,
   prefixosInexistentes,
 } from './codigos.js';
-import { todas, todosCodigos, type Aprendizagem } from './gabarito.js';
+import { codigosComMesmoTexto, todas, todosCodigos, type Aprendizagem } from './gabarito.js';
 import { parafrasesA, parafrasesB, parafrasesC, parafrasesD } from '../prompts/tarefas.js';
 import type { BancoItens, Estrato, Item, PedidoC } from './tipos.js';
 
@@ -297,7 +297,12 @@ function itensD(rng: Rng, usados: Set<string>, ids: () => string): Item[] {
     tipo: 'real' as const,
     codigo: a.codigo,
     texto: a.texto,
-    gabarito: { tipo: 'codigo' as const, codigo: a.codigo },
+    // RB-7: qualquer código de texto idêntico é resposta correta.
+    gabarito: {
+      tipo: 'codigo' as const,
+      codigo: a.codigo,
+      codigosAceitos: codigosComMesmoTexto(a.codigo),
+    },
     estrato: a.estrato,
     parafrases: parafrasesD(a.texto, a.estrato.etapa),
   }));
