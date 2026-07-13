@@ -2,7 +2,7 @@
  "versao": "v1-rc",
  "seed": 20260712,
  "dataset_versao": "dados-2026.07",
- "gerado_em": "2026-07-13T00:57:04.907Z",
+ "gerado_em": "2026-07-13T13:57:56.853Z",
  "distribuicao": {
   "A:real": 80,
   "B:real": 60,
@@ -6395,7 +6395,10 @@
    "texto": "Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF08LP11"
+    "codigo": "EF08LP11",
+    "codigosAceitos": [
+     "EF08LP11"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6416,7 +6419,10 @@
    "texto": "Identificar evidências de transformações químicas a partir do resultado de misturas de materiais que originam produtos diferentes dos que foram misturados (mistura de ingredientes para fazer um bolo, mistura de vinagre com bicarbonato de sódio etc.).",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF06CI02"
+    "codigo": "EF06CI02",
+    "codigosAceitos": [
+     "EF06CI02"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6437,7 +6443,10 @@
    "texto": "Identificar a adequação de diferentes tecnologias computacionais na resolução de problemas.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF05CO11"
+    "codigo": "EF05CO11",
+    "codigosAceitos": [
+     "EF05CO11"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6458,7 +6467,10 @@
    "texto": "Vivenciar diferentes ritmos, velocidades e fluxos nas interações e brincadeiras (em danças, balanços, escorregadores etc.).",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EI01ET06"
+    "codigo": "EI01ET06",
+    "codigosAceitos": [
+     "EI01ET06"
+    ]
    },
    "estrato": {
     "etapa": "EI",
@@ -6479,7 +6491,10 @@
    "texto": "Assistir, em vídeo digital, a programa de culinária infantil e, a partir dele, planejar e produzir receitas em áudio ou vídeo.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF03LP15"
+    "codigo": "EF03LP15",
+    "codigosAceitos": [
+     "EF03LP15"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6500,7 +6515,10 @@
    "texto": "Construir algoritmo em linguagem natural e representá-lo por fluxograma que indique a resolução de um problema simples (por exemplo, se um número natural qualquer é par).",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF06MA04"
+    "codigo": "EF06MA04",
+    "codigosAceitos": [
+     "EF06MA04"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6521,7 +6539,10 @@
    "texto": "Identificar mudanças e permanências ao longo do tempo, discutindo os sentidos dos grandes marcos da história da humanidade (nomadismo, desenvolvimento da agricultura e do pastoreio, criação da indústria etc.).",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF04HI02"
+    "codigo": "EF04HI02",
+    "codigosAceitos": [
+     "EF04HI02"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6542,7 +6563,10 @@
    "texto": "Apreciar poemas visuais e concretos, observando efeitos de sentido criados pelo formato do texto na página, distribuição e diagramação das letras, pelas ilustrações e por outros efeitos visuais.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF15LP17"
+    "codigo": "EF15LP17",
+    "codigosAceitos": [
+     "EF15LP17"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6563,7 +6587,10 @@
    "texto": "Classificar informações, agrupando-as em coleções (conjuntos) e associando cada coleção a um ‘tipo de dado’.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF69CO01"
+    "codigo": "EF69CO01",
+    "codigosAceitos": [
+     "EF69CO01"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6584,7 +6611,10 @@
    "texto": "Identificar objetos e documentos pessoais que remetam à própria experiência no âmbito da família e/ou da comunidade, discutindo as razões pelas quais alguns objetos são preservados e outros são descartados.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF02HI09"
+    "codigo": "EF02HI09",
+    "codigosAceitos": [
+     "EF02HI09"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6605,7 +6635,10 @@
    "texto": "Caracterizar as indumentárias como elementos integrantes das identidades religiosas.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF03ER06"
+    "codigo": "EF03ER06",
+    "codigosAceitos": [
+     "EF03ER06"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6626,7 +6659,10 @@
    "texto": "Resolver, com o suporte de imagem e/ou material manipulável, problemas simples de contagem, como a determinação do número de agrupamentos possíveis ao se combinar cada elemento de uma coleção com todos os elementos de outra, utilizando estratégias e formas de registro pessoais.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF04MA08"
+    "codigo": "EF04MA08",
+    "codigosAceitos": [
+     "EF04MA08"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6647,7 +6683,10 @@
    "texto": "Problematizar preconceitos e estereótipos relacionados ao universo das lutas e demais práticas corporais, propondo alternativas para superá-los, com base na solidariedade, na justiça, na equidade e no respeito.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF67EF17"
+    "codigo": "EF67EF17",
+    "codigosAceitos": [
+     "EF67EF17"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6668,7 +6707,10 @@
    "texto": "Reconhecer e apreciar o papel de músicos e grupos de música brasileiros e estrangeiros que contribuíram para o desenvolvimento de formas e gêneros musicais.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF69AR18"
+    "codigo": "EF69AR18",
+    "codigosAceitos": [
+     "EF69AR18"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6689,7 +6731,10 @@
    "texto": "Observar os mecanismos de modalização adequados aos textos jurídicos, as modalidades deônticas, que se referem ao eixo da conduta (obrigatoriedade/permissibilidade) como, por exemplo: Proibição: “Não se deve fumar em recintos fechados.”; Obrigatoriedade: “A vida tem que valer a pena.”; Possibilidade: “É permitido a entrada de menores acompanhados de adultos responsáveis”, e os mecanismos de modalização adequados aos textos políticos e propositivos, as modalidades apreciativas, em que o locutor exprime um juízo de valor (positivo ou negativo) acerca do que enuncia. Por exemplo: “Que belo discurso!”, “Discordo das escolhas de Antônio.” “Felizmente, o buraco ainda não causou acidentes mais graves.”",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF69LP28"
+    "codigo": "EF69LP28",
+    "codigosAceitos": [
+     "EF69LP28"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6710,7 +6755,10 @@
    "texto": "Analisar funções definidas por uma ou mais sentenças (tabela do Imposto de Renda, contas de luz, água, gás etc.), em suas representações algébrica e gráfica, identificando domínios de validade, imagem, crescimento e decrescimento, e convertendo essas representações de uma para outra, com ou sem apoio de tecnologias digitais.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EM13MAT404"
+    "codigo": "EM13MAT404",
+    "codigosAceitos": [
+     "EM13MAT404"
+    ]
    },
    "estrato": {
     "etapa": "EM",
@@ -6731,7 +6779,10 @@
    "texto": "Analisar e utilizar as diferentes formas de representação e consulta a dados em formato digital para pesquisas científicas.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EM13CO13"
+    "codigo": "EM13CO13",
+    "codigosAceitos": [
+     "EM13CO13"
+    ]
    },
    "estrato": {
     "etapa": "EM",
@@ -6752,7 +6803,10 @@
    "texto": "Experimentar e fruir exercícios físicos que solicitem diferentes capacidades físicas, identificando seus tipos (força, velocidade, resistência, flexibilidade) e as sensações corporais provocadas pela sua prática.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF67EF08"
+    "codigo": "EF67EF08",
+    "codigosAceitos": [
+     "EF67EF08"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6773,7 +6827,10 @@
    "texto": "Problematizar a prática excessiva de exercícios físicos e o uso de medicamentos para a ampliação do rendimento ou potencialização das transformações corporais.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF89EF09"
+    "codigo": "EF89EF09",
+    "codigosAceitos": [
+     "EF89EF09"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6794,7 +6851,10 @@
    "texto": "Ler e compreender, com certa autonomia, textos em versos, explorando rimas, sons e jogos de palavras, imagens poéticas (sentidos figurados) e recursos visuais e sonoros.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF35LP27"
+    "codigo": "EF35LP27",
+    "codigosAceitos": [
+     "EF35LP27"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6815,7 +6875,10 @@
    "texto": "Identificar princípios éticos em diferentes tradições religiosas e filosofias de vida, discutindo como podem influenciar condutas pessoais e práticas sociais.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF07ER06"
+    "codigo": "EF07ER06",
+    "codigosAceitos": [
+     "EF07ER06"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6836,7 +6899,10 @@
    "texto": "Resolver e elaborar problemas que envolvam cálculos (mentais ou escritos, exatos ou aproximados) com números naturais, por meio de estratégias variadas, com compreensão dos processos neles envolvidos com e sem uso de calculadora.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF06MA03"
+    "codigo": "EF06MA03",
+    "codigosAceitos": [
+     "EF06MA03"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6857,7 +6923,10 @@
    "texto": "Contribuir com a escrita de textos normativos, quando houver esse tipo de demanda na escola – regimentos e estatutos de organizações da sociedade civil do âmbito da atuação das crianças e jovens (grêmio livre, clubes de leitura, associações culturais etc.) – e de regras e regulamentos nos vários âmbitos da escola – campeonatos, festivais, regras de convivência etc., levando em conta o contexto de produção e as características dos gêneros em questão.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF69LP23"
+    "codigo": "EF69LP23",
+    "codigosAceitos": [
+     "EF69LP23"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6878,7 +6947,10 @@
    "texto": "Identificar as transformações ocorridas na cidade ao longo do tempo e discutir suas interferências nos modos de vida de seus habitantes, tomando como ponto de partida o presente.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF04HI03"
+    "codigo": "EF04HI03",
+    "codigosAceitos": [
+     "EF04HI03"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6899,7 +6971,10 @@
    "texto": "Identificar as variáveis e suas frequências e os elementos constitutivos (título, eixos, legendas, fontes e datas) em diferentes tipos de gráfico.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF06MA31"
+    "codigo": "EF06MA31",
+    "codigosAceitos": [
+     "EF06MA31"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6920,7 +6995,10 @@
    "texto": "Experimentar, fruir e recriar diferentes brincadeiras e jogos da cultura popular presentes no contexto comunitário e regional, reconhecendo e respeitando as diferenças individuais de desempenho dos colegas.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF12EF01"
+    "codigo": "EF12EF01",
+    "codigosAceitos": [
+     "EF12EF01"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6941,7 +7019,10 @@
    "texto": "Representar por meio de um fluxograma os passos utilizados para resolver um grupo de problemas.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF07MA07"
+    "codigo": "EF07MA07",
+    "codigosAceitos": [
+     "EF07MA07"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6962,7 +7043,10 @@
    "texto": "Explicar como os processos naturais e históricos atuam na produção e na mudança das paisagens naturais e antrópicas nos seus lugares de vivência, comparando-os a outros lugares.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF03GE04"
+    "codigo": "EF03GE04",
+    "codigosAceitos": [
+     "EF03GE04"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -6983,7 +7067,10 @@
    "texto": "Explorar e construir a solução de problemas por meio da reutilização de partes de soluções existentes.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EM13CO01"
+    "codigo": "EM13CO01",
+    "codigosAceitos": [
+     "EM13CO01"
+    ]
    },
    "estrato": {
     "etapa": "EM",
@@ -7004,7 +7091,10 @@
    "texto": "Selecionar informações e dados necessários para uma dada pesquisa (sem excedê-los) em diferentes fontes (orais, impressas, digitais etc.) e comparar autonomamente esses conteúdos, levando em conta seus contextos de produção, referências e índices de confiabilidade, e percebendo coincidências, complementaridades, contradições, erros ou imprecisões conceituais e de dados, de forma a compreender e posicionar-se criticamente sobre esses conteúdos e estabelecer recortes precisos.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EM13LP32"
+    "codigo": "EM13LP32",
+    "codigosAceitos": [
+     "EM13LP32"
+    ]
    },
    "estrato": {
     "etapa": "EM",
@@ -7025,7 +7115,10 @@
    "texto": "Identificar mitos de criação em diferentes culturas e tradições religiosas.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF05ER02"
+    "codigo": "EF05ER02",
+    "codigosAceitos": [
+     "EF05ER02"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7046,7 +7139,10 @@
    "texto": "Analisar áreas de conflito e tensões nas regiões de fronteira do continente latino-americano e o papel de organismos internacionais e regionais de cooperação nesses cenários.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF08GE11"
+    "codigo": "EF08GE11",
+    "codigosAceitos": [
+     "EF08GE11"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7067,7 +7163,10 @@
    "texto": "Classificar resultados de eventos cotidianos aleatórios como “pouco prováveis”, “muito prováveis”, “improváveis” e “impossíveis”.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF02MA21"
+    "codigo": "EF02MA21",
+    "codigosAceitos": [
+     "EF02MA21"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7088,7 +7187,10 @@
    "texto": "Analisar criticamente as políticas de termos de uso das redes sociais e demais plataformas.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF08CO09"
+    "codigo": "EF08CO09",
+    "codigosAceitos": [
+     "EF08CO09"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7109,7 +7211,10 @@
    "texto": "Identificar as formas e funções das cidades e analisar as mudanças sociais, econômicas e ambientais provocadas pelo seu crescimento.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF05GE03"
+    "codigo": "EF05GE03",
+    "codigosAceitos": [
+     "EF05GE03"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7130,7 +7235,10 @@
    "texto": "Analisar técnicas de criptografia para armazenamento e transmissão de dados.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF09CO05"
+    "codigo": "EF09CO05",
+    "codigosAceitos": [
+     "EF09CO05"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7151,7 +7259,10 @@
    "texto": "Compartilhar informações por meio de redes sociais, compreendendo a sua dinâmica de funcionamento, de forma responsável e avaliando sua confiabilidade, considerando o respeito e a ética.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF08CO07"
+    "codigo": "EF08CO07",
+    "codigosAceitos": [
+     "EF08CO07"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7172,7 +7283,10 @@
    "texto": "Identificar os principais recursos naturais dos países da América Latina, analisando seu uso para a produção de matéria-prima e energia e sua relevância para a cooperação entre os países do Mercosul.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF08GE22"
+    "codigo": "EF08GE22",
+    "codigosAceitos": [
+     "EF08GE22"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7193,7 +7307,10 @@
    "texto": "Identificar as principais partes de uma planta (raiz, caule, folhas, flores e frutos) e a função desempenhada por cada uma delas, e analisar as relações entre as plantas, o ambiente e os demais seres vivos.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF02CI06"
+    "codigo": "EF02CI06",
+    "codigosAceitos": [
+     "EF02CI06"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7214,7 +7331,10 @@
    "texto": "Identificar e analisar as demandas e os protagonismos políticos, sociais e culturais dos povos indígenas e das populações afrodescendentes (incluindo as quilombolas) no Brasil contemporâneo considerando a história das Américas e o contexto de exclusão e inclusão precária desses grupos na ordem social e econômica atual, promovendo ações para a redução das desigualdades étnico-raciais no país.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EM13CHS601"
+    "codigo": "EM13CHS601",
+    "codigosAceitos": [
+     "EM13CHS601"
+    ]
    },
    "estrato": {
     "etapa": "EM",
@@ -7235,7 +7355,10 @@
    "texto": "Identificar, em textos, o uso de conjunções e a relação que estabelecem entre partes do texto: adição, oposição, tempo, causa, condição, finalidade.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF05LP07"
+    "codigo": "EF05LP07",
+    "codigosAceitos": [
+     "EF05LP07"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7256,7 +7379,10 @@
    "texto": "Debater e avaliar o papel da indústria cultural e das culturas de massa no estímulo ao consumismo, seus impactos econômicos e socioambientais, com vistas à percepção crítica das necessidades criadas pelo consumo e à adoção de hábitos sustentáveis.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EM13CHS303"
+    "codigo": "EM13CHS303",
+    "codigosAceitos": [
+     "EM13CHS303"
+    ]
    },
    "estrato": {
     "etapa": "EM",
@@ -7277,7 +7403,10 @@
    "texto": "Identificar e descrever problemas ambientais que ocorrem no entorno da escola e da residência (lixões, indústrias poluentes, destruição do patrimônio histórico etc.), propondo soluções (inclusive tecnológicas) para esses problemas.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF05GE11"
+    "codigo": "EF05GE11",
+    "codigosAceitos": [
+     "EF05GE11"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7298,7 +7427,10 @@
    "texto": "Utilizar diferentes fontes sonoras disponíveis no ambiente em brincadeiras cantadas, canções, músicas e melodias.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EI02TS03"
+    "codigo": "EI02TS03",
+    "codigosAceitos": [
+     "EI02TS03"
+    ]
    },
    "estrato": {
     "etapa": "EI",
@@ -7319,7 +7451,10 @@
    "texto": "Reconhecer que, para um computador realizar tarefas, ele se comunica com o mundo exterior com o uso de interfaces físicas (dispositivos de entrada e saída).",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF03CO06"
+    "codigo": "EF03CO06",
+    "codigosAceitos": [
+     "EF03CO06"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7340,7 +7475,10 @@
    "texto": "Reconhecer um número irracional como um número real cuja representação decimal é infinita e não periódica, e estimar a localização de alguns deles na reta numérica.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF09MA02"
+    "codigo": "EF09MA02",
+    "codigosAceitos": [
+     "EF09MA02"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7361,7 +7499,10 @@
    "texto": "Analisar os impactos socioambientais decorrentes de práticas de instituições governamentais, de empresas e de indivíduos, discutindo as origens dessas práticas, selecionando, incorporando e promovendo aquelas que favoreçam a consciência e a ética socioambiental e o consumo responsável.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EM13CHS304"
+    "codigo": "EM13CHS304",
+    "codigosAceitos": [
+     "EM13CHS304"
+    ]
    },
    "estrato": {
     "etapa": "EM",
@@ -7382,7 +7523,10 @@
    "texto": "Reconhecer a importância de verificar a confiabilidade das fontes de informações obtidas na Internet.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF04CO08"
+    "codigo": "EF04CO08",
+    "codigosAceitos": [
+     "EF04CO08"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7403,7 +7547,10 @@
    "texto": "Reconhecer simetria de reflexão em figuras e em pares de figuras geométricas planas e utilizá-la na construção de figuras congruentes, com o uso de malhas quadriculadas e de softwares de geometria.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF04MA19"
+    "codigo": "EF04MA19",
+    "codigosAceitos": [
+     "EF04MA19"
+    ]
    },
    "estrato": {
     "etapa": "EF",
@@ -7424,7 +7571,10 @@
    "texto": "Criar soluções de problemas para os quais seja adequado o uso de árvores e grafos para descrever suas informações e automatizá-las usando uma linguagem de programação.",
    "gabarito": {
     "tipo": "codigo",
-    "codigo": "EF09CO01"
+    "codigo": "EF09CO01",
+    "codigosAceitos": [
+     "EF09CO01"
+    ]
    },
    "estrato": {
     "etapa": "EF",

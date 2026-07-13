@@ -112,16 +112,42 @@ na chave de cache.
 
 | Achado | Commit | Data |
 |---|---|---|
-| RB-1 | pendente | |
-| RB-2 | pendente | |
-| RB-3 | pendente | |
-| RB-4 | pendente | |
-| RB-5 | pendente | |
-| RB-6 | pendente | |
-| RB-7 | pendente | |
-| RB-8 | pendente | |
-| RB-9 | pendente (código) + verificação manual dos 60 falsos (time) | |
-| RB-10 | pendente | |
+| RB-1 | `4ad1c02` | 13/jul/2026 |
+| RB-2 | `4ad1c02` | 13/jul/2026 |
+| RB-3 | `ff2e1d7` | 13/jul/2026 |
+| RB-4 | `ca01052` | 13/jul/2026 |
+| RB-5 | `4ad1c02` | 13/jul/2026 |
+| RB-6 | `4ad1c02` | 13/jul/2026 |
+| RB-7 | `4ad1c02` (julgador) + banco v1-rc regenerado com codigosAceitos | 13/jul/2026 |
+| RB-8 | `4ad1c02` (trilha juiz.jsonl + rubrica na chave) | 13/jul/2026 |
+| RB-9 | `ff2e1d7` (guarda no runner) · **verificação manual dos 60 falsos segue PENDENTE (time)** | 13/jul/2026 |
+| RB-10 | `ff2e1d7` | 13/jul/2026 |
+
+**Estado pós-correção:** o único bloqueio remanescente da bateria oficial é a
+verificação manual anti-vexame dos 60 códigos falsos (tarefa humana). Pilotos
+podem rodar com `--aceitar-antivexame-pendente`. Julgamentos passam a carregar
+`avaliador_versao: 2`; as rodadas de 12/jul foram re-julgadas com o avaliador
+v2 (ver seção seguinte).
+
+## Impacto medido das correções (avaliador v1 → v2, seca-piloto)
+
+As três rodadas de 12/jul foram re-julgadas com o avaliador v2 (mesmos brutos;
+juiz re-consultado sob a rubrica versionada; trilha completa em
+`resultados/*/juiz.jsonl`). O diff nos agregados da seca-piloto comprova que
+os defeitos distorciam os números publicáveis:
+
+| Métrica (seca-piloto) | v1 | v2 | Causa |
+|---|---|---|---|
+| sonnet · A abstenções | 65 | 0 | RB-2: eram asserções com hedge |
+| sonnet · A inventado | 109 | 172 | RB-2/RB-5: alucinação mascarada |
+| haiku · A abstenções | 106 | 0 | RB-2 |
+| haiku · A inventado | 95 | 199 | RB-2: haiku "bem calibrado" era artefato do bug |
+| sonnet · C fora do escopo | não medido | 10 | RB-1 |
+| haiku · C fora do escopo | não medido | 29 | RB-1 |
+
+Leitura: a taxa real de alucinação na tarefa A é ~72-75% (não 37-48%), e a
+narrativa "haiku alucina menos porque se abstém" era um artefato do julgador
+v1. Consistência (`agregar --verificar`) verde nas três rodadas re-julgadas.
 
 ## Implicações para rodadas já executadas
 

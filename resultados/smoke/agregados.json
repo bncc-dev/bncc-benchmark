@@ -1,6 +1,6 @@
 {
  "rodada": "smoke",
- "gerado_em": "2026-07-13T00:51:04.988Z",
+ "gerado_em": "2026-07-13T14:04:26.290Z",
  "dataset_versao": "dados-2026.07",
  "itens_versao": "v1-rc",
  "por_modelo": {
@@ -10,8 +10,7 @@
      "tarefas": {
       "A": {
        "total": 9,
-       "veredito:abstencao": 3,
-       "veredito:inventado": 6
+       "veredito:inventado": 9
       },
       "B": {
        "total": 9,
@@ -26,6 +25,7 @@
        "codigos_citados": 30,
        "codigos_inventados": 0,
        "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
        "texto:divergente": 20,
        "texto:ok": 10
       },
@@ -37,13 +37,11 @@
      "estratos": {
       "bncc-2018": {
        "total": 21,
-       "alucinacoes": 9,
-       "abstencoes": 3
+       "alucinacoes": 12
       },
       "etapa:EM": {
        "total": 3,
-       "alucinacoes": 1,
-       "abstencoes": 2
+       "alucinacoes": 3
       },
       "computacao-2022": {
        "total": 9,
@@ -55,8 +53,7 @@
       },
       "etapa:EF": {
        "total": 18,
-       "alucinacoes": 8,
-       "abstencoes": 1
+       "alucinacoes": 9
       }
      },
      "total_julgamentos": 30
@@ -83,6 +80,7 @@
        "codigos_citados": 10,
        "codigos_inventados": 0,
        "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
        "texto:ok": 10
       },
       "D": {
@@ -118,8 +116,7 @@
      "tarefas": {
       "A": {
        "total": 9,
-       "veredito:inventado": 6,
-       "veredito:abstencao": 3
+       "veredito:inventado": 9
       },
       "B": {
        "total": 9,
@@ -134,6 +131,7 @@
        "codigos_citados": 30,
        "codigos_inventados": 0,
        "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
        "texto:divergente": 20,
        "texto:ok": 10
       },
@@ -145,28 +143,23 @@
      "estratos": {
       "bncc-2018": {
        "total": 21,
-       "alucinacoes": 10,
-       "abstencoes": 2
+       "alucinacoes": 12
       },
       "etapa:EM": {
        "total": 3,
-       "alucinacoes": 2,
-       "abstencoes": 1
+       "alucinacoes": 3
       },
       "computacao-2022": {
        "total": 9,
-       "alucinacoes": 2,
-       "abstencoes": 1
+       "alucinacoes": 3
       },
       "etapa:EI": {
        "total": 9,
-       "alucinacoes": 2,
-       "abstencoes": 1
+       "alucinacoes": 3
       },
       "etapa:EF": {
        "total": 18,
-       "alucinacoes": 8,
-       "abstencoes": 1
+       "alucinacoes": 9
       }
      },
      "total_julgamentos": 30
