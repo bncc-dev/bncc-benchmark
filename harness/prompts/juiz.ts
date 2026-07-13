@@ -3,6 +3,12 @@
  * chamado nos casos que o pré-filtro programático não resolve.
  */
 
+/**
+ * RB-8: a versão da rubrica integra a chave de cache do juiz e é gravada em
+ * juiz.jsonl. Qualquer mudança neste prompt exige bump.
+ */
+export const RUBRICA_VERSAO = 'rubrica-v1';
+
 export function promptJuiz(textoCanonico: string, trecho: string): string {
   return `Você compara o texto oficial de uma aprendizagem da BNCC com o texto que um modelo de linguagem atribuiu a ela.
 

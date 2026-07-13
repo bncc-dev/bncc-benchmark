@@ -7,7 +7,7 @@
  */
 
 import { readFileSync } from 'node:fs';
-import { habilidadesEF, habilidadesEM, objetivosEI, versao } from '@bncc/dados';
+import { habilidadesEF, habilidadesEM, normalizarTexto, objetivosEI, versao } from '@bncc/dados';
 import { analisar } from './codigos.js';
 import type { Estrato } from './tipos.js';
 
@@ -82,4 +82,30 @@ export function todosCodigos(): string[] {
 
 export function infoDataset(): { dataset_versao: string; total: number } {
   return { dataset_versao: versao().data_version, total: indice().size };
+}
+
+let duplicadosMemo: Map<string, string[]> | null = null;
+
+/**
+ * RB-7: códigos cujo texto normalizado é idêntico ao do código dado (inclui o
+ * próprio). Computação numera o mesmo texto por ano e por bloco (EF06CO04 =
+ * EF69CO04 etc.); todos são resposta correta na tarefa D.
+ */
+export function codigosComMesmoTexto(codigo: string): string[] {
+  if (!duplicadosMemo) {
+    const porTexto = new Map<string, string[]>();
+    for (const a of indice().values()) {
+      const chave = normalizarTexto(a.texto);
+      const grupo = porTexto.get(chave) ?? [];
+      grupo.push(a.codigo);
+      porTexto.set(chave, grupo);
+    }
+    duplicadosMemo = new Map();
+    for (const grupo of porTexto.values()) {
+      for (const c of grupo) duplicadosMemo.set(c, [...grupo].sort());
+    }
+  }
+  const grupo = duplicadosMemo.get(codigo.trim().toUpperCase());
+  if (!grupo) throw new Error(`Código fora do gabarito: ${codigo}`);
+  return grupo;
 }

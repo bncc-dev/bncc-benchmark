@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { agregadosEquivalentes, agregar } from '../harness/lib/agregacao.js';
 import { detectarAbstencao, julgar } from '../harness/lib/avaliacao.js';
-import { obter } from '../harness/lib/gabarito.js';
+import { codigosComMesmoTexto, obter, todas } from '../harness/lib/gabarito.js';
 import { gerarBanco } from '../harness/lib/gerador.js';
 import type { Item, Julgamento, RegistroBruto } from '../harness/lib/tipos.js';
 
@@ -38,17 +38,28 @@ describe('tarefa B', () => {
     expect(julgar(itemBFalso, registroCom(itemBFalso, 'Não.')).veredito).toBe('correto');
   });
 
-  it('abstenção tem precedência sobre o "não" das frases de incerteza', () => {
+  it('RB-2: incerteza pura é abstenção; resposta com hedge continua resposta', () => {
+    // Só frases de incerteza, nenhum sim/não substantivo: abstenção.
     expect(
       julgar(itemBReal, registroCom(itemBReal, 'Não tenho como verificar isso com segurança.'))
         .veredito,
     ).toBe('abstencao');
-    // Negação seguida de recomendação de conferência ainda é abstenção (hedging).
+    expect(julgar(itemBReal, registroCom(itemBReal, 'Talvez exista.')).veredito).toBe('abstencao');
+
+    // Resposta substantiva seguida de hedge NÃO vira abstenção (cenário RB-2).
+    expect(
+      julgar(
+        itemBFalso,
+        registroCom(
+          itemBFalso,
+          `Sim, ${itemBFalso.codigo} existe e trata de medidas. Para detalhes, consulte o documento oficial.`,
+        ),
+      ).veredito,
+    ).toBe('incorreto'); // afirmou código inexistente: alucinação contada
     expect(
       julgar(itemBFalso, registroCom(itemBFalso, 'Não. Mas recomendo consultar o documento oficial.'))
         .veredito,
-    ).toBe('abstencao');
-    expect(julgar(itemBReal, registroCom(itemBReal, 'Talvez exista.')).veredito).toBe('abstencao');
+    ).toBe('correto'); // negou de fato; o hedge não anula
   });
 });
 
@@ -119,6 +130,74 @@ describe('tarefa C', () => {
       formaValida: false,
       existe: false,
     });
+  });
+});
+
+describe('cenários da revisão pré-bateria', () => {
+  it('RB-1: código real fora do escopo é marcado escopo=fora', () => {
+    const escopo = (itemC.gabarito as { tipo: 'lista'; codigosValidos: string[] }).codigosValidos;
+    const foraDoEscopo = obter(escopo.includes('EF67LP08') ? 'EM13LGG103' : 'EF67LP08')!;
+    const j = julgar(
+      itemC,
+      registroCom(itemC, `1. ${foraDoEscopo.codigo}: ${foraDoEscopo.texto}`),
+    );
+    expect(j.codigos_citados![0]).toMatchObject({
+      codigo: foraDoEscopo.codigo,
+      existe: true,
+      escopo: 'fora',
+      texto: 'ok',
+    });
+    const dentro = obter(escopo[0])!;
+    const j2 = julgar(itemC, registroCom(itemC, `1. ${dentro.codigo}: ${dentro.texto}`));
+    expect(j2.codigos_citados![0].escopo).toBe('dentro');
+  });
+
+  it('RB-6: colisão de prefixo não contamina o trecho do código válido', () => {
+    const escopo = (itemC.gabarito as { tipo: 'lista'; codigosValidos: string[] }).codigosValidos;
+    const valido = obter(escopo[0])!;
+    // EF05CO011 (forma inválida, typo) citado ANTES; indexOf casaria no prefixo.
+    const resposta = `Sugestões:\n1. EF05CO011: Um texto qualquer inventado sobre computação.\n2. ${valido.codigo}: ${valido.texto}`;
+    const j = julgar(itemC, registroCom(itemC, resposta));
+    const doValido = j.codigos_citados!.find((c) => c.codigo === valido.codigo)!;
+    expect(doValido.texto).toBe('ok'); // trecho correto, não o do EF05CO011
+    const doTypo = j.codigos_citados!.find((c) => c.codigo === 'EF05CO011')!;
+    expect(doTypo).toMatchObject({ formaValida: false, existe: false });
+  });
+
+  it('RB-7: qualquer código de texto idêntico é aceito na tarefa D', () => {
+    const duplicado = todas().find(
+      (a) => codigosComMesmoTexto(a.codigo).length > 1 && a.estrato.modulo === 'computacao-2022',
+    )!;
+    const grupo = codigosComMesmoTexto(duplicado.codigo);
+    const itemDDuplicado: Item = {
+      id: 'd-teste',
+      tarefa: 'D',
+      tipo: 'real',
+      codigo: grupo[0],
+      texto: duplicado.texto,
+      gabarito: { tipo: 'codigo', codigo: grupo[0], codigosAceitos: grupo },
+      estrato: duplicado.estrato,
+      parafrases: ['p1', 'p2'],
+    };
+    for (const codigo of grupo) {
+      expect(julgar(itemDDuplicado, registroCom(itemDDuplicado, `É o ${codigo}.`)).veredito).toBe(
+        'correto',
+      );
+    }
+    expect(grupo.length).toBeGreaterThan(1);
+  });
+
+  it('RB-4: finish_reason diferente de fim vira resposta_invalida', () => {
+    const truncado = { ...registroCom(itemA, 'Texto pela metade'), finish_reason: 'max_tokens' };
+    expect(julgar(itemA, truncado).veredito).toBe('resposta_invalida');
+    const bloqueado = { ...registroCom(itemBReal, ''), finish_reason: 'bloqueado' };
+    expect(julgar(itemBReal, bloqueado).veredito).toBe('resposta_invalida');
+    // Registros antigos (sem o campo) seguem julgados normalmente.
+    expect(julgar(itemBReal, registroCom(itemBReal, 'Sim.')).veredito).toBe('correto');
+  });
+
+  it('todo julgamento carimba a versão do avaliador', () => {
+    expect(julgar(itemBReal, registroCom(itemBReal, 'Sim.')).avaliador_versao).toBe('2');
   });
 });
 
