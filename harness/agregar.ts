@@ -2,8 +2,8 @@
  * CLI: agrega julgados de uma rodada; com --verificar, recalcula e compara
  * com o agregados.json commitado (o check do CI, DECISOES.md D3).
  *
- *   pnpm agregar -- --rodada smoke
- *   pnpm agregar -- --rodada smoke --verificar
+ *   pnpm agregar --rodada smoke
+ *   pnpm agregar --rodada smoke --verificar
  */
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';

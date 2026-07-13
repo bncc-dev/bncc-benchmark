@@ -2,8 +2,8 @@
  * CLI: julga os brutos de uma rodada e aplica o juiz LLM nos casos não
  * triviais.
  *
- *   pnpm avaliar -- --rodada smoke                      # juiz default (claude-haiku)
- *   pnpm avaliar -- --rodada smoke --juiz nenhum        # só verificadores programáticos
+ *   pnpm avaliar --rodada smoke                      # juiz default (claude-haiku)
+ *   pnpm avaliar --rodada smoke --juiz nenhum        # só verificadores programáticos
  *
  * Saída: resultados/<rodada>/julgados.jsonl
  */

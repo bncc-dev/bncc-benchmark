@@ -1,8 +1,8 @@
 /**
  * CLI: executa a bateria contra um ou mais modelos.
  *
- *   pnpm executar -- --rodada smoke --modelos claude-sonnet,claude-haiku --limite 10
- *   pnpm executar -- --rodada smoke --modelos claude-sonnet --modo grounded --limite 5
+ *   pnpm executar --rodada smoke --modelos claude-sonnet,claude-haiku --limite 10
+ *   pnpm executar --rodada smoke --modelos claude-sonnet --modo grounded --limite 5
  *
  * Saída: resultados/<rodada>/brutos-<modelo>-<modo>.jsonl
  * Keys em .env (nunca commitado). Execução é sempre local (DECISOES.md D3).
