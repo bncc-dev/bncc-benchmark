@@ -35,6 +35,8 @@ export interface DefModelo {
   precos: { entrada: number; saida: number };
   /** Base URL para provedores openai-compat. */
   baseUrl?: string;
+  /** Campos extras mesclados no corpo da requisição (ex.: pin de provedor no OpenRouter). */
+  corpoExtra?: Record<string, unknown>;
   /** true quando o adapter implementa a rodada grounded. */
   suportaGrounded: boolean;
 }

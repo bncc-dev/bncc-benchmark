@@ -9,6 +9,7 @@ import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos
 
 interface RespostaApi {
   model: string;
+  provider?: string; // OpenRouter informa qual endpoint serviu
   choices: Array<{ message: { content: string | null } }>;
   usage: { prompt_tokens: number; completion_tokens: number };
 }
@@ -32,6 +33,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
           temperature: 0,
           max_tokens: chamada.maxTokens,
           messages: [{ role: 'user', content: chamada.prompt }],
+          ...def.corpoExtra,
         }),
       });
       if (!resposta.ok) {
@@ -41,7 +43,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
       const dados = (await resposta.json()) as RespostaApi;
       return {
         texto: dados.choices[0]?.message.content ?? '',
-        versaoModelo: dados.model,
+        versaoModelo: dados.provider ? `${dados.model} (via ${dados.provider})` : dados.model,
         tokens: { entrada: dados.usage.prompt_tokens, saida: dados.usage.completion_tokens },
         custoUsd:
           (dados.usage.prompt_tokens * def.precos.entrada +

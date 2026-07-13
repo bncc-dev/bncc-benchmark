@@ -43,14 +43,27 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 1, saida: 5 },
     suportaGrounded: true,
   },
-  gpt: {
-    id: 'gpt',
+  // OpenRouter (uma key para GPT/Gemini/chineses; provedor pinado por requisição,
+  // endpoint que serviu fica registrado no versao_modelo).
+  'gpt-sol': {
+    id: 'gpt-sol',
     provedor: 'openai-compat',
-    modelo: 'gpt-5.2', // conferir no M5
-    envKey: 'OPENAI_API_KEY',
-    baseUrl: 'https://api.openai.com/v1',
-    precos: { entrada: 1.25, saida: 10 }, // conferir no M5
-    suportaGrounded: false, // M5: tool-use na API REST
+    modelo: 'openai/gpt-5.6-sol',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['OpenAI'] } },
+    precos: { entrada: 5, saida: 30 },
+    suportaGrounded: false, // porte do loop MCP pendente (M5)
+  },
+  'gpt-luna': {
+    id: 'gpt-luna',
+    provedor: 'openai-compat',
+    modelo: 'openai/gpt-5.6-luna',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['OpenAI'] } },
+    precos: { entrada: 1, saida: 6 },
+    suportaGrounded: false,
   },
   gemini: {
     id: 'gemini',
