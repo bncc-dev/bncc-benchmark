@@ -97,21 +97,25 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 1, saida: 6 },
     suportaGrounded: false,
   },
-  // Gemini DIRETO via Google AI Studio (política: rota de primeira parte
-  // sempre que houver key; decisão do time, 13/jul/2026).
+  // POLÍTICA (decisão do time, 13/jul/2026): execução SÓ via Bedrock e
+  // OpenRouter, onde o faturamento é controlado. A rota direta do Google
+  // (AI Studio) fica suspensa até decisão em contrário; o OpenRouter serve
+  // Gemini pelo próprio Google e registra o endpoint nos brutos.
   'gemini-pro': {
     id: 'gemini-pro',
-    provedor: 'google',
-    modelo: 'gemini-3.1-pro-preview',
-    envKey: 'GEMINI_API_KEY',
+    provedor: 'openai-compat',
+    modelo: 'google/gemini-3.1-pro-preview',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
     precos: { entrada: 2, saida: 12 },
     suportaGrounded: false,
   },
   'gemini-flash': {
     id: 'gemini-flash',
-    provedor: 'google',
-    modelo: 'gemini-3.5-flash',
-    envKey: 'GEMINI_API_KEY',
+    provedor: 'openai-compat',
+    modelo: 'google/gemini-3.5-flash',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
     precos: { entrada: 1.5, saida: 9 },
     suportaGrounded: false,
   },
