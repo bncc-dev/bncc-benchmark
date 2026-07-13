@@ -97,12 +97,50 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 1, saida: 6 },
     suportaGrounded: false,
   },
-  gemini: {
-    id: 'gemini',
-    provedor: 'google',
-    modelo: 'gemini-2.5-pro', // conferir no M5
-    envKey: 'GEMINI_API_KEY',
-    precos: { entrada: 1.25, saida: 10 }, // conferir no M5
+  // Fronteira dos demais provedores, via OpenRouter (bateria piloto).
+  'gemini-pro': {
+    id: 'gemini-pro',
+    provedor: 'openai-compat',
+    modelo: 'google/gemini-3.1-pro-preview',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    precos: { entrada: 2, saida: 12 },
+    suportaGrounded: false,
+  },
+  'deepseek-pro': {
+    id: 'deepseek-pro',
+    provedor: 'openai-compat',
+    modelo: 'deepseek/deepseek-v4-pro',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    precos: { entrada: 0.43, saida: 0.87 },
+    suportaGrounded: false,
+  },
+  grok: {
+    id: 'grok',
+    provedor: 'openai-compat',
+    modelo: 'x-ai/grok-4.5',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    precos: { entrada: 2, saida: 6 },
+    suportaGrounded: false,
+  },
+  kimi: {
+    id: 'kimi',
+    provedor: 'openai-compat',
+    modelo: 'moonshotai/kimi-k2.6',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    precos: { entrada: 0.66, saida: 3.41 },
+    suportaGrounded: false,
+  },
+  'qwen-max': {
+    id: 'qwen-max',
+    provedor: 'openai-compat',
+    modelo: 'qwen/qwen3.7-max',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    precos: { entrada: 1.25, saida: 3.75 },
     suportaGrounded: false,
   },
   maritaca: {
