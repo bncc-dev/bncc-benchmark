@@ -41,6 +41,12 @@ export interface DefModelo {
   precos: { entrada: number; saida: number };
   /** Base URL para provedores openai-compat. */
   baseUrl?: string;
+  /**
+   * Orçamento mínimo de resposta para este modelo (tokens). Modelos com
+   * raciocínio interno queimam o orçamento pensando antes de escrever; sem
+   * folga, a resposta sai cortada (finish_reason=max_tokens).
+   */
+  maxTokensPadrao?: number;
   /** Campos extras mesclados no corpo da requisição (ex.: pin de provedor no OpenRouter). */
   corpoExtra?: Record<string, unknown>;
   /** true quando o adapter implementa a rodada grounded. */

@@ -71,6 +71,11 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
   const limitador = criarLimitador(concorrencia);
   const trabalhos: Array<Promise<{ registro: RegistroBruto; doCache: boolean }>> = [];
 
+  // Orçamento efetivo: o maior entre a config da rodada e o mínimo do modelo
+  // (modelos com raciocínio interno precisam de folga para não sair cortados).
+  const orcamentoBase = Math.max(maxTokens, def.maxTokensPadrao ?? 0);
+  const TETO_ESCALADA = 16384;
+
   for (const item of itens) {
     const nParafrases = Math.min(parafrases, item.parafrases.length);
     for (let p = 0; p < nParafrases; p++) {
@@ -86,7 +91,7 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
         modo,
         prompt,
         itensVersao: banco.versao,
-        maxTokens,
+        maxTokens: orcamentoBase,
         grounding: modo === 'grounded' ? `${def.provedor}:${URL_MCP}` : null,
       });
 
@@ -95,11 +100,23 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
           const emCache = cache.obter<RegistroBruto>(chave);
           if (emCache) return { registro: emCache, doCache: true };
 
-          const resposta = await comRetry(
-            () => provedor.completar({ prompt, grounded: modo === 'grounded', maxTokens }),
+          // Escalada automática: resposta cortada por max_tokens ganha uma
+          // segunda chance com o dobro do orçamento (o custo real fica nos
+          // tokens registrados; a chave de cache usa o orçamento base, então
+          // o checkpoint continua determinístico).
+          let resposta = await comRetry(
+            () => provedor.completar({ prompt, grounded: modo === 'grounded', maxTokens: orcamentoBase }),
             tentativas,
             esperaBaseMs,
           );
+          if (resposta.finishReason === 'max_tokens' && orcamentoBase < TETO_ESCALADA) {
+            const dobro = Math.min(orcamentoBase * 2, TETO_ESCALADA);
+            resposta = await comRetry(
+              () => provedor.completar({ prompt, grounded: modo === 'grounded', maxTokens: dobro }),
+              tentativas,
+              esperaBaseMs,
+            );
+          }
           const registro: RegistroBruto = {
             item_id: item.id,
             modelo: def.id,
