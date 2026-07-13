@@ -97,16 +97,25 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 1, saida: 6 },
     suportaGrounded: false,
   },
-  // Fronteira dos demais provedores, via OpenRouter (bateria piloto).
+  // Gemini DIRETO via Google AI Studio (política: rota de primeira parte
+  // sempre que houver key; decisão do time, 13/jul/2026).
   'gemini-pro': {
     id: 'gemini-pro',
-    provedor: 'openai-compat',
-    modelo: 'google/gemini-3.1-pro-preview',
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
+    provedor: 'google',
+    modelo: 'gemini-3.1-pro-preview',
+    envKey: 'GEMINI_API_KEY',
     precos: { entrada: 2, saida: 12 },
     suportaGrounded: false,
   },
+  'gemini-flash': {
+    id: 'gemini-flash',
+    provedor: 'google',
+    modelo: 'gemini-3.5-flash',
+    envKey: 'GEMINI_API_KEY',
+    precos: { entrada: 1.5, saida: 9 },
+    suportaGrounded: false,
+  },
+  // Fronteira dos demais provedores, via OpenRouter (bateria piloto).
   'deepseek-pro': {
     id: 'deepseek-pro',
     provedor: 'openai-compat',
