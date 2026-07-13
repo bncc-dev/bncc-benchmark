@@ -1,0 +1,116 @@
+{
+ "rodada": "smoke-openrouter",
+ "gerado_em": "2026-07-13T12:11:21.529Z",
+ "dataset_versao": "dados-2026.07",
+ "itens_versao": "v1-rc",
+ "por_modelo": {
+  "gpt-luna": {
+   "modo": {
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 9,
+       "veredito:fiel_exato": 6,
+       "veredito:inventado": 3
+      },
+      "B": {
+       "total": 9,
+       "veredito:correto": 9,
+       "tipo:real:correto": 9
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:incorreto": 1,
+       "veredito:correto": 5
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 1
+      },
+      "etapa:EM": {
+       "total": 3,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 3
+      },
+      "etapa:EI": {
+       "total": 9,
+       "alucinacoes": 3
+      },
+      "etapa:EF": {
+       "total": 18,
+       "alucinacoes": 1
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  },
+  "gpt-sol": {
+   "modo": {
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 9,
+       "veredito:fiel_exato": 9
+      },
+      "B": {
+       "total": 9,
+       "veredito:correto": 7,
+       "tipo:real:correto": 7,
+       "veredito:incorreto": 2,
+       "tipo:real:incorreto": 2
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 3,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 18,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  }
+ }
+}

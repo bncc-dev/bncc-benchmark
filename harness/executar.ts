@@ -31,6 +31,7 @@ const { values: args } = parseArgs({
     limite: { type: 'string' },
     parafrases: { type: 'string', default: '3' },
     concorrencia: { type: 'string', default: '5' },
+    'max-tokens': { type: 'string', default: '1024' },
   },
 });
 
@@ -73,6 +74,7 @@ for (const id of ids) {
     parafrases: Number(args.parafrases),
     cache,
     concorrencia: Number(args.concorrencia),
+    maxTokens: Number(args['max-tokens']),
     aoProgresso: (feito, total, doCache) => {
       if (feito % 25 === 0 || feito === total) {
         process.stdout.write(`\r  ${id}: ${feito}/${total}${doCache ? ' (cache)' : ''}      `);
