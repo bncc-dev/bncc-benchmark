@@ -27,7 +27,7 @@ jobs:
           if ls resultados/*/julgados.jsonl >/dev/null 2>&1; then
             for rodada in resultados/*/; do
               if [ -f "$rodada/julgados.jsonl" ] && [ -f "$rodada/agregados.json" ]; then
-                pnpm agregar -- --rodada "$(basename "$rodada")" --verificar
+                pnpm agregar --rodada "$(basename "$rodada")" --verificar
               fi
             done
           else

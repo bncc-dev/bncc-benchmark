@@ -42,10 +42,10 @@ DECISOES.md       decisões de desenho numeradas
 pnpm install
 pnpm test                                  # invariantes do gerador + verificadores
 pnpm gerar                                 # gera itens/itens-v1-rc.json (determinístico)
-pnpm executar -- --rodada smoke --modelos claude-haiku --limite 10
-pnpm avaliar  -- --rodada smoke
-pnpm agregar  -- --rodada smoke
-pnpm agregar  -- --rodada smoke --verificar   # o check que o CI usa
+pnpm executar --rodada smoke --modelos claude-haiku --limite 10
+pnpm avaliar --rodada smoke
+pnpm agregar --rodada smoke
+pnpm agregar --rodada smoke --verificar   # o check que o CI usa
 ```
 
 Keys dos provedores em `.env` (nunca commitadas). A execução é sempre local;

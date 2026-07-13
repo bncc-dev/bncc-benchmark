@@ -2,8 +2,8 @@
  * CLI: gera o banco de itens público e o held-out privado.
  *
  *   pnpm gerar                        # itens/itens-v1-rc.json + held-out
- *   pnpm gerar -- --seed 123          # seed alternativa (o default é o registrado)
- *   pnpm gerar -- --sem-heldout      # só o banco público
+ *   pnpm gerar --seed 123          # seed alternativa (o default é o registrado)
+ *   pnpm gerar --sem-heldout      # só o banco público
  *
  * O held-out NUNCA é escrito dentro do repositório (DECISOES.md D5).
  */
