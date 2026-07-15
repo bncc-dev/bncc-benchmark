@@ -113,3 +113,23 @@ mesmo loop é a base do grounded de OpenAI/Google no M5. Ao comparar
 resultados, rodadas pelo mesmo modelo em provedores diferentes são medições
 distintas (versões e serving podem divergir); o leaderboard identifica o
 provedor.
+
+## D10 · Verificação anti-vexame: protocolo de três categorias
+
+A pergunta da tarefa B é sempre "existe NA BNCC?", então um código que exista
+apenas em currículo estadual não invalida o gabarito "não". A verificação
+manual dos falsos serve para CLASSIFICAR, não para descartar:
+
+1. **Limpo**: nenhuma ocorrência relevante fora do formato. Conta como
+   alucinação normal quando aceito.
+2. **Existe em derivado** (currículo estadual/municipal ou material de ampla
+   circulação): mantém gabarito "não", ganha nota no item e é reportado como
+   categoria separada ("confusão com currículo derivado"), não somado à
+   invenção pura.
+3. **Zona cinzenta federal** (grafado em documento do MEC/CNE, como o typo
+   EF05CO011): vira item especial com gabarito anotado.
+
+Fluxo operacional: pré-triagem automatizada por busca (planilha em
+`docs/anti-vexame/`) + adjudicação humana registrada no campo
+`verificacao_antivexame` de cada item. O congelamento `itens-v1` exige os 60
+com status diferente de `pendente`.
