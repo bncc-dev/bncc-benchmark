@@ -16,6 +16,7 @@ import { gravarBrutos } from './lib/brutos.js';
 import { CacheDisco } from './lib/cache.js';
 import { carregarEnv } from './lib/env.js';
 import { executarBateria, selecionarBalanceado } from './lib/execucao.js';
+import { commitHarness, registrarExecucao, type EntradaExecucao } from './lib/manifesto.js';
 import type { BancoItens, Modo } from './lib/tipos.js';
 import { criarProvedor } from './provedores/fabrica.js';
 import { MODELOS } from './provedores/registro.js';
@@ -77,6 +78,23 @@ console.log(
   `Rodada "${args.rodada}" · modo ${modo} · ${itens.length} itens × até ${args.parafrases} paráfrases · modelos: ${ids.join(', ')}`,
 );
 
+const entradaManifesto: EntradaExecucao = {
+  executado_em: new Date().toISOString(),
+  modo,
+  harness_commit: commitHarness(RAIZ),
+  flags: {
+    itens: args.itens,
+    limite: args.limite ? Number(args.limite) : null,
+    parafrases: Number(args.parafrases),
+    concorrencia: Number(args.concorrencia),
+    max_tokens_flag: Number(args['max-tokens']),
+    aceitar_antivexame_pendente: args['aceitar-antivexame-pendente'],
+  },
+  dataset_versao: banco.dataset_versao,
+  itens_versao: banco.versao,
+  modelos: [],
+};
+
 for (const id of ids) {
   const def = MODELOS[id];
   if (modo === 'grounded' && !def.suportaGrounded) {
@@ -123,8 +141,26 @@ for (const id of ids) {
     );
   }
 
+  entradaManifesto.modelos.push({
+    id,
+    def,
+    resultado: {
+      registros: resultado.registros.length,
+      chamadas_novas: resultado.chamadas,
+      do_cache: resultado.doCache,
+      custo_usd: Number(resultado.custoUsd.toFixed(6)),
+      incompletas,
+    },
+  });
+
   const segundos = ((Date.now() - inicio) / 1000).toFixed(1);
   console.log(
     `  ${arquivo}\n  ${resultado.registros.length} registros gravados · ${resultado.chamadas} chamadas novas · ${resultado.doCache} do cache · US$ ${resultado.custoUsd.toFixed(4)} · ${segundos}s`,
   );
+}
+
+if (entradaManifesto.modelos.length > 0) {
+  const dirRodada = resolve(RAIZ, 'resultados', args.rodada!);
+  registrarExecucao(resolve(dirRodada, 'manifesto.json'), args.rodada!, entradaManifesto);
+  console.log(`Manifesto: ${resolve(dirRodada, 'manifesto.json')}`);
 }

@@ -87,6 +87,12 @@ export interface RegistroBruto {
   resposta: string;
   timestamp: string;
   custo_usd: number;
+  /**
+   * Orçamento de resposta (tokens) da tentativa que produziu esta resposta:
+   * o efetivo pós-escalada, quando a escalada automática disparou. Ausente em
+   * brutos anteriores a 15/jul/2026.
+   */
+  max_tokens?: number;
   tokens: { entrada: number; saida: number; reasoning?: number };
   /**
    * RB-4: por que o provedor parou de gerar. 'fim' = resposta completa;

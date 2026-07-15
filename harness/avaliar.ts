@@ -23,6 +23,7 @@ import { criarLimitador } from './lib/concorrencia.js';
 import { carregarEnv } from './lib/env.js';
 import { comRetry } from './lib/execucao.js';
 import { obter } from './lib/gabarito.js';
+import { commitHarness, registrarAvaliacao } from './lib/manifesto.js';
 import type { BancoItens, Julgamento, RegistroBruto } from './lib/tipos.js';
 import { extrairVereditoJuiz, promptJuiz, RUBRICA_VERSAO } from './prompts/juiz.js';
 import { criarProvedor } from './provedores/fabrica.js';
@@ -252,6 +253,22 @@ trilhaJuiz.sort(
     a.parafrase - b.parafrase ||
     (a.codigo ?? '').localeCompare(b.codigo ?? ''),
 );
+
+// Manifesto: registro auditável desta avaliação (append; ver lib/manifesto.ts).
+registrarAvaliacao(resolve(dirRodada, 'manifesto.json'), args.rodada!, {
+  avaliado_em: new Date().toISOString(),
+  harness_commit: commitHarness(RAIZ),
+  avaliador_versao: julgados[0]?.avaliador_versao ?? 'desconhecida',
+  rubrica_versao: RUBRICA_VERSAO,
+  juiz: args.juiz !== 'nenhum' && MODELOS[args.juiz!]
+    ? { id: MODELOS[args.juiz!].id, modelo: MODELOS[args.juiz!].modelo }
+    : null,
+  julgados: julgados.length,
+  pendentes_a: pendentesA.length,
+  pendentes_c: pendentesC.length,
+  juiz_chamadas: trilhaJuiz.length,
+  juiz_custo_usd: Number(trilhaJuiz.reduce((s, l) => s + l.custo_usd, 0).toFixed(6)),
+});
 
 const saida = resolve(dirRodada, 'julgados.jsonl');
 writeFileSync(saida, julgados.map((j) => JSON.stringify(j)).join('\n') + '\n');

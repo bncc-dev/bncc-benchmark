@@ -138,6 +138,23 @@ describe('executarBateria', () => {
     expect(orcamentosVistos).toEqual([2048, 4096]); // padrão do modelo vence a config; corte dobra
     expect(resultado.registros[0].finish_reason).toBe('fim');
     expect(resultado.registros[0].resposta).toBe('resposta completa');
+    // Auditoria: o bruto registra o orçamento efetivo da tentativa gravada.
+    expect(resultado.registros[0].max_tokens).toBe(4096);
+  });
+
+  it('sem escalada, o bruto registra o orçamento base', async () => {
+    const itens = selecionarBalanceado(banco.itens, 1);
+    const resultado = await executarBateria({
+      banco,
+      itens,
+      def: { ...DEF, maxTokensPadrao: 2048 },
+      provedor: provedorFake({ chamadas: 0 }),
+      modo: 'seco',
+      parafrases: 1,
+      cache: new CacheDisco(join(dirTemporario, 'c-orc-base')),
+      maxTokens: 1024,
+    });
+    expect(resultado.registros[0].max_tokens).toBe(2048);
   });
 
   it('faz retry em erro transitório e desiste em erro permanente', async () => {
