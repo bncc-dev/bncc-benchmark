@@ -58,6 +58,11 @@ export interface Item {
   nota?: string;
   verificacao_antivexame?: {
     status: 'pendente' | 'ok' | 'rejeitado';
+    /** Protocolo D10: onde o código falso existe no mundo real, se existir. */
+    categoria?: 'limpo' | 'derivado' | 'cinzenta-federal';
+    fontes?: string[];
+    verificado_em?: string;
+    por?: string;
     notas?: string;
   };
 }
@@ -136,6 +141,8 @@ export interface Julgamento {
   estrato: Estrato;
   /** Versão da lógica de julgamento que produziu este veredito (auditoria). */
   avaliador_versao: string;
+  /** D10: categoria anti-vexame do código falso (itens da tarefa B). */
+  antivexame_categoria?: 'limpo' | 'derivado' | 'cinzenta-federal';
   veredito: Veredito;
   /** Tarefa C: detalhe por código citado. */
   codigos_citados?: CodigoCitado[];

@@ -1,8 +1,8 @@
 {
  "rodada": "seca-piloto",
- "gerado_em": "2026-07-13T14:04:27.884Z",
+ "gerado_em": "2026-07-15T14:00:13.385Z",
  "dataset_versao": "dados-2026.07",
- "itens_versao": "v1-rc",
+ "itens_versao": "v1",
  "por_modelo": {
   "haiku-bedrock": {
    "modo": {
@@ -23,7 +23,11 @@
        "veredito:correto": 202,
        "tipo:real:correto": 21,
        "tipo:falso-extensao:correto": 88,
+       "antivexame:derivado:total": 96,
+       "antivexame:limpo:total": 72,
        "tipo:falso-extensao:incorreto": 2,
+       "antivexame:derivado:aceito": 2,
+       "antivexame:cinzenta-federal:total": 12,
        "tipo:falso-profundo:correto": 60,
        "tipo:falso-combinacao:correto": 30,
        "tipo:especial:incorreto": 3,
@@ -90,7 +94,13 @@
        "veredito:correto": 209,
        "tipo:real:correto": 48,
        "tipo:falso-extensao:correto": 77,
+       "antivexame:derivado:total": 96,
        "tipo:falso-extensao:incorreto": 13,
+       "antivexame:derivado:aceito": 15,
+       "antivexame:limpo:total": 72,
+       "antivexame:cinzenta-federal:total": 12,
+       "antivexame:cinzenta-federal:aceito": 1,
+       "antivexame:limpo:aceito": 6,
        "tipo:falso-profundo:correto": 58,
        "tipo:falso-profundo:incorreto": 2,
        "tipo:falso-combinacao:correto": 23,

@@ -1,8 +1,8 @@
 {
  "rodada": "smoke-elenco",
- "gerado_em": "2026-07-13T19:08:40.110Z",
+ "gerado_em": "2026-07-15T14:00:11.829Z",
  "dataset_versao": "dados-2026.07",
- "itens_versao": "v1-rc",
+ "itens_versao": "v1",
  "por_modelo": {
   "deepseek-flash": {
    "modo": {

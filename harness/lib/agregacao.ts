@@ -41,6 +41,15 @@ export function agregar(
     contar(tarefa, `veredito:${j.veredito}`);
     if (j.tarefa === 'B') {
       contar(tarefa, `tipo:${j.tipo}:${j.veredito}`);
+      // D10: a métrica dupla. "Aceitou falso" se divide por onde o código
+      // existe no mundo real: invenção pura (limpo) vs confusão com
+      // currículo derivado vs zona cinzenta federal.
+      if (j.tipo.startsWith('falso') && j.antivexame_categoria) {
+        contar(tarefa, `antivexame:${j.antivexame_categoria}:total`);
+        if (j.veredito === 'incorreto') {
+          contar(tarefa, `antivexame:${j.antivexame_categoria}:aceito`);
+        }
+      }
     }
     if (j.tarefa === 'C' && j.codigos_citados) {
       contar(tarefa, 'codigos_citados', j.codigos_citados.length);

@@ -63,7 +63,7 @@ function textosNormalizados(): Array<{ codigo: string; textoNorm: string }> {
 }
 
 function julgamentoBase(item: Item, registro: RegistroBruto): Omit<Julgamento, 'veredito'> {
-  return {
+  const base: Omit<Julgamento, 'veredito'> = {
     item_id: item.id,
     modelo: registro.modelo,
     parafrase: registro.parafrase,
@@ -73,6 +73,12 @@ function julgamentoBase(item: Item, registro: RegistroBruto): Omit<Julgamento, '
     estrato: item.estrato,
     avaliador_versao: AVALIADOR_VERSAO,
   };
+  // D10: a categoria anti-vexame acompanha o julgamento para a agregação
+  // separar invenção pura de confusão com currículo derivado.
+  if (item.verificacao_antivexame?.categoria) {
+    base.antivexame_categoria = item.verificacao_antivexame.categoria;
+  }
+  return base;
 }
 
 /** RB-4: truncamento/bloqueio do provedor invalida a resposta para julgamento. */
