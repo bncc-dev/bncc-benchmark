@@ -133,3 +133,22 @@ Fluxo operacional: pré-triagem automatizada por busca (planilha em
 `docs/anti-vexame/`) + adjudicação humana registrada no campo
 `verificacao_antivexame` de cada item. O congelamento `itens-v1` exige os 60
 com status diferente de `pendente`.
+
+## D11 · Releases de resultados com semver
+
+Cada conjunto de resultados que o time trata como referência vira uma
+release: git tag `vX.Y.Z` + entrada em `RELEASES.md` declarando a composição
+exata (rodadas, modelos, itens_versao, avaliador, rubrica, dataset, custo,
+data). Releases são imutáveis; qualquer alteração gera número novo:
+
+- **PATCH**: re-julgamento/correção sobre os mesmos brutos (sem medição nova).
+- **MINOR**: medições novas com a mesma metodologia (modelos ou rodadas
+  adicionados, ex.: a rodada grounded).
+- **MAJOR**: quebra de comparabilidade (banco de itens ou protocolo novos);
+  o leaderboard recomeça a série.
+- **1.0.0** é a primeira publicação pública, casada com o gate
+  `dados-v1.0.0` do bncc.dev; tudo antes é 0.x interno.
+
+Os manifestos por rodada (D3/RB-8) já amarram cada artefato a config e
+commit; a release é o laço externo que dá nome citável ao conjunto.
+Decisão do time em 15/jul/2026.
