@@ -203,13 +203,26 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 0.38, saida: 2.02 },
     suportaGrounded: false,
   },
-  maritaca: {
-    id: 'maritaca',
+  // Maritaca DIRETO (exceção à política Bedrock+OpenRouter, aprovada pelo
+  // time em 15/jul/2026: Sabiá não existe nos agregadores; conta pré-paga em
+  // reais). Preços oficiais em BRL convertidos a ~R$5,40/US$ para o custo
+  // informativo: sabia-4 R$5/R$20 por MTok; sabiazinho-4 R$1/R$4.
+  'sabia-4': {
+    id: 'sabia-4',
     provedor: 'openai-compat',
-    modelo: 'sabia-3', // conferir no M5
+    modelo: 'sabia-4',
     envKey: 'MARITACA_API_KEY',
     baseUrl: 'https://chat.maritaca.ai/api',
-    precos: { entrada: 0.95, saida: 1.9 }, // conferir no M5
+    precos: { entrada: 0.93, saida: 3.7 },
+    suportaGrounded: false,
+  },
+  'sabiazinho-4': {
+    id: 'sabiazinho-4',
+    provedor: 'openai-compat',
+    modelo: 'sabiazinho-4',
+    envKey: 'MARITACA_API_KEY',
+    baseUrl: 'https://chat.maritaca.ai/api',
+    precos: { entrada: 0.19, saida: 0.74 },
     suportaGrounded: false,
   },
   deepseek: {
