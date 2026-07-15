@@ -19,7 +19,7 @@ const { values: args } = parseArgs({
   allowPositionals: true, // o pnpm repassa o separador "--" como posicional
   options: {
     rodada: { type: 'string', default: 'smoke' },
-    itens: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1-rc.json') },
+    itens: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1.json') },
     verificar: { type: 'boolean', default: false },
   },
 });

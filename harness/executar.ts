@@ -28,7 +28,7 @@ const { values: args } = parseArgs({
     rodada: { type: 'string', default: 'smoke' },
     modelos: { type: 'string', default: 'claude-haiku' },
     modo: { type: 'string', default: 'seco' }, // seco | grounded
-    itens: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1-rc.json') },
+    itens: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1.json') },
     limite: { type: 'string' },
     parafrases: { type: 'string', default: '3' },
     concorrencia: { type: 'string', default: '5' },

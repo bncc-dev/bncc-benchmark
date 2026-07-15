@@ -1,8 +1,8 @@
 {
  "rodada": "smoke",
- "gerado_em": "2026-07-13T14:04:26.290Z",
+ "gerado_em": "2026-07-15T14:00:08.374Z",
  "dataset_versao": "dados-2026.07",
- "itens_versao": "v1-rc",
+ "itens_versao": "v1",
  "por_modelo": {
   "haiku-bedrock": {
    "modo": {
