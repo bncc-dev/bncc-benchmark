@@ -1,0 +1,723 @@
+{
+ "data_triagem": "2026-07-15",
+ "metodo": "6 agentes de busca em paralelo; ocorrências exatas verificadas por fetch/grep quando possível",
+ "resultados": [
+  {
+   "codigo": "EM13CNT311",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://curriculo.sedu.es.gov.br/curriculo/wp-content/uploads/2021/12/EMENTA-BIOLOGIA-3%C2%B0-Serie-Curriculo-Capixaba.docx.pdf",
+     "tipo": "estadual",
+     "evidencia": "EM13CNT311BIO/ES na ementa de Biologia do Currículo Capixaba"
+    }
+   ],
+   "observacao": "ES estende via EM13CNT311BIO/ES; prefixo exato contido.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-061"
+  },
+  {
+   "codigo": "EF01HI09",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://efape.educacao.sp.gov.br/curriculopaulista/wp-content/uploads/download/habilidades-essenciais-anos-aniciais%202021/Habilidades%20essenciais_Anos%20Iniciais_Historia%202021.pdf",
+     "tipo": "estadual",
+     "evidencia": "(EF01HI09*) Identificar, respeitar e valorizar as diferenças entre as pessoas de sua convivência"
+    }
+   ],
+   "observacao": "Habilidade própria do Currículo Paulista (asterisco).",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-062"
+  },
+  {
+   "codigo": "EF08CO12",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.procede.api.br/publica/documentos/PRRRMUEET5SJC-20250814-081555--!--Resolucao_01.pdf",
+     "tipo": "municipal",
+     "evidencia": "(EF08CO12) Reconhecer e analisar os problemas de segurança de dados pessoais (Candiba/BA)"
+    }
+   ],
+   "observacao": "Extensão municipal de Computação (Candiba/BA numera até EF08CO13); ausente do texto CNE homologado.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-063"
+  },
+  {
+   "codigo": "EF35LP32",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://portal.educacao.go.gov.br/wp-content/uploads/2021/06/MATRIZ-BIANUAL-DE-HABILIDADES-3a-CORTE-1.pdf",
+     "tipo": "estadual",
+     "evidencia": "(GO-EF35LP32) Ler contos populares..."
+    }
+   ],
+   "observacao": "Forma prefixada GO- (Goiás); substring exata contida.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-064"
+  },
+  {
+   "codigo": "EF06MA35",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://curriculo.sedu.es.gov.br/curriculo/wp-content/uploads/2026/04/Estudante-Caderno-de-Matematica-6o-e-7o.pdf",
+     "tipo": "estadual",
+     "evidencia": "EF06MA35 Resolver situações problemas de contagem... (caderno oficial SEDU-ES)"
+    }
+   ],
+   "observacao": "Código próprio do currículo do ES (também EF06MA35MG em MG).",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-065"
+  },
+  {
+   "codigo": "EF15CO10",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Bloco EF15CO termina em CO09 nas fontes de referência; só fuzzy-match.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-066"
+  },
+  {
+   "codigo": "EF07LP15",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://planejamentosdeaula.com/plano-de-aula-cidadania-e-direitos-humanos-no-7o-ano/",
+     "tipo": "material",
+     "evidencia": "(EF07LP15) Identificar a proibição imposta ou o direito garantido... (reindexação por ano da EF67LP15 oficial)"
+    }
+   ],
+   "observacao": "Plataformas reindexam blocos 67 por ano; explica aceitações no smoke.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-067"
+  },
+  {
+   "codigo": "EF03CO10",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.procede.api.br/publica/documentos/PRRRMUEET5SJC-20250814-081555--!--Resolucao_01.pdf",
+     "tipo": "municipal",
+     "evidencia": "(EF03CO10) Usar software educacional para autoria de documentos (Candiba/BA)"
+    }
+   ],
+   "observacao": "Extensão municipal; referência consolidada para em CO09.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-068"
+  },
+  {
+   "codigo": "EF04ER08",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "ER 4º ano termina em ER07; extensões estaduais saltam para ER11MG+.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-069"
+  },
+  {
+   "codigo": "EF07GE13",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://efape.educacao.sp.gov.br/curriculopaulista/wp-content/uploads/2020/01/Geografia.pdf",
+     "tipo": "estadual",
+     "evidencia": "(EF07GE13*) Analisar o processo de formação do território brasileiro..."
+    }
+   ],
+   "observacao": "Habilidade própria do Currículo Paulista.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-070"
+  },
+  {
+   "codigo": "EF05CI14",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://sedu.es.gov.br/Media/sedu/EscoLAR/SEDU%20-%20CIENCIAS%20EF%20INICIAL.pdf",
+     "tipo": "estadual",
+     "evidencia": "EF05CI14/ES - Observar e descrever o movimento de pessoas e objetos..."
+    }
+   ],
+   "observacao": "Sufixo /ES; forma pura circula em plataformas com texto divergente.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-071"
+  },
+  {
+   "codigo": "EM13CO27",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "CEE-PR e currículos verificados param em EM13CO26; só fuzzy-match.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-072"
+  },
+  {
+   "codigo": "EF09GE19",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://efape.educacao.sp.gov.br/curriculopaulista/wp-content/uploads/2023/01/Geografia-Anos-Finais.pdf",
+     "tipo": "estadual",
+     "evidencia": "(EF09GE19*) Analisar as relações entre o local e o global..."
+    }
+   ],
+   "observacao": "Habilidade própria do Currículo Paulista.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-073"
+  },
+  {
+   "codigo": "EM13CHS505",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://planejamentosdeaula.com/educacao-antirracista-transformando-a-escola-em-40-minutos/",
+     "tipo": "material",
+     "evidencia": "EM13CHS505: dois textos diferentes atribuídos ao mesmo código na plataforma"
+    }
+   ],
+   "observacao": "Provável conteúdo gerado por IA; ausente dos currículos estaduais verificados.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-074"
+  },
+  {
+   "codigo": "EF07LI24",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://novatrento.sc.gov.br/uploads/sites/349/2021/12/1665704_4_Ingles___Ensino_Fundamental_2.pdf",
+     "tipo": "municipal",
+     "evidencia": "(EF07LI24) Selecionar, em um texto, a informação desejada (Nova Trento/SC)"
+    }
+   ],
+   "observacao": "Renumeração municipal.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-075"
+  },
+  {
+   "codigo": "EI03EF10",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.pedagogiaaopedaletra.com/plano-de-aula-sentimentos-bncc/",
+     "tipo": "material",
+     "evidencia": "(EI03EF10) Desenvolver empatia e atitudes de cuidado."
+    }
+   ],
+   "observacao": "Circula em materiais docentes com texto do campo EO (erro que se propagou).",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-076"
+  },
+  {
+   "codigo": "EI01EF10",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://educacao.santabarbaradegoias.go.gov.br/wp-content/uploads/sites/2/2024/03/DOCUMENTO-CURRICULAR-SABARGO-ED-INFANTIL.pdf",
+     "tipo": "municipal",
+     "evidencia": "(GO-EI01EF10) Associar nomes de pessoas..."
+    }
+   ],
+   "observacao": "Só na forma prefixada GO-; substring exata contida.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-077"
+  },
+  {
+   "codigo": "EM13MAT408",
+   "classificacao": "cinzenta-federal",
+   "achados": [
+    {
+     "url": "https://basenacionalcomum.mec.gov.br/implementacao/praticas/caderno-de-praticas/ensinomedio/171-jogos-ludicidade-inclusao-ressignificando-do-processo-de-ensino-aprendizagem-emmatematica",
+     "tipo": "federal",
+     "evidencia": "'Habilidades trabalhadas: ... EM13MAT408 ...' no Caderno de Práticas do site oficial da BNCC/MEC"
+    },
+    {
+     "url": "https://www.aprendizagemconectada.mt.gov.br/documents/14069491/14986669/Agosto_3_Ano_Mat_EM+MATEM%C3%81TICA+(2).pdf",
+     "tipo": "estadual",
+     "evidencia": "EM13MAT408 – Construir e interpretar tabelas e gráficos de frequências (MT)"
+    }
+   ],
+   "observacao": "Código da proposta 2018 da BNCC-EM (renumerado na homologação); aparece no próprio site do MEC. ALTO RISCO: virar item especial.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-078"
+  },
+  {
+   "codigo": "EF12EF13",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.itaipulandia.pr.gov.br/transparencia/33c78e261dcd443a12fc10eef740e6dd.pdf",
+     "tipo": "municipal",
+     "evidencia": "(EF12EF13) Identificar os elementos constitutivos... (texto da EF12EF11 oficial)"
+    }
+   ],
+   "observacao": "Renumeração municipal (Itaipulândia/PR) + plataforma de aulas.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-079"
+  },
+  {
+   "codigo": "EF09MA24",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://efape.educacao.sp.gov.br/curriculopaulista/wp-content/uploads/download/habilidades-essenciais-anos-finais%202021/Habilidades%20essenciais%20_%20Anos%20Finais_Matem%C3%A1tica.pdf",
+     "tipo": "estadual",
+     "evidencia": "(EF09MA24*) teorema de Tales (Currículo Paulista, com videoaulas do CMSP)"
+    }
+   ],
+   "observacao": "Habilidade própria de SP com definição estável e amplamente indexada.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-080"
+  },
+  {
+   "codigo": "EM13LGG306",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://atividades.soescola.com/glossario/15-ideias-de-atividades-bncc-utilizando-tecnologia/",
+     "tipo": "material",
+     "evidencia": "'Habilidade BNCC: EM13LGG306' em portal de atividades"
+    }
+   ],
+   "observacao": "Conteúdo aparentemente gerado por IA; nenhum currículo oficial.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-081"
+  },
+  {
+   "codigo": "EM13CHS405",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.edocente.com.br/bncc/em13chs405/",
+     "tipo": "material",
+     "evidencia": "Página dedicada ao código na plataforma e-docente (Editora do Brasil), título/slug indexados"
+    }
+   ],
+   "observacao": "Fetch bloqueado (403); ocorrência pelo título/URL indexados.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-082"
+  },
+  {
+   "codigo": "EF03ER07",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://santamaria.pucminas.br/wp-content/uploads/2025/02/BT-3.%C2%BA-ANO-EF-PLANEJAMENTO-DA-I-ETAPAS-LETIVAS-2025.pdf",
+     "tipo": "material",
+     "evidencia": "(CSMM – EF03ER07) Identificar, a partir de pesquisa, como as Tradições Religiosas cuidam da natureza"
+    }
+   ],
+   "observacao": "Extensão de colégio privado (prefixo CSMM); token exato presente.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-083"
+  },
+  {
+   "codigo": "EF05LP29",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://acervodigital.sme.prefeitura.sp.gov.br/wp-content/uploads/2022/06/Prioriz-Curric_Ens-Fund_LP.pdf",
+     "tipo": "municipal",
+     "evidencia": "EF05LP29 Utilizar organizadores textuais... (Currículo da Cidade, SME-SP, código sem prefixo)"
+    }
+   ],
+   "observacao": "Maior rede municipal do país usa o código pelado. ALTO RISCO.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-084"
+  },
+  {
+   "codigo": "EI02ET09",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://gouvelandia.go.gov.br/wp-content/uploads/2023/11/Matriz-Curricular-da-Educacao-Infantil-2022.pdf",
+     "tipo": "municipal",
+     "evidencia": "(GO-EI02ET09) Demonstrar noções das funções de objetos..."
+    }
+   ],
+   "observacao": "Só forma prefixada GO-.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-085"
+  },
+  {
+   "codigo": "EF07CO12",
+   "classificacao": "cinzenta-federal",
+   "achados": [
+    {
+     "url": "https://portal.mec.gov.br/docman/abril-2021-pdf/182481-texto-referencia-normas-sobre-computacao-na-educacao-basica/file",
+     "tipo": "federal",
+     "evidencia": "(EF07CO12) Demonstrar empatia sobre opiniões divergentes na web (texto-referência CNE/CEB 2021, pré-homologação ia até CO15)"
+    },
+    {
+     "url": "https://www.mortugaba.ba.gov.br/HandlerPublicacao.ashx?mixed=ZG9jdW1lbnRvc1NFUC81MjUvMjAyNC84LzI3LzI5MDMwMjMucGRm",
+     "tipo": "municipal",
+     "evidencia": "Mesmo código/texto em resolução municipal (Mortugaba/BA)"
+    }
+   ],
+   "observacao": "Rascunho federal de 2021 replicado por municípios. ALTO RISCO: virar item especial.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-086"
+  },
+  {
+   "codigo": "EI02EO08",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.facebook.com/TiaTamiresBalaoDeIdeias/videos/2713851108833457/",
+     "tipo": "material",
+     "evidencia": "'EI02EO06, EI02EO08, EI02ET05' em atividade docente (código sem prefixo)"
+    }
+   ],
+   "observacao": "Pelado em material docente; variante municipal com sufixo ALT01 em Altinópolis/SP.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-087"
+  },
+  {
+   "codigo": "EF06CO11",
+   "classificacao": "cinzenta-federal",
+   "achados": [
+    {
+     "url": "https://portal.mec.gov.br/docman/abril-2021-pdf/182481-texto-referencia-normas-sobre-computacao-na-educacao-basica/file",
+     "tipo": "federal",
+     "evidencia": "(EF06CO11) Aplicar protocolos de segurança e privacidade em ambientes virtuais (texto-referência CNE/CEB 2021)"
+    }
+   ],
+   "observacao": "Mesmo caso do EF07CO12; homologado de 2022 para em CO10. ALTO RISCO: virar item especial.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-088"
+  },
+  {
+   "codigo": "EF09LI20",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.altinopolis.sp.gov.br/secretarias/educacao-esportes-e-lazer/",
+     "tipo": "municipal",
+     "evidencia": "(EF09LI20-ALT) pronomes reflexivos em inglês (Altinópolis/SP)"
+    }
+   ],
+   "observacao": "Só com sufixo municipal -ALT; derivado por cautela.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-089"
+  },
+  {
+   "codigo": "EM13MAT317",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Fontes candidatas baixadas e verificadas; só vizinhos.",
+   "tipo_armadilha": "falso-extensao",
+   "item_id": "b-090"
+  },
+  {
+   "codigo": "EF01LP30",
+   "classificacao": "cinzenta-federal",
+   "achados": [
+    {
+     "url": "https://plurall-content.s3.amazonaws.com/oeds/PNLD2019/APIS/Apis_Portugues%201/06_AP_LP_1ANO_1BIM_Quadro_bimestral_TRTA.pdf",
+     "tipo": "material",
+     "evidencia": "EF01LP30 Completar palavras com fonema/letra inicial ou medial... (coleção PNLD 2019)"
+    },
+    {
+     "url": "https://docplayer.com.br/110510381-Objetos-de-conhecimento-e-habilidades-bncc-v3.html",
+     "tipo": "federal",
+     "evidencia": "Código real da 3ª versão da BNCC (MEC, abr/2017, LP 1º ano ia até EF01LP44)"
+    }
+   ],
+   "observacao": "BNCC pré-homologação + PNLD com texto estável. ALTO RISCO: virar item especial.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-091"
+  },
+  {
+   "codigo": "EF08LI33",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Só ecos de formato.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-092"
+  },
+  {
+   "codigo": "EI03EO15",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.slideshare.net/slideshow/campo-de-experincias-codigos-g4-copia/250356056",
+     "tipo": "estadual",
+     "evidencia": "(GO-EI03EO15) Reconhecer e expressar emoções... (Documento Curricular de Goiás)"
+    }
+   ],
+   "observacao": "Forma prefixada GO-.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-093"
+  },
+  {
+   "codigo": "EF06HI32",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Máximo oficial HI19; só ecos.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-094"
+  },
+  {
+   "codigo": "EI03CG14",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Só ecos de CG01-CG05.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-095"
+  },
+  {
+   "codigo": "EF06CI18",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Currículo do ES verificado (para em CI16/ES); alegação do resumo de IA da busca não se sustentou.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-096"
+  },
+  {
+   "codigo": "EF02HI24",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Só fuzzy-match (inclusive produto Linksys EF2H24).",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-097"
+  },
+  {
+   "codigo": "EF15LP26",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://atividades.soescola.com/glossario/15-ideias-de-atividades-bncc-producao-textual/",
+     "tipo": "material",
+     "evidencia": "'A habilidade BNCC correspondente é EF15LP26' (portal Só Escola; oficial vai até LP19)"
+    }
+   ],
+   "observacao": "Glossário aparentemente gerado por IA, indexado.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-098"
+  },
+  {
+   "codigo": "EF09GE21",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://efape.educacao.sp.gov.br/curriculopaulista/wp-content/uploads/2023/01/Geografia-Anos-Finais.pdf",
+     "tipo": "estadual",
+     "evidencia": "Currículo Paulista estende Geografia 9º ano; texto estável replicado na rede"
+    }
+   ],
+   "observacao": "ALTO RISCO (maior rede estadual do país).",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-099"
+  },
+  {
+   "codigo": "EF01MA27",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.epedagogia.com.br/jogoseducativos.php?anoescolar=100",
+     "tipo": "material",
+     "evidencia": "Tags de jogos educativos com EF01MA27 (provável herança da BNCC v3)"
+    }
+   ],
+   "observacao": "Plataforma de jogos; sem ocorrência curricular oficial.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-100"
+  },
+  {
+   "codigo": "EM13MAT320",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://site.seduc.se.gov.br/redeEstadual/escolaDisciplinaDetalhes.asp?cdTurma=134756&cdComponente=2299",
+     "tipo": "estadual",
+     "evidencia": "EM13MAT320 com texto quase idêntico à EM13MAT310 oficial (SEDUC-SE)"
+    }
+   ],
+   "observacao": "Renumeração ou erro sistemático estadual (SE usa 320/321/323/324).",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-101"
+  },
+  {
+   "codigo": "EF08CO16",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Currículos de Computação verificados param em CO11; só fuzzy-match.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-102"
+  },
+  {
+   "codigo": "EM13LGG214",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Fontes verificadas contêm só LGG201-204.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-103"
+  },
+  {
+   "codigo": "EF07CO18",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Currículos verificados param em CO11 (rascunho 2021 ia até CO15, não alcança 18).",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-104"
+  },
+  {
+   "codigo": "EF15CO16",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Bloco para em CO09; só fuzzy-match.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-105"
+  },
+  {
+   "codigo": "EM13LGG119",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Página SEDUC-SE verificada; só códigos oficiais.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-106"
+  },
+  {
+   "codigo": "EF69LP64",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Oficial termina em LP56; nenhuma extensão estadual encontrada.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-107"
+  },
+  {
+   "codigo": "EF01CO20",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Currículos verificados param em CO07; uma fonte municipal inacessível (SSL), sem trecho exato.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-108"
+  },
+  {
+   "codigo": "EF04CI16",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://atividades.soescola.com/glossario/15-ideias-de-atividades-bncc-sustentabilidade-4-ano/",
+     "tipo": "material",
+     "evidencia": "'Habilidade BNCC: EF04CI16' (portal lista CI12-CI18, além do máximo oficial CI11)"
+    }
+   ],
+   "observacao": "Família de códigos estendida por portal de atividades.",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-109"
+  },
+  {
+   "codigo": "EF06GE21",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://efape.educacao.sp.gov.br/curriculopaulista/wp-content/uploads/2020/01/Geografia.pdf",
+     "tipo": "estadual",
+     "evidencia": "(EF06GE21*) Identificar os pontos cardeais e colaterais... (SP estende até GE32)"
+    }
+   ],
+   "observacao": "ALTO RISCO (Currículo Paulista, texto estável, ampla replicação).",
+   "tipo_armadilha": "falso-profundo",
+   "item_id": "b-110"
+  },
+  {
+   "codigo": "EF12CI03",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://atividades.soescola.com/glossario/15-ideias-de-atividades-bncc-solidariedade-e-cidadania/",
+     "tipo": "material",
+     "evidencia": "'...habilidades da BNCC como EF12CI03 e EF12CI04' (família EF12 inteira fabricada pelo portal)"
+    }
+   ],
+   "observacao": "Conteúdo aparentemente gerado por IA que inventa família de códigos.",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-111"
+  },
+  {
+   "codigo": "EM13MAT703",
+   "classificacao": "derivado",
+   "achados": [
+    {
+     "url": "https://www.profy.ai/planos-de-aula/matematica/ensino-medio/1-ano/geometria-analitica-na-pratica-investigando-trajetorias-25059/",
+     "tipo": "material",
+     "evidencia": "'EM13MAT703: Reconhecer e descrever a estrutura de propriedades invariantes de cada cônica...' (plano de aula da PROFY, texto de habilidade inventado)"
+    }
+   ],
+   "observacao": "ATENÇÃO: ocorrência no site da própria Profy (mantenedora do bncc.dev). Corrigir a página independentemente do benchmark.",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-112"
+  },
+  {
+   "codigo": "EF12CO03",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "PDF estadual suspeito (ES) baixado e grepado: 0 ocorrências; Computação usa códigos por ano.",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-113"
+  },
+  {
+   "codigo": "EF69ER02",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "PDF municipal suspeito grepado: ER usa códigos por ano; fuzzy-match com EF69AR02.",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-114"
+  },
+  {
+   "codigo": "EF69CI10",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Só fuzzy-match (EF69LP10, EF69AR10).",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-115"
+  },
+  {
+   "codigo": "EF67CO03",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Só fuzzy-match com EF07CO03 real; prefixo EF67CO não existe em nenhuma fonte.",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-116"
+  },
+  {
+   "codigo": "EF89CI03",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Só fuzzy-match.",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-117"
+  },
+  {
+   "codigo": "EF67CI02",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "Só fuzzy-match com EF67LP02.",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-118"
+  },
+  {
+   "codigo": "EF67HI03",
+   "classificacao": "limpo",
+   "achados": [
+    {
+     "url": "https://basenacionalcomum.mec.gov.br/images/relatorios/AMAPA%20(AP)/Consolidacao.xlsm",
+     "tipo": "eco",
+     "evidencia": "Planilha de consulta pública no site da BNCC retornada sem o código exato em trecho"
+    }
+   ],
+   "observacao": "Recomendação: baixar o .xlsm e grepar antes de assinar (ambiguidade federal residual).",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-119"
+  },
+  {
+   "codigo": "EF69EF06",
+   "classificacao": "limpo",
+   "achados": [],
+   "observacao": "EF usa blocos 35/67/89; fontes suspeitas verificadas eram fuzzy-match; 1 PDF municipal inacessível (403).",
+   "tipo_armadilha": "falso-combinacao",
+   "item_id": "b-120"
+  }
+ ]
+}
