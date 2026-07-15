@@ -104,15 +104,16 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
           // segunda chance com o dobro do orçamento (o custo real fica nos
           // tokens registrados; a chave de cache usa o orçamento base, então
           // o checkpoint continua determinístico).
+          let orcamentoUsado = orcamentoBase;
           let resposta = await comRetry(
             () => provedor.completar({ prompt, grounded: modo === 'grounded', maxTokens: orcamentoBase }),
             tentativas,
             esperaBaseMs,
           );
           if (resposta.finishReason === 'max_tokens' && orcamentoBase < TETO_ESCALADA) {
-            const dobro = Math.min(orcamentoBase * 2, TETO_ESCALADA);
+            orcamentoUsado = Math.min(orcamentoBase * 2, TETO_ESCALADA);
             resposta = await comRetry(
-              () => provedor.completar({ prompt, grounded: modo === 'grounded', maxTokens: dobro }),
+              () => provedor.completar({ prompt, grounded: modo === 'grounded', maxTokens: orcamentoUsado }),
               tentativas,
               esperaBaseMs,
             );
@@ -128,6 +129,7 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
             resposta: resposta.texto,
             timestamp: new Date().toISOString(),
             custo_usd: resposta.custoUsd,
+            max_tokens: orcamentoUsado,
             tokens: resposta.tokens,
             finish_reason: resposta.finishReason,
             tools_chamadas: resposta.toolsChamadas,
