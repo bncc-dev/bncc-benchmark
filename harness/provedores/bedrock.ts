@@ -56,6 +56,7 @@ export function criarProvedorBedrock(def: DefModelo, token: string): Provedor {
     }
     const resposta = await fetch(url, {
       method: 'POST',
+      signal: AbortSignal.timeout(300_000), // sem timeout, socket pendurado trava o slot para sempre
       headers: {
         'content-type': 'application/json',
         accept: 'application/json',
