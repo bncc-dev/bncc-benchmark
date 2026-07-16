@@ -1,0 +1,1087 @@
+{
+ "rodada": "oficial-seca-2026-07",
+ "execucoes": [
+  {
+   "executado_em": "2026-07-16T15:37:46.298Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 6,
+      "do_cache": 894,
+      "custo_usd": 0.008334,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 2,
+      "do_cache": 898,
+      "custo_usd": 0.014782,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T16:12:17.340Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T16:29:53.716Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 3,
+      "do_cache": 897,
+      "custo_usd": 0.004546,
+      "incompletas": 4
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T16:40:26.418Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 4
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T16:49:11.998Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 4
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T16:55:38.109Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 4
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 3,
+      "do_cache": 897,
+      "custo_usd": 0.003549,
+      "incompletas": 7
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T17:01:22.655Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 4
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 7
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T17:06:16.216Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 4
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 7
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T17:11:20.237Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 4
+     }
+    },
+    {
+     "id": "deepseek-flash",
+     "def": {
+      "id": "deepseek-flash",
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.08,
+       "saida": 0.15
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 3,
+      "do_cache": 897,
+      "custo_usd": 0.000437,
+      "incompletas": 28
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 7
+     }
+    },
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 0,
+      "do_cache": 900,
+      "custo_usd": 0,
+      "incompletas": 5
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T17:55:24.585Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 8,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sonnet-bedrock",
+     "def": {
+      "id": "sonnet-bedrock",
+      "provedor": "bedrock",
+      "modelo": "us.anthropic.claude-sonnet-4-6",
+      "envKey": "AWS_BEARER_TOKEN_BEDROCK",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 1.992528,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T18:15:57.486Z",
+   "modo": "seco",
+   "harness_commit": "aacfdb5",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 6,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "kimi",
+     "def": {
+      "id": "kimi",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "moonshotai/kimi-k2.6",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Moonshot AI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.66,
+       "saida": 3.41
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 20,
+      "do_cache": 880,
+      "custo_usd": 0.368139,
+      "incompletas": 1
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": [
+  {
+   "avaliado_em": "2026-07-16T17:39:34.965Z",
+   "harness_commit": "aacfdb5",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 13500,
+   "pendentes_a": 2590,
+   "pendentes_c": 4639,
+   "juiz_chamadas": 7229,
+   "juiz_custo_usd": 2.656157
+  },
+  {
+   "avaliado_em": "2026-07-16T18:44:03.485Z",
+   "harness_commit": "aacfdb5",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 15300,
+   "pendentes_a": 3061,
+   "pendentes_c": 5538,
+   "juiz_chamadas": 8599,
+   "juiz_custo_usd": 0.489189
+  }
+ ]
+}
