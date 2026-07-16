@@ -10,12 +10,14 @@ import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos
 interface RespostaApi {
   model: string;
   provider?: string; // OpenRouter informa qual endpoint serviu
-  choices: Array<{ message: { content: string | null }; finish_reason?: string }>;
-  usage: {
+  choices?: Array<{ message: { content: string | null }; finish_reason?: string }>;
+  usage?: {
     prompt_tokens: number;
     completion_tokens: number;
     completion_tokens_details?: { reasoning_tokens?: number };
   };
+  /** OpenRouter pode devolver HTTP 200 com erro no corpo (falha do upstream). */
+  error?: { code?: number | string; message?: string };
 }
 
 export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor {
@@ -45,6 +47,20 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
         throw new ErroProvedor(resposta.status, `${def.id} ${resposta.status}: ${detalhe.slice(0, 300)}`);
       }
       const dados = (await resposta.json()) as RespostaApi;
+
+      // OpenRouter: erro embutido em HTTP 200 (upstream instável) deve virar
+      // ErroProvedor para o retry agir, nunca um TypeError que mata a rodada.
+      if (dados.error) {
+        const codigo = typeof dados.error.code === 'number' ? dados.error.code : 502;
+        throw new ErroProvedor(
+          codigo,
+          `${def.id} erro no corpo (HTTP 200): ${String(dados.error.message).slice(0, 200)}`,
+        );
+      }
+      if (!dados.choices?.length || !dados.usage) {
+        throw new ErroProvedor(502, `${def.id} resposta sem choices/usage (anomalia do upstream)`);
+      }
+
       // RB-4: stop = completa; length = truncada; content_filter = bloqueada.
       const bruto = dados.choices[0]?.finish_reason;
       const finishReason =
