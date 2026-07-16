@@ -1,0 +1,376 @@
+{
+ "rodada": "smoke-grounded-2",
+ "execucoes": [
+  {
+   "executado_em": "2026-07-16T23:29:02.868Z",
+   "modo": "grounded",
+   "harness_commit": "65cb6b8",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": 3,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-sol",
+     "def": {
+      "id": "gpt-sol",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "openai/gpt-5.6-sol",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "OpenAI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 5,
+       "saida": 30
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.050295,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "fable-5",
+     "def": {
+      "id": "fable-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "anthropic/claude-fable-5",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "precos": {
+       "entrada": 10,
+       "saida": 50
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.24245,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sonnet-bedrock",
+     "def": {
+      "id": "sonnet-bedrock",
+      "provedor": "bedrock",
+      "modelo": "us.anthropic.claude-sonnet-4-6",
+      "envKey": "AWS_BEARER_TOKEN_BEDROCK",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.06138,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.006162,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.002975,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-pro",
+     "def": {
+      "id": "gemini-pro",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "google/gemini-3.1-pro-preview",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Google"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 2,
+       "saida": 12
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.031622,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-07-16T23:30:20.060Z",
+   "modo": "grounded",
+   "harness_commit": "65cb6b8",
+   "flags": {
+    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "limite": 3,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-sol",
+     "def": {
+      "id": "gpt-sol",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "openai/gpt-5.6-sol",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "OpenAI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 5,
+       "saida": 30
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 0,
+      "do_cache": 3,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "fable-5",
+     "def": {
+      "id": "fable-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "anthropic/claude-fable-5",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "precos": {
+       "entrada": 10,
+       "saida": 50
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 0,
+      "do_cache": 3,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sonnet-bedrock",
+     "def": {
+      "id": "sonnet-bedrock",
+      "provedor": "bedrock",
+      "modelo": "us.anthropic.claude-sonnet-4-6",
+      "envKey": "AWS_BEARER_TOKEN_BEDROCK",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 0,
+      "do_cache": 3,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.43,
+       "saida": 0.87
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 0,
+      "do_cache": 3,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 0,
+      "do_cache": 3,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-pro",
+     "def": {
+      "id": "gemini-pro",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "google/gemini-3.1-pro-preview",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Google"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 2,
+       "saida": 12
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 0,
+      "do_cache": 3,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": [
+  {
+   "avaliado_em": "2026-07-16T23:30:41.597Z",
+   "harness_commit": "65cb6b8",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 18,
+   "pendentes_a": 0,
+   "pendentes_c": 0,
+   "juiz_chamadas": 0,
+   "juiz_custo_usd": 0
+  }
+ ]
+}
