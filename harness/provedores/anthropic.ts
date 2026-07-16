@@ -44,6 +44,7 @@ export function criarProvedorAnthropic(def: DefModelo, key: string): Provedor {
 
       const resposta = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
+        signal: AbortSignal.timeout(300_000), // sem timeout, socket pendurado trava o slot para sempre
         headers,
         body: JSON.stringify(corpo),
       });

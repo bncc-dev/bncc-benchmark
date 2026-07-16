@@ -26,6 +26,7 @@ export function criarProvedorGoogle(def: DefModelo, key: string): Provedor {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${def.modelo}:generateContent`;
       const resposta = await fetch(url, {
         method: 'POST',
+        signal: AbortSignal.timeout(300_000), // sem timeout, socket pendurado trava o slot para sempre
         headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
         body: JSON.stringify({
           contents: [{ parts: [{ text: chamada.prompt }] }],

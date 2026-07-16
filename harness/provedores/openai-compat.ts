@@ -30,6 +30,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
       }
       const resposta = await fetch(`${def.baseUrl}/chat/completions`, {
         method: 'POST',
+        signal: AbortSignal.timeout(300_000), // sem timeout, socket pendurado trava o slot para sempre
         headers: {
           'content-type': 'application/json',
           authorization: `Bearer ${key}`,

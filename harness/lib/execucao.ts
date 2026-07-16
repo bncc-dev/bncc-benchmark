@@ -52,6 +52,7 @@ function erroDeRede(erro: unknown): boolean {
   if (!(erro instanceof Error)) return false;
   const causa = (erro as { cause?: { code?: string } }).cause;
   if (causa?.code && CODIGOS_REDE.has(causa.code)) return true;
+  if (erro.name === 'TimeoutError' || erro.name === 'AbortError') return true;
   return erro instanceof TypeError && /terminated|fetch failed|network/i.test(erro.message);
 }
 
