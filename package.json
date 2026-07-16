@@ -12,7 +12,8 @@
     "gerar": "tsx harness/gerar-itens.ts",
     "executar": "tsx harness/executar.ts",
     "avaliar": "tsx harness/avaliar.ts",
-    "agregar": "tsx harness/agregar.ts"
+    "agregar": "tsx harness/agregar.ts",
+    "exportar-site": "tsx harness/exportar-site.ts"
   },
   "dependencies": {
     "@bncc/dados": "0.2.0"

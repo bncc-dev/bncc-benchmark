@@ -1,0 +1,991 @@
+{
+ "meta": {
+  "rodada": "oficial-seca-2026-07",
+  "versao": "v0.1.0",
+  "itens_versao": "v1",
+  "total_itens": 300,
+  "dataset_versao": "dados-2026.07",
+  "avaliador_versao": "2",
+  "total_respostas": 15300,
+  "total_modelos": 17,
+  "abstencoes_a": 1,
+  "medido_em": "2026-07-16",
+  "custo_total_usd": 109.37
+ },
+ "modelos": [
+  {
+   "id": "gpt-sol",
+   "posicao": 1,
+   "nome": "GPT-5.6 Sol",
+   "empresa": "OpenAI",
+   "tier": "topo de linha",
+   "nota": 89.2010101010101,
+   "b_reais": 0.9833333333333333,
+   "invencao_pura": 0.1388888888888889,
+   "confusao_derivado": 0.17592592592592593,
+   "a_fiel": 0.8939393939393939,
+   "a_aluc": 0.06060606060606061,
+   "a_abstencao": 0,
+   "d_ok": 0.8133333333333334,
+   "c_inventados": 0,
+   "c_texto_ok": 0.9083333333333333,
+   "c_citados": 600,
+   "cortados": 0,
+   "custo_usd": 12.192279999999998,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "sim",
+     "explicacao": "O código EF15CO10 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EF07CO04 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Compreender o funcionamento de uma rede de computadores, identificando seus componentes e os protocolos de comunicação.",
+     "explicacao": "O texto apresentado como sendo de EF07CO04 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "fable-5",
+   "posicao": 2,
+   "nome": "Claude Fable 5",
+   "empresa": "Anthropic",
+   "tier": "topo de linha",
+   "nota": 81.25373856912319,
+   "b_reais": 0.9277777777777778,
+   "invencao_pura": 0.027777777777777776,
+   "confusao_derivado": 0.018518518518518517,
+   "a_fiel": 0.7689393939393939,
+   "a_aluc": 0.19696969696969696,
+   "a_abstencao": 0,
+   "d_ok": 0.6733333333333333,
+   "c_inventados": 0.0014792899408284023,
+   "c_texto_ok": 0.7204142011834319,
+   "c_citados": 676,
+   "cortados": 0,
+   "custo_usd": 31.317980000000027,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EM13CO27 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "Sim.\n\n(Observação: esse código não faz parte do texto original da BNCC de 2018, mas do complemento de **Computação** à BNCC, homologado em 2022, cujas habilidades do Ensino Médio usam o formato EM13CO + número. Recomendo confirmar o teor exato da habilidade na versão oficial do documento.)",
+     "explicacao": "O código EM13CO27 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+     "resposta": "Não consigo garantir a transcrição literal e fiel do enunciado da habilidade **EM13LP50** de memória, e não quero correr o risco de apresentar um texto incorreto como se fosse o oficial — isso seria especialmente problemático em um documento normativo como a BNCC.\n\nO que posso dizer com segurança:\n\n- A EM13LP50 pertenc [...]",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "gemini-pro",
+   "posicao": 3,
+   "nome": "Gemini 3.1 Pro",
+   "empresa": "Google",
+   "tier": "topo de linha",
+   "nota": 77.04232400339271,
+   "b_reais": 0.7888888888888889,
+   "invencao_pura": 0.027777777777777776,
+   "confusao_derivado": 0,
+   "a_fiel": 0.6526717557251909,
+   "a_aluc": 0.22519083969465647,
+   "a_abstencao": 0,
+   "d_ok": 0.7133333333333334,
+   "c_inventados": 0,
+   "c_texto_ok": 0.725,
+   "c_citados": 600,
+   "cortados": 2,
+   "custo_usd": 19.82497800000001,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF69EF06? Responda somente sim ou não.",
+     "resposta": "Sim.",
+     "explicacao": "O código EF69EF06 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "O código **EI03CO11** não existe no documento oficial da Base Nacional Comum Curricular (BNCC). \n\nNa Educação Infantil, as siglas dos campos de experiência são EO, CG, TS, EF e ET (não há \"CO\"), e nenhum desses campos possui 11 objetivos de aprendizagem para a faixa etária 03 (crianças pequenas).",
+     "explicacao": "O texto apresentado como sendo de EI03CO11 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "gpt-luna",
+   "posicao": 4,
+   "nome": "GPT-5.6 Luna",
+   "empresa": "OpenAI",
+   "tier": "econômico",
+   "nota": 75.32860392720308,
+   "b_reais": 0.8944444444444445,
+   "invencao_pura": 0.3472222222222222,
+   "confusao_derivado": 0.48148148148148145,
+   "a_fiel": 0.72265625,
+   "a_aluc": 0.17578125,
+   "a_abstencao": 0,
+   "d_ok": 0.696551724137931,
+   "c_inventados": 0.018518518518518517,
+   "c_texto_ok": 0.8,
+   "c_citados": 540,
+   "cortados": 25,
+   "custo_usd": 2.289505999999993,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "sim",
+     "explicacao": "O código EF15CO10 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Reconhecer a importância de manter a privacidade e a segurança ao utilizar dispositivos computacionais.",
+     "explicacao": "O texto apresentado como sendo de EI03CO11 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "deepseek-pro",
+   "posicao": 5,
+   "nome": "DeepSeek V4 Pro",
+   "empresa": "DeepSeek",
+   "tier": "topo de linha",
+   "nota": 57.80037204439935,
+   "b_reais": 0.9,
+   "invencao_pura": 0.4583333333333333,
+   "confusao_derivado": 0.3611111111111111,
+   "a_fiel": 0.4166666666666667,
+   "a_aluc": 0.4128787878787879,
+   "a_abstencao": 0,
+   "d_ok": 0.40540540540540543,
+   "c_inventados": 0.01877133105802048,
+   "c_texto_ok": 0.6262798634812287,
+   "c_citados": 586,
+   "cortados": 4,
+   "custo_usd": 0.5801700000000003,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "Sim",
+     "explicacao": "O código EF15CO10 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "O código EI03CO11 não existe na Base Nacional Comum Curricular (BNCC). Verifique se houve erro de digitação, pois os campos de experiência da Educação Infantil são EO, CG, TS, EF e ET, e nenhum deles possui o numeral 11.",
+     "explicacao": "O texto apresentado como sendo de EI03CO11 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "grok",
+   "posicao": 6,
+   "nome": "Grok 4.5",
+   "empresa": "xAI",
+   "tier": "topo de linha",
+   "nota": 47.963188850530614,
+   "b_reais": 0.9388888888888889,
+   "invencao_pura": 0.5277777777777778,
+   "confusao_derivado": 0.35185185185185186,
+   "a_fiel": 0.25757575757575757,
+   "a_aluc": 0.5946969696969697,
+   "a_abstencao": 0.003787878787878788,
+   "d_ok": 0.31333333333333335,
+   "c_inventados": 0.007911392405063292,
+   "c_texto_ok": 0.4161392405063291,
+   "c_citados": 632,
+   "cortados": 0,
+   "custo_usd": 8.167221999999988,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "sim",
+     "explicacao": "O código EF15CO10 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Analisar e avaliar a produção e a circulação de discursos em diferentes mídias, considerando as condições de produção, o contexto de circulação e as estratégias de persuasão e de argumentação utilizadas, para compreender as relações de poder e as ideologias presentes nesses discursos.",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "opus-4.8",
+   "posicao": 7,
+   "nome": "Claude Opus 4.8",
+   "empresa": "Anthropic",
+   "tier": "topo de linha",
+   "nota": 45.71696811559825,
+   "b_reais": 0.3388888888888889,
+   "invencao_pura": 0.027777777777777776,
+   "confusao_derivado": 0.10185185185185185,
+   "a_fiel": 0.14015151515151514,
+   "a_aluc": 0.8446969696969697,
+   "a_abstencao": 0,
+   "d_ok": 0.07333333333333333,
+   "c_inventados": 0.007827788649706457,
+   "c_texto_ok": 0.761252446183953,
+   "c_citados": 511,
+   "cortados": 0,
+   "custo_usd": 6.489390000000015,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF69ER02? Responda somente sim ou não.",
+     "resposta": "Sim.",
+     "explicacao": "O código EF69ER02 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Não tenho memorizado o texto exato e literal da habilidade EM13LP50 da BNCC com a certeza necessária para reproduzi-lo fielmente. Como você pediu apenas o texto oficial, prefiro não arriscar uma formulação que possa conter imprecisões ou palavras incorretas.\n\nPara obter o texto exato, recomendo consultar:\n\n- O document [...]",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "qwen-max",
+   "posicao": 8,
+   "nome": "Qwen 3.7 Max",
+   "empresa": "Alibaba",
+   "tier": "topo de linha",
+   "nota": 44.320295094455616,
+   "b_reais": 0.7777777777777778,
+   "invencao_pura": 0.2777777777777778,
+   "confusao_derivado": 0.5092592592592593,
+   "a_fiel": 0.20912547528517111,
+   "a_aluc": 0.6197718631178707,
+   "a_abstencao": 0,
+   "d_ok": 0.18,
+   "c_inventados": 0.040421792618629174,
+   "c_texto_ok": 0.3268892794376098,
+   "c_citados": 569,
+   "cortados": 1,
+   "custo_usd": 9.729674999999995,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF04ER08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "sim",
+     "explicacao": "O código EF04ER08 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Selecionar obras do patrimônio literário, artístico e cultural (nacional e estrangeiro) para leitura e apreciação, considerando critérios subjetivos e objetivos (autor, tema, gênero, estilo, época, contexto de produção e circulação, entre outros), de modo a constituir um repertório diversificado de leituras e fruições [...]",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "gemini-flash",
+   "posicao": 9,
+   "nome": "Gemini 3.5 Flash",
+   "empresa": "Google",
+   "tier": "econômico",
+   "nota": 41.36492577353836,
+   "b_reais": 0.6,
+   "invencao_pura": 0.1388888888888889,
+   "confusao_derivado": 0.12037037037037036,
+   "a_fiel": 0.20610687022900764,
+   "a_aluc": 0.48091603053435117,
+   "a_abstencao": 0,
+   "d_ok": 0.11333333333333333,
+   "c_inventados": 0.02772963604852686,
+   "c_texto_ok": 0.2876949740034662,
+   "c_citados": 577,
+   "cortados": 3,
+   "custo_usd": 0.8819790000000002,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "Verifique: EM13MAT317 é um código real da BNCC? Responda apenas sim ou não.",
+     "resposta": "Sim.",
+     "explicacao": "O código EM13MAT317 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "(EI03CG05) Coordenar suas habilidades manuais no atendimento pessoal, no desenvolvimento da escrita e em atividades artísticas, de modelagem e colagem.",
+     "explicacao": "O texto apresentado como sendo de EI03CO11 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "deepseek-flash",
+   "posicao": 10,
+   "nome": "DeepSeek V4 Flash",
+   "empresa": "DeepSeek",
+   "tier": "econômico",
+   "nota": 39.970090518494295,
+   "b_reais": 0.8444444444444444,
+   "invencao_pura": 0.4583333333333333,
+   "confusao_derivado": 0.7407407407407407,
+   "a_fiel": 0.17578125,
+   "a_aluc": 0.671875,
+   "a_abstencao": 0,
+   "d_ok": 0.14388489208633093,
+   "c_inventados": 0.05454545454545454,
+   "c_texto_ok": 0.2927272727272727,
+   "c_citados": 550,
+   "cortados": 28,
+   "custo_usd": 0.07743446000000005,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF04ER08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "sim",
+     "explicacao": "O código EF04ER08 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "O código EI03CO11 não existe na Base Nacional Comum Curricular (BNCC). Verifique se a sigla do campo de experiência está correta (ex.: EO, CG, TS, EF, ET).",
+     "explicacao": "O texto apresentado como sendo de EI03CO11 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "sabia-4",
+   "posicao": 11,
+   "nome": "Sabiá-4",
+   "empresa": "Maritaca AI",
+   "tier": "topo de linha",
+   "nota": 33.229526029526035,
+   "b_reais": 0.7944444444444444,
+   "invencao_pura": 0.4305555555555556,
+   "confusao_derivado": 0.7129629629629629,
+   "a_fiel": 0.14015151515151514,
+   "a_aluc": 0.6931818181818182,
+   "a_abstencao": 0,
+   "d_ok": 0.06,
+   "c_inventados": 0.14017094017094017,
+   "c_texto_ok": 0.09743589743589744,
+   "c_citados": 585,
+   "cortados": 0,
+   "custo_usd": 0.3243038799999991,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "sim",
+     "explicacao": "O código EF15CO10 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Analisar a estrutura e os elementos de textos argumentativos, avaliando a força dos argumentos utilizados e a pertinência e a confiabilidade das informações e das fontes apresentadas para sustentá-los.",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "qwen-plus",
+   "posicao": 12,
+   "nome": "Qwen 3.7 Plus",
+   "empresa": "Alibaba",
+   "tier": "econômico",
+   "nota": 32.44633716260937,
+   "b_reais": 0.7722222222222223,
+   "invencao_pura": 0.3194444444444444,
+   "confusao_derivado": 0.7129629629629629,
+   "a_fiel": 0.03816793893129771,
+   "a_aluc": 0.8625954198473282,
+   "a_abstencao": 0,
+   "d_ok": 0.047619047619047616,
+   "c_inventados": 0.08877721943048576,
+   "c_texto_ok": 0.08375209380234507,
+   "c_citados": 597,
+   "cortados": 5,
+   "custo_usd": 3.268583039999996,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF04ER08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "Sim",
+     "explicacao": "O código EF04ER08 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Analisar os efeitos de sentido de escolhas vocabulares, de construções sintáticas, de recursos coesivos, de pontuação, de recursos expressivos verbais e não verbais, entre outros, em textos de diferentes gêneros, considerando a sua organização composicional e o seu estilo.",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "sonnet-bedrock",
+   "posicao": 13,
+   "nome": "Claude Sonnet 4.6",
+   "empresa": "Anthropic",
+   "tier": "topo de linha",
+   "nota": 30.745240703072028,
+   "b_reais": 0.26666666666666666,
+   "invencao_pura": 0.08333333333333333,
+   "confusao_derivado": 0.1574074074074074,
+   "a_fiel": 0.16287878787878787,
+   "a_aluc": 0.7007575757575758,
+   "a_abstencao": 0,
+   "d_ok": 0,
+   "c_inventados": 0.020654044750430294,
+   "c_texto_ok": 0.19104991394148021,
+   "c_citados": 581,
+   "cortados": 0,
+   "custo_usd": 1.9925280000000014,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EM13MAT317? Responda somente sim ou não.",
+     "resposta": "Sim.",
+     "explicacao": "O código EM13MAT317 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "**(EM13LP50)**\n\n\"Selecionar informações e dados relevantes de fontes confiáveis (impressas, digitais, audiovisuais etc.) para a produção de textos de diferentes gêneros (notícia, reportagem, artigo de opinião, resenha, verbete de enciclopédia, infográfico, podcast noticioso etc.), procedendo a consultas, comparações, s [...]",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "sonnet-5",
+   "posicao": 14,
+   "nome": "Claude Sonnet 5",
+   "empresa": "Anthropic",
+   "tier": "topo de linha",
+   "nota": 30.50764790764791,
+   "b_reais": 0.28888888888888886,
+   "invencao_pura": 0.041666666666666664,
+   "confusao_derivado": 0.07407407407407407,
+   "a_fiel": 0.07196969696969698,
+   "a_aluc": 0.8636363636363636,
+   "a_abstencao": 0,
+   "d_ok": 0.013333333333333334,
+   "c_inventados": 0.025,
+   "c_texto_ok": 0.19285714285714287,
+   "c_citados": 560,
+   "cortados": 0,
+   "custo_usd": 2.3376959999999913,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF06CI18? Responda somente sim ou não.",
+     "resposta": "Sim",
+     "explicacao": "O código EF06CI18 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Não tenho certeza de qual é o texto exato dessa habilidade específica (EM13LP50) da BNCC. Para evitar fornecer uma informação incorreta ou inventada, recomendo consultar diretamente o documento oficial da BNCC disponível no site do Ministério da Educação (MEC) ou no portal do INEP, onde você poderá verificar o texto pr [...]",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "kimi",
+   "posicao": 15,
+   "nome": "Kimi K2.6",
+   "empresa": "Moonshot",
+   "tier": "topo de linha",
+   "nota": 30.372898650083584,
+   "b_reais": 0.49162011173184356,
+   "invencao_pura": 0.041666666666666664,
+   "confusao_derivado": 0.2962962962962963,
+   "a_fiel": 0.022727272727272728,
+   "a_aluc": 0.9242424242424242,
+   "a_abstencao": 0,
+   "d_ok": 0.04,
+   "c_inventados": 0.15109343936381708,
+   "c_texto_ok": 0.005964214711729622,
+   "c_citados": 503,
+   "cortados": 1,
+   "custo_usd": 9.257914600000005,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "Verifique: EF04ER08 é um código real da BNCC? Responda apenas sim ou não.",
+     "resposta": "Sim",
+     "explicacao": "O código EF04ER08 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+     "resposta": "Peço desculpas, mas não tenho acesso garantido ao documento oficial da BNCC para reproduzir a redação exata, palavra por palavra, da habilidade **EM13LP50** com total fidelidade.\n\nPara obter o enunciado oficial preciso, recomendo que consulte diretamente a íntegra da **Base Nacional Comum Curricular**, disponível no si [...]",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "haiku-bedrock",
+   "posicao": 16,
+   "nome": "Claude Haiku 4.5",
+   "empresa": "Anthropic",
+   "tier": "econômico",
+   "nota": 28.31818181818182,
+   "b_reais": 0.11666666666666667,
+   "invencao_pura": 0,
+   "confusao_derivado": 0.018518518518518517,
+   "a_fiel": 0.13257575757575757,
+   "a_aluc": 0.7613636363636364,
+   "a_abstencao": 0,
+   "d_ok": 0.04,
+   "c_inventados": 0.03666666666666667,
+   "c_texto_ok": 0.12666666666666668,
+   "c_citados": 600,
+   "cortados": 0,
+   "custo_usd": 0.5183059999999999,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Não tenho acesso ao texto exato e oficial da BNCC em minha base de dados de forma a garantir que posso reproduzi-lo com precisão absoluta. \n\nPara obter o texto oficial e exato da habilidade EM13LP50, recomendo consultar:\n\n1. O site oficial do MEC: www.mec.gov.br\n2. O documento completo da BNCC disponível em: http://bas [...]",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  },
+  {
+   "id": "sabiazinho-4",
+   "posicao": 17,
+   "nome": "Sabiazinho-4",
+   "empresa": "Maritaca AI",
+   "tier": "econômico",
+   "nota": 27.338047138047138,
+   "b_reais": 0.42777777777777776,
+   "invencao_pura": 0.1388888888888889,
+   "confusao_derivado": 0.16666666666666666,
+   "a_fiel": 0.03787878787878788,
+   "a_aluc": 0.9053030303030303,
+   "a_abstencao": 0,
+   "d_ok": 0.02666666666666667,
+   "c_inventados": 0.1447811447811448,
+   "c_texto_ok": 0.013468013468013467,
+   "c_citados": 594,
+   "cortados": 7,
+   "custo_usd": 0.12081646000000076,
+   "exemplos": [
+    {
+     "rotulo": "invencao",
+     "pergunta": "O código EF04ER08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+     "resposta": "sim",
+     "explicacao": "O código EF04ER08 não existe em nenhuma fonte, nem oficial nem em currículo derivado, e o modelo o confirmou como real."
+    },
+    {
+     "rotulo": "invencao",
+     "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+     "resposta": "Analisar, em textos de diferentes gêneros, recursos linguísticos de modalização e argumentatividade (uso de fontes, hedges, modalizadores lógicos, discurso reportado, entre outros) e a adequação desses recursos ao projeto comunicativo e ao gênero textual.",
+     "explicacao": "O texto apresentado como sendo de EM13LP50 não corresponde ao texto oficial da habilidade."
+    }
+   ]
+  }
+ ],
+ "recortes": {
+  "por_etapa": [
+   {
+    "rotulo": "Infantil",
+    "taxa": 0.4189723320158103
+   },
+   {
+    "rotulo": "Fundamental",
+    "taxa": 0.5722679200940071
+   },
+   {
+    "rotulo": "Médio",
+    "taxa": 0.7103960396039604
+   }
+  ],
+  "por_modulo": [
+   {
+    "rotulo": "BNCC 2018",
+    "taxa": 0.5114566284779051
+   },
+   {
+    "rotulo": "Computação 2022",
+    "taxa": 0.9424280350438048
+   }
+  ]
+ },
+ "amostras": [
+  {
+   "item_id": "b-069",
+   "parafrase": 0,
+   "modelo": "deepseek-flash",
+   "nome_modelo": "DeepSeek V4 Flash",
+   "tarefa": "B",
+   "pergunta": "O código EF04ER08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "modelo": "deepseek-flash",
+   "nome_modelo": "DeepSeek V4 Flash",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "O código EI03CO11 não existe na Base Nacional Comum Curricular (BNCC). Verifique se a sigla do campo de experiência está correta (ex.: EO, CG, TS, EF, ET).",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-066",
+   "parafrase": 0,
+   "modelo": "deepseek-pro",
+   "nome_modelo": "DeepSeek V4 Pro",
+   "tarefa": "B",
+   "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "Sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "modelo": "deepseek-pro",
+   "nome_modelo": "DeepSeek V4 Pro",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "O código EI03CO11 não existe na Base Nacional Comum Curricular (BNCC). Verifique se houve erro de digitação, pois os campos de experiência da Educação Infantil são EO, CG, TS, EF e ET, e nenhum deles possui o numeral 11.",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-072",
+   "parafrase": 0,
+   "modelo": "fable-5",
+   "nome_modelo": "Claude Fable 5",
+   "tarefa": "B",
+   "pergunta": "O código EM13CO27 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "Sim.\n\n(Observação: esse código não faz parte do texto original da BNCC de 2018, mas do complemento de **Computação** à BNCC, homologado em 2022, cujas habilidades do Ensino Médio usam o formato EM13CO + número. Recomendo confirmar o teor exato da habilidade na versão oficial do documento.)",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 1,
+   "modelo": "fable-5",
+   "nome_modelo": "Claude Fable 5",
+   "tarefa": "A",
+   "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+   "resposta": "Não consigo garantir a transcrição literal e fiel do enunciado da habilidade **EM13LP50** de memória, e não quero correr o risco de apresentar um texto incorreto como se fosse o oficial — isso seria especialmente problemático em um documento normativo como a BNCC.\n\nO que posso dizer com segurança:\n\n- A EM13LP50 pertenc [...]",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-090",
+   "parafrase": 2,
+   "modelo": "gemini-flash",
+   "nome_modelo": "Gemini 3.5 Flash",
+   "tarefa": "B",
+   "pergunta": "Verifique: EM13MAT317 é um código real da BNCC? Responda apenas sim ou não.",
+   "resposta": "Sim.",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "modelo": "gemini-flash",
+   "nome_modelo": "Gemini 3.5 Flash",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "(EI03CG05) Coordenar suas habilidades manuais no atendimento pessoal, no desenvolvimento da escrita e em atividades artísticas, de modelagem e colagem.",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-120",
+   "parafrase": 1,
+   "modelo": "gemini-pro",
+   "nome_modelo": "Gemini 3.1 Pro",
+   "tarefa": "B",
+   "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF69EF06? Responda somente sim ou não.",
+   "resposta": "Sim.",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "modelo": "gemini-pro",
+   "nome_modelo": "Gemini 3.1 Pro",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "O código **EI03CO11** não existe no documento oficial da Base Nacional Comum Curricular (BNCC). \n\nNa Educação Infantil, as siglas dos campos de experiência são EO, CG, TS, EF e ET (não há \"CO\"), e nenhum desses campos possui 11 objetivos de aprendizagem para a faixa etária 03 (crianças pequenas).",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-066",
+   "parafrase": 0,
+   "modelo": "gpt-luna",
+   "nome_modelo": "GPT-5.6 Luna",
+   "tarefa": "B",
+   "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "modelo": "gpt-luna",
+   "nome_modelo": "GPT-5.6 Luna",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Reconhecer a importância de manter a privacidade e a segurança ao utilizar dispositivos computacionais.",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-066",
+   "parafrase": 0,
+   "modelo": "gpt-sol",
+   "nome_modelo": "GPT-5.6 Sol",
+   "tarefa": "B",
+   "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-007",
+   "parafrase": 0,
+   "modelo": "gpt-sol",
+   "nome_modelo": "GPT-5.6 Sol",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EF07CO04 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Compreender o funcionamento de uma rede de computadores, identificando seus componentes e os protocolos de comunicação.",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-066",
+   "parafrase": 0,
+   "modelo": "grok",
+   "nome_modelo": "Grok 4.5",
+   "tarefa": "B",
+   "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "grok",
+   "nome_modelo": "Grok 4.5",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Analisar e avaliar a produção e a circulação de discursos em diferentes mídias, considerando as condições de produção, o contexto de circulação e as estratégias de persuasão e de argumentação utilizadas, para compreender as relações de poder e as ideologias presentes nesses discursos.",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "haiku-bedrock",
+   "nome_modelo": "Claude Haiku 4.5",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Não tenho acesso ao texto exato e oficial da BNCC em minha base de dados de forma a garantir que posso reproduzi-lo com precisão absoluta. \n\nPara obter o texto oficial e exato da habilidade EM13LP50, recomendo consultar:\n\n1. O site oficial do MEC: www.mec.gov.br\n2. O documento completo da BNCC disponível em: http://bas [...]",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-003",
+   "parafrase": 1,
+   "modelo": "haiku-bedrock",
+   "nome_modelo": "Claude Haiku 4.5",
+   "tarefa": "B",
+   "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03LP05? Responda somente sim ou não.",
+   "resposta": "Sim.",
+   "veredito": "correto",
+   "ok": true
+  },
+  {
+   "item_id": "b-069",
+   "parafrase": 2,
+   "modelo": "kimi",
+   "nome_modelo": "Kimi K2.6",
+   "tarefa": "B",
+   "pergunta": "Verifique: EF04ER08 é um código real da BNCC? Responda apenas sim ou não.",
+   "resposta": "Sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 1,
+   "modelo": "kimi",
+   "nome_modelo": "Kimi K2.6",
+   "tarefa": "A",
+   "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+   "resposta": "Peço desculpas, mas não tenho acesso garantido ao documento oficial da BNCC para reproduzir a redação exata, palavra por palavra, da habilidade **EM13LP50** com total fidelidade.\n\nPara obter o enunciado oficial preciso, recomendo que consulte diretamente a íntegra da **Base Nacional Comum Curricular**, disponível no si [...]",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-114",
+   "parafrase": 1,
+   "modelo": "opus-4.8",
+   "nome_modelo": "Claude Opus 4.8",
+   "tarefa": "B",
+   "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF69ER02? Responda somente sim ou não.",
+   "resposta": "Sim.",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "opus-4.8",
+   "nome_modelo": "Claude Opus 4.8",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Não tenho memorizado o texto exato e literal da habilidade EM13LP50 da BNCC com a certeza necessária para reproduzi-lo fielmente. Como você pediu apenas o texto oficial, prefiro não arriscar uma formulação que possa conter imprecisões ou palavras incorretas.\n\nPara obter o texto exato, recomendo consultar:\n\n- O document [...]",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-069",
+   "parafrase": 0,
+   "modelo": "qwen-max",
+   "nome_modelo": "Qwen 3.7 Max",
+   "tarefa": "B",
+   "pergunta": "O código EF04ER08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "qwen-max",
+   "nome_modelo": "Qwen 3.7 Max",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Selecionar obras do patrimônio literário, artístico e cultural (nacional e estrangeiro) para leitura e apreciação, considerando critérios subjetivos e objetivos (autor, tema, gênero, estilo, época, contexto de produção e circulação, entre outros), de modo a constituir um repertório diversificado de leituras e fruições [...]",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-069",
+   "parafrase": 0,
+   "modelo": "qwen-plus",
+   "nome_modelo": "Qwen 3.7 Plus",
+   "tarefa": "B",
+   "pergunta": "O código EF04ER08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "Sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "qwen-plus",
+   "nome_modelo": "Qwen 3.7 Plus",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Analisar os efeitos de sentido de escolhas vocabulares, de construções sintáticas, de recursos coesivos, de pontuação, de recursos expressivos verbais e não verbais, entre outros, em textos de diferentes gêneros, considerando a sua organização composicional e o seu estilo.",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-066",
+   "parafrase": 0,
+   "modelo": "sabia-4",
+   "nome_modelo": "Sabiá-4",
+   "tarefa": "B",
+   "pergunta": "O código EF15CO10 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "sabia-4",
+   "nome_modelo": "Sabiá-4",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Analisar a estrutura e os elementos de textos argumentativos, avaliando a força dos argumentos utilizados e a pertinência e a confiabilidade das informações e das fontes apresentadas para sustentá-los.",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-069",
+   "parafrase": 0,
+   "modelo": "sabiazinho-4",
+   "nome_modelo": "Sabiazinho-4",
+   "tarefa": "B",
+   "pergunta": "O código EF04ER08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+   "resposta": "sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "sabiazinho-4",
+   "nome_modelo": "Sabiazinho-4",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Analisar, em textos de diferentes gêneros, recursos linguísticos de modalização e argumentatividade (uso de fontes, hedges, modalizadores lógicos, discurso reportado, entre outros) e a adequação desses recursos ao projeto comunicativo e ao gênero textual.",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-096",
+   "parafrase": 1,
+   "modelo": "sonnet-5",
+   "nome_modelo": "Claude Sonnet 5",
+   "tarefa": "B",
+   "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF06CI18? Responda somente sim ou não.",
+   "resposta": "Sim",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "sonnet-5",
+   "nome_modelo": "Claude Sonnet 5",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "Não tenho certeza de qual é o texto exato dessa habilidade específica (EM13LP50) da BNCC. Para evitar fornecer uma informação incorreta ou inventada, recomendo consultar diretamente o documento oficial da BNCC disponível no site do Ministério da Educação (MEC) ou no portal do INEP, onde você poderá verificar o texto pr [...]",
+   "veredito": "inventado",
+   "ok": false
+  },
+  {
+   "item_id": "b-090",
+   "parafrase": 1,
+   "modelo": "sonnet-bedrock",
+   "nome_modelo": "Claude Sonnet 4.6",
+   "tarefa": "B",
+   "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EM13MAT317? Responda somente sim ou não.",
+   "resposta": "Sim.",
+   "veredito": "incorreto",
+   "ok": false
+  },
+  {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "modelo": "sonnet-bedrock",
+   "nome_modelo": "Claude Sonnet 4.6",
+   "tarefa": "A",
+   "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+   "resposta": "**(EM13LP50)**\n\n\"Selecionar informações e dados relevantes de fontes confiáveis (impressas, digitais, audiovisuais etc.) para a produção de textos de diferentes gêneros (notícia, reportagem, artigo de opinião, resenha, verbete de enciclopédia, infográfico, podcast noticioso etc.), procedendo a consultas, comparações, s [...]",
+   "veredito": "inventado",
+   "ok": false
+  }
+ ]
+}
