@@ -91,7 +91,12 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
   } = opcoes;
 
   const limitador = criarLimitador(concorrencia);
-  const trabalhos: Array<Promise<{ registro: RegistroBruto; doCache: boolean }>> = [];
+  // Cada trabalho NUNCA rejeita (resolve com {erro} em falha): com dezenas de
+  // promessas em voo aguardadas sequencialmente, uma rejeição anterior ao
+  // await vira unhandledRejection e o Node mata o processo inteiro, por fora
+  // de qualquer try/catch (queda 4 da rodada oficial).
+  type Trabalho = { registro: RegistroBruto; doCache: boolean } | { erro: unknown };
+  const trabalhos: Array<Promise<Trabalho>> = [];
 
   // Orçamento efetivo: o maior entre a config da rodada e o mínimo do modelo
   // (modelos com raciocínio interno precisam de folga para não sair cortados).
@@ -160,7 +165,10 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
           };
           cache.gravar(chave, registro);
           return { registro, doCache: false };
-        }),
+        }).then(
+          (ok) => ok as Trabalho,
+          (erro) => ({ erro }) as Trabalho,
+        ),
       );
     }
   }
@@ -168,11 +176,25 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
   const total = trabalhos.length;
   let feito = 0;
   const resultados: Array<{ registro: RegistroBruto; doCache: boolean }> = [];
+  let primeiroErro: unknown = null;
+  let erros = 0;
   for (const trabalho of trabalhos) {
     const r = await trabalho;
     feito++;
+    if ('erro' in r) {
+      erros++;
+      if (primeiroErro === null) primeiroErro = r.erro;
+      continue;
+    }
     aoProgresso?.(feito, total, r.doCache);
     resultados.push(r);
+  }
+  if (primeiroErro !== null) {
+    // Tudo que completou está no cache; o chamador decide (FALHA + fila segue).
+    throw new Error(
+      `${erros} de ${total} chamadas falharam após retries; primeiro erro: ${(primeiroErro as Error).message?.slice(0, 200)}`,
+      { cause: primeiroErro },
+    );
   }
 
   // Ordem estável no JSONL, independente da ordem de conclusão.

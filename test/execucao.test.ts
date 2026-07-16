@@ -157,6 +157,31 @@ describe('executarBateria', () => {
     expect(resultado.registros[0].max_tokens).toBe(2048);
   });
 
+  it('falhas concorrentes não viram unhandledRejection: erro agregado no fim, sucessos preservados', async () => {
+    const itens = selecionarBalanceado(banco.itens, 6);
+    let chamadas = 0;
+    const metadeFalha: Provedor = {
+      id: 'fake',
+      async completar(chamada) {
+        chamadas++;
+        if (chamadas % 2 === 0) throw new ErroProvedor(401, 'permanente');
+        return provedorFake({ chamadas: 0 }).completar(chamada);
+      },
+    };
+    await expect(
+      executarBateria({
+        banco,
+        itens,
+        def: DEF,
+        provedor: metadeFalha,
+        modo: 'seco',
+        parafrases: 1,
+        cache: new CacheDisco(join(dirTemporario, 'c-concorrente')),
+        esperaBaseMs: 1,
+      }),
+    ).rejects.toThrow(/chamadas falharam após retries/);
+  });
+
   it('erro de rede cru (ECONNRESET/terminated) também ganha retry', async () => {
     const itens = selecionarBalanceado(banco.itens, 1);
     let tentativas = 0;
