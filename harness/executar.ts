@@ -95,6 +95,7 @@ const entradaManifesto: EntradaExecucao = {
   modelos: [],
 };
 
+const falhas: string[] = [];
 for (const id of ids) {
   const def = MODELOS[id];
   if (modo === 'grounded' && !def.suportaGrounded) {
@@ -103,7 +104,9 @@ for (const id of ids) {
   }
   const provedor = criarProvedor(def, ambiente);
   const inicio = Date.now();
-  const resultado = await executarBateria({
+  let resultado;
+  try {
+    resultado = await executarBateria({
     banco,
     itens,
     def,
@@ -119,6 +122,14 @@ for (const id of ids) {
       }
     },
   });
+  } catch (erro) {
+    // Um modelo instável não derruba a bateria: o que ele completou está no
+    // cache; a fila continua e ele é retomado num re-run do mesmo comando.
+    process.stdout.write('\n');
+    console.error(`FALHA em ${id} (fila continua; re-rode o mesmo comando para retomá-lo): ${(erro as Error).message.slice(0, 200)}`);
+    falhas.push(id);
+    continue;
+  }
   process.stdout.write('\n');
 
   const dir = resolve(RAIZ, 'resultados', args.rodada!);
@@ -157,6 +168,11 @@ for (const id of ids) {
   console.log(
     `  ${arquivo}\n  ${resultado.registros.length} registros gravados · ${resultado.chamadas} chamadas novas · ${resultado.doCache} do cache · US$ ${resultado.custoUsd.toFixed(4)} · ${segundos}s`,
   );
+}
+
+if (falhas.length > 0) {
+  console.error(`\nModelos com falha nesta invocação: ${falhas.join(', ')} — re-rode o mesmo comando para completá-los.`);
+  process.exitCode = 1;
 }
 
 if (entradaManifesto.modelos.length > 0) {
