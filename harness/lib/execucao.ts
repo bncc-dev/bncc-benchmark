@@ -33,6 +33,28 @@ export interface ResultadoExecucao {
   custoUsd: number;
 }
 
+const CODIGOS_REDE = new Set([
+  'ECONNRESET',
+  'ECONNREFUSED',
+  'ETIMEDOUT',
+  'EAI_AGAIN',
+  'EPIPE',
+  'ENOTFOUND',
+  'UND_ERR_SOCKET',
+]);
+
+/**
+ * Erros de rede chegam do fetch como TypeError cru ("terminated",
+ * "fetch failed"), com a causa real (ECONNRESET etc.) aninhada. São
+ * transitórios por natureza e merecem retry tanto quanto um 429.
+ */
+function erroDeRede(erro: unknown): boolean {
+  if (!(erro instanceof Error)) return false;
+  const causa = (erro as { cause?: { code?: string } }).cause;
+  if (causa?.code && CODIGOS_REDE.has(causa.code)) return true;
+  return erro instanceof TypeError && /terminated|fetch failed|network/i.test(erro.message);
+}
+
 export async function comRetry<T>(
   fn: () => Promise<T>,
   tentativas: number,
@@ -44,7 +66,7 @@ export async function comRetry<T>(
       return await fn();
     } catch (erro) {
       ultimoErro = erro;
-      const transitorio = erro instanceof ErroProvedor && erro.transitorio;
+      const transitorio = (erro instanceof ErroProvedor && erro.transitorio) || erroDeRede(erro);
       if (!transitorio || t === tentativas - 1) throw erro;
       await new Promise((r) => setTimeout(r, esperaBaseMs * 4 ** t));
     }
