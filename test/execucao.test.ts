@@ -157,6 +157,36 @@ describe('executarBateria', () => {
     expect(resultado.registros[0].max_tokens).toBe(2048);
   });
 
+  it('erro de rede cru (ECONNRESET/terminated) também ganha retry', async () => {
+    const itens = selecionarBalanceado(banco.itens, 1);
+    let tentativas = 0;
+    const redeInstavel: Provedor = {
+      id: 'fake',
+      async completar(chamada) {
+        tentativas++;
+        if (tentativas === 1) {
+          throw new TypeError('terminated', { cause: { code: 'ECONNRESET' } });
+        }
+        if (tentativas === 2) {
+          throw new TypeError('fetch failed');
+        }
+        return provedorFake({ chamadas: 0 }).completar(chamada);
+      },
+    };
+    const resultado = await executarBateria({
+      banco,
+      itens,
+      def: DEF,
+      provedor: redeInstavel,
+      modo: 'seco',
+      parafrases: 1,
+      cache: new CacheDisco(join(dirTemporario, 'c-rede')),
+      esperaBaseMs: 1,
+    });
+    expect(tentativas).toBe(3);
+    expect(resultado.registros).toHaveLength(1);
+  });
+
   it('faz retry em erro transitório e desiste em erro permanente', async () => {
     const itens = selecionarBalanceado(banco.itens, 1);
     let tentativas = 0;
