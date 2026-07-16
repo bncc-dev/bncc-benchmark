@@ -54,7 +54,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['OpenAI'], allow_fallbacks: false } },
     precos: { entrada: 5, saida: 30 },
-    suportaGrounded: false, // porte do loop MCP pendente (M5)
+    suportaGrounded: true,
   },
   // POLÍTICA (decisão do time, 13/jul/2026): modelos Anthropic rodam via
   // Bedrock sempre que a conta tiver acesso (sonnet-bedrock/haiku-bedrock
@@ -69,7 +69,7 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     precos: { entrada: 2, saida: 10 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   'opus-4.8': {
     id: 'opus-4.8',
@@ -79,7 +79,7 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     precos: { entrada: 5, saida: 25 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   'fable-5': {
     id: 'fable-5',
@@ -89,7 +89,7 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     precos: { entrada: 10, saida: 50 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   'gpt-luna': {
     id: 'gpt-luna',
@@ -99,7 +99,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['OpenAI'], allow_fallbacks: false } },
     precos: { entrada: 1, saida: 6 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   // POLÍTICA (decisão do time, 13/jul/2026): execução SÓ via Bedrock e
   // OpenRouter, onde o faturamento é controlado. A rota direta do Google
@@ -114,7 +114,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Google'], allow_fallbacks: false } },
     precos: { entrada: 2, saida: 12 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   'gemini-flash': {
     id: 'gemini-flash',
@@ -125,7 +125,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Google'], allow_fallbacks: false } },
     precos: { entrada: 1.5, saida: 9 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   // Fronteira dos demais provedores, via OpenRouter (bateria piloto).
   'deepseek-pro': {
@@ -137,7 +137,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } }, // 1ª parte excluída pela política de privacidade da conta; Fireworks (sem quantização) como rota efetiva
     precos: { entrada: 0.43, saida: 0.87 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   grok: {
     id: 'grok',
@@ -147,7 +147,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['xAI'], allow_fallbacks: false } },
     precos: { entrada: 2, saida: 6 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   kimi: {
     id: 'kimi',
@@ -158,7 +158,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Moonshot AI'], allow_fallbacks: false } },
     precos: { entrada: 0.66, saida: 3.41 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   'qwen-max': {
     id: 'qwen-max',
@@ -169,7 +169,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
     precos: { entrada: 1.25, saida: 3.75 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   // Segundo escalão (Fase 2), via OpenRouter.
   'deepseek-flash': {
@@ -180,7 +180,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } }, // 1ª parte excluída pela política de privacidade da conta; Fireworks (sem quantização) como rota efetiva
     precos: { entrada: 0.08, saida: 0.15 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   'qwen-plus': {
     id: 'qwen-plus',
@@ -190,7 +190,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
     precos: { entrada: 0.32, saida: 1.28 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   'kimi-k25': {
     id: 'kimi-k25',
@@ -201,7 +201,7 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Moonshot AI'], allow_fallbacks: false } },
     precos: { entrada: 0.38, saida: 2.02 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   // Maritaca DIRETO (exceção à política Bedrock+OpenRouter, aprovada pelo
   // time em 15/jul/2026: Sabiá não existe nos agregadores; conta pré-paga em
@@ -214,7 +214,7 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'MARITACA_API_KEY',
     baseUrl: 'https://chat.maritaca.ai/api',
     precos: { entrada: 0.93, saida: 3.7 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   'sabiazinho-4': {
     id: 'sabiazinho-4',
@@ -223,7 +223,7 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'MARITACA_API_KEY',
     baseUrl: 'https://chat.maritaca.ai/api',
     precos: { entrada: 0.19, saida: 0.74 },
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
   deepseek: {
     id: 'deepseek',
@@ -232,6 +232,6 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'DEEPSEEK_API_KEY',
     baseUrl: 'https://api.deepseek.com',
     precos: { entrada: 0.27, saida: 1.1 }, // conferir no M5
-    suportaGrounded: false,
+    suportaGrounded: true,
   },
 };
