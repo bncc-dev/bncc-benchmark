@@ -88,6 +88,8 @@ export interface ExportSite {
   modelos: ModeloExport[];
   recortes: { por_etapa: RecorteLinha[]; por_modulo: RecorteLinha[] };
   amostras: AmostraCrua[];
+  /** Amostra maior por modelo (id → respostas), para o drawer de JSON bruto do site. */
+  amostras_drawer: Record<string, AmostraCrua[]>;
 }
 
 const pct = (n: number, d: number): number => (d > 0 ? n / d : 0);
@@ -269,6 +271,78 @@ function curarExemplos(
   return exemplos.slice(0, 2);
 }
 
+/** Um julgamento conta como acerto para fins de rótulo da amostra. */
+function ehOk(j: Julgamento): boolean {
+  return ['correto', 'fiel_exato', 'fiel_parafrase', 'abstencao'].includes(j.veredito);
+}
+
+/**
+ * Amostra maior por modelo para o drawer de JSON bruto do site: até `porModelo`
+ * respostas reais, distribuídas em rodízio pelas tarefas A/B/C/D e com os erros
+ * na frente dos acertos dentro de cada tarefa. Determinística (sem aleatório).
+ */
+function amostrarDrawer(
+  julgadosPorModelo: Map<string, Julgamento[]>,
+  brutosPorModelo: Map<string, Map<string, RegistroBruto>>,
+  apresentacao: Record<string, Apresentacao>,
+  porModelo: number,
+): Record<string, AmostraCrua[]> {
+  const saida: Record<string, AmostraCrua[]> = {};
+  const chave = (j: Julgamento): string => `${j.item_id}:${j.parafrase}`;
+  const ordenar = (a: Julgamento, b: Julgamento): number => {
+    const ea = ehOk(a) ? 1 : 0;
+    const eb = ehOk(b) ? 1 : 0;
+    if (ea !== eb) return ea - eb; // erros primeiro
+    return chave(a).localeCompare(chave(b));
+  };
+
+  for (const modelo of [...julgadosPorModelo.keys()].sort()) {
+    const porChave = brutosPorModelo.get(modelo)!;
+    const porTarefa = new Map<string, Julgamento[]>();
+    for (const j of julgadosPorModelo.get(modelo)!) {
+      const grupo = porTarefa.get(j.tarefa) ?? [];
+      grupo.push(j);
+      porTarefa.set(j.tarefa, grupo);
+    }
+    for (const grupo of porTarefa.values()) grupo.sort(ordenar);
+
+    const tarefas = ['A', 'B', 'C', 'D'];
+    const escolhidas: Julgamento[] = [];
+    for (let i = 0; escolhidas.length < porModelo; i++) {
+      let avancou = false;
+      for (const t of tarefas) {
+        const grupo = porTarefa.get(t);
+        if (grupo && grupo[i]) {
+          escolhidas.push(grupo[i]);
+          avancou = true;
+          if (escolhidas.length >= porModelo) break;
+        }
+      }
+      if (!avancou) break;
+    }
+
+    saida[modelo] = escolhidas
+      .map((j): AmostraCrua | null => {
+        const r = porChave.get(chave(j));
+        if (!r) return null;
+        return {
+          item_id: j.item_id,
+          parafrase: j.parafrase,
+          modelo,
+          nome_modelo: apresentacao[modelo]?.nome ?? modelo,
+          tarefa: j.tarefa,
+          pergunta: aparar(r.prompt),
+          resposta: aparar(r.resposta),
+          veredito: j.veredito,
+          ok: ehOk(j),
+        };
+      })
+      .filter((a): a is AmostraCrua => a !== null)
+      .slice(0, porModelo);
+  }
+  return saida;
+}
+
 /** Amostra determinística de respostas cruas: erros e acertos notáveis por tarefa. */
 function amostrar(
   julgadosPorModelo: Map<string, Julgamento[]>,
@@ -279,8 +353,7 @@ function amostrar(
   const amostras: AmostraCrua[] = [];
   const vagasPorModelo = Math.max(1, Math.floor(limite / julgadosPorModelo.size));
   const modelos = [...julgadosPorModelo.keys()].sort();
-  const okDe = (j: Julgamento): boolean =>
-    ['correto', 'fiel_exato', 'fiel_parafrase', 'abstencao'].includes(j.veredito);
+  const okDe = ehOk;
 
   for (const modelo of modelos) {
     const julgados = julgadosPorModelo.get(modelo)!;
@@ -392,5 +465,6 @@ export function montarExport(entrada: EntradaExport): ExportSite {
       por_modulo: recorteA(julgadosElenco, (j) => NOME_MODULO[j.estrato.modulo] ?? null),
     },
     amostras: amostrar(julgadosPorModelo, brutosPorModelo, apresentacao, entrada.limiteAmostras ?? 34),
+    amostras_drawer: amostrarDrawer(julgadosPorModelo, brutosPorModelo, apresentacao, 10),
   };
 }

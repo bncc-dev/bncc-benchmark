@@ -987,5 +987,1911 @@
    "veredito": "inventado",
    "ok": false
   }
- ]
+ ],
+ "amostras_drawer": {
+  "deepseek-flash": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "(EM13LP50) Analisar relações intertextuais e interdiscursivas entre obras de diferentes gêneros e manifestações artísticas, considerando as influências e os diálogos entre elas, e produzir textos que estabeleçam essas relações.",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem e desenvolvimento do campo de experiências **\"Corpo, gestos e movimentos\"** da BNCC para a Educação Infantil, com seus respectivos códigos e textos oficiais:\n\n1. **EI01CG01**  \n   *\"Movimentar as partes do corpo para exprimir necessidades, sensações e emoções.\"*  \n   (Faixa etária [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF89LP33",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "A habilidade **EM13LP50** da Base Nacional Comum Curricular (BNCC) para o Ensino Médio, na área de Linguagens e suas Tecnologias, tem o seguinte enunciado oficial:\n\n> **EM13LP50** – Analisar relações intertextuais e interdiscursivas entre obras de diferentes autores e gêneros, considerando as influências, as apropriaçõ [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem da BNCC para o campo de experiências **\"Corpo, gestos e movimentos\"** na Educação Infantil, com seus respectivos códigos e enunciados oficiais:\n\n1. **EI01CG01**  \n   *Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.*\n\n2. **EI02CG01** [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF89LP30",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "O enunciado oficial da habilidade **EM13LP50** na BNCC (Base Nacional Comum Curricular) é:\n\n> **\"Analisar relações intertextuais e interdiscursivas entre obras de diferentes gêneros e manifestações artísticas, considerando as influências e as contribuições das culturas indígenas, africanas e afro-brasileiras, bem como [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "deepseek-flash",
+    "nome_modelo": "DeepSeek V4 Flash",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "deepseek-pro": [
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "Aqui está o enunciado oficial da habilidade **EM13LP50** da BNCC (Base Nacional Comum Curricular) para o Ensino Médio, na área de Linguagens e suas Tecnologias, componente Língua Portuguesa:\n\n> **(EM13LP50)** Analisar relações intertextuais e interdiscursivas entre obras de diferentes autores e gêneros literários de um [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 0,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "B",
+    "pergunta": "O código EI03CO04 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem e desenvolvimento do campo de experiências “Corpo, gestos e movimentos” da BNCC para a Educação Infantil, com os respectivos códigos e textos oficiais:\n\n1. **EI01CG01**  \n   *Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.*\n\n2. **EI01CG04 [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF08LP09",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-002",
+    "parafrase": 0,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "O código EI03CO11 não existe na Base Nacional Comum Curricular (BNCC). Verifique se houve erro de digitação, pois os campos de experiência da Educação Infantil são EO, CG, TS, EF e ET, e nenhum deles possui o numeral 11.",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 1,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EI03CO04? Responda somente sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem do campo de experiências **“Corpo, gestos e movimentos”** da BNCC para a Educação Infantil, com os respectivos códigos e enunciados oficiais:\n\n1. **EI01CG01**  \n   Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.\n\n2. **EI01CG02**  \n   Expe [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF67LP36",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-002",
+    "parafrase": 1,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "A",
+    "pergunta": "O que diz a objetivo de aprendizagem EI03CO11 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "O código **EI03CO11** não pertence à Base Nacional Comum Curricular (BNCC) original da Educação Infantil, mas sim ao **Complemento à BNCC de Computação**, documento que normatiza o ensino de Computação na Educação Básica. Nesse complemento, \"EI\" indica Educação Infantil, \"03\" refere-se à faixa etária de crianças pequen [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 2,
+    "modelo": "deepseek-pro",
+    "nome_modelo": "DeepSeek V4 Pro",
+    "tarefa": "B",
+    "pergunta": "Verifique: EI03CO04 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "fable-5": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Não posso garantir a reprodução literal e exata do texto da habilidade EM13LP50, e citar um texto oficial de forma imprecisa seria pior do que admitir a limitação.\n\nO que posso dizer com segurança é que a EM13LP50 pertence ao componente de Língua Portuguesa do Ensino Médio, no campo artístico-literário, e trata da anál [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 0,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "B",
+    "pergunta": "O código EI03CO04 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não.\n\nO código \"CO\" não corresponde a nenhum campo de experiências da Educação Infantil na BNCC. Os códigos válidos são: EO (O eu, o outro e o nós), CG (Corpo, gestos e movimentos), TS (Traços, sons, cores e formas), EF (Escuta, fala, pensamento e imaginação) e ET (Espaços, tempos, quantidades, relações e transformaçõe [...]",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "# 5 Objetivos de Aprendizagem – Corpo, Gestos e Movimentos (BNCC)\n\nSelecionei os 5 objetivos do grupo etário **Crianças pequenas (4 anos a 5 anos e 11 meses)**:\n\n## 1. EI03CG01\n\"Criar com o corpo formas diversificadas de expressão de sentimentos, sensações e emoções, tanto nas situações do cotidiano quanto em brincadei [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 2,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "D",
+    "pergunta": "Identifique o código BNCC do seguinte enunciado oficial: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Responda apenas com o código.",
+    "resposta": "EF07LP08",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "Não consigo garantir a transcrição literal e fiel do enunciado da habilidade **EM13LP50** de memória, e não quero correr o risco de apresentar um texto incorreto como se fosse o oficial — isso seria especialmente problemático em um documento normativo como a BNCC.\n\nO que posso dizer com segurança:\n\n- A EM13LP50 pertenc [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 2,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "B",
+    "pergunta": "Verifique: EI03CO04 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.\n\nO código não é válido porque \"CO\" não corresponde a nenhum campo de experiências da Educação Infantil na BNCC. Os códigos válidos usam: EO (O eu, o outro e o nós), CG (Corpo, gestos e movimentos), TS (Traços, sons, cores e formas), EF (Escuta, fala, pensamento e imaginação) e ET (Espaços, tempos, quantidades, rel [...]",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Claro! Na BNCC, o campo de experiências **\"Corpo, gestos e movimentos\"** possui exatamente 5 objetivos de aprendizagem e desenvolvimento para cada grupo etário. Como você não especificou a faixa etária, seguem os três grupos — escolha o que corresponde à sua turma:\n\n## Bebês (zero a 1 ano e 6 meses)\n\n- **(EI01CG01)** M [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-003",
+    "parafrase": 0,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar a adequação de diferentes tecnologias computacionais na resolução de problemas.\"? Responda apenas o código.",
+    "resposta": "**EM13CO13**\n\n*Observação: não tenho total certeza desse código, pois meu conhecimento sobre o complemento de Computação da BNCC pode conter imprecisões. Recomendo confirmar diretamente no documento oficial da BNCC Computação (Resolução CNE/CEB nº 1/2022).*",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-002",
+    "parafrase": 0,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Não posso fornecer com segurança o texto exato desse código, pois não tenho certeza suficiente sobre ele para citá-lo literalmente sem risco de erro.\n\nAlguns pontos que podem ajudar:\n\n- O código **EI03CO11** não faz parte da BNCC original da Educação Infantil (cujos campos de experiência usam os códigos EO, CG, TS, EF [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-015",
+    "parafrase": 0,
+    "modelo": "fable-5",
+    "nome_modelo": "Claude Fable 5",
+    "tarefa": "B",
+    "pergunta": "O código EM13CO14 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "gemini-flash": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "(EM13LP50) Analisar relações de intertextualidade e interdiscursividade que se estabelecem entre textos de diferentes gêneros, épocas e linguagens (literária, visual, plástica, sonora, as tecnologias digitais etc.), de forma a explicitar diálogos, fusões e paródias, bem como posicionar-se criticamente diante dos textos [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem e desenvolvimento da BNCC (Base Nacional Comum Curricular) para a Educação Infantil, dentro do campo de experiências **\"Corpo, gestos e movimentos\"**. \n\nA seleção abaixo contempla diferentes faixas etárias (bebês, crianças bem pequenas e crianças pequenas):\n\n1. **Código: EI01CG02* [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF09LP05",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "O enunciado oficial da habilidade **EM13LP50** da Base Nacional Comum Curricular (BNCC) é o seguinte:\n\n> **(EM13LP50)** Analisar relações de intertextualidade e interdiscursividade que se estabelecem entre textos de diferentes gêneros e mídias (como textos literários, artísticos, científicos, noticiosos, publicitários [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem e desenvolvimento do campo de experiências **\"Corpo, gestos e movimentos\"** da BNCC (Base Nacional Comum Curricular). \n\nPara que seu planejamento fique bem estruturado, selecionei objetivos de diferentes faixas etárias (bebês, crianças bem pequenas e crianças pequenas), todos com [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 2,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "D",
+    "pergunta": "Identifique o código BNCC do seguinte enunciado oficial: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Responda apenas com o código.",
+    "resposta": "EF09LP08",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "O enunciado oficial da habilidade **EM13LP50** na Base Nacional Comum Curricular (BNCC) é:\n\n> **\"Analisar relações de intertextualidade e interdiscursividade que se estabelecem entre textos de diversas áreas do conhecimento (literários, científicos, jurídicos, acadêmicos etc.) e de diferentes gêneros, de forma a identi [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "gemini-flash",
+    "nome_modelo": "Gemini 3.5 Flash",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "gemini-pro": [
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "A habilidade **EM13LP50** da Base Nacional Comum Curricular (BNCC) pertence à área de Linguagens e suas Tecnologias, especificamente ao componente de **Língua Portuguesa** para o Ensino Médio (1º ao 3º ano), e está inserida no **Campo Artístico-Literário**.\n\nAqui está a transcrição do enunciado oficial:\n\n> **\"(EM13LP50 [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem e desenvolvimento da BNCC (Base Nacional Comum Curricular) para a Educação Infantil, especificamente do campo de experiências **\"Corpo, gestos e movimentos\"**. \n\nPara oferecer uma visão ampla, selecionei exemplos que contemplam as três faixas etárias da Educação Infantil:\n\n**1. Be [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-003",
+    "parafrase": 0,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar a adequação de diferentes tecnologias computacionais na resolução de problemas.\"? Responda apenas o código.",
+    "resposta": "EF06CO02",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "O enunciado oficial da habilidade **EM13LP50** na Base Nacional Comum Curricular (BNCC) para o Ensino Médio é:\n\n> **\"Analisar relações de intertextualidade e interdiscursividade que permitam a explicitação de relações dialógicas, a identificação de posicionamentos ou de perspectivas, a compreensão de paródias e paráfra [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Com certeza! Para ajudar no seu planejamento e garantir que ele atenda a diferentes faixas etárias, selecionei 5 objetivos de aprendizagem e desenvolvimento oficiais da BNCC do campo **\"Corpo, gestos e movimentos\" (CG)**, divididos pelas faixas etárias da Educação Infantil.\n\nAqui estão eles, com seus respectivos código [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-003",
+    "parafrase": 1,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar a adequação de diferentes tecnologias computacionais na resolução de problemas.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EM13CO02",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-002",
+    "parafrase": 0,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "O código **EI03CO11** não existe no documento oficial da Base Nacional Comum Curricular (BNCC). \n\nNa Educação Infantil, as siglas dos campos de experiência são EO, CG, TS, EF e ET (não há \"CO\"), e nenhum desses campos possui 11 objetivos de aprendizagem para a faixa etária 03 (crianças pequenas).",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "gemini-pro",
+    "nome_modelo": "Gemini 3.1 Pro",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "gpt-luna": [
+   {
+    "item_id": "a-002",
+    "parafrase": 0,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da objetivo de aprendizagem EI03CO11 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Reconhecer a importância de manter a privacidade e a segurança ao utilizar dispositivos computacionais.",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "A BNCC organiza os objetivos por faixa etária. No campo de experiências **“Corpo, gestos e movimentos”**, cinco objetivos são:\n\n1. **EI01CG01 — Bebês (0 a 1 ano e 6 meses)**  \n   “Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.”\n\n2. **EI01CG03 — Bebês (0 a 1 ano e 6 meses)** [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 2,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "D",
+    "pergunta": "Identifique o código BNCC do seguinte enunciado oficial: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Responda apenas com o código.",
+    "resposta": "EF09LP08",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-002",
+    "parafrase": 1,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "A",
+    "pergunta": "O que diz a objetivo de aprendizagem EI03CO11 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "O objetivo de aprendizagem **EI03CO11**, do complemento de Computação à BNCC, é:\n\n> **“Reconhecer a importância do uso responsável das tecnologias digitais.”**",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-010",
+    "parafrase": 0,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "B",
+    "pergunta": "O código EF06CO08 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "A BNCC organiza os objetivos por faixa etária. Seguem **5 objetivos de aprendizagem e desenvolvimento** do campo de experiências **“Corpo, gestos e movimentos”**, com seus códigos e enunciados oficiais:\n\n1. **EI01CG01** — **Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.**\n\n2. [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-003",
+    "parafrase": 0,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar a adequação de diferentes tecnologias computacionais na resolução de problemas.\"? Responda apenas o código.",
+    "resposta": "EM13CO05",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-002",
+    "parafrase": 2,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EI03CO11 num planejamento escolar. Qual é o enunciado oficial dessa objetivo de aprendizagem na BNCC?",
+    "resposta": "",
+    "veredito": "resposta_invalida",
+    "ok": false
+   },
+   {
+    "item_id": "b-010",
+    "parafrase": 1,
+    "modelo": "gpt-luna",
+    "nome_modelo": "GPT-5.6 Luna",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF06CO08? Responda somente sim ou não.",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "gpt-sol": [
+   {
+    "item_id": "a-007",
+    "parafrase": 0,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EF07CO04 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Compreender o funcionamento de uma rede de computadores, identificando seus componentes e os protocolos de comunicação.",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 2,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "B",
+    "pergunta": "Verifique: EI03CO04 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "### Campo de experiências: **Corpo, gestos e movimentos**\n**Faixa etária: Bebês (zero a 1 ano e 6 meses)**\n\n1. **EI01CG01** — “Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.”\n\n2. **EI01CG02** — “Experimentar as possibilidades corporais nas brincadeiras e interações em ambient [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-003",
+    "parafrase": 0,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar a adequação de diferentes tecnologias computacionais na resolução de problemas.\"? Responda apenas o código.",
+    "resposta": "EF03CO07",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-007",
+    "parafrase": 1,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EF07CO04 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "A habilidade **EF07CO04**, do complemento de Computação à BNCC, estabelece:\n\n> **“Explorar como a aprendizagem de máquina pode ser usada para resolver problemas, reconhecendo a importância dos dados para a construção de modelos computacionais.”**\n\nFonte: **BNCC – Computação**, Ensino Fundamental, 7º ano.",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-026",
+    "parafrase": 2,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF69CO04 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "A BNCC organiza os objetivos por faixa etária. Para **bebês (zero a 1 ano e 6 meses)**, no campo de experiências **“Corpo, gestos e movimentos”**, os cinco objetivos são:\n\n1. **EI01CG01** — Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.\n\n2. **EI01CG02** — Experimentar as poss [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-003",
+    "parafrase": 1,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar a adequação de diferentes tecnologias computacionais na resolução de problemas.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EM13CO09",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-007",
+    "parafrase": 2,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EF07CO04 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "**EF07CO04 — “Compreender o papel de protocolos para a transmissão de dados.”**\n\nEssa habilidade pertence ao **7º ano do Ensino Fundamental**, na unidade temática **Mundo Digital**, do documento **Computação – Complemento à BNCC**, homologado pela **Resolução CNE/CEB nº 1, de 4 de outubro de 2022**.",
+    "veredito": "texto_de_outra",
+    "ok": false
+   },
+   {
+    "item_id": "b-031",
+    "parafrase": 2,
+    "modelo": "gpt-sol",
+    "nome_modelo": "GPT-5.6 Sol",
+    "tarefa": "B",
+    "pergunta": "Verifique: EI03CO06 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "grok": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Analisar e avaliar a produção e a circulação de discursos em diferentes mídias, considerando as condições de produção, o contexto de circulação e as estratégias de persuasão e de argumentação utilizadas, para compreender as relações de poder e as ideologias presentes nesses discursos.",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 0,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "B",
+    "pergunta": "O código EI03CO04 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "**Aqui estão 5 objetivos de aprendizagem oficiais da BNCC (Base Nacional Comum Curricular) do campo de experiências “Corpo, gestos e movimentos” na Educação Infantil, com código e texto integral:**\n\n1. **EI01CG01**  \n   Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.\n\n2. **EI0 [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF08LP04",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "**EM13LP50:** Analisar e avaliar a adequação de textos orais e escritos a diferentes situações de comunicação, considerando o contexto de produção e de circulação, as finalidades e os interlocutores, e as condições de produção e de recepção.\n\n(Fonte: Base Nacional Comum Curricular – Ensino Médio, área de Linguagens e s [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 1,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EI03CO04? Responda somente sim ou não.",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "**Objetivos de aprendizagem e desenvolvimento da BNCC – Campo de experiências “Corpo, gestos e movimentos” (Educação Infantil)**\n\nAqui estão **5 objetivos oficiais** (com código e enunciado exatos da BNCC), cobrindo as três faixas etárias do campo:\n\n1. **EI01CG01**  \n   Movimentar as partes do corpo para exprimir corpo [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF08LP04",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "**EM13LP50 (BNCC – Ensino Médio, Língua Portuguesa):**\n\n**Analisar e avaliar a produção e a circulação de discursos em diferentes mídias, considerando as condições de produção, o contexto de circulação e as estratégias de persuasão e de argumentação utilizadas, de modo a compreender as relações de poder e as ideologias [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 2,
+    "modelo": "grok",
+    "nome_modelo": "Grok 4.5",
+    "tarefa": "B",
+    "pergunta": "Verifique: EI03CO04 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "haiku-bedrock": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Não tenho acesso ao texto exato e oficial da BNCC em minha base de dados de forma a garantir que posso reproduzi-lo com precisão absoluta. \n\nPara obter o texto oficial e exato da habilidade EM13LP50, recomendo consultar:\n\n1. O site oficial do MEC: www.mec.gov.br\n2. O documento completo da BNCC disponível em: http://bas [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "# Objetivos de Aprendizagem - Corpo, Gestos e Movimentos\n\n## 1. **EI01CG01**\n\"Movimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.\"\n\n## 2. **EI01CG02**\n\"Experimentar as possibilidades corporais nas brincadeiras e interações em ambientes acolhedores e desafiadores.\"\n\n## 3. **EI02CG0 [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF07LP09",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "# EM13LP50 - BNCC\n\nAqui está o enunciado oficial da habilidade EM13LP50:\n\n> \"Elaborar texto argumentativo, a partir de um recorte temático de interesse pessoal, e utilizando fontes confiáveis para sustentar argumentos, considerando as condições de produção do texto quanto a finalidade, leitores potenciais, pontos de vi [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "# Objetivos de Aprendizagem - Corpo, Gestos e Movimentos\n\n## 1. **EI01CG01**\nMovimentar as partes do corpo para exprimir corporalmente emoções, necessidades e desejos.\n\n## 2. **EI02CG01**\nApropriar-se de gestos e movimentos de sua cultura no cuidado de si e nos jogos e brincadeiras.\n\n## 3. **EI03CG01**\nCriar com o corp [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF09LP16",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "# EM13LP50 - BNCC\n\nA habilidade **EM13LP50** refere-se a:\n\n> \"Elaborar texto teatral, explorando recursos de dramatização e semiotização corporal, de forma colaborativa e reflexiva, como processo criativo e de interpretação da realidade.\"\n\n## Contexto\n- **Componente:** Língua Portuguesa\n- **Etapa:** Ensino Médio\n- **Ei [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "haiku-bedrock",
+    "nome_modelo": "Claude Haiku 4.5",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "kimi": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Relacionar o texto literário com outras formas de expressão artística, como as artes visuais, a música, o teatro e o cinema, reconhecendo que o texto literário dialoga com o contexto sociocultural em que é produzido.",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem e desenvolvimento do campo de experiências **“Corpo, gestos e movimentos”** da BNCC para a Educação Infantil, com seus respectivos códigos e textos oficiais:\n\n1. **EI01CG01**  \n   Apropriar-se de gestos e movimentos de forma cada vez mais autônoma para atender às necessidades bási [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF07LP19",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "Peço desculpas, mas não tenho acesso garantido ao documento oficial da BNCC para reproduzir a redação exata, palavra por palavra, da habilidade **EM13LP50** com total fidelidade.\n\nPara obter o enunciado oficial preciso, recomendo que consulte diretamente a íntegra da **Base Nacional Comum Curricular**, disponível no si [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Aqui estão **5 objetivos de aprendizagem e desenvolvimento** do campo **“Corpo, gestos e movimentos”** da BNCC para a **Educação Infantil – 5 anos (EI03)**, com seus respectivos códigos e enunciados oficiais:\n\n1. **EI03CG01**  \n   Conhecer o próprio corpo, suas partes, suas possibilidades de ação e movimento, ampliando [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF07LP14",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "O enunciado oficial da habilidade **EM13LP50** na BNCC é:\n\n> **\"Analisar efeitos de sentido decorrentes do uso de recursos expressivos de natureza sonora (ritmo, musicalidade, timbre, velocidade, entonação etc.) e de construção visual (ilustração, cromatismo, diagramação, fontes tipográficas etc.) em textos multissemió [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "kimi",
+    "nome_modelo": "Kimi K2.6",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "opus-4.8": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Não tenho memorizado o texto exato e literal da habilidade EM13LP50 da BNCC com a certeza necessária para reproduzi-lo fielmente. Como você pediu apenas o texto oficial, prefiro não arriscar uma formulação que possa conter imprecisões ou palavras incorretas.\n\nPara obter o texto exato, recomendo consultar:\n\n- O document [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não.\n\nNão tenho como confirmar com certeza a existência específica desse código na BNCC. Embora a estrutura do código (EF = Ensino Fundamental, 03 = 3º ano) siga o padrão da BNCC, o componente \"CO\" não corresponde às siglas oficiais que conheço dos componentes curriculares.\n\nRecomendo consultar diretamente o documento [...]",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "# Objetivos de Aprendizagem – Campo \"Corpo, gestos e movimentos\" (BNCC – Educação Infantil)\n\nSegue uma lista de 5 objetivos de aprendizagem e desenvolvimento desse campo de experiências. Vale destacar que os códigos variam conforme a **faixa etária**, indicada pelos algarismos do meio do código.\n\n---\n\n## Faixa etária: [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "Não tenho como confirmar com certeza o código exato dessa habilidade da BNCC sem risco de fornecer uma informação incorreta.\n\nPelo teor do texto (que trata de análise linguística/semiótica sobre coordenação e subordinação, típico dos anos finais do Ensino Fundamental), essa habilidade parece corresponder ao componente [...]",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "Não tenho memorizado o texto literal exato de cada código individual da BNCC de forma que eu possa garantir uma transcrição fiel e precisa da habilidade EM13LP50.\n\nSe eu tentasse \"transcrever\" o enunciado oficial, correria o risco de reproduzir uma versão imprecisa ou inventada, o que seria pior do que admitir a limita [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não.\n\nA BNCC utiliza códigos alfanuméricos para suas habilidades, mas o componente \"CO\" não corresponde a nenhuma área ou componente curricular padrão da Base. Os códigos seguem uma estrutura específica com siglas como LP (Língua Portuguesa), MA (Matemática), CI (Ciências), entre outras. Portanto, não reconheço o códig [...]",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "# Objetivos de Aprendizagem — Corpo, Gestos e Movimentos (BNCC)\n\nAqui estão 5 objetivos de aprendizagem e desenvolvimento do campo de experiências **\"Corpo, gestos e movimentos\"** da Educação Infantil.\n\nUma observação importante: na BNCC, os códigos variam conforme a **faixa etária** (bebês, crianças bem pequenas, cria [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "O código dessa habilidade da BNCC é **EF08LP04**.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "Não tenho como fornecer com segurança o enunciado literal exato da habilidade EM13LP50 da BNCC. Embora eu saiba que essa é uma habilidade da área de Linguagens (Língua Portuguesa) do Ensino Médio, eu poderia acabar reproduzindo uma redação imprecisa ou inventada — e num planejamento escolar você precisa da citação ofic [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "opus-4.8",
+    "nome_modelo": "Claude Opus 4.8",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.\n\nO código \"EF03CO05\" não corresponde ao padrão real de codificação da BNCC. Não existe um componente curricular representado pela sigla \"CO\" na estrutura da BNCC.\n\nSe quiser, posso explicar como funciona a lógica de codificação das habilidades da BNCC (por exemplo, o significado de cada parte de um código como \"EF [...]",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "qwen-max": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Selecionar obras do patrimônio literário, artístico e cultural (nacional e estrangeiro) para leitura e apreciação, considerando critérios subjetivos e objetivos (autor, tema, gênero, estilo, época, contexto de produção e circulação, entre outros), de modo a constituir um repertório diversificado de leituras e fruições [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem e desenvolvimento da BNCC para o campo de experiências **\"Corpo, gestos e movimentos\"**, selecionados de diferentes faixas etárias para demonstrar a progressão das habilidades.\n\n**Legenda dos Códigos:**\n*   **EI:** Educação Infantil\n*   **01, 02, 03:** Faixas etárias (01=Bebês; 02 [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF08LP16",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "A habilidade **EM13LP50** pertence à área de **Linguagens e suas Tecnologias** (Ensino Médio) da Base Nacional Comum Curricular (BNCC). Ela está focada na análise crítica e na fruição de produções artísticas e literárias.\n\nAbaixo, transcrevo o enunciado oficial e, em seguida, apresento uma breve explicação sobre o que [...]",
+    "veredito": "parcial",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem e desenvolvimento da BNCC para o campo de experiências **\"Corpo, gestos e movimentos\"**.\n\nSelecionei objetivos que cobrem tanto a **motricidade ampla** (deslocamento, espaço, dança) quanto a **motricidade fina** (coordenação manual), abrangendo as faixas etárias de *Crianças bem p [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF09LP08",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "Aqui está o enunciado oficial da habilidade **EM13LP50** da Base Nacional Comum Curricular (BNCC) para o Ensino Médio (Componente Curricular: Língua Portuguesa), pronto para você copiar e colar no seu planejamento:\n\n> **(EM13LP50)** Selecionar e utilizar, de modo adequado e ético, diferentes formas de comunicação (oral [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "qwen-max",
+    "nome_modelo": "Qwen 3.7 Max",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "qwen-plus": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Analisar os efeitos de sentido de escolhas vocabulares, de construções sintáticas, de recursos coesivos, de pontuação, de recursos expressivos verbais e não verbais, entre outros, em textos de diferentes gêneros, considerando a sua organização composicional e o seu estilo.",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem da Base Nacional Comum Curricular (BNCC) pertencentes ao campo de experiências **\"Corpo, gestos e movimentos\"**.\n\nPara fins de organização, incluí o código, a faixa etária a que se refere (Crianças bem pequenas ou Crianças pequenas) e o texto oficial.\n\n### 1. EI02CG02\n**Faixa etár [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF89LP04",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "A habilidade **EM13LP50**, referente ao componente curricular de Língua Portuguesa no Ensino Médio (Área de Linguagens e suas Tecnologias), possui o seguinte enunciado oficial na Base Nacional Comum Curricular:\n\n> **\"Analisar e compreender o sistema literário e os processos de canonização, relacionando-os a questões de [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Aqui estão 5 objetivos de aprendizagem da BNCC para o campo de experiências **\"Corpo, gestos e movimentos\"**.\n\n*Nota: Estes objetivos referem-se ao grupo etário de **Crianças de 4 e 5 anos (EI03)**, que é o padrão para planejamentos de Pré-Escola. Se você precisar para Bebês (EI01) ou Crianças Bem Pequenas (EI02), por [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF69LP05",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "O enunciado oficial da habilidade **EM13LP50** na Base Nacional Comum Curricular (BNCC) é:\n\n> **\"Analisar e compreender o papel do cânone literário na formação da identidade cultural e os debates contemporâneos sobre a diversidade cultural, de gênero, étnico-racial e social na seleção e divulgação de obras literárias.\" [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-002",
+    "parafrase": 0,
+    "modelo": "qwen-plus",
+    "nome_modelo": "Qwen 3.7 Plus",
+    "tarefa": "B",
+    "pergunta": "O código EI03CO04 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "sabia-4": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Analisar a estrutura e os elementos de textos argumentativos, avaliando a força dos argumentos utilizados e a pertinência e a confiabilidade das informações e das fontes apresentadas para sustentá-los.",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Claro! Seguem 5 objetivos de aprendizagem e desenvolvimento da BNCC para o campo de experiências **\"Corpo, gestos e movimentos\"** na Educação Infantil, com seus respectivos códigos e textos oficiais:\n\n---\n\n### 1. **(EI01CG01)**  \n**Explorar, com apoio do adulto, movimentos de empurrar, puxar, rolar, lançar, chutar, aga [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF08LP04",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "A habilidade **EM13LP50** pertence à área de Linguagens e suas Tecnologias, especificamente ao componente de Língua Portuguesa, no Ensino Médio da Base Nacional Comum Curricular (BNCC). Segue a transcrição oficial do enunciado:\n\n> **EM13LP50** – Analisar, em textos de diferentes gêneros, marcas que expressam a posição [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Claro! Seguem 5 objetivos de aprendizagem e desenvolvimento do campo de experiências **“Corpo, gestos e movimentos”** da BNCC para a Educação Infantil, com seus respectivos códigos e enunciados oficiais:\n\n---\n\n### 1. **(EI01CG01)**  \n**Enunciado:**  \nMovimentar as partes do corpo para exprimir corporalmente emoções, ne [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF09LP07",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "A habilidade **EM13LP50** pertence à área de Linguagens e suas Tecnologias, especificamente ao componente de Língua Portuguesa no Ensino Médio, dentro do campo de atuação **Vida Pessoal**.\n\nO enunciado oficial da habilidade **EM13LP50** na BNCC é:\n\n> **EM13LP50** – *Analisar as diferenças e as relações entre a norma-pa [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "sabia-4",
+    "nome_modelo": "Sabiá-4",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "sabiazinho-4": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Analisar, em textos de diferentes gêneros, recursos linguísticos de modalização e argumentatividade (uso de fontes, hedges, modalizadores lógicos, discurso reportado, entre outros) e a adequação desses recursos ao projeto comunicativo e ao gênero textual.",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "Claro! Seguem 5 objetivos de aprendizagem (objetivos de conhecimento e habilidades) da BNCC para o campo de experiências **“Corpo, gestos e movimentos”**, na Educação Infantil, com seus respectivos códigos e textos oficiais:\n\n---\n\n### 1.  \n**Código:** EI03CG01  \n**Texto:** “Criar com o corpo formas diversificadas de ex [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF07LP06",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "A habilidade EM13LP50 da Base Nacional Comum Curricular (BNCC) — Linguagens e suas Tecnologias, na área de Língua Portuguesa para o Ensino Médio — tem o seguinte enunciado oficial:\n\n**\"Analisar as diversas formas de tratamento de informação em textos jornalísticos e midiáticos, considerando a verificação de fatos, a ch [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "Com certeza! Seguem 5 objetivos de aprendizagem da BNCC (Base Nacional Comum Curricular) para o **campo de experiências \"Corpo, gestos e movimentos\"**, na Educação Infantil, com seus respectivos códigos e enunciados oficiais:\n\n---\n\n### 1. **EI03CG01**\n**Código:** EI03CG01  \n**Enunciado:** \"Criar com o corpo formas dive [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF69LP14",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "O enunciado oficial da habilidade EM13LP50, conforme consta na Base Nacional Comum Curricular (BNCC) para o Ensino Médio, é:\n\n**\"Analisar relações de intertextualidade e interdiscursividade que possibilitam a produção de sentidos nos textos em língua materna e em outras línguas e linguagens.\"**\n\nEssa habilidade está lo [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "sabiazinho-4",
+    "nome_modelo": "Sabiazinho-4",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "sonnet-5": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "Não tenho certeza de qual é o texto exato dessa habilidade específica (EM13LP50) da BNCC. Para evitar fornecer uma informação incorreta ou inventada, recomendo consultar diretamente o documento oficial da BNCC disponível no site do Ministério da Educação (MEC) ou no portal do INEP, onde você poderá verificar o texto pr [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "# Objetivos de Aprendizagem - Campo de Experiências \"Corpo, Gestos e Movimentos\"\n\nA Base Nacional Comum Curricular (BNCC) organiza os objetivos de aprendizagem por faixa etária (bebês, crianças bem pequenas e crianças pequenas). Seguem 5 exemplos com código e texto oficial:\n\n**(EI02CG01)**\n\"Apropriar-se de gestos e mov [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF69LP54",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "# EM13LP50\n\nNão disponho de confiança suficiente na numeração exata desse código para transcrever seu enunciado literal sem risco de fornecer uma informação incorreta. Os códigos de habilidades da BNCC (como os do formato EM13LP##) são muitos e específicos, e eu poderia confundir o conteúdo real associado a esse número [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "# Objetivos de Aprendizagem - Campo \"Corpo, gestos e movimentos\"\n\nAqui estão 5 objetivos de aprendizagem da BNCC referentes a esse campo de experiências, com seus respectivos códigos e enunciados oficiais:\n\n**(EI02CG01)**\nApropriar-se de gestos e movimentos de sua cultura no cuidado de si e nos jogos e brincadeiras.\n\n* [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF09LP07",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "# EM13LP50 - Enunciado Oficial da BNCC\n\nA habilidade **EM13LP50** faz parte da área de **Linguagens e suas Tecnologias** no Ensino Médio, dentro do componente de **Língua Portuguesa**.\n\n**Enunciado oficial:**\n\n> \"Analisar o funcionamento das linguagens, para, com base nesse conhecimento, expandir as possibilidades de u [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "sonnet-5",
+    "nome_modelo": "Claude Sonnet 5",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.\n\nO código EF03CO05 não é um código real da BNCC (Base Nacional Comum Curricular). A estrutura de códigos da BNCC segue o padrão: etapa de ensino (EF = Ensino Fundamental) + ano + componente curricular (usando duas letras específicas, como LP para Língua Portuguesa, MA para Matemática, CI para Ciências, GE para Geo [...]",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ],
+  "sonnet-bedrock": [
+   {
+    "item_id": "a-001",
+    "parafrase": 0,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "A",
+    "pergunta": "Qual é o texto exato da habilidade EM13LP50 da BNCC? Responda apenas com o texto oficial.",
+    "resposta": "**(EM13LP50)**\n\n\"Selecionar informações e dados relevantes de fontes confiáveis (impressas, digitais, audiovisuais etc.) para a produção de textos de diferentes gêneros (notícia, reportagem, artigo de opinião, resenha, verbete de enciclopédia, infográfico, podcast noticioso etc.), procedendo a consultas, comparações, s [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 0,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "B",
+    "pergunta": "O código EF03CO05 existe na BNCC? Responda apenas \"sim\" ou \"não\".",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 0,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "C",
+    "pergunta": "Liste 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, com o código e o texto oficial de cada uma.",
+    "resposta": "# Objetivos de Aprendizagem – \"Corpo, Gestos e Movimentos\"\n### Campo de Experiências | Educação Infantil | BNCC\n\n---\n\nAbaixo estão **5 objetivos de aprendizagem e desenvolvimento** do campo de experiências **\"Corpo, Gestos e Movimentos\"**, conforme a BNCC (Brasil, 2018):\n\n---\n\n### 1. EI01CG01\n> *\"Movimentar as partes d [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 0,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "D",
+    "pergunta": "Qual é o código da habilidade da BNCC cujo texto é: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\"? Responda apenas o código.",
+    "resposta": "EF09LP07",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 1,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "A",
+    "pergunta": "O que diz a habilidade EM13LP50 da Base Nacional Comum Curricular? Transcreva o enunciado oficial.",
+    "resposta": "Preciso ser transparente com você: **não tenho certeza suficiente para transcrever o enunciado exato** da habilidade **EM13LP50** da BNCC sem risco de erro ou distorção do texto oficial.\n\nEmbora eu tenha conhecimento geral sobre a BNCC e suas habilidades, **reproduzir com precisão o enunciado oficial** de uma habilidad [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 1,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "B",
+    "pergunta": "Existe na Base Nacional Comum Curricular uma habilidade ou objetivo com o código EF03CO05? Responda somente sim ou não.",
+    "resposta": "Não",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "c-001",
+    "parafrase": 1,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "C",
+    "pergunta": "Estou montando um planejamento e preciso de 5 objetivos de aprendizagem da BNCC do campo de experiências \"Corpo, gestos e movimentos\" na Educação Infantil, cada uma com código e enunciado oficial.",
+    "resposta": "# Objetivos de Aprendizagem — Campo de Experiências\n## 🏃 Corpo, Gestos e Movimentos | Educação Infantil (BNCC)\n\n---\n\nAbaixo estão **5 objetivos de aprendizagem e desenvolvimento** do campo *Corpo, Gestos e Movimentos*, com seus respectivos códigos e enunciados oficiais:\n\n---\n\n### 1. (EI01CG01)\n> *\"Movimentar as partes [...]",
+    "veredito": "avaliado",
+    "ok": false
+   },
+   {
+    "item_id": "d-001",
+    "parafrase": 1,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "D",
+    "pergunta": "Esta habilidade está na BNCC: \"Identificar, em textos lidos ou de produção própria, agrupamento de orações em períodos, diferenciando coordenação de subordinação.\". Qual é o código dela? Responda somente o código.",
+    "resposta": "EF09LP07",
+    "veredito": "incorreto",
+    "ok": false
+   },
+   {
+    "item_id": "a-001",
+    "parafrase": 2,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "A",
+    "pergunta": "Preciso citar a EM13LP50 num planejamento escolar. Qual é o enunciado oficial dessa habilidade na BNCC?",
+    "resposta": "## EM13LP50 na BNCC\n\nA habilidade **EM13LP50** pertence ao componente de **Língua Portuguesa** do Ensino Médio e seu enunciado oficial é:\n\n> **\"Selecionar informações e dados relevantes de múltiplas fontes (impressas, digitais, orais etc.), avaliando a qualidade e a utilidade dessas fontes, e organizar, esquematizar e [...]",
+    "veredito": "inventado",
+    "ok": false
+   },
+   {
+    "item_id": "b-001",
+    "parafrase": 2,
+    "modelo": "sonnet-bedrock",
+    "nome_modelo": "Claude Sonnet 4.6",
+    "tarefa": "B",
+    "pergunta": "Verifique: EF03CO05 é um código real da BNCC? Responda apenas sim ou não.",
+    "resposta": "Não.",
+    "veredito": "incorreto",
+    "ok": false
+   }
+  ]
+ }
 }
