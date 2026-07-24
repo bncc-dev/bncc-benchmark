@@ -1,5 +1,10 @@
 # bncc-benchmark
 
+[![Validação](https://github.com/bncc-dev/bncc-benchmark/actions/workflows/validacao.yml/badge.svg)](https://github.com/bncc-dev/bncc-benchmark/actions/workflows/validacao.yml)
+[![Dados: CC BY 4.0](https://img.shields.io/badge/dados-CC%20BY%204.0-lightgrey.svg)](LICENSE-DADOS.md)
+[![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-green.svg)](LICENSE-CODIGO.md)
+[![Status: pré-release](https://img.shields.io/badge/status-pr%C3%A9--release-orange.svg)](RELEASES.md)
+
 Benchmark público de alucinação de LLMs sobre a BNCC (Base Nacional Comum
 Curricular). Mede, com metodologia aberta e dados brutos publicados, quanto os
 modelos de linguagem inventam códigos e textos da BNCC quando respondem sem

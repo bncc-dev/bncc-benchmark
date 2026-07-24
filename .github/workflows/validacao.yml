@@ -1,0 +1,22 @@
+name: Validação
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+      # Consistência julgados×agregados da rodada publicada (RELEASES.md)
+      - run: pnpm agregar --rodada oficial-seca-2026-07 --verificar
