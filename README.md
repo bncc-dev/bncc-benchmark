@@ -38,6 +38,8 @@ DECISOES.md       decisões de desenho numeradas
 
 ## Uso (time)
 
+Instalação do zero e primeira execução: [`docs/comecando.md`](docs/comecando.md).
+
 ```bash
 pnpm install
 pnpm test                                  # invariantes do gerador + verificadores
