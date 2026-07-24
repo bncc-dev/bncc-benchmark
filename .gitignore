@@ -7,3 +7,6 @@ cache/
 # ele é gravado em ~/Dev/bncc-benchmark-heldout/, fora daqui)
 *heldout*
 *held-out*
+
+# exceção: o template de exemplo é público
+!.env.example
