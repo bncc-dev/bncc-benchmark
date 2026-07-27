@@ -6,7 +6,7 @@
    "modo": "grounded",
    "harness_commit": "a594f50",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": 3,
     "parafrases": 1,
     "concorrencia": 3,

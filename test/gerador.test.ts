@@ -85,14 +85,19 @@ describe('invariantes do banco de itens', () => {
     expect(outra.distribuicao).toEqual(banco.distribuicao);
   });
 
-  it('seed diferente gera banco diferente (held-out não vaza)', () => {
-    const heldout = gerarBanco(20260712 + SEED_REMOVIDA);
+  // A propriedade é genérica ("seeds distintas produzem bancos distintos") e por
+  // isso é verificada com seeds arbitrárias. Usar aqui a seed real do held-out
+  // publicaria a receita dele: o gerador é determinístico e este arquivo é
+  // público. A seed verdadeira vive só em SEED_HELDOUT no .env.
+  it('seed diferente gera banco diferente (o held-out não é derivável do público)', () => {
+    const outroBanco = gerarBanco(1);
     const codigosPublicos = new Set(banco.itens.map((i) => i.codigo).filter(Boolean));
-    const codigosHeldout = heldout.itens.map((i) => i.codigo).filter(Boolean);
-    const repetidos = codigosHeldout.filter((c) => codigosPublicos.has(c));
+    const codigosOutros = outroBanco.itens.map((i) => i.codigo).filter(Boolean);
+    const repetidos = codigosOutros.filter((c) => codigosPublicos.has(c));
     // Alguma interseção é estatisticamente esperada; identidade total não.
-    expect(repetidos.length).toBeLessThan(codigosHeldout.length);
-    expect(heldout.itens).not.toEqual(banco.itens);
+    expect(repetidos.length).toBeLessThan(codigosOutros.length);
+    expect(outroBanco.itens).not.toEqual(banco.itens);
+    expect(gerarBanco(2).itens).not.toEqual(outroBanco.itens);
   });
 
   it('inclui os itens especiais do typo (D6)', () => {
