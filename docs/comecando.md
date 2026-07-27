@@ -18,12 +18,6 @@ cp .env.example .env   # preencha as chaves que for usar
 
 Sem nenhuma chave você já consegue rodar testes, gerar itens e explorar os resultados publicados em `resultados/` — as chaves só são necessárias para **executar** modelos e **julgar** respostas.
 
-> **Sobre `pnpm gerar`:** use sempre `pnpm gerar --sem-heldout`. A geração do
-> conjunto held-out exige `SEED_HELDOUT`, que só os mantenedores têm — o
-> gerador é determinístico, então publicar essa seed equivaleria a publicar o
-> próprio held-out (`DECISOES.md` D5). Sem a flag, o comando falha de
-> propósito. O banco público que você gera é idêntico ao versionado.
-
 ## Verificando a instalação
 
 ```bash
@@ -36,7 +30,7 @@ pnpm test        # invariantes do gerador, verificadores, manifesto e proveniên
 Uma rodada mínima de ponta a ponta, com 10 itens e um modelo barato:
 
 ```bash
-pnpm gerar --sem-heldout                                   # itens/itens-v1-rc.json (determinístico, mesma seed = mesmo banco)
+pnpm gerar                                                 # itens/itens-v1-rc.json (determinístico, mesma seed = mesmo banco)
 pnpm executar --rodada smoke --modelos claude-haiku --limite 10
 pnpm avaliar --rodada smoke                                # juiz LLM (usa Bedrock por padrão)
 pnpm agregar --rodada smoke
