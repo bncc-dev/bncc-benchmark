@@ -12,9 +12,41 @@ acesso à fonte estruturada, e quanto o problema desaparece com grounding via
 bncc.dev (MCP e API).
 
 A rodada `oficial-seca-2026-07` mediu **17 modelos × 900 respostas cada**, e as
-15.300 respostas cruas estão neste repositório, uma a uma. Metodologia completa
-em [`METODOLOGIA.md`](METODOLOGIA.md), decisões de desenho numeradas em
-[`DECISOES.md`](DECISOES.md), notas em [`RELEASES.md`](RELEASES.md).
+15.300 respostas cruas estão neste repositório, uma a uma.
+
+## Resultados
+
+Pergunte a um LLM o texto exato de uma habilidade da BNCC, sem dar acesso à
+fonte. A taxa de respostas fiéis ao texto oficial vai de **89% a 2%**,
+dependendo do modelo.
+
+| # | Modelo | Nota | Texto fiel | Aceitou código falso |
+|---|---|---|---|---|
+| 1 | GPT-5.6 Sol · OpenAI | 89,2 | 89% | 14% |
+| 2 | Claude Fable 5 · Anthropic | 81,3 | 77% | 3% |
+| 3 | Gemini 3.1 Pro · Google | 77,0 | 65% | 3% |
+| 4 | GPT-5.6 Luna · OpenAI | 75,3 | 72% | 35% |
+| 5 | DeepSeek V4 Pro · DeepSeek | 57,8 | 42% | 46% |
+
+*Nota* é a média de cinco dimensões (reconhecer códigos reais, recusar falsos,
+fidelidade do texto, lookup inverso e citação correta em geração aberta).
+*Texto fiel* é a fração de respostas que reproduzem a habilidade oficial na
+tarefa A. *Aceitou código falso* é a fração de códigos inexistentes — e
+verificados como inexistentes também fora da BNCC — que o modelo afirmou
+existir.
+
+Os 17 modelos, todas as métricas e os exemplos estão em
+[`resultados/`](resultados/) e no leaderboard em [bncc.dev](https://bncc.dev).
+
+Dois achados que valem mais que o ranking. **Nota alta não significa modelo
+confiável**: o primeiro colocado ainda aceita 14% dos códigos falsos como
+reais. E **acertar o texto e recusar invenções são habilidades distintas** —
+o quarto colocado escreve texto fiel em 72% dos casos e mesmo assim aceita 35%
+dos códigos inventados.
+
+Metodologia completa em [`METODOLOGIA.md`](METODOLOGIA.md), decisões de desenho
+numeradas em [`DECISOES.md`](DECISOES.md), composição de cada release em
+[`RELEASES.md`](RELEASES.md).
 
 ## O conjunto held-out
 
