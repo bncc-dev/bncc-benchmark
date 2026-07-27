@@ -1,6 +1,6 @@
 /**
  * Adapter Google (Gemini, generateContent). Rodada grounded não implementada
- * aqui (M5: tool-use com a API REST do bncc.dev).
+ * aqui (exigiria tool-use com a API REST do bncc.dev).
  */
 
 import { ErroProvedor } from './erro.js';
@@ -21,7 +21,7 @@ export function criarProvedorGoogle(def: DefModelo, key: string): Provedor {
     id: def.id,
     async completar(chamada: ChamadaModelo): Promise<RespostaModelo> {
       if (chamada.grounded) {
-        throw new Error(`Rodada grounded não implementada para ${def.id} (M5)`);
+        throw new Error(`Rodada grounded não implementada para ${def.id}`);
       }
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${def.modelo}:generateContent`;
       const resposta = await fetch(url, {
@@ -40,7 +40,7 @@ export function criarProvedorGoogle(def: DefModelo, key: string): Provedor {
       const dados = (await resposta.json()) as RespostaApi;
       const candidato = dados.candidates?.[0];
       const texto = (candidato?.content?.parts ?? []).map((p) => p.text ?? '').join('');
-      // RB-4: STOP = completa; MAX_TOKENS = truncada; SAFETY etc. = bloqueada.
+      // STOP = completa; MAX_TOKENS = truncada; SAFETY etc. = bloqueada.
       // candidates vazio (bloqueio de prompt) nunca vira resposta válida.
       const bruto = candidato?.finishReason;
       const finishReason =

@@ -1,16 +1,19 @@
 /**
- * Registro dos modelos-alvo. Os dois "claude-*" bastam para o smoke (uma key).
- * Os demais são os alvos do M5: nomes de modelo e preços DEVEM ser conferidos
- * na data da rodada (o campo precos é informativo; a fonte de custo real são
- * os tokens registrados nos brutos).
+ * Registro dos modelos que o benchmark sabe chamar. Adicionar um modelo é
+ * acrescentar uma entrada aqui — ver `docs/arquitetura.md`.
+ *
+ * Identificadores de modelo e preços DEVEM ser conferidos na data da rodada:
+ * provedores renomeiam e repreçam sem aviso. O campo `precos` é informativo e
+ * serve para estimativa; o custo real de cada rodada vem dos tokens
+ * registrados nos brutos, não daqui.
  */
 
 import type { DefModelo } from './tipos.js';
 
 export const MODELOS: Record<string, DefModelo> = {
   // Bedrock (Converse API, bearer token AWS_BEARER_TOKEN_BEDROCK; região via
-  // AWS_REGION, default us-east-1). IDs de modelo idênticos aos usados em
-  // projetos irmãos da equipe; conferir/pinar no M5.
+  // AWS_REGION, default us-east-1). Conferir os IDs de modelo na data da
+  // rodada: a Bedrock versiona os identificadores.
   'sonnet-bedrock': {
     id: 'sonnet-bedrock',
     provedor: 'bedrock',
@@ -228,10 +231,10 @@ export const MODELOS: Record<string, DefModelo> = {
   deepseek: {
     id: 'deepseek',
     provedor: 'openai-compat',
-    modelo: 'deepseek-chat', // conferir no M5
+    modelo: 'deepseek-chat', // conferir na data da rodada
     envKey: 'DEEPSEEK_API_KEY',
     baseUrl: 'https://api.deepseek.com',
-    precos: { entrada: 0.27, saida: 1.1 }, // conferir no M5
+    precos: { entrada: 0.27, saida: 1.1 }, // conferir na data da rodada
     suportaGrounded: true,
   },
 };

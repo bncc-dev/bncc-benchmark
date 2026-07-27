@@ -239,7 +239,7 @@ export interface Citacao {
 }
 
 /**
- * Todas as ocorrências, em ordem, com posições (RB-6). O matchAll consome
+ * Todas as ocorrências, em ordem, com posições. O matchAll consome
  * cada citação como token único, então EF05CO01 nunca casa "dentro" de um
  * EF05CO011 citado antes (a colisão de prefixo do indexOf).
  */

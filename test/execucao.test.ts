@@ -83,7 +83,7 @@ describe('executarBateria', () => {
     expect(segunda.registros).toEqual(primeira.registros);
   });
 
-  it('RB-3: maxTokens diferente NÃO reutiliza o cache', async () => {
+  it('maxTokens diferente NÃO reutiliza o cache', async () => {
     const itens = selecionarBalanceado(banco.itens, 2);
     const cache = new CacheDisco(join(dirTemporario, 'c-rb3'));
     const contador = { chamadas: 0 };

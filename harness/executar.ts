@@ -49,7 +49,7 @@ const itens = selecionarBalanceado(banco.itens, limite);
 const ambiente = carregarEnv(resolve(RAIZ, '.env'));
 const cache = new CacheDisco(resolve(RAIZ, 'cache'));
 
-// RB-9: gabarito "existe: false" só vale depois da verificação anti-vexame.
+// Gabarito "existe: false" só vale depois da verificação anti-vexame.
 // Rodar bateria paga com falsos pendentes arrisca contar acerto como alucinação.
 const pendentes = itens.filter((i) => i.verificacao_antivexame?.status === 'pendente');
 if (pendentes.length > 0 && !args['aceitar-antivexame-pendente']) {
@@ -100,7 +100,7 @@ const falhas: string[] = [];
 for (const id of ids) {
   const def = MODELOS[id];
   if (modo === 'grounded' && !def.suportaGrounded) {
-    console.warn(`AVISO: ${id} não suporta grounded ainda (M5); pulando.`);
+    console.warn(`AVISO: ${id} não suporta modo grounded; pulando.`);
     continue;
   }
   const provedor = criarProvedor(def, ambiente);
@@ -143,7 +143,7 @@ for (const id of ids) {
     );
   }
 
-  // RB-4: respostas incompletas não entram nas taxas; melhor saber já na execução.
+  // Respostas incompletas não entram nas taxas; melhor saber já na execução.
   const incompletas = resultado.registros.filter(
     (r) => r.finish_reason !== undefined && r.finish_reason !== 'fim',
   ).length;

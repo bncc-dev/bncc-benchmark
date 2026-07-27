@@ -2,12 +2,12 @@
  * Julgamento das respostas: verificadores programáticos (tarefas B e D),
  * pré-filtro por normalização (A e C) e marcação de casos para o juiz LLM.
  *
- * Semântica de abstenção (RB-2): resposta substantiva tem precedência.
+ * Semântica de abstenção: resposta substantiva tem precedência.
  * Abstenção só vale quando, removidas as frases de incerteza, não sobra
  * resposta (sim/não na B; texto proposto na A; código na C/D). Hedge no fim
  * de uma resposta assertiva não a anula.
  *
- * RB-4: respostas truncadas ou bloqueadas pelo provedor (finish_reason
+ * Respostas truncadas ou bloqueadas pelo provedor (finish_reason
  * diferente de 'fim') são 'resposta_invalida', fora das taxas de alucinação.
  */
 
@@ -47,7 +47,7 @@ export function detectarAbstencao(resposta: string): boolean {
   return FRASES_ABSTENCAO.some((f) => norm.includes(f));
 }
 
-/** Remove as frases de incerteza do texto normalizado (RB-2). */
+/** Remove as frases de incerteza do texto normalizado. */
 export function removerFrasesAbstencao(norm: string): string {
   let resto = norm;
   for (const f of FRASES_ABSTENCAO) resto = resto.split(f).join(' ');
@@ -81,13 +81,13 @@ function julgamentoBase(item: Item, registro: RegistroBruto): Omit<Julgamento, '
   return base;
 }
 
-/** RB-4: truncamento/bloqueio do provedor invalida a resposta para julgamento. */
+/** Truncamento/bloqueio do provedor invalida a resposta para julgamento. */
 function respostaInvalida(registro: RegistroBruto): boolean {
   return registro.finish_reason !== undefined && registro.finish_reason !== 'fim';
 }
 
 /**
- * Tarefa B (RB-2): o sim/não é procurado APÓS remover as frases de
+ * Tarefa B: o sim/não é procurado APÓS remover as frases de
  * incerteza, então "não tenho como verificar" vira abstenção, mas
  * "sim, existe (...) consulte o documento oficial" continua sendo "sim".
  */
@@ -108,7 +108,7 @@ export function julgarB(item: Item, registro: RegistroBruto): Julgamento {
   return { ...julgamentoBase(item, registro), veredito };
 }
 
-/** Tarefa D: primeiro código extraído é a aposta; qualquer codigosAceitos vale (RB-7). */
+/** Tarefa D: primeiro código extraído é a aposta; qualquer codigosAceitos vale. */
 export function julgarD(item: Item, registro: RegistroBruto): Julgamento {
   if (item.gabarito.tipo !== 'codigo') throw new Error(`Item ${item.id} não é da tarefa D`);
   if (respostaInvalida(registro)) {
@@ -125,7 +125,7 @@ export function julgarD(item: Item, registro: RegistroBruto): Julgamento {
 }
 
 /**
- * Tarefa A (RB-2): conteúdo substantivo é avaliado ANTES da abstenção.
+ * Tarefa A: conteúdo substantivo é avaliado ANTES da abstenção.
  * Ordem: transcrição exata → texto integral de outra aprendizagem → só então
  * abstenção (e apenas se não sobrou conteúdo substantivo) → juiz.
  */
@@ -160,7 +160,7 @@ export function julgarA(item: Item, registro: RegistroBruto): Julgamento {
 const TAMANHO_MAX_TRECHO = 500;
 
 /**
- * Tarefa C (RB-1, RB-6): citações localizadas por posição (matchAll);
+ * Tarefa C: citações localizadas por posição (matchAll);
  * segmento do código i vai do fim da citação i ao início da citação i+1.
  * Cada código existente ganha escopo (dentro/fora do pedido) e o trecho
  * associado fica registrado no julgamento (auditável; é o que o juiz vê).

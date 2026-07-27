@@ -297,7 +297,7 @@ function itensD(rng: Rng, usados: Set<string>, ids: () => string): Item[] {
     tipo: 'real' as const,
     codigo: a.codigo,
     texto: a.texto,
-    // RB-7: qualquer código de texto idêntico é resposta correta.
+    // Qualquer código de texto idêntico é resposta correta.
     gabarito: {
       tipo: 'codigo' as const,
       codigo: a.codigo,

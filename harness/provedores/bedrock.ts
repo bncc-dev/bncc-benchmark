@@ -3,7 +3,7 @@
  * sem SigV4 nem SDK). A rodada grounded usa um loop de tool-use explícito com
  * o mini-cliente MCP (lib/mcp-cliente.ts), já que o Bedrock não tem o MCP
  * connector da API direta da Anthropic. O mesmo loop serve de base para os
- * provedores OpenAI/Google no M5.
+ * provedores OpenAI/Google ainda não têm essa rota.
  */
 
 import { chamarToolMcp, listarToolsMcp, URL_MCP } from '../lib/mcp-cliente.js';
@@ -114,7 +114,7 @@ export function criarProvedorBedrock(def: DefModelo, token: string): Provedor {
         .filter((b) => b.text)
         .map((b) => b.text)
         .join('\n');
-      // RB-4: Converse usa end_turn/stop_sequence/max_tokens/content_filtered.
+      // Converse usa end_turn/stop_sequence/max_tokens/content_filtered.
       const finishReason =
         ultima.stopReason === 'end_turn' || ultima.stopReason === 'stop_sequence'
           ? 'fim'

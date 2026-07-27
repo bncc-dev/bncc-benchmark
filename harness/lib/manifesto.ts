@@ -2,7 +2,7 @@
  * Manifesto da rodada: snapshot auditável da configuração de cada execução e
  * avaliação, gravado em resultados/<rodada>/manifesto.json.
  *
- * Semântica de APPEND (espírito do RB-10): entradas nunca são removidas nem
+ * Semântica de APPEND: entradas nunca são removidas nem
  * sobrescritas; cada invocação do executar/avaliar acrescenta a sua. Escrita
  * atômica (tmp + rename). O manifesto é log aditivo e NÃO participa do check
  * de consistência do agregar --verificar (que cobre julgados×agregados);

@@ -108,7 +108,7 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
     const nParafrases = Math.min(parafrases, item.parafrases.length);
     for (let p = 0; p < nParafrases; p++) {
       const prompt = item.parafrases[p];
-      // RB-3: maxTokens e o mecanismo de grounding fazem parte da identidade
+      // MaxTokens e o mecanismo de grounding fazem parte da identidade
       // da chamada; sem eles, uma re-execução com config diferente reutilizaria
       // respostas incompatíveis (ex.: truncadas) em silêncio.
       const chave = chaveCache({

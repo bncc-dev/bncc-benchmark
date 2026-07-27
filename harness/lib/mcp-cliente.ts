@@ -1,7 +1,7 @@
 /**
  * Mini-cliente MCP para o servidor remoto do bncc.dev (streamable HTTP,
  * stateless, sem key). Usado pelo loop de tool-use dos provedores que não têm
- * MCP connector nativo (Bedrock agora; OpenAI/Google no M5).
+ * MCP connector nativo. Implementado para Bedrock; OpenAI e Google ainda não.
  */
 
 const URL_MCP = 'https://mcp.bncc.dev/mcp';

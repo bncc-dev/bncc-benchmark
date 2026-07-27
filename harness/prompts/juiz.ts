@@ -4,7 +4,7 @@
  */
 
 /**
- * RB-8: a versão da rubrica integra a chave de cache do juiz e é gravada em
+ * A versão da rubrica integra a chave de cache do juiz e é gravada em
  * juiz.jsonl. Qualquer mudança neste prompt exige bump.
  */
 export const RUBRICA_VERSAO = 'rubrica-v1';

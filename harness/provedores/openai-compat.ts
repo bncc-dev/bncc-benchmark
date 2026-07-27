@@ -128,7 +128,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
         }
       }
 
-      // RB-4: stop = completa; length = truncada; content_filter = bloqueada.
+      // Stop = completa; length = truncada; content_filter = bloqueada.
       const bruto = dados.choices![0]?.finish_reason;
       const finishReason =
         bruto === 'stop'

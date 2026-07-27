@@ -6,10 +6,10 @@
  *   pnpm avaliar --rodada smoke --juiz nenhum        # só verificadores programáticos
  *
  * Saídas: resultados/<rodada>/julgados.jsonl
- *         resultados/<rodada>/juiz.jsonl   (RB-8: trilha auditável do juiz,
+ *         resultados/<rodada>/juiz.jsonl   (trilha auditável do juiz,
  *         uma linha por julgamento com resposta bruta, versão e custo)
  *
- * RB-5: juiz sem veredito parseável ganha 1 retry com mais tokens; persiste →
+ * Juiz sem veredito parseável ganha 1 retry com mais tokens; persiste →
  * 'indeterminado' (nunca conta como alucinação, nunca é cacheado).
  */
 
@@ -147,7 +147,7 @@ if (args.juiz !== 'nenhum' && pendentesA.length + pendentesC.length > 0) {
       return emCache.veredito;
     }
 
-    // RB-5: tentativa normal e um retry com folga antes de desistir.
+    // Tentativa normal e um retry com folga antes de desistir.
     let respostaBruta = '';
     let versaoModelo = '';
     let tokens = { entrada: 0, saida: 0 };

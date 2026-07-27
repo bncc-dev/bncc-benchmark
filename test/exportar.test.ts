@@ -51,7 +51,7 @@ describe('calcularMetricas', () => {
     const m = calcularMetricas(js, 0);
     expect(m.invencao_pura).toBe(1);
     expect(m.confusao_derivado).toBe(0.5);
-    expect(m.a_fiel).toBe(1); // a inválida não entra no denominador (RB-4)
+    expect(m.a_fiel).toBe(1); // a inválida não entra no denominador
     expect(m.cortados).toBe(1);
   });
 });

@@ -44,6 +44,9 @@ ranking continuar significando alguma coisa depois de publicado.
 
 ## Antes de abrir um PR
 
+Como o pipeline se encaixa, onde mexe cada tipo de mudança e como adicionar um
+modelo: [`docs/arquitetura.md`](docs/arquitetura.md).
+
 ```bash
 pnpm install
 pnpm typecheck

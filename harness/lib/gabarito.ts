@@ -87,7 +87,7 @@ export function infoDataset(): { dataset_versao: string; total: number } {
 let duplicadosMemo: Map<string, string[]> | null = null;
 
 /**
- * RB-7: códigos cujo texto normalizado é idêntico ao do código dado (inclui o
+ * Códigos cujo texto normalizado é idêntico ao do código dado (inclui o
  * próprio). Computação numera o mesmo texto por ano e por bloco (EF06CO04 =
  * EF69CO04 etc.); todos são resposta correta na tarefa D.
  */

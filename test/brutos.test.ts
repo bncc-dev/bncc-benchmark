@@ -26,7 +26,7 @@ function registro(item: string, parafrase: number, resposta = 'x'): RegistroBrut
   };
 }
 
-describe('RB-10: brutos nunca encolhem', () => {
+describe('brutos nunca encolhem', () => {
   it('re-run parcial preserva os registros da bateria completa', () => {
     const arquivo = join(dir, 'brutos-fake-seco.jsonl');
     const bateria = [registro('a-001', 0), registro('a-001', 1), registro('b-001', 0)];

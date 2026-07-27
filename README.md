@@ -67,6 +67,9 @@ METODOLOGIA.md    protocolo completo
 DECISOES.md       decisões de desenho numeradas
 ```
 
+Como as peças se encaixam, e a receita para **adicionar um modelo**:
+[`docs/arquitetura.md`](docs/arquitetura.md).
+
 ## Uso
 
 Instalação do zero e primeira execução: [`docs/comecando.md`](docs/comecando.md).

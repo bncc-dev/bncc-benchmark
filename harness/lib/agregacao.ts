@@ -55,7 +55,7 @@ export function agregar(
       contar(tarefa, 'codigos_citados', j.codigos_citados.length);
       contar(tarefa, 'codigos_inventados', j.codigos_citados.filter((c) => !c.existe).length);
       contar(tarefa, 'codigos_forma_invalida', j.codigos_citados.filter((c) => !c.formaValida).length);
-      // RB-1: código real fora do escopo pedido é métrica própria (não é T1).
+      // Código real fora do escopo pedido é métrica própria (não é T1).
       contar(tarefa, 'codigos_fora_escopo', j.codigos_citados.filter((c) => c.escopo === 'fora').length);
       for (const c of j.codigos_citados) {
         if (c.texto) contar(tarefa, `texto:${c.texto}`);

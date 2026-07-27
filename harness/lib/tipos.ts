@@ -35,7 +35,7 @@ export type Gabarito =
   | { tipo: 'existencia'; existe: boolean }
   | { tipo: 'lista'; codigosValidos: string[] }
   /**
-   * RB-7: codigosAceitos cobre textos idênticos com códigos distintos
+   * CodigosAceitos cobre textos idênticos com códigos distintos
    * (Computação numera o mesmo texto por ano e por bloco); qualquer um deles
    * é resposta correta na tarefa D.
    */
@@ -95,7 +95,7 @@ export interface RegistroBruto {
   max_tokens?: number;
   tokens: { entrada: number; saida: number; reasoning?: number };
   /**
-   * RB-4: por que o provedor parou de gerar. 'fim' = resposta completa;
+   * Por que o provedor parou de gerar. 'fim' = resposta completa;
    * 'max_tokens' = truncada; 'bloqueado' = safety; outros valores = bruto do
    * provedor. Ausente em registros anteriores ao avaliador v2 (tratados como
    * válidos, limitação documentada).
@@ -110,11 +110,11 @@ export interface CodigoCitado {
   codigo: string;
   formaValida: boolean;
   existe: boolean;
-  /** RB-1: código existente está dentro do escopo pedido pelo item C? */
+  /** Código existente está dentro do escopo pedido pelo item C? */
   escopo?: 'dentro' | 'fora';
   /** Só para códigos existentes com texto associado na resposta. */
   texto?: 'ok' | 'divergente' | 'ausente' | 'pendente_juiz' | 'indeterminado';
-  /** RB-6/RB-8: segmento da resposta associado ao código (auditável, vai ao juiz). */
+  /** Segmento da resposta associado ao código (auditável, vai ao juiz). */
   trecho?: string;
 }
 
@@ -129,9 +129,9 @@ export type Veredito =
   | 'incorreto'
   | 'abstencao'
   | 'pendente_juiz'
-  /** RB-5: juiz não emitiu veredito parseável mesmo após retry; nunca conta como alucinação. */
+  /** Juiz não emitiu veredito parseável mesmo após retry; nunca conta como alucinação. */
   | 'indeterminado'
-  /** RB-4: resposta truncada/bloqueada pelo provedor; artefato de execução, fora das taxas. */
+  /** Resposta truncada/bloqueada pelo provedor; artefato de execução, fora das taxas. */
   | 'resposta_invalida'
   // C (resumo do item)
   | 'sem_codigos'

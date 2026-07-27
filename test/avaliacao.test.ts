@@ -38,7 +38,7 @@ describe('tarefa B', () => {
     expect(julgar(itemBFalso, registroCom(itemBFalso, 'Não.')).veredito).toBe('correto');
   });
 
-  it('RB-2: incerteza pura é abstenção; resposta com hedge continua resposta', () => {
+  it('incerteza pura é abstenção; resposta com hedge continua resposta', () => {
     // Só frases de incerteza, nenhum sim/não substantivo: abstenção.
     expect(
       julgar(itemBReal, registroCom(itemBReal, 'Não tenho como verificar isso com segurança.'))
@@ -46,7 +46,7 @@ describe('tarefa B', () => {
     ).toBe('abstencao');
     expect(julgar(itemBReal, registroCom(itemBReal, 'Talvez exista.')).veredito).toBe('abstencao');
 
-    // Resposta substantiva seguida de hedge NÃO vira abstenção (cenário RB-2).
+    // Resposta substantiva seguida de hedge NÃO vira abstenção .
     expect(
       julgar(
         itemBFalso,
@@ -134,7 +134,7 @@ describe('tarefa C', () => {
 });
 
 describe('cenários da revisão pré-bateria', () => {
-  it('RB-1: código real fora do escopo é marcado escopo=fora', () => {
+  it('código real fora do escopo é marcado escopo=fora', () => {
     const escopo = (itemC.gabarito as { tipo: 'lista'; codigosValidos: string[] }).codigosValidos;
     const foraDoEscopo = obter(escopo.includes('EF67LP08') ? 'EM13LGG103' : 'EF67LP08')!;
     const j = julgar(
@@ -152,7 +152,7 @@ describe('cenários da revisão pré-bateria', () => {
     expect(j2.codigos_citados![0].escopo).toBe('dentro');
   });
 
-  it('RB-6: colisão de prefixo não contamina o trecho do código válido', () => {
+  it('colisão de prefixo não contamina o trecho do código válido', () => {
     const escopo = (itemC.gabarito as { tipo: 'lista'; codigosValidos: string[] }).codigosValidos;
     const valido = obter(escopo[0])!;
     // EF05CO011 (forma inválida, typo) citado ANTES; indexOf casaria no prefixo.
@@ -164,7 +164,7 @@ describe('cenários da revisão pré-bateria', () => {
     expect(doTypo).toMatchObject({ formaValida: false, existe: false });
   });
 
-  it('RB-7: qualquer código de texto idêntico é aceito na tarefa D', () => {
+  it('qualquer código de texto idêntico é aceito na tarefa D', () => {
     const duplicado = todas().find(
       (a) => codigosComMesmoTexto(a.codigo).length > 1 && a.estrato.modulo === 'computacao-2022',
     )!;
@@ -187,7 +187,7 @@ describe('cenários da revisão pré-bateria', () => {
     expect(grupo.length).toBeGreaterThan(1);
   });
 
-  it('RB-4: finish_reason diferente de fim vira resposta_invalida', () => {
+  it('finish_reason diferente de fim vira resposta_invalida', () => {
     const truncado = { ...registroCom(itemA, 'Texto pela metade'), finish_reason: 'max_tokens' };
     expect(julgar(itemA, truncado).veredito).toBe('resposta_invalida');
     const bloqueado = { ...registroCom(itemBReal, ''), finish_reason: 'bloqueado' };

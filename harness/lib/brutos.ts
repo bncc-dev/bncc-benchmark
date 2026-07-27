@@ -1,5 +1,5 @@
 /**
- * Escrita dos artefatos brutos (RB-10): merge por (item_id, parafrase) com o
+ * Escrita dos artefatos brutos: merge por (item_id, parafrase) com o
  * arquivo existente, nunca encolhe, escrita atômica. Um re-run parcial
  * (--limite) jamais pode truncar o registro de uma bateria já paga.
  */
