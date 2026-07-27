@@ -13,7 +13,8 @@
     "executar": "tsx harness/executar.ts",
     "avaliar": "tsx harness/avaliar.ts",
     "agregar": "tsx harness/agregar.ts",
-    "exportar-site": "tsx harness/exportar-site.ts"
+    "exportar-site": "tsx harness/exportar-site.ts",
+    "exportar-grafico": "tsx harness/exportar-grafico.ts"
   },
   "dependencies": {
     "@bncc/dados": "0.2.0"

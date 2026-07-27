@@ -38,11 +38,22 @@ existir.
 Os 17 modelos, todas as métricas e os exemplos estão em
 [`resultados/`](resultados/) e no leaderboard em [bncc.dev](https://bncc.dev).
 
-Dois achados que valem mais que o ranking. **Nota alta não significa modelo
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/oficial-seca-2026-07/site/dispersao-v0.1.0-escuro.svg">
+  <img alt="Dispersão dos 17 modelos: fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul. GPT-5.6 Sol aparece isolado no alto, com 89% de fidelidade e 14% de aceitação de falsos; Claude Fable 5 e Gemini 3.1 Pro ficam à esquerda, com 3% de aceitação; GPT-5.6 Luna tem fidelidade alta (72%) mas aceita 35% dos falsos; a maioria dos modelos se aglomera na faixa abaixo de 25% de fidelidade." src="resultados/oficial-seca-2026-07/site/dispersao-v0.1.0-claro.svg">
+</picture>
+
+Duas leituras que o ranking sozinho não dá. **Nota alta não significa modelo
 confiável**: o primeiro colocado ainda aceita 14% dos códigos falsos como
 reais. E **acertar o texto e recusar invenções são habilidades distintas** —
-o quarto colocado escreve texto fiel em 72% dos casos e mesmo assim aceita 35%
-dos códigos inventados.
+por isso os pontos se espalham em vez de formar uma diagonal. GPT-5.6 Luna e
+Claude Fable 5 reproduzem o texto oficial com fidelidade parecida (72% e 77%),
+mas o primeiro aceita 35% dos códigos inventados e o segundo, 3% — mais de dez
+vezes menos, com a mesma competência de texto.
+
+O gráfico é gerado a partir do leaderboard publicado
+(`pnpm exportar-grafico`), não desenhado à mão: ele não tem como divergir dos
+números da tabela.
 
 Metodologia completa em [`METODOLOGIA.md`](METODOLOGIA.md), decisões de desenho
 numeradas em [`DECISOES.md`](DECISOES.md), composição de cada release em
