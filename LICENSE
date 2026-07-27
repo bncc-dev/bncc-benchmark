@@ -1,0 +1,25 @@
+# Licenças
+
+Este repositório usa duas licenças, porque contém duas coisas de natureza
+diferente.
+
+## Código — MIT
+
+Todo o conteúdo de `harness/` e `test/`, e os arquivos de configuração.
+Texto completo em [`LICENSE-CODIGO.md`](LICENSE-CODIGO.md).
+
+## Itens, resultados e metodologia — CC BY 4.0
+
+O banco de itens (`itens/`), as respostas e agregados das rodadas
+(`resultados/`), a metodologia (`METODOLOGIA.md`) e a documentação.
+Texto completo em [`LICENSE-DADOS.md`](LICENSE-DADOS.md).
+
+Atribuição e proveniência do dataset de origem estão em
+[`LICENSE-DADOS.md`](LICENSE-DADOS.md) e em
+[`dados-vendorizados/PROVENIENCIA.md`](dados-vendorizados/PROVENIENCIA.md).
+
+## Sobre as respostas dos modelos
+
+As respostas em `resultados/` foram geradas por modelos de terceiros. Ver
+[`resultados/README.md`](resultados/README.md) para origem, data e as
+condições que recaem sobre quem as reutiliza.

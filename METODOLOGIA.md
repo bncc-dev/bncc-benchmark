@@ -80,7 +80,10 @@ código (ex.: EF01AR01, porque Arte no Fundamental numera por blocos de anos).
   próprias keys.
 - Um conjunto held-out privado, gerado pelo mesmo processo com seed distinta,
   fica fora do repositório: em re-medições futuras ele separa aprendizado real
-  de memorização do teste publicado.
+  de memorização do teste publicado. Dele divulgam-se **apenas resultados
+  agregados**, nunca os itens ou o desempenho item a item — estes permitiriam
+  a quem varresse seeds reconhecer um acerto e reconstruir o conjunto,
+  anulando sua função (ver `DECISOES.md` D5).
 - Consistência: o CI recalcula os agregados a partir dos brutos commitados e
   falha se divergirem.
 

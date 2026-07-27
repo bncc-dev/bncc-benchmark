@@ -130,7 +130,7 @@ Fora isso, nada a esconder: chaves vivem em `.env` (ignorado desde sempre) e o `
 - [x] **A-1.4 ·** `git filter-repo` sobre todo o histórico; verificação `git log -S` vazia no remoto e no clone local.
 - [x] **A-1.5 ·** Force-push + limpeza do clone local (reflog expirado, `gc --prune`). Sem forks e sem branch protection — nada mais a coordenar.
 - [x] **A-1.6 ·** Held-out regerado com seed criptográfica, porque o GitHub segue servindo os commits órfãos por SHA. Mapa completo fora do versionado.
-- [ ] **A-3 ·** Release `dados-v1.0.0` do bncc-dados publicada (gate de redistribuição do vendorizado).
+- [x] **A-3 ·** Release `dados-v1.0.0` do bncc-dados publicada e repositório aberto (27/jul). Proveniência do vendorizado verificada publicamente: commit `5d3f413` acessível e SHA-256 do arquivo idêntico ao declarado.
 - [x] `CONTRIBUTING.md` com a regra de instrumento de medição.
 - [x] `CODE_OF_CONDUCT.md` (Contributor Covenant pt-BR, mesmo texto do bncc-dados).
 - [x] `SECURITY.md` com canal privado — vazamento do held-out tratado como vulnerabilidade.
@@ -141,10 +141,10 @@ Fora isso, nada a esconder: chaves vivem em `.env` (ignorado desde sempre) e o `
 ### Desejável antes de abrir
 
 - [ ] **A-4 ·** Decidir sobre `docs/revisoes/` e ajustar o tom de `docs/anti-vexame/`.
-- [ ] **A-4b ·** README declara que a Profy mantém o bncc.dev (conflito de interesse explícito).
-- [ ] **A-5 ·** `LICENSE` canônico apontando para os dois.
-- [ ] Nota de redistribuição em `resultados/`: origem (modelo, data, ToS do provedor à época) e aviso de que o reuso está sujeito aos termos de cada provedor. Prática padrão (HELM, LMSYS); risco baixo, restrições recaem sobre o reusuário.
-- [ ] Trocar "Estado: em construção, privado" no README pelo texto de lançamento.
+- [x] **A-4b ·** README declara que a Profy mantém o bncc.dev, com o conflito de interesse explícito e link para o achado no site dela.
+- [x] **A-5 ·** `LICENSE` canônico apontando para os dois.
+- [x] Nota de redistribuição em `resultados/README.md`: origem (modelo, data, ToS do provedor à época) e aviso de que o reuso está sujeito aos termos de cada provedor. Prática padrão (HELM, LMSYS); risco baixo, restrições recaem sobre o reusuário.
+- [x] README com texto de lançamento, seção do held-out, como contribuir e badge de release.
 - [ ] Documentar na `METODOLOGIA.md` que do held-out se publicam apenas agregados.
 
 ## Sequência de flip coordenada
