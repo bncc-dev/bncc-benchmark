@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Dúvida de metodologia
+    url: https://github.com/bncc-dev/bncc-benchmark/blob/main/METODOLOGIA.md
+    about: "Como os itens são gerados, como o julgamento funciona e como as notas são agregadas."
+  - name: Por que o held-out não é publicado
+    url: https://github.com/bncc-dev/bncc-benchmark/blob/main/CONTRIBUTING.md#o-held-out
+    about: "O conjunto privado não será liberado. Entenda o porquê antes de pedir."
+  - name: Problema de segurança ou suspeita de vazamento do held-out
+    url: https://github.com/bncc-dev/bncc-benchmark/security/policy
+    about: "Não abra issue pública. Veja a política de segurança."

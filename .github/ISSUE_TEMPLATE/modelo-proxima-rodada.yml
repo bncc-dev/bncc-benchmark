@@ -1,0 +1,32 @@
+name: Modelo novo na próxima rodada
+description: Sugerir a inclusão de um modelo no leaderboard.
+labels: ["modelo-proxima-rodada"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Medições novas entram em release MINOR e dependem de rota estável e de
+        custo. Pedidos são agregados numa issue-mãe por rodada.
+  - type: input
+    id: modelo
+    attributes:
+      label: Modelo
+      description: Nome e versão exata (ex.- fornecedor/modelo-1.2).
+    validations:
+      required: true
+  - type: dropdown
+    id: rota
+    attributes:
+      label: Rota de acesso disponível
+      options:
+        - OpenRouter
+        - AWS Bedrock
+        - API direta do provedor
+        - Não sei
+    validations:
+      required: true
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Por que este modelo importa para o benchmark
+      description: Ex.- é usado em produção no Brasil, é referência em português, etc.

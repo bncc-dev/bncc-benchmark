@@ -6,7 +6,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -75,7 +75,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -144,7 +144,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -245,7 +245,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -346,7 +346,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -447,7 +447,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -570,7 +570,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -693,7 +693,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -816,7 +816,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 3,
@@ -970,7 +970,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 8,
@@ -1008,7 +1008,7 @@
    "modo": "seco",
    "harness_commit": "aacfdb5",
    "flags": {
-    "itens": "/Users/marcosbeto/Dev/bncc-benchmark/itens/itens-v1.json",
+    "itens": "itens/itens-v1.json",
     "limite": null,
     "parafrases": 3,
     "concorrencia": 6,
