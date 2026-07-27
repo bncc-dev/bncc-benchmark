@@ -4,7 +4,7 @@
  *
  *   pnpm exec tsx harness/congelar-itens.ts --por "Nome do adjudicador"
  *
- * Fonte da adjudicação: docs/anti-vexame/pre-triagem-<data>.json (classificação
+ * Fonte da adjudicação: docs/pre-triagem/pre-triagem-<data>.json (classificação
  * por código, com fontes), confirmada por humano na planilha de adjudicação.
  * Regenerar o v1-rc (pnpm gerar) NÃO toca no v1 congelado; um novo
  * congelamento exige nova adjudicação.
@@ -25,7 +25,7 @@ const { values: args } = parseArgs({
     data: { type: 'string', default: '2026-07-15' },
     triagem: {
       type: 'string',
-      default: resolve(RAIZ, 'docs/anti-vexame/pre-triagem-2026-07-15.json'),
+      default: resolve(RAIZ, 'docs/pre-triagem/pre-triagem-2026-07-15.json'),
     },
     entrada: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1-rc.json') },
     saida: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1.json') },

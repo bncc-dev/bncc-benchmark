@@ -1,10 +1,29 @@
-# Pré-triagem anti-vexame · 60 códigos falsos · 15/jul/2026
+# Pré-triagem dos 60 códigos falsos · 15/jul/2026
 
-**Status: ADJUDICADA em 15/jul/2026 por Marcos Beto (time bncc.dev): os 60 itens confirmados conforme a classificação sugerida.** Protocolo: DECISOES.md D10 (três categorias). Método: 6 agentes de busca em paralelo, ocorrências exatas verificadas por fetch/grep quando possível; dado bruto em `pre-triagem-2026-07-15.json`.
+Registro concluído da verificação manual que precedeu a rodada oficial. Todo
+código falso da tarefa B foi checado, antes de qualquer medição, contra a
+possibilidade de existir fora da BNCC — em currículo estadual, municipal ou
+material de ampla circulação. Sem essa etapa, uma resposta correta sobre um
+código que existe em outro lugar seria contada como alucinação.
+
+Concluída em 15/jul/2026 pelo time bncc.dev: os 60 itens foram classificados
+nas três categorias do protocolo `DECISOES.md` D10 e o resultado está
+congelado em `itens/itens-v1.json`, no campo `verificacao_antivexame` de cada
+item.
+
+Método: busca em paralelo por seis agentes, com cada ocorrência verificada
+diretamente na fonte quando acessível. Dado bruto em
+`pre-triagem-2026-07-15.json`.
+
+> Nota de terminologia: o campo `verificacao_antivexame` e a categoria
+> `antivexame_categoria` preservam o nome interno que esta verificação teve
+> durante o desenvolvimento. Os nomes permanecem porque estão gravados no banco
+> de itens congelado e nos julgados já publicados, que são imutáveis por
+> release (`RELEASES.md`, D11). Leia "anti-vexame" como "pré-triagem".
 
 ## Placar
 
-| Classificação sugerida | Total | borda (30) | profundo (20) | combinação (10) |
+| Classificação | Total | borda (30) | profundo (20) | combinação (10) |
 |---|---|---|---|---|
 | Limpo | 24 | 4 | 12 | 8 |
 | Existe em derivado | 32 | 23 | 7 | 2 |
@@ -12,19 +31,19 @@
 
 **Leitura estrutural**: as armadilhas de borda colidem massivamente com extensões estaduais/municipais (era esperado em retrospecto: a borda da numeração é onde os estados penduram habilidades próprias). Os 4 federais são colisões com versões pré-homologação (BNCC v3 de 2017, proposta EM de 2018, texto-referência de Computação de 2021), inclusive uma no próprio site do MEC.
 
-## Recomendação estrutural (para o time ratificar)
+## Decisões adotadas
 
-1. **Manter os 60 e o gabarito "não existe na BNCC"** (a pergunta é explícita).
-2. **Duas métricas na publicação**: "invenção pura" (aceitou código limpo) e "confusão com currículo derivado" (aceitou código que existe fora da BNCC). A segunda vira achado próprio do benchmark.
-3. **Os 4 federais viram itens especiais** (como o typo EF05CO011): EF01LP30, EM13MAT408, EF06CO11, EF07CO12, reportados à parte.
-4. **Ação fora do benchmark**: corrigir o plano de aula da Profy que publica EM13MAT703 com texto inventado (evidência abaixo).
+1. **Os 60 foram mantidos, com gabarito "não existe na BNCC"** — a pergunta da tarefa B é explícita quanto ao escopo.
+2. **A publicação separa duas métricas**: "invenção pura" (o modelo aceitou um código limpo) e "confusão com currículo derivado" (aceitou um código que existe fora da BNCC). A segunda virou achado próprio do benchmark.
+3. **Os 4 casos federais viraram itens especiais** (como o typo EF05CO011): EF01LP30, EM13MAT408, EF06CO11 e EF07CO12, reportados à parte.
+4. **Ação fora do benchmark**: a triagem encontrou um plano de aula no site da Profy — mantenedora do bncc.dev — publicando EM13MAT703 com texto inventado (evidência abaixo). Registrado aqui pelo mesmo critério aplicado a qualquer outra fonte.
 
-## Itens para adjudicar
+## Itens verificados
 
-Marque a coluna final: `[ ] confirmo` ou anote divergência.
+A última coluna registra a confirmação de cada classificação.
 
 
-### Zona cinzenta federal (ALTO RISCO, adjudicar primeiro)
+### Zona cinzenta federal
 
 | Código | Item | Armadilha | Evidência principal | Observação | Adjudicação |
 |---|---|---|---|---|---|

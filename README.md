@@ -38,7 +38,7 @@ CI reprova qualquer nota editada à mão.
 
 A triagem que precedeu a rodada oficial, aliás, encontrou uma habilidade com
 texto inventado publicada **no próprio site da Profy**
-([registro](docs/anti-vexame/2026-07-15-planilha-adjudicacao.md)). Está
+([registro](docs/pre-triagem/2026-07-15-triagem-falsos.md)). Está
 documentado aqui pelo mesmo motivo que todo o resto está.
 
 ## O que é medido

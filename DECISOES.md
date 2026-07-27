@@ -2,9 +2,8 @@
 
 Decisões de desenho deste benchmark, no mesmo espírito do `DECISOES.md` do
 bncc-dados: cada escolha que envolve interpretação ou trade-off vira uma entrada
-numerada, com racional. Documentos de referência: design doc e plano de
-implementação no repositório de planejamento do bncc.dev
-(`docs/plans/benchmark-alucinacao.md` e `benchmark-alucinacao-implementacao.md`).
+numerada, com racional. O protocolo completo de medição está em
+`METODOLOGIA.md`; o que cada release contém, em `RELEASES.md`.
 
 ## D1 · Stack TypeScript, sem build, provedores via fetch puro
 
@@ -106,7 +105,7 @@ comum (é divergência documentada entre fonte e forma canônica).
 ## D7 · Rótulo dos itens: v1-rc até o congelamento
 
 O arquivo gerado agora é `itens-v1-rc.json` (release candidate). O congelamento
-em `itens-v1.json` depende de duas coisas: verificação anti-vexame manual de
+em `itens-v1.json` depende de duas coisas: pré-triagem manual de
 cada código falso (nenhum pode existir em currículo estadual ou material
 derivado; o gerador emite o checklist com status `pendente`) e ratificação da
 distribuição D2 pelo time.
@@ -146,7 +145,13 @@ resultados, rodadas pelo mesmo modelo em provedores diferentes são medições
 distintas (versões e serving podem divergir); o leaderboard identifica o
 provedor.
 
-## D10 · Verificação anti-vexame: protocolo de três categorias
+## D10 · Pré-triagem dos códigos falsos: protocolo de três categorias
+
+> Terminologia: esta etapa foi chamada de "verificação anti-vexame" durante o
+> desenvolvimento, e o nome sobrevive nos campos `verificacao_antivexame` e
+> `antivexame_categoria`. Eles não são renomeados porque estão gravados no
+> banco de itens congelado e nos julgados publicados, imutáveis por release
+> (D11). Na documentação, o termo é **pré-triagem**.
 
 A pergunta da tarefa B é sempre "existe NA BNCC?", então um código que exista
 apenas em currículo estadual não invalida o gabarito "não". A verificação
@@ -162,7 +167,7 @@ manual dos falsos serve para CLASSIFICAR, não para descartar:
    EF05CO011): vira item especial com gabarito anotado.
 
 Fluxo operacional: pré-triagem automatizada por busca (planilha em
-`docs/anti-vexame/`) + adjudicação humana registrada no campo
+`docs/pre-triagem/`) + adjudicação humana registrada no campo
 `verificacao_antivexame` de cada item. O congelamento `itens-v1` exige os 60
 com status diferente de `pendente`.
 
