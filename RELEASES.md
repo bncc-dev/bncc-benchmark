@@ -3,16 +3,21 @@
 Cada release é um conjunto imutável de resultados, identificado por git tag
 `vX.Y.Z` (semântica em DECISOES.md D11: PATCH = re-julgamento dos mesmos
 brutos; MINOR = medições novas na mesma metodologia; MAJOR = quebra de
-comparabilidade; 1.0.0 = primeira publicação pública, gate `dados-v1.0.0`).
+comparabilidade). O projeto está em **0.x**: a metodologia ainda pode mudar, e
+abrir o repositório não promoveu a versão. O 1.0.0 vem quando o protocolo
+estabilizar.
 
 Processo de release: bateria executada e avaliada → resultados commitados e
 CI verde (check de consistência) → entrada preenchida aqui → `git tag vX.Y.Z`
 + push da tag. Alterou qualquer julgamento depois? Número novo, nunca
 sobrescrever.
 
-## v0.1.0 · 16/jul/2026 · interna (pré-publicação)
+## v0.1.0 · 16/jul/2026 · primeira release pública
 
 Primeira medição de referência do benchmark: 15.300 respostas, 17 modelos.
+Medida em julho de 2026, quando o repositório ainda era privado, e publicada
+sem alteração na abertura de 27/jul/2026 — os resultados são exatamente os
+que o CI recalcula a cada push.
 
 - **Rodada**: `oficial-seca-2026-07`, modo seco (a rodada grounded entra numa
   release MINOR futura). Execução 15-16/jul/2026, trilha completa nos

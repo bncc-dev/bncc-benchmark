@@ -183,8 +183,18 @@ data). Releases são imutáveis; qualquer alteração gera número novo:
   adicionados, ex.: a rodada grounded).
 - **MAJOR**: quebra de comparabilidade (banco de itens ou protocolo novos);
   o leaderboard recomeça a série.
-- **1.0.0** é a primeira publicação pública, casada com o gate
-  `dados-v1.0.0` do bncc.dev; tudo antes é 0.x interno.
+- **0.x** enquanto a metodologia ainda pode mudar. Publicação não promove
+  versão: o benchmark abriu em 0.1.0 e segue em 0.x.
+- **1.0.0** quando o protocolo estabilizar — banco de itens, rubrica e
+  avaliador maduros o bastante para que a série de comparabilidade seja um
+  compromisso, não uma expectativa.
+
+**Emenda (27/jul/2026):** a regra anterior amarrava 1.0.0 à primeira
+publicação pública. Trocada porque as duas coisas não são a mesma: abrir o
+repositório é uma decisão de transparência, estabilizar o protocolo é uma
+decisão técnica. Numerar 1.0.0 no dia da abertura prometeria estabilidade que
+o banco de itens ainda não tem — a v1 pode ganhar correções, e o 0.x avisa
+isso a quem for citar o benchmark.
 
 Os manifestos por rodada (D3/RB-8) já amarram cada artefato a config e
 commit; a release é o laço externo que dá nome citável ao conjunto.
