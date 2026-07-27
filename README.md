@@ -48,7 +48,7 @@ Instalação do zero e primeira execução: [`docs/comecando.md`](docs/comecando
 ```bash
 pnpm install
 pnpm test                                  # invariantes do gerador + verificadores
-pnpm gerar                                 # gera itens/itens-v1-rc.json (determinístico)
+pnpm gerar --sem-heldout                   # gera itens/itens-v1-rc.json (determinístico)
 pnpm executar --rodada smoke --modelos claude-haiku --limite 10
 pnpm avaliar --rodada smoke
 pnpm agregar --rodada smoke

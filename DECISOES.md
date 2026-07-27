@@ -61,6 +61,17 @@ re-medições futuras, aprendizado real (melhora nos itens públicos E no
 held-out) de memorização do teste publicado (melhora só nos públicos).
 O `.gitignore` bloqueia padrões `*heldout*` como defesa em profundidade.
 
+**Emenda (27/jul/2026): a seed do held-out também é privada.** A auditoria
+pré-abertura mostrou que proteger o arquivo não basta — o gerador é
+determinístico, então a seed versionada permitia reconstruir o held-out item a
+item a partir do próprio repositório. A seed passou a vir de `SEED_HELDOUT` no
+`.env` e nenhum arquivo versionado (código, teste ou documento) pode voltar a
+registrá-la ou descrever como derivá-la. O `pnpm gerar` falha com mensagem
+explícita quando a variável está ausente; `--sem-heldout` gera só o banco
+público. Consequência para publicação: do held-out divulgam-se apenas
+agregados, nunca itens ou resultados item a item — estes permitiriam confirmar
+tentativas de adivinhação da seed.
+
 ## D6 · O typo EF05CO011 como item especial
 
 O anexo oficial do Parecer CNE/CEB 2/2022 grafa EF05CO011 (três dígitos de
