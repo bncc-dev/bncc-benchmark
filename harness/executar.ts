@@ -9,7 +9,7 @@
  */
 
 import { mkdirSync, readFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { gravarBrutos } from './lib/brutos.js';
@@ -83,7 +83,8 @@ const entradaManifesto: EntradaExecucao = {
   modo,
   harness_commit: commitHarness(RAIZ),
   flags: {
-    itens: args.itens,
+    // Relativo à raiz: caminho absoluto vazaria o home de quem executou a rodada.
+    itens: relative(RAIZ, resolve(args.itens!)),
     limite: args.limite ? Number(args.limite) : null,
     parafrases: Number(args.parafrases),
     concorrencia: Number(args.concorrencia),

@@ -5,12 +5,17 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   validar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.2
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -18,5 +23,12 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm typecheck
       - run: pnpm test
-      # Consistência julgados×agregados da rodada publicada (RELEASES.md)
-      - run: pnpm agregar --rodada oficial-seca-2026-07 --verificar
+      # Consistência: recalcula os agregados a partir dos brutos commitados e
+      # falha se divergirem. Protege as notas publicadas contra edição manual.
+      - name: consistência dos resultados
+        run: |
+          for rodada in resultados/*/; do
+            if [ -f "$rodada/julgados.jsonl" ] && [ -f "$rodada/agregados.json" ]; then
+              pnpm agregar --rodada "$(basename "$rodada")" --verificar
+            fi
+          done

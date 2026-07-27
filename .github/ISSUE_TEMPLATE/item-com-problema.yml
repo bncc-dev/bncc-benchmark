@@ -1,0 +1,34 @@
+name: Item com problema
+description: Um item do banco está ambíguo, tem gabarito errado ou julgamento incorreto.
+labels: ["item-proximo-banco", "adjudicacao"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Correções **nunca alteram uma rodada já publicada** — as notas precisam
+        continuar comparáveis entre releases. Se procede, o item entra corrigido
+        na próxima versão do banco, com registro em `DECISOES.md`.
+        Ver [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).
+  - type: input
+    id: item
+    attributes:
+      label: Código do item
+      description: O `id` do item em `itens/itens-v1.json` (ex.- b-112).
+    validations:
+      required: true
+  - type: textarea
+    id: observado
+    attributes:
+      label: O que está registrado × o que deveria estar
+      description: Cite o gabarito atual e o que você considera correto.
+    validations:
+      required: true
+  - type: textarea
+    id: fonte
+    attributes:
+      label: Justificativa com fonte
+      description: |
+        Link ou citação do documento oficial que sustenta a correção. Sem fonte
+        verificável a issue não avança para adjudicação.
+    validations:
+      required: true
