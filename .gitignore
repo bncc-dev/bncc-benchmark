@@ -10,3 +10,9 @@ cache/
 
 # exceção: o template de exemplo é público
 !.env.example
+
+# Documentos internos (estratégia de abertura, manual de triagem da comunidade,
+# revisões de engenharia com custos, relatórios de teste anteriores à rodada
+# oficial). Ficam no disco do time, fora do repositório público — o bncc-dados
+# faz o mesmo com o plano de abertura dele.
+interno/
