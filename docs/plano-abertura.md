@@ -4,7 +4,23 @@ Análise e estratégia para tornar público o `bncc-dev/bncc-benchmark`, registr
 
 > **Nota de higiene deste documento.** Ele descreve como o held-out era derivável, mas **nunca cita os valores**. Qualquer edição futura deve manter essa regra: um plano de abertura que publica o segredo que ele mesmo protege é pior que não ter plano.
 
-## Veredito da auditoria (2026-07-26)
+## Situação em 2026-07-27: A-1 fechado
+
+O bloqueador crítico foi resolvido. A sequência, e o que ela ensinou:
+
+1. Seed saiu do código para `SEED_HELDOUT` no `.env`; teste deixou de codificar a fórmula; geração do held-out virou opt-in (`--com-heldout`).
+2. Histórico reescrito com `git filter-repo` e force-push. A árvore do topo ficou byte a byte idêntica — nada do conteúdo atual mudou.
+3. **A reescrita não bastou.** Verificação pós-push mostrou que o GitHub continua servindo commits órfãos por SHA direto: a seed antiga seguia recuperável pela API, e o mapa de commits que havia sido versionado funcionava como índice desses objetos.
+4. **Held-out regerado com seed nova** de origem criptográfica. Como ele nunca havia sido usado em medição (todas as rodadas apontam para `itens/itens-v1.json`), o custo foi um comando e nenhuma comparabilidade perdida. A seed exposta hoje abre um conjunto que não é mais o held-out.
+5. Mapa completo saiu do versionado; `docs/reescrita-de-historico.md` publica só os três hashes que os manifestos citam.
+
+Lição para futuras limpezas: **force-push não apaga nada no GitHub.** Objetos órfãos seguem servidos por SHA até uma coleta de lixo que só ocorre a pedido do suporte. Qualquer remediação que dependa só de reescrita de histórico é incompleta; a que invalida o segredo (rotação/regeneração) não depende de terceiros.
+
+Continua verdadeira a ressalva de fundo: nada disso responde se alguém copiou os objetos antes. A regeneração é o que torna essa pergunta irrelevante.
+
+## Veredito da auditoria (2026-07-26) — registro histórico
+
+> As duas seções seguintes preservam o diagnóstico original, incluindo a parte que se mostrou incompleta (a suposição de que reescrever o histórico bastaria). Ficam como estão porque o erro é a parte instrutiva. O estado atual é o da seção acima.
 
 **Não abrir ainda — e o bloqueador não é um segredo commitado.** A varredura saiu limpa: nenhum `.env` jamais entrou no histórico, nenhuma chave literal em nenhum dos 41 commits, nenhum arquivo de held-out em nenhuma árvore, nenhuma PII nas 15.300 respostas.
 
@@ -16,7 +32,7 @@ A boa notícia, e ela muda o custo do conserto: **como nada vazou, o held-out at
 
 ### 🔴 Crítico
 
-**A-1 · O held-out é derivável do repositório.**
+**A-1 · O held-out é derivável do repositório.** — ✅ **RESOLVIDO em 27/jul/2026** (ver seção de situação, no topo). O relato abaixo é o do achado original.
 
 Evidência: `harness/gerar-itens.ts:18-19` fixa a seed pública e o deslocamento que produz a seed do held-out, com o comentário explicando a fórmula; `test/gerador.test.ts:89` refaz a conta literalmente — o teste chamado *"held-out não vaza"* é o mapa mais direto para derivá-lo. O gerador (`harness/lib/gerador.ts:374`) é puro e determinístico sobre um PRNG seedado.
 
@@ -108,11 +124,12 @@ Fora isso, nada a esconder: chaves vivem em `.env` (ignorado desde sempre) e o `
 
 ### Mínimo para abrir (bloqueadores)
 
-- [ ] **A-1.1 ·** Seed do held-out sai do código para `SEED_HELDOUT` no `.env`; `.env.example` atualizado. **Sem trocar o valor** — o held-out atual é preservado.
-- [ ] **A-1.2 ·** `test/gerador.test.ts` deixa de codificar a fórmula (seeds arbitrárias).
-- [ ] **A-1.3 ·** Higienizar documentos e comentários que descrevam a derivação (inclusive este plano).
-- [ ] **A-1.4 ·** `git filter-repo` sobre todo o histórico; `commit-map` versionado; verificação `git log -S` vazia.
-- [ ] **A-1.5 ·** Force-push + reclone por todo o time; forks/espelhos/backups internos tratados.
+- [x] **A-1.1 ·** Seed do held-out sai do código para `SEED_HELDOUT` no `.env`; `.env.example` atualizado.
+- [x] **A-1.2 ·** `test/gerador.test.ts` deixa de codificar a fórmula (seeds arbitrárias).
+- [x] **A-1.3 ·** Higienizar documentos e comentários que descrevam a derivação (inclusive este plano).
+- [x] **A-1.4 ·** `git filter-repo` sobre todo o histórico; verificação `git log -S` vazia no remoto e no clone local.
+- [x] **A-1.5 ·** Force-push + limpeza do clone local (reflog expirado, `gc --prune`). Sem forks e sem branch protection — nada mais a coordenar.
+- [x] **A-1.6 ·** Held-out regerado com seed criptográfica, porque o GitHub segue servindo os commits órfãos por SHA. Mapa completo fora do versionado.
 - [ ] **A-3 ·** Release `dados-v1.0.0` do bncc-dados publicada (gate de redistribuição do vendorizado).
 - [x] `CONTRIBUTING.md` com a regra de instrumento de medição.
 - [x] `CODE_OF_CONDUCT.md` (Contributor Covenant pt-BR, mesmo texto do bncc-dados).

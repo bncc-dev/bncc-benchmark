@@ -71,10 +71,27 @@ held-out virou **opt-in**: `pnpm gerar` produz só o banco público e
 `pnpm gerar --com-heldout` (só mantenedores, exige a variável) regera também o
 privado. O padrão precisa servir quem não tem a seed, que será a maioria depois
 da abertura; e esquecer a flag é inofensivo, enquanto o inverso quebraria o
-primeiro comando de todo contribuidor externo. Consequência para publicação: do
-held-out divulgam-se apenas
-agregados, nunca itens ou resultados item a item — estes permitiriam confirmar
-tentativas de adivinhação da seed.
+primeiro comando de todo contribuidor externo.
+
+**O conjunto foi regerado com seed nova (27/jul/2026).** Reescrever o histórico
+não bastou: depois do force-push, o GitHub seguia servindo os commits órfãos por
+SHA direto, com a seed antiga recuperável pela API. Como o held-out nunca havia
+sido usado em medição alguma (todas as rodadas até aqui apontam para
+`itens/itens-v1.json`), regerar custou um comando e nenhuma comparabilidade —
+e é a única remediação que não depende de coleta de lixo de terceiros nem da
+suposição de que ninguém copiou os objetos antes. A seed antiga hoje abre um
+conjunto que não é mais o held-out.
+
+A seed nova é aleatória de origem criptográfica, não derivada da pública: se um
+dia outro valor escapar, a estrutura não deve ser adivinhável. Limite conhecido:
+o PRNG (mulberry32, `harness/lib/aleatorio.ts`) trunca a seed em 32 bits, então
+o espaço é de ~4,3 bilhões. Ampliá-lo exigiria trocar o PRNG, o que mudaria
+também o banco público já congelado. A defesa efetiva contra varredura não é o
+tamanho do espaço e sim a ausência de oráculo: sem resultados item a item
+publicados, não há como reconhecer um acerto.
+
+Consequência para publicação: do held-out divulgam-se apenas agregados, nunca
+itens ou resultados item a item — estes seriam exatamente o oráculo que falta.
 
 ## D6 · O typo EF05CO011 como item especial
 
