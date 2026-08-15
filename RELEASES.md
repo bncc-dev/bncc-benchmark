@@ -12,6 +12,28 @@ CI verde (check de consistência) → entrada preenchida aqui → `git tag vX.Y.
 + push da tag. Alterou qualquer julgamento depois? Número novo, nunca
 sobrescrever.
 
+## v0.2.0 · EM PREPARAÇÃO · rodada seca 2026-08
+
+Rascunho — esta entrada se completa quando a bateria rodar; até lá registra as
+decisões de composição já tomadas (15/ago/2026).
+
+- **Elenco (19)**: as 17 vagas da v0.1.0 — 7 com modelo atualizado
+  (opus-4.8→opus-5, grok-4.5→4.6, gemini-3.5-flash→3.7-flash, kimi-k2.6→k3,
+  qwen3.7-max→3.8-max, deepseek-pro/flash fixados nos snapshots -0813/-0731) —
+  mais 2 entrantes: muse-spark-1.2 (Meta) e qwen3.7-flash (Alibaba).
+- **kimi-k2.5: promessa da v0.1.0 REVOGADA.** A v0.1.0 registrou "medição
+  adiada, entra em release MINOR futura". Não será medido: entre as duas
+  releases a Moonshot lançou o K2.6 e depois o K3 (16/jul/2026), deixando o
+  K2.5 duas gerações defasado — medi-lo não responderia mais nenhuma pergunta
+  comparativa do benchmark. Registrado aqui para que a promessa conste como
+  resolvida, não esquecida.
+- **Comparabilidade**: mesmo `itens-v1`, mesma rubrica-v1, mesmo juiz
+  (haiku-bedrock), mesmo dataset dados-2026.07 → MINOR conforme D11. Rodada
+  executada com cache novo (chamadas frescas para todo o elenco, inclusive
+  modelos inalterados — aliases de API podem mudar por baixo sem aviso).
+- **Rodada grounded**: segue prometida para release MINOR futura (promessa da
+  v0.1.0 mantida, não é desta release).
+
 ## v0.1.0 · 16/jul/2026 · primeira release pública
 
 Primeira medição de referência do benchmark: 15.300 respostas, 17 modelos.

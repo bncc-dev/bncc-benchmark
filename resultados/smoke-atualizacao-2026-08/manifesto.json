@@ -1,0 +1,424 @@
+{
+ "rodada": "smoke-atualizacao-2026-08",
+ "execucoes": [
+  {
+   "executado_em": "2026-08-15T13:55:51.482Z",
+   "modo": "seco",
+   "harness_commit": "b5f4408",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 3,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": true
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "opus-5",
+     "def": {
+      "id": "opus-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "anthropic/claude-opus-5",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "precos": {
+       "entrada": 5,
+       "saida": 25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.149985,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "grok",
+     "def": {
+      "id": "grok",
+      "provedor": "openai-compat",
+      "modelo": "x-ai/grok-4.6",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "xAI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.024808,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-flash",
+     "def": {
+      "id": "gemini-flash",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "google/gemini-3.7-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Google"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.375,
+       "saida": 1.875
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.012638,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "kimi",
+     "def": {
+      "id": "kimi",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "moonshotai/kimi-k3",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Moonshot AI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.113601,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "qwen-max",
+     "def": {
+      "id": "qwen-max",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.8-max",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.144538,
+      "incompletas": 1
+     }
+    },
+    {
+     "id": "deepseek-pro",
+     "def": {
+      "id": "deepseek-pro",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-pro-0813",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 1.32,
+       "saida": 3.96
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.003483,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "deepseek-flash",
+     "def": {
+      "id": "deepseek-flash",
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-flash-0731",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.14,
+       "saida": 0.28
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.001766,
+      "incompletas": 3
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-15T14:04:56.265Z",
+   "modo": "seco",
+   "harness_commit": "b5f4408",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 3,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": true
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-flash",
+     "def": {
+      "id": "deepseek-flash",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4-flash-0731",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.14,
+       "saida": 0.28
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.001407,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-15T14:40:40.055Z",
+   "modo": "seco",
+   "harness_commit": "b5f4408",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 3,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": true
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "qwen-flash",
+     "def": {
+      "id": "qwen-flash",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.03,
+       "saida": 0.13
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.000525,
+      "incompletas": 1
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-15T14:41:35.943Z",
+   "modo": "seco",
+   "harness_commit": "b5f4408",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 3,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": true
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "qwen-flash",
+     "def": {
+      "id": "qwen-flash",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.03,
+       "saida": 0.13
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.000312,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-15T14:48:02.653Z",
+   "modo": "seco",
+   "harness_commit": "b5f4408",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 3,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": true
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "muse-spark",
+     "def": {
+      "id": "muse-spark",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "meta/muse-spark-1.2",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Meta"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 1.25,
+       "saida": 4.25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.012723,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": []
+}
