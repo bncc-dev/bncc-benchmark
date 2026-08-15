@@ -33,6 +33,14 @@ decisões de composição já tomadas (15/ago/2026).
   modelos inalterados — aliases de API podem mudar por baixo sem aviso).
 - **Rodada grounded**: segue prometida para release MINOR futura (promessa da
   v0.1.0 mantida, não é desta release).
+- **Errata da v0.1.0 (preço do gpt-luna)**: o `precos` do gpt-luna no registro
+  estava em 1/6 por MTok, dez vezes o cobrado pela OpenAI via OpenRouter
+  (0.1/0.6). Como o `custo_usd` dos brutos é calculado a partir dessa tabela,
+  o custo publicado do gpt-luna na v0.1.0 (~US$ 2,29) está inflado ~10×; o
+  real é ~US$ 0,23, e o total da rodada cai de ~US$ 109 para ~US$ 107.
+  **Nenhuma nota, resposta ou julgamento é afetado** — o campo é informativo e
+  não entra na avaliação. A v0.1.0 é imutável (D11) e não será reescrita: a
+  correção vale da v0.2.0 em diante e fica registrada aqui.
 
 ## v0.1.0 · 16/jul/2026 · primeira release pública
 

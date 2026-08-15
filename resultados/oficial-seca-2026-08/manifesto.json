@@ -1,0 +1,107 @@
+{
+ "rodada": "oficial-seca-2026-08",
+ "execucoes": [
+  {
+   "executado_em": "2026-08-15T16:35:23.443Z",
+   "modo": "seco",
+   "harness_commit": "dd1fce9",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "opus-5",
+     "def": {
+      "id": "opus-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "anthropic/claude-opus-5",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "precos": {
+       "entrada": 5,
+       "saida": 25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 212,
+      "do_cache": 688,
+      "custo_usd": 8.076635,
+      "incompletas": 2
+     }
+    },
+    {
+     "id": "grok",
+     "def": {
+      "id": "grok",
+      "provedor": "openai-compat",
+      "modelo": "x-ai/grok-4.6",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "xAI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 9.817348,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-flash",
+     "def": {
+      "id": "gemini-flash",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "google/gemini-3.7-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Google"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.375,
+       "saida": 1.875
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 1.617611,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": []
+}

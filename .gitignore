@@ -3,6 +3,8 @@ cache/
 # Caches de rodadas anteriores, arquivados por D12 (rodada oficial nova começa
 # com cache vazio; o antigo continua servindo à retomada/reprodução da sua).
 cache-*/
+# Logs de execução local da bateria (a trilha oficial fica no manifesto).
+*.log
 .env
 .env.*
 

@@ -101,7 +101,12 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['OpenAI'], allow_fallbacks: false } },
-    precos: { entrada: 1, saida: 6 },
+    // Corrigido em 15/ago/2026: estava 1/6, dez vezes o cobrado. A OpenAI via
+    // OpenRouter cobra 0.1/0.6 (conferido no endpoint do provedor pinado).
+    // Consequência: o custo do gpt-luna na v0.1.0 saiu inflado ~10× (US$ 2,29
+    // publicados; ~US$ 0,23 reais). Release imutável (D11), corrigido daqui
+    // em diante e anotado na v0.2.0.
+    precos: { entrada: 0.1, saida: 0.6 },
     suportaGrounded: true,
   },
   // POLÍTICA (decisão do time, 13/jul/2026): execução SÓ via Bedrock e
