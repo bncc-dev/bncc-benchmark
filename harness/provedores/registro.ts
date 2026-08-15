@@ -74,11 +74,11 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 2, saida: 10 },
     suportaGrounded: true,
   },
-  'opus-4.8': {
-    id: 'opus-4.8',
+  'opus-5': {
+    id: 'opus-5',
     maxTokensPadrao: 4096,
     provedor: 'openai-compat',
-    modelo: 'anthropic/claude-opus-4.8',
+    modelo: 'anthropic/claude-opus-5', // sucessor do opus-4.8 (aposentado em ago/2026)
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     precos: { entrada: 5, saida: 25 },
@@ -123,11 +123,11 @@ export const MODELOS: Record<string, DefModelo> = {
     id: 'gemini-flash',
     maxTokensPadrao: 8192,
     provedor: 'openai-compat',
-    modelo: 'google/gemini-3.5-flash',
+    modelo: 'google/gemini-3.7-flash', // sucessor do 3.5-flash (13/ago/2026)
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Google'], allow_fallbacks: false } },
-    precos: { entrada: 1.5, saida: 9 },
+    precos: { entrada: 0.375, saida: 1.875 },
     suportaGrounded: true,
   },
   // Fronteira dos demais provedores, via OpenRouter (bateria piloto).
@@ -135,17 +135,17 @@ export const MODELOS: Record<string, DefModelo> = {
     id: 'deepseek-pro',
     maxTokensPadrao: 4096,
     provedor: 'openai-compat',
-    modelo: 'deepseek/deepseek-v4-pro',
+    modelo: 'deepseek/deepseek-v4-pro-0813', // snapshot datado (fixado em ago/2026; o alias sem data deriva)
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } }, // 1ª parte excluída pela política de privacidade da conta; Fireworks (sem quantização) como rota efetiva
-    precos: { entrada: 0.43, saida: 0.87 },
+    precos: { entrada: 1.32, saida: 3.96 }, // preço da Fireworks no snapshot -0813 (DeepSeek direto cobraria 0.435/0.87, mas está vetado)
     suportaGrounded: true,
   },
   grok: {
     id: 'grok',
     provedor: 'openai-compat',
-    modelo: 'x-ai/grok-4.5',
+    modelo: 'x-ai/grok-4.6', // sucessor do grok-4.5 (12/ago/2026), mesmo preço
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['xAI'], allow_fallbacks: false } },
@@ -156,33 +156,34 @@ export const MODELOS: Record<string, DefModelo> = {
     id: 'kimi',
     maxTokensPadrao: 8192,
     provedor: 'openai-compat',
-    modelo: 'moonshotai/kimi-k2.6',
+    modelo: 'moonshotai/kimi-k3', // sucessor do k2.6 (16/jul/2026); NB: sobe de faixa de preço
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Moonshot AI'], allow_fallbacks: false } },
-    precos: { entrada: 0.66, saida: 3.41 },
+    precos: { entrada: 3, saida: 15 },
     suportaGrounded: true,
   },
   'qwen-max': {
     id: 'qwen-max',
     maxTokensPadrao: 4096,
     provedor: 'openai-compat',
-    modelo: 'qwen/qwen3.7-max',
+    modelo: 'qwen/qwen3.8-max', // sucessor do 3.7-max (03/ago/2026)
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
-    precos: { entrada: 1.25, saida: 3.75 },
+    precos: { entrada: 2, saida: 6 },
     suportaGrounded: true,
   },
   // Segundo escalão (Fase 2), via OpenRouter.
   'deepseek-flash': {
     id: 'deepseek-flash',
+    maxTokensPadrao: 4096, // o snapshot -0731 raciocina antes de responder; 1024 truncava com resposta vazia
     provedor: 'openai-compat',
-    modelo: 'deepseek/deepseek-v4-flash',
+    modelo: 'deepseek/deepseek-v4-flash-0731', // snapshot datado (fixado em ago/2026); a Fireworks saiu do alias sem data, mas serve o snapshot
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } }, // 1ª parte excluída pela política de privacidade da conta; Fireworks (sem quantização) como rota efetiva
-    precos: { entrada: 0.08, saida: 0.15 },
+    precos: { entrada: 0.14, saida: 0.28 },
     suportaGrounded: true,
   },
   'qwen-plus': {
@@ -193,6 +194,30 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
     precos: { entrada: 0.32, saida: 1.28 },
+    suportaGrounded: true,
+  },
+  // Entrantes da rodada 2026-08 (decisão: cobrir a Meta e reforçar a faixa
+  // ultra-barata; ver conversa/decisões de 15/ago/2026).
+  'muse-spark': {
+    id: 'muse-spark',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'meta/muse-spark-1.2',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['Meta'], allow_fallbacks: false } },
+    precos: { entrada: 1.25, saida: 4.25 },
+    suportaGrounded: true,
+  },
+  'qwen-flash': {
+    id: 'qwen-flash',
+    maxTokensPadrao: 4096, // raciocina antes de responder; 1024 truncava com resposta vazia
+    provedor: 'openai-compat',
+    modelo: 'qwen/qwen3.7-flash',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
+    precos: { entrada: 0.03, saida: 0.13 },
     suportaGrounded: true,
   },
   'kimi-k25': {

@@ -199,3 +199,40 @@ isso a quem for citar o benchmark.
 Os manifestos por rodada (D3/RB-8) já amarram cada artefato a config e
 commit; a release é o laço externo que dá nome citável ao conjunto.
 Decisão do time em 15/jul/2026.
+
+## D12 · Rodada oficial nova = cache novo; snapshots datados quando existirem
+
+O cache em disco (`cache/`) protege contra re-execução acidental dentro de uma
+rodada, mas a chave (modelo + prompt + config) não distingue QUANDO a resposta
+foi obtida. Modelos servidos por API mudam por baixo de aliases sem data — o
+fenômeno é documentado na literatura (Chen, Zaharia & Zou 2023, "How Is
+ChatGPT's Behavior Changing over Time?") e foi observado neste projeto na
+prática: entre jul e ago/2026, provedores repreçaram aliases (`qwen3.7-max`,
+`kimi-k2.6`) e a Fireworks deixou de servir o alias `deepseek-v4-flash`
+(mantendo o snapshot datado). Reaproveitar cache entre rodadas oficiais
+misturaria medições de datas diferentes sob o rótulo de uma data só.
+
+Regras adotadas (15/ago/2026):
+
+1. **Cada rodada oficial começa com cache vazio.** O cache da rodada anterior
+   é arquivado (`cache-YYYY-MM/`), não descartado: continua servindo à
+   retomada/reprodução daquela rodada. Dentro de uma mesma rodada, o cache
+   segue fazendo o que sempre fez (retomada barata, determinismo do
+   checkpoint).
+2. **Todos os modelos do elenco fazem chamadas frescas**, inclusive os que não
+   mudaram de versão entre rodadas — é exatamente neles que a deriva
+   silenciosa passaria despercebida. Smokes e pilotos podem reaproveitar
+   cache à vontade.
+3. **Identificadores de modelo usam snapshot datado quando o provedor
+   oferecer** (ex.: `deepseek-v4-pro-0813` em vez de `deepseek-v4-pro`).
+   Aliases sem data só quando não houver alternativa, e o `versao_modelo`
+   gravado nos brutos registra o endpoint que de fato serviu.
+
+Custo desta política: re-medir o elenco inteiro a cada rodada oficial (~US$
+100-150/rodada na escala atual) em vez de pagar só pelos modelos novos. É o
+preço de poder afirmar que todos os números de uma rodada são da mesma janela
+temporal. Alternativa considerada e rejeitada: reaproveitar julho para os
+modelos "inalterados" com um teste de deriva amostral (subamostra pareada
+jul×ago, McNemar) — defensável e mais barata, fica documentada aqui como opção
+para quando o elenco ou o custo crescerem a ponto de justificar a complexidade
+extra no manifesto.
