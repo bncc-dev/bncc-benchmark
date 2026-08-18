@@ -21,7 +21,7 @@ import { calcularMetricas, montarExport, type Apresentacao } from './lib/exporta
 /**
  * Nome público, empresa e faixa de preço de cada modelo já medido.
  *
- * O id designa o MODELO, não a vaga no elenco (D13.1): quando o fabricante
+ * O id designa o MODELO, não a vaga no elenco (D13.1): quando a empresa
  * lança versão nova, ela entra com id próprio e o antigo permanece aqui,
  * porque as releases em que foi medido seguem citáveis. Por isso a tabela só
  * cresce — ids nunca são reapontados nem removidos.
