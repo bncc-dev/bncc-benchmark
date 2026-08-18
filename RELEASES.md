@@ -9,8 +9,12 @@ estabilizar.
 
 Processo de release: bateria executada e avaliada → resultados commitados e
 CI verde (check de consistência) → entrada preenchida aqui → `git tag vX.Y.Z`
-+ push da tag. Alterou qualquer julgamento depois? Número novo, nunca
-sobrescrever.
++ push da tag → **Release do GitHub criada a partir da tag** (`gh release
+create vX.Y.Z --verify-tag`), com as notas resumindo esta entrada. A tag e a
+Release são objetos distintos: sem a segunda, a página do repositório segue
+anunciando a release anterior como a mais recente, que é o primeiro lugar
+onde a maioria das pessoas olha. Alterou qualquer julgamento depois? Número
+novo, nunca sobrescrever.
 
 ## v0.2.0 · 18/ago/2026 · elenco renovado, 19 modelos
 
