@@ -56,7 +56,7 @@ código (ex.: EF01AR01, porque Arte no Fundamental numera por blocos de anos).
 - 2 a 3 paráfrases por item; média e variância reportadas.
 - Versão exata de cada modelo registrada, com data de medição. O identificador
   de um modelo no leaderboard designa **aquele modelo**, não uma vaga no
-  elenco: quando o fabricante lança versão nova, ela entra como linha própria
+  elenco: quando a empresa lança versão nova, ela entra como linha própria
   e a antiga permanece nas releases em que foi medida. O leaderboard é uma
   sequência de fotografias datadas, não uma série temporal por modelo
   (ver `DECISOES.md` D13.1).
