@@ -3,7 +3,7 @@
 [![Validação](https://github.com/bncc-dev/bncc-benchmark/actions/workflows/validacao.yml/badge.svg)](https://github.com/bncc-dev/bncc-benchmark/actions/workflows/validacao.yml)
 [![Dados: CC BY 4.0](https://img.shields.io/badge/dados-CC%20BY%204.0-lightgrey.svg)](LICENSE-DADOS.md)
 [![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-green.svg)](LICENSE-CODIGO.md)
-[![Release: v0.1.0](https://img.shields.io/badge/release-v0.1.0-blue.svg)](RELEASES.md)
+[![Release: v0.2.0](https://img.shields.io/badge/release-v0.2.0-blue.svg)](RELEASES.md)
 
 Benchmark público de alucinação de LLMs sobre a BNCC (Base Nacional Comum
 Curricular). Mede, com metodologia aberta e dados brutos publicados, quanto os
@@ -11,22 +11,22 @@ modelos de linguagem inventam códigos e textos da BNCC quando respondem sem
 acesso à fonte estruturada, e quanto o problema desaparece com grounding via
 bncc.dev (MCP e API).
 
-A rodada `oficial-seca-2026-07` mediu **17 modelos × 900 respostas cada**, e as
-15.300 respostas cruas estão neste repositório, uma a uma.
+A rodada `oficial-seca-2026-08` mediu **19 modelos × 900 respostas cada**, e as
+17.100 respostas cruas estão neste repositório, uma a uma.
 
 ## Resultados
 
 Pergunte a um LLM o texto exato de uma habilidade da BNCC, sem dar acesso à
-fonte. A taxa de respostas fiéis ao texto oficial vai de **89% a 2%**,
+fonte. A taxa de respostas fiéis ao texto oficial vai de **90% a 0%**,
 dependendo do modelo.
 
 | # | Modelo | Nota | Texto fiel | Aceitou código falso |
 |---|---|---|---|---|
-| 1 | GPT-5.6 Sol · OpenAI | 89,2 | 89% | 14% |
-| 2 | Claude Fable 5 · Anthropic | 81,3 | 77% | 3% |
-| 3 | Gemini 3.1 Pro · Google | 77,0 | 65% | 3% |
-| 4 | GPT-5.6 Luna · OpenAI | 75,3 | 72% | 35% |
-| 5 | DeepSeek V4 Pro · DeepSeek | 57,8 | 42% | 46% |
+| 1 | GPT-5.6 Sol · OpenAI | 86,4 | 90% | 25% |
+| 2 | Claude Fable 5 · Anthropic | 80,2 | 77% | 3% |
+| 3 | Gemini 3.1 Pro · Google | 76,0 | 61% | 4% |
+| 4 | Claude Opus 5 · Anthropic | 75,0 | 67% | 4% |
+| 5 | GPT-5.6 Luna · OpenAI | 73,8 | 75% | 43% |
 
 *Nota* é a média de cinco dimensões (reconhecer códigos reais, recusar falsos,
 fidelidade do texto, lookup inverso e citação correta em geração aberta).
@@ -35,20 +35,20 @@ tarefa A. *Aceitou código falso* é a fração de códigos inexistentes — e
 verificados como inexistentes também fora da BNCC — que o modelo afirmou
 existir.
 
-Os 17 modelos, todas as métricas e os exemplos estão em
+Os 19 modelos, todas as métricas e os exemplos estão em
 [`resultados/`](resultados/) e no leaderboard em [bncc.dev](https://bncc.dev).
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="resultados/oficial-seca-2026-07/site/dispersao-v0.1.0-escuro.svg">
-  <img alt="Dispersão dos 17 modelos: fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul. GPT-5.6 Sol aparece isolado no alto, com 89% de fidelidade e 14% de aceitação de falsos; Claude Fable 5 e Gemini 3.1 Pro ficam à esquerda, com 3% de aceitação; GPT-5.6 Luna tem fidelidade alta (72%) mas aceita 35% dos falsos; a maioria dos modelos se aglomera na faixa abaixo de 25% de fidelidade." src="resultados/oficial-seca-2026-07/site/dispersao-v0.1.0-claro.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/oficial-seca-2026-08/site/dispersao-v0.2.0-escuro.svg">
+  <img alt="Dispersão dos 19 modelos: fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul. GPT-5.6 Sol aparece isolado no alto, com 90% de fidelidade, mas aceita 25% dos códigos falsos; Claude Fable 5, Gemini 3.1 Pro e Claude Opus 5 ficam à esquerda, entre 3% e 4% de aceitação; GPT-5.6 Luna tem fidelidade alta (75%) e aceita 43% dos falsos; a maioria dos modelos se aglomera na faixa abaixo de 25% de fidelidade." src="resultados/oficial-seca-2026-08/site/dispersao-v0.2.0-claro.svg">
 </picture>
 
 Duas leituras que o ranking sozinho não dá. **Nota alta não significa modelo
-confiável**: o primeiro colocado ainda aceita 14% dos códigos falsos como
+confiável**: o primeiro colocado ainda aceita 25% dos códigos falsos como
 reais. E **acertar o texto e recusar invenções são habilidades distintas** —
 por isso os pontos se espalham em vez de formar uma diagonal. GPT-5.6 Luna e
-Claude Fable 5 reproduzem o texto oficial com fidelidade parecida (72% e 77%),
-mas o primeiro aceita 35% dos códigos inventados e o segundo, 3% — mais de dez
+Claude Fable 5 reproduzem o texto oficial com fidelidade parecida (75% e 77%),
+mas o primeiro aceita 43% dos códigos inventados e o segundo, 3% — quatorze
 vezes menos, com a mesma competência de texto.
 
 O gráfico é gerado a partir do leaderboard publicado

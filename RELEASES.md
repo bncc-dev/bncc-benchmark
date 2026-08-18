@@ -12,15 +12,74 @@ CI verde (check de consistência) → entrada preenchida aqui → `git tag vX.Y.
 + push da tag. Alterou qualquer julgamento depois? Número novo, nunca
 sobrescrever.
 
-## v0.2.0 · EM PREPARAÇÃO · rodada seca 2026-08
+## v0.2.0 · 18/ago/2026 · elenco renovado, 19 modelos
 
-Rascunho — esta entrada se completa quando a bateria rodar; até lá registra as
-decisões de composição já tomadas (15/ago/2026).
+Segunda medição de referência: 17.100 respostas, 19 modelos. Bateria executada
+em 15-18/ago/2026.
 
+- **Rodada**: `oficial-seca-2026-08`, modo seco. **17.100 respostas, 19
+  modelos, todos com a bateria completa** (900 chamadas cada: 300 itens × 3
+  paráfrases). Nenhum modelo ficou parcial, então a D13.3 não foi acionada.
+- **Julgamento**: avaliador v2 · rubrica-v1 · juiz haiku-bedrock (9.460
+  julgamentos na trilha, `juiz.jsonl`) — mesmo juiz e rubrica da v0.1.0.
+- **Líder**: gpt-sol (nota 86,4; era 89,2 em julho). **Lanterna**: qwen-flash
+  (27,3), entrante desta rodada. Agregados verificados por CI.
+- **Custo do resultado publicado**: US$ 189,47 (contra ~US$ 107 em julho). O
+  aumento vem dos modelos que raciocinam antes de responder, que geram muito
+  mais tokens de saída: opus-5 custou US$ 28,13 para 900 chamadas contra
+  US$ 6,49 estimados a partir dos tokens do opus-4.8. Mais caros: kimi-k3
+  (35,65), qwen-38-max (33,40), fable-5 (32,00), opus-5 (28,13). Mais baratos:
+  sabiazinho-4 (0,12), qwen-flash (0,17), gpt-luna (0,23).
+  **O desembolso total foi maior (~US$ 218)**: inclui as medições dos dois Qwen
+  que foram descartadas e refeitas (ver abaixo). Custo publicado é o dos brutos
+  que compõem a release, não o da conta.
 - **Elenco (19)**: as 17 vagas da v0.1.0 — 7 com modelo atualizado
   (opus-4.8→opus-5, grok-4.5→4.6, gemini-3.5-flash→3.7-flash, kimi-k2.6→k3,
   qwen3.7-max→3.8-max, deepseek-pro/flash fixados nos snapshots -0813/-0731) —
   mais 2 entrantes: muse-spark-1.2 (Meta) e qwen3.7-flash (Alibaba).
+- **Ids de modelo renomeados (D13.1)**: `kimi`→`kimi-k3`, `grok`→`grok-46`,
+  `gemini-flash`→`gemini-37-flash`, `qwen-max`→`qwen-38-max`. Os ids antigos
+  continuam válidos na v0.1.0, onde designam os modelos daquela rodada; o
+  `APRESENTACAO` do exportador guarda os dois conjuntos. Um id nunca é
+  reapontado para outro modelo.
+- **Mudanças de condição de execução (D13.2)**: `deepseek-flash` passou de
+  `max_tokens` 1024 (julho, herdado da flag) para 4096, porque o snapshot
+  `-0731` raciocina antes de responder e truncava com resposta vazia em 1024;
+  `qwen-flash` entrou já com 4096 pelo mesmo motivo. **Comparar o
+  deepseek-flash entre v0.1.0 e v0.2.0 exige essa ressalva** — o modelo mudou
+  de snapshot e de orçamento de tokens ao mesmo tempo.
+- **Truncamento invalidou e refez dois modelos.** Na primeira passada,
+  `qwen-plus` devolveu 427 de 900 respostas VAZIAS (47%) e `qwen-38-max`, 303
+  (34%): o teto de `max_tokens` não comportava o raciocínio, e como a resposta
+  vem depois dele, truncar perdia tudo. Os dois foram refeitos com teto 32768
+  (zero truncadas) e só a medição refeita entra nesta release.
+  **O efeito no resultado é contraintuitivo e vale registrar**: as notas
+  CAÍRAM depois da correção (qwen-38-max 52,1→43,0; qwen-plus 36,4→32,2),
+  porque uma resposta vazia nunca aceita um código inventado — o truncamento
+  funcionava como abstenção forçada e inflava a dimensão anti-alucinação. Nos
+  códigos falsos "limpos", o qwen-plus passou de 18% de aceitação aparente
+  para 35% reais. Números truncados são otimistas, não pessimistas.
+- **Truncamento residual**: gpt-luna 18 respostas vazias (2,0%), deepseek-flash
+  12 (1,3%), deepseek-pro 5, opus-5 2, qwen-flash 2, sabiazinho-4 3 truncadas
+  sem perda de resposta. Todos abaixo de 3% e expostos no campo `cortados` do
+  leaderboard. Declarados como limitação, não invalidam a medição.
+- **fable-5 rodou por duas rotas (D9)**: 898 chamadas via Amazon Bedrock e 2
+  via Google, porque a entrada não tinha provedor pinado. As 2 são
+  irreproduzíveis pela rota majoritária: em 18/ago/2026 o Amazon Bedrock passou
+  a responder 404 ("Claude Fable 5 is not available") para a conta. Mantidas e
+  declaradas, por serem 0,2% das chamadas; o registro passou a pinar
+  `Anthropic`, rota que respondia naquela data.
+- **Leaderboard passa a expor as rotas.** Campo `rotas` por modelo, com o
+  endpoint que serviu cada chamada e a contagem — a D9 exige que o leaderboard
+  identifique o provedor, e até aqui o artefato exportado não carregava essa
+  informação. Vale para os 19 modelos, não só para o caso do fable-5.
+- **Rotas com rate limit persistente**: Fireworks (DeepSeek), Maritaca e
+  Alibaba devolveram 429 ao longo da bateria, exigindo retomadas sucessivas.
+  Achado operacional: janelas curtas se recuperam com tentativas frequentes
+  (20-45s), não com esperas longas — uma chamada do deepseek-pro resistiu a
+  horas de tentativas espaçadas de 15 min e passou em 2 min de tentativas
+  seguidas. Registrado para baterias futuras; ver também a issue sobre
+  concorrência por provedor.
 - **kimi-k2.5: promessa da v0.1.0 REVOGADA.** A v0.1.0 registrou "medição
   adiada, entra em release MINOR futura". Não será medido: entre as duas
   releases a Moonshot lançou o K2.6 e depois o K3 (16/jul/2026), deixando o
