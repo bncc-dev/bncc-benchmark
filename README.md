@@ -80,7 +80,7 @@ frescas, a régua dá a mesma medida. Sem isso, nenhuma das outras comparações
 significaria nada.
 
 **Geração nova na mesma vaga.** Aqui são modelos diferentes, e a diferença
-mede o que o fabricante entregou:
+mede o que a empresa entregou na versão seguinte:
 
 | Vaga | Julho | Agosto | Δ |
 |---|---|---|---|
@@ -91,7 +91,7 @@ mede o que o fabricante entregou:
 | Alibaba topo | Qwen 3.7 Max · 44,3 | Qwen 3.8 Max · 43,0 | −1,3 |
 
 Duas gerações novas saltaram ~30 pontos em um mês; uma andou para trás. Não há
-tendência única — depende do fabricante.
+tendência única — depende da empresa.
 
 **Entrantes**: Muse Spark 1.2 (Meta) estreia em 7º com 70,6; Qwen 3.7 Flash
 entra em 19º com 27,3.
