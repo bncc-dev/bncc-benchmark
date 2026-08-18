@@ -55,6 +55,51 @@ O gráfico é gerado a partir do leaderboard publicado
 (`pnpm exportar-grafico`), não desenhado à mão: ele não tem como divergir dos
 números da tabela.
 
+## Um mês depois: o que mudou entre as rodadas
+
+A rodada de julho (v0.1.0) mediu 17 modelos; a de agosto, 19. Comparar as duas
+exige separar três situações diferentes — o identificador de um modelo designa
+**aquele modelo**, não uma vaga no elenco, então "o kimi melhorou" seria uma
+leitura errada quando o que houve foi troca de geração (ver `DECISOES.md` D13).
+
+**Mesmo modelo, mesma condição.** Nove modelos foram remedidos do zero, com
+chamadas novas:
+
+| Modelo | Julho | Agosto | Δ |
+|---|---|---|---|
+| GPT-5.6 Sol | 89,2 | 86,4 | −2,8 |
+| GPT-5.6 Luna | 75,3 | 73,8 | −1,5 |
+| Gemini 3.1 Pro | 77,0 | 76,0 | −1,1 |
+| Claude Fable 5 | 81,3 | 80,2 | −1,0 |
+| Sabiá-4 · Sonnet 5 · Sonnet 4.6 · Haiku 4.5 | — | — | ±0,1 |
+| Sabiazinho-4 | 27,3 | 29,1 | +1,8 |
+
+Todos dentro de ±3 pontos, quatro deles dentro de ±0,1. **É o resultado mais
+importante desta comparação**: um mês depois, com cache novo e chamadas
+frescas, a régua dá a mesma medida. Sem isso, nenhuma das outras comparações
+significaria nada.
+
+**Geração nova na mesma vaga.** Aqui são modelos diferentes, e a diferença
+mede o que o fabricante entregou:
+
+| Vaga | Julho | Agosto | Δ |
+|---|---|---|---|
+| Google econômico | Gemini 3.5 Flash · 41,4 | Gemini 3.7 Flash · 70,9 | **+29,5** |
+| Anthropic topo | Claude Opus 4.8 · 45,7 | Claude Opus 5 · 75,0 | **+29,3** |
+| Moonshot topo | Kimi K2.6 · 30,4 | Kimi K3 · 43,8 | +13,5 |
+| xAI topo | Grok 4.5 · 48,0 | Grok 4.6 · 54,5 | +6,6 |
+| Alibaba topo | Qwen 3.7 Max · 44,3 | Qwen 3.8 Max · 43,0 | −1,3 |
+
+Duas gerações novas saltaram ~30 pontos em um mês; uma andou para trás. Não há
+tendência única — depende do fabricante.
+
+**Entrantes**: Muse Spark 1.2 (Meta) estreia em 7º com 70,6; Qwen 3.7 Flash
+entra em 19º com 27,3.
+
+Ficam de fora da comparação os três modelos cuja *condição de medição* mudou
+junto (snapshot datado ou orçamento de tokens): DeepSeek V4 Pro, V4 Flash e
+Qwen 3.7 Plus. As ressalvas estão em [`RELEASES.md`](RELEASES.md).
+
 Metodologia completa em [`METODOLOGIA.md`](METODOLOGIA.md), decisões de desenho
 numeradas em [`DECISOES.md`](DECISOES.md), composição de cada release em
 [`RELEASES.md`](RELEASES.md).
