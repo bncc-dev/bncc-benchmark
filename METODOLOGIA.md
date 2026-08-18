@@ -54,12 +54,26 @@ código (ex.: EF01AR01, porque Arte no Fundamental numera por blocos de anos).
 
 - Temperatura 0, sem system prompt (condição "usuário comum"); prompt exato registrado por chamada.
 - 2 a 3 paráfrases por item; média e variância reportadas.
-- Versão exata de cada modelo registrada, com data de medição.
+- Versão exata de cada modelo registrada, com data de medição. O identificador
+  de um modelo no leaderboard designa **aquele modelo**, não uma vaga no
+  elenco: quando o fabricante lança versão nova, ela entra como linha própria
+  e a antiga permanece nas releases em que foi medida. O leaderboard é uma
+  sequência de fotografias datadas, não uma série temporal por modelo
+  (ver `DECISOES.md` D13.1).
 - **Rodada seca** (sem grounding) e **rodada grounded** (mesmo modelo conectado
   ao bncc.dev via MCP em `https://mcp.bncc.dev/mcp`, ou tool-use na API REST
   onde MCP não for suportado; o mecanismo fica registrado por chamada).
 - Abstenção honesta ("não tenho certeza") é categoria própria em todas as
   tarefas e é reportada positivamente: o benchmark premia calibração.
+- Orçamento de tokens por resposta: há um default por rodada e alguns modelos
+  têm teto próprio, porque modelos que raciocinam antes de responder truncam
+  com resposta vazia em orçamento curto. O teto usado fica registrado em cada
+  chamada e faz parte da identidade dela. Mudança de teto **de um modelo** é
+  declarada na release e exige ressalva ao comparar aquele modelo entre
+  releases; mudança para o elenco inteiro é protocolo novo (ver `DECISOES.md`
+  D13.2).
+- Respostas cortadas pelo teto ganham uma segunda tentativa com o dobro do
+  orçamento; o custo real fica nos tokens registrados.
 
 ## Julgamento
 

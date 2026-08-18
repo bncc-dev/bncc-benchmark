@@ -1,0 +1,53 @@
+{
+ "rodada": "smoke-qwen-thinking",
+ "execucoes": [
+  {
+   "executado_em": "2026-08-17T12:22:37.015Z",
+   "modo": "seco",
+   "harness_commit": "2d11f00",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 8,
+    "parafrases": 3,
+    "concorrencia": 5,
+    "max_tokens_flag": 32768,
+    "aceitar_antivexame_pendente": true
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "qwen-plus",
+     "def": {
+      "id": "qwen-plus",
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.7-plus",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.32,
+       "saida": 1.28
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 24,
+      "chamadas_novas": 24,
+      "do_cache": 0,
+      "custo_usd": 0.136694,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": []
+}

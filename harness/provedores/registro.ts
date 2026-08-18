@@ -71,6 +71,7 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'anthropic/claude-sonnet-5',
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['Amazon Bedrock'], allow_fallbacks: false } },
     precos: { entrada: 2, saida: 10 },
     suportaGrounded: true,
   },
@@ -81,6 +82,7 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'anthropic/claude-opus-5', // sucessor do opus-4.8 (aposentado em ago/2026)
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['Amazon Bedrock'], allow_fallbacks: false } },
     precos: { entrada: 5, saida: 25 },
     suportaGrounded: true,
   },
@@ -91,6 +93,14 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'anthropic/claude-fable-5',
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
+    // Sem pin, o OpenRouter desviou 2 das 900 chamadas da rodada 2026-08 para
+    // o Google, misturando duas medições na mesma linha (D9). O pin natural
+    // seria 'Amazon Bedrock', que serviu as outras 898 — mas em 18/ago/2026
+    // essa rota passou a responder 404 ("Claude Fable 5 is not available",
+    // gating de acesso do fornecedor) e as 2 chamadas ficaram irreproduzíveis
+    // por ela. Rotas que respondiam naquela data: Anthropic e Google.
+    // Pinado em 'Anthropic'; conferir na data da próxima rodada.
+    corpoExtra: { provider: { order: ['Anthropic'], allow_fallbacks: false } },
     precos: { entrada: 10, saida: 50 },
     suportaGrounded: true,
   },
@@ -124,8 +134,8 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 2, saida: 12 },
     suportaGrounded: true,
   },
-  'gemini-flash': {
-    id: 'gemini-flash',
+  'gemini-37-flash': {
+    id: 'gemini-37-flash',
     maxTokensPadrao: 8192,
     provedor: 'openai-compat',
     modelo: 'google/gemini-3.7-flash', // sucessor do 3.5-flash (13/ago/2026)
@@ -147,8 +157,8 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 1.32, saida: 3.96 }, // preço da Fireworks no snapshot -0813 (DeepSeek direto cobraria 0.435/0.87, mas está vetado)
     suportaGrounded: true,
   },
-  grok: {
-    id: 'grok',
+  'grok-46': {
+    id: 'grok-46',
     provedor: 'openai-compat',
     modelo: 'x-ai/grok-4.6', // sucessor do grok-4.5 (12/ago/2026), mesmo preço
     envKey: 'OPENROUTER_API_KEY',
@@ -157,8 +167,8 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 2, saida: 6 },
     suportaGrounded: true,
   },
-  kimi: {
-    id: 'kimi',
+  'kimi-k3': {
+    id: 'kimi-k3',
     maxTokensPadrao: 8192,
     provedor: 'openai-compat',
     modelo: 'moonshotai/kimi-k3', // sucessor do k2.6 (16/jul/2026); NB: sobe de faixa de preço
@@ -168,9 +178,13 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 3, saida: 15 },
     suportaGrounded: true,
   },
-  'qwen-max': {
-    id: 'qwen-max',
-    maxTokensPadrao: 4096,
+  'qwen-38-max': {
+    id: 'qwen-38-max',
+    // 32768 (ago/2026): com 4096 (escalando a 8192) 304 das 900 chamadas
+    // truncaram e voltaram VAZIAS — a resposta vem depois do raciocínio.
+    // Smoke com teto folgado: raciocínio médio 6.330, máximo 15.550, nenhuma
+    // truncada. Mesmo motivo do qwen-plus acima.
+    maxTokensPadrao: 32768,
     provedor: 'openai-compat',
     modelo: 'qwen/qwen3.8-max', // sucessor do 3.7-max (03/ago/2026)
     envKey: 'OPENROUTER_API_KEY',
@@ -193,6 +207,13 @@ export const MODELOS: Record<string, DefModelo> = {
   },
   'qwen-plus': {
     id: 'qwen-plus',
+    // 32768 (ago/2026): com o teto anterior (1024, default da flag) 427 das 900
+    // chamadas truncaram e voltaram VAZIAS — a resposta vem depois do
+    // raciocínio, então truncar perde tudo. Medido em smoke com teto folgado:
+    // raciocínio médio 4.268 tokens, máximo 14.556, para respostas que às vezes
+    // são a palavra "Não". Teto generoso não custa nada por si (paga-se pelos
+    // tokens gerados) e é seguro contra a cauda longa.
+    maxTokensPadrao: 32768,
     provedor: 'openai-compat',
     modelo: 'qwen/qwen3.7-plus',
     envKey: 'OPENROUTER_API_KEY',

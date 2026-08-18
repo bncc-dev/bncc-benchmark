@@ -51,6 +51,13 @@ export interface ModeloExport extends MetricasModelo {
   nome: string;
   empresa: string;
   tier: string;
+  /**
+   * Endpoints que de fato serviram as chamadas, com a contagem de cada um
+   * (D9: provedores diferentes são medições distintas, e o leaderboard
+   * identifica o provedor). Normalmente uma entrada só; mais de uma sinaliza
+   * que o roteamento variou dentro da mesma medição.
+   */
+  rotas: Record<string, number>;
   exemplos: ExemploCurado[];
 }
 
@@ -424,13 +431,17 @@ export function montarExport(entrada: EntradaExport): ExportSite {
 
   const modelos: ModeloExport[] = [...julgadosPorModelo.entries()]
     .map(([id, js]) => {
-      const custo = (brutos.get(id) ?? []).reduce((s, r) => s + r.custo_usd, 0);
+      const registros = brutos.get(id) ?? [];
+      const custo = registros.reduce((s, r) => s + r.custo_usd, 0);
       const metricas = calcularMetricas(js, custo);
+      const rotas: Record<string, number> = {};
+      for (const r of registros) rotas[r.versao_modelo] = (rotas[r.versao_modelo] ?? 0) + 1;
       return {
         id,
         posicao: 0,
         ...apresentacao[id],
         ...metricas,
+        rotas,
         exemplos: curarExemplos(js, brutosPorModelo.get(id) ?? new Map(), itens),
       };
     })

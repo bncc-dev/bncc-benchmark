@@ -236,3 +236,60 @@ modelos "inalterados" com um teste de deriva amostral (subamostra pareada
 jul×ago, McNemar) — defensável e mais barata, fica documentada aqui como opção
 para quando o elenco ou o custo crescerem a ponto de justificar a complexidade
 extra no manifesto.
+
+## D13 · Identidade de modelo entre releases; condição por modelo; elenco parcial
+
+A preparação da segunda rodada oficial (ago/2026) expôs três casos que a D11
+não cobria. Ela regula o que muda **dentro** de uma release; estes são sobre o
+que muda **entre** releases.
+
+### D13.1 · A unidade de identidade é o modelo, não a vaga
+
+Na v0.1.0, `kimi` significava Kimi K2.6; na rodada de agosto, o mesmo id passou
+a apontar para o K3 — e o mesmo vale para `grok`, `qwen-max` e `gemini-flash`.
+Quem cruzar duas releases pela chave leria "o kimi melhorou" quando o que houve
+foi troca de modelo. O benchmark existe para medir modelos, então **o id
+identifica o modelo, não o lugar dele no elenco**.
+
+Regra: quando o modelo por trás de um id muda de versão, o id muda junto
+(`kimi-k26` e `kimi-k3` são linhas distintas, não uma linha com histórico).
+Ids já publicados nunca são reapontados. O `APRESENTACAO` do exportador guarda
+o nome público de cada id, incluindo os aposentados, porque releases antigas
+continuam citáveis.
+
+Consequência assumida: o leaderboard não tem série temporal por modelo — tem
+fotografias datadas. Uma comparação entre gerações (K2.6 × K3) é legítima, mas
+é comparação entre dois modelos, e o texto deve dizer isso.
+
+### D13.2 · Mudança de condição de execução vale por modelo, e é declarada
+
+`max_tokens` faz parte da identidade da chamada (`harness/lib/execucao.ts`), e
+mudá-lo muda a medição. Casos reais desta rodada: `deepseek-flash` rodou a
+1024 em julho e passou a 4096 em agosto (a 1024 o snapshot novo truncava com
+resposta vazia, porque raciocina antes de responder); `qwen-flash` entrou já
+com 4096 pelo mesmo motivo.
+
+Regra: alterar condição de execução de **um** modelo não quebra a rodada nem
+força MAJOR — mas **entra na entrada da release, nomeando o modelo, o valor
+antigo, o novo e o motivo**. Comparar esse modelo entre releases exige a
+ressalva. Se a condição mudar para o elenco inteiro (a flag global, o prompt,
+o número de paráfrases, a temperatura), aí é protocolo novo: **MAJOR**.
+
+### D13.3 · Elenco parcial: só entra quem completou
+
+Uma rodada pode terminar com modelos incompletos (orçamento, rate limit
+persistente do provedor, rota que caiu). Regra: **a release publica apenas
+modelos com a bateria completa**; quem ficou pela metade não entra e é
+**nomeado na entrada da release**, com o motivo e o estado em que parou.
+
+Racional: amostras desiguais na mesma tabela produzem intervalos de confiança
+diferentes por linha, e num leaderboard de ~20 modelos separados por poucos
+pontos isso torna metade das comparações inconclusivas. Pior, decidir quem
+fica com amostra menor é uma escolha do mantenedor correlacionada com o
+resultado — viés de seleção. Publicar menos modelos e dizer quais faltaram é
+mais honesto que publicar todos com régua diferente.
+
+Os brutos parciais permanecem no repositório e no cache: servem para retomar a
+medição numa release seguinte, sem custo repetido.
+
+Decisão de 16/ago/2026, durante a rodada `oficial-seca-2026-08`.
