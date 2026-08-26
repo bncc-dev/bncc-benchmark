@@ -1,0 +1,1703 @@
+{
+ "rodada": "piloto-fonte-2026-08",
+ "gerado_em": "2026-08-25T00:24:28.877Z",
+ "dataset_versao": "dados-2026.07",
+ "itens_versao": "v1",
+ "por_modelo": {
+  "deepseek-flash-direto": {
+   "modo": {
+    "contexto": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 41,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30,
+       "texto:divergente": 5,
+       "texto:ausente": 6
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 41,
+      "alucinacao_residual": 0
+     }
+    },
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:parcial": 3,
+       "veredito:abstencao": 1,
+       "veredito:inventado": 2,
+       "veredito:resposta_invalida": 2
+      },
+      "B": {
+       "total": 10,
+       "veredito:incorreto": 4,
+       "tipo:real:incorreto": 2,
+       "veredito:correto": 6,
+       "tipo:falso-extensao:correto": 2,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-extensao:incorreto": 1,
+       "antivexame:derivado:aceito": 1,
+       "tipo:falso-profundo:incorreto": 1,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:cinzenta-federal:aceito": 1,
+       "tipo:falso-profundo:correto": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 4,
+       "codigos_citados": 20,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 14,
+       "texto:divergente": 6,
+       "veredito:resposta_invalida": 2
+      },
+      "D": {
+       "total": 6,
+       "veredito:incorreto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 9
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 1,
+       "abstencoes": 1
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 1,
+       "abstencoes": 1
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 9
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  },
+  "gemini-37-flash-direto": {
+   "modo": {
+    "contexto": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    }
+   }
+  },
+  "gemini-37-flash-mcp": {
+   "modo": {
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    }
+   }
+  },
+  "gpt-sol-direto": {
+   "modo": {
+    "contexto": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 29,
+       "texto:divergente": 1
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 4,
+       "veredito:inventado": 2,
+       "veredito:texto_de_outra": 2
+      },
+      "B": {
+       "total": 10,
+       "veredito:incorreto": 5,
+       "tipo:real:incorreto": 1,
+       "veredito:correto": 5,
+       "tipo:real:correto": 1,
+       "tipo:falso-extensao:incorreto": 2,
+       "antivexame:derivado:total": 5,
+       "antivexame:derivado:aceito": 3,
+       "tipo:falso-extensao:correto": 1,
+       "tipo:falso-profundo:correto": 1,
+       "antivexame:cinzenta-federal:total": 1,
+       "tipo:falso-profundo:incorreto": 1,
+       "antivexame:limpo:total": 1,
+       "antivexame:limpo:aceito": 1,
+       "tipo:falso-combinacao:incorreto": 1,
+       "tipo:falso-combinacao:correto": 1,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 2,
+       "veredito:incorreto": 4
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 9
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 3
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 8
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  },
+  "gpt-sol-mcp": {
+   "modo": {
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    }
+   }
+  },
+  "grok-46-direto": {
+   "modo": {
+    "contexto": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 41,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30,
+       "texto:divergente": 5,
+       "texto:ausente": 6
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 41,
+      "alucinacao_residual": 0
+     }
+    },
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:inventado": 5,
+       "veredito:texto_de_outra": 1,
+       "veredito:fiel_exato": 1,
+       "veredito:fiel_parafrase": 1
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 7,
+       "tipo:real:correto": 1,
+       "veredito:incorreto": 3,
+       "tipo:real:incorreto": 1,
+       "tipo:falso-extensao:incorreto": 1,
+       "antivexame:derivado:total": 5,
+       "antivexame:derivado:aceito": 2,
+       "tipo:falso-extensao:correto": 2,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:incorreto": 1,
+       "tipo:falso-combinacao:correto": 1,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 11,
+       "texto:divergente": 19
+      },
+      "D": {
+       "total": 6,
+       "veredito:incorreto": 4,
+       "veredito:correto": 2
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 8
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 4
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 1
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 9
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  },
+  "grok-46-mcp": {
+   "modo": {
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    }
+   }
+  },
+  "kimi-k3-direto": {
+   "modo": {
+    "contexto": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 35,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 29,
+       "texto:divergente": 4,
+       "texto:ausente": 2
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 35,
+      "alucinacao_residual": 0
+     }
+    },
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 38,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 28,
+       "texto:ausente": 4,
+       "texto:divergente": 6
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 38,
+      "alucinacao_residual": 0
+     }
+    },
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:inventado": 7,
+       "veredito:texto_de_outra": 1
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 8,
+       "tipo:real:correto": 1,
+       "veredito:incorreto": 2,
+       "tipo:real:incorreto": 1,
+       "tipo:falso-extensao:incorreto": 1,
+       "antivexame:derivado:total": 5,
+       "antivexame:derivado:aceito": 1,
+       "tipo:falso-extensao:correto": 2,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 32,
+       "codigos_inventados": 1,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 5,
+       "texto:ok": 5,
+       "texto:divergente": 25,
+       "texto:ausente": 1
+      },
+      "D": {
+       "total": 6,
+       "veredito:incorreto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 12
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 3
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 4
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 11
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  },
+  "sabia-4": {
+   "modo": {
+    "contexto": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 9,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "veredito:incorreto": 1,
+       "tipo:especial:incorreto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 29,
+       "texto:divergente": 1
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:inventado": 7,
+       "veredito:texto_de_outra": 1
+      },
+      "B": {
+       "total": 10,
+       "veredito:incorreto": 5,
+       "tipo:real:incorreto": 1,
+       "veredito:correto": 5,
+       "tipo:real:correto": 1,
+       "tipo:falso-extensao:correto": 2,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-extensao:incorreto": 1,
+       "antivexame:derivado:aceito": 3,
+       "tipo:falso-profundo:incorreto": 1,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:cinzenta-federal:aceito": 1,
+       "tipo:falso-profundo:correto": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:incorreto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 6,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:divergente": 23,
+       "texto:ok": 1
+      },
+      "D": {
+       "total": 6,
+       "veredito:incorreto": 5,
+       "veredito:correto": 1
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 19
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 3
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 4
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 18
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  },
+  "sabiazinho-4": {
+   "modo": {
+    "contexto": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 27,
+       "texto:divergente": 3
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 29,
+       "texto:divergente": 1
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 3,
+       "veredito:incorreto": 3
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 2
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 1
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 1
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 2
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0,
+      "chamou_e_errou": 3
+     }
+    },
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:inventado": 7,
+       "veredito:parcial": 1
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 8,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 2,
+       "antivexame:derivado:total": 5,
+       "veredito:incorreto": 2,
+       "tipo:falso-extensao:incorreto": 1,
+       "antivexame:derivado:aceito": 2,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:incorreto": 1,
+       "tipo:falso-combinacao:correto": 1,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 35,
+       "codigos_inventados": 7,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 6,
+       "texto:ausente": 11,
+       "texto:divergente": 17
+      },
+      "D": {
+       "total": 6,
+       "veredito:incorreto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 16
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 6
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 18
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  },
+  "sonnet-5-mcp": {
+   "modo": {
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 32,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 29,
+       "texto:ausente": 1,
+       "texto:divergente": 2
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 32,
+      "alucinacao_residual": 0
+     }
+    }
+   }
+  },
+  "sonnet-bedrock": {
+   "modo": {
+    "contexto": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 9,
+       "tipo:real:correto": 1,
+       "veredito:incorreto": 1,
+       "tipo:real:incorreto": 1,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 30
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "grounded": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:fiel_exato": 8
+      },
+      "B": {
+       "total": 10,
+       "veredito:correto": 10,
+       "tipo:real:correto": 2,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 29,
+       "texto:divergente": 1
+      },
+      "D": {
+       "total": 6,
+       "veredito:correto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 0
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 30,
+     "fonte": {
+      "total": 30,
+      "b_falsos_total": 7,
+      "c_codigos_citados": 30,
+      "alucinacao_residual": 0
+     }
+    },
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 8,
+       "veredito:inventado": 7,
+       "veredito:fiel_parafrase": 1
+      },
+      "B": {
+       "total": 10,
+       "veredito:incorreto": 2,
+       "tipo:real:incorreto": 2,
+       "veredito:correto": 8,
+       "tipo:falso-extensao:correto": 3,
+       "antivexame:derivado:total": 5,
+       "tipo:falso-profundo:correto": 2,
+       "antivexame:cinzenta-federal:total": 1,
+       "antivexame:limpo:total": 1,
+       "tipo:falso-combinacao:correto": 2,
+       "tipo:especial:correto": 1
+      },
+      "C": {
+       "total": 6,
+       "veredito:avaliado": 6,
+       "codigos_citados": 30,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 9,
+       "texto:divergente": 21
+      },
+      "D": {
+       "total": 6,
+       "veredito:incorreto": 6
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 21,
+       "alucinacoes": 9
+      },
+      "etapa:EM": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "computacao-2022": {
+       "total": 9,
+       "alucinacoes": 4
+      },
+      "etapa:EI": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "etapa:EF": {
+       "total": 22,
+       "alucinacoes": 9
+      }
+     },
+     "total_julgamentos": 30
+    }
+   }
+  }
+ }
+}

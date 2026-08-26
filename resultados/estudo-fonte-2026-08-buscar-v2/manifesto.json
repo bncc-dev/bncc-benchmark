@@ -1,0 +1,453 @@
+{
+ "rodada": "estudo-fonte-2026-08-buscar-v2",
+ "execucoes": [
+  {
+   "executado_em": "2026-08-25T19:42:02.914Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 2
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T19:42:03.407Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T19:42:04.336Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "mcp_tools_hash": "c19cf2eecbaa",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 0.916623,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 0.185093,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T20:31:21.774Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 2,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "mcp_tools_hash": "c19cf2eecbaa",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 0.818841,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 0.189957,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T21:10:25.787Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 2,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "mcp_tools_hash": "c19cf2eecbaa",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 0.892829,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 0.177642,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T22:22:32.837Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "mcp_tools_hash": "c19cf2eecbaa",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 0.900887,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 900,
+      "do_cache": 0,
+      "custo_usd": 0.178873,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": [
+  {
+   "avaliado_em": "2026-08-25T20:10:07.051Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 3000,
+   "pendentes_a": 186,
+   "pendentes_c": 382,
+   "juiz_chamadas": 568,
+   "juiz_custo_usd": 0.03826
+  },
+  {
+   "avaliado_em": "2026-08-25T21:07:28.515Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 3000,
+   "pendentes_a": 180,
+   "pendentes_c": 386,
+   "juiz_chamadas": 566,
+   "juiz_custo_usd": 0.031684
+  },
+  {
+   "avaliado_em": "2026-08-25T21:46:18.724Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 3000,
+   "pendentes_a": 179,
+   "pendentes_c": 371,
+   "juiz_chamadas": 550,
+   "juiz_custo_usd": 0.025721
+  },
+  {
+   "avaliado_em": "2026-08-25T23:00:37.558Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 3000,
+   "pendentes_a": 176,
+   "pendentes_c": 370,
+   "juiz_chamadas": 546,
+   "juiz_custo_usd": 0.021135
+  }
+ ]
+}
