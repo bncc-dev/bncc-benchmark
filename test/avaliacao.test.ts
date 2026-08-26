@@ -244,3 +244,73 @@ describe('agregação e verificação', () => {
     expect(agregadosEquivalentes(a, adulterado)).toBe(false);
   });
 });
+
+describe('métricas de fonte (estudo de intervenção, D14)', () => {
+  function julgadoFonte(extra: Partial<Julgamento>): Julgamento {
+    return {
+      item_id: 'x',
+      modelo: 'm',
+      parafrase: 0,
+      modo: 'grounded',
+      tarefa: 'B',
+      tipo: 'falso-extensao',
+      estrato: { etapa: 'EF', modulo: 'bncc-2018', componente: 'LP' },
+      avaliador_versao: '2',
+      veredito: 'correto',
+      ...extra,
+    };
+  }
+  const meta = { dataset_versao: 'd', itens_versao: 'v' };
+
+  it('o bruto com tools_chamadas alimenta o julgamento', () => {
+    const r = { ...registroCom(itemBFalso, 'Não.'), modo: 'grounded' as const, tools_chamadas: 2 };
+    expect(julgar(itemBFalso, r).tools_chamadas).toBe(2);
+    expect(julgar(itemBFalso, registroCom(itemBFalso, 'Não.')).tools_chamadas).toBeUndefined();
+  });
+
+  it('conta nao_chamou, chamou_e_errou, rejeicao_negativa e alucinacao_residual', () => {
+    const julgados: Julgamento[] = [
+      julgadoFonte({ tools_chamadas: 1 }), // usou e acertou
+      julgadoFonte({ tools_chamadas: 0, veredito: 'incorreto' }), // não chamou, aceitou falso
+      julgadoFonte({ tools_chamadas: 1, veredito: 'incorreto' }), // chamou e errou (rejeição negativa)
+      julgadoFonte({
+        tarefa: 'C',
+        tipo: 'real',
+        tools_chamadas: 1,
+        veredito: 'avaliado',
+        codigos_citados: [
+          { codigo: 'EF01LP01', formaValida: true, existe: true },
+          { codigo: 'EF01LP99', formaValida: true, existe: false },
+        ],
+      }),
+      julgadoFonte({ modo: 'contexto', tools_chamadas: 0, veredito: 'incorreto' }), // contexto: sem "nao_chamou"
+    ];
+    const a = agregar(julgados, 'teste', meta).por_modelo.m.modo;
+    expect(a.grounded.fonte).toEqual({
+      total: 4,
+      nao_chamou: 1,
+      chamou_e_errou: 2,
+      b_falsos_total: 3,
+      rejeicao_negativa: 2,
+      c_codigos_citados: 2,
+      alucinacao_residual: 1,
+    });
+    expect(a.contexto.fonte).toEqual({ total: 1, b_falsos_total: 1, rejeicao_negativa: 1 });
+  });
+
+  it('julgados sem tools_chamadas (anteriores a 24/ago/2026) não ganham bloco fonte — CI intocado', () => {
+    const a = agregar([julgadoFonte({})], 'teste', meta).por_modelo.m.modo;
+    expect(a.grounded.fonte).toBeUndefined();
+    const s = agregar([julgadoFonte({ modo: 'seco', tools_chamadas: 0 })], 'teste', meta).por_modelo.m.modo;
+    expect(s.seco.fonte).toBeUndefined();
+  });
+});
+
+describe('erro de ferramenta invalida a resposta (emenda 25/ago/2026)', () => {
+  it('tools_erros > 0 vira resposta_invalida em qualquer tarefa; 0 ou ausente julga normalmente', () => {
+    const base = { ...registroCom(itemBReal, 'Não.'), modo: 'grounded' as const, tools_chamadas: 2 };
+    expect(julgar(itemBReal, { ...base, tools_erros: 1 }).veredito).toBe('resposta_invalida');
+    expect(julgar(itemBReal, { ...base, tools_erros: 0 }).veredito).toBe('incorreto');
+    expect(julgar(itemBReal, base).veredito).toBe('incorreto');
+  });
+});

@@ -9,6 +9,7 @@ import type { DefModelo, Provedor } from '../provedores/tipos.js';
 import { CacheDisco, chaveCache } from './cache.js';
 import { URL_MCP } from './mcp-cliente.js';
 import { criarLimitador } from './concorrencia.js';
+import { CONTEXTO_VERSAO, promptComContexto } from './contexto.js';
 import type { BancoItens, Item, Modo, RegistroBruto } from './tipos.js';
 
 export interface OpcoesExecucao {
@@ -21,6 +22,10 @@ export interface OpcoesExecucao {
   cache: CacheDisco;
   concorrencia?: number;
   maxTokens?: number;
+  /** Versão dos dados do MCP (grounded): entra na chave de cache (D14). */
+  mcpDadosVersao?: string;
+  /** Hash das tools servidas pelo MCP (grounded): entra na chave de cache. */
+  mcpToolsHash?: string;
   tentativas?: number;
   esperaBaseMs?: number;
   aoProgresso?: (feito: number, total: number, doCache: boolean) => void;
@@ -86,6 +91,8 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
     cache,
     concorrencia = 5,
     maxTokens = 1024,
+    mcpDadosVersao,
+    mcpToolsHash,
     tentativas = 3,
     esperaBaseMs = 1000,
     aoProgresso,
@@ -107,7 +114,10 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
   for (const item of itens) {
     const nParafrases = Math.min(parafrases, item.parafrases.length);
     for (let p = 0; p < nParafrases; p++) {
-      const prompt = item.parafrases[p];
+      // Condição contexto (D14): a listagem do escopo entra no prompt; sem tool.
+      const prompt = modo === 'contexto' ? promptComContexto(item, item.parafrases[p]) : item.parafrases[p];
+      const grounded = modo === 'grounded';
+      const mecanismoContexto = modo === 'contexto' ? `contexto:${CONTEXTO_VERSAO}` : null;
       // MaxTokens e o mecanismo de grounding fazem parte da identidade
       // da chamada; sem eles, uma re-execução com config diferente reutilizaria
       // respostas incompatíveis (ex.: truncadas) em silêncio.
@@ -120,7 +130,9 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
         prompt,
         itensVersao: banco.versao,
         maxTokens: orcamentoBase,
-        grounding: modo === 'grounded' ? `${def.provedor}:${URL_MCP}` : null,
+        grounding: grounded
+          ? `${def.provedor}:${URL_MCP}${mcpDadosVersao ? `@${mcpDadosVersao}` : ''}${mcpToolsHash ? `#${mcpToolsHash}` : ''}`
+          : mecanismoContexto,
       });
 
       trabalhos.push(
@@ -134,14 +146,14 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
           // o checkpoint continua determinístico).
           let orcamentoUsado = orcamentoBase;
           let resposta = await comRetry(
-            () => provedor.completar({ prompt, grounded: modo === 'grounded', maxTokens: orcamentoBase }),
+            () => provedor.completar({ prompt, grounded, maxTokens: orcamentoBase }),
             tentativas,
             esperaBaseMs,
           );
           if (resposta.finishReason === 'max_tokens' && orcamentoBase < TETO_ESCALADA) {
             orcamentoUsado = Math.min(orcamentoBase * 2, TETO_ESCALADA);
             resposta = await comRetry(
-              () => provedor.completar({ prompt, grounded: modo === 'grounded', maxTokens: orcamentoUsado }),
+              () => provedor.completar({ prompt, grounded, maxTokens: orcamentoUsado }),
               tentativas,
               esperaBaseMs,
             );
@@ -152,7 +164,7 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
             versao_modelo: resposta.versaoModelo,
             parafrase: p,
             modo,
-            mecanismo_grounding: resposta.mecanismoGrounding,
+            mecanismo_grounding: resposta.mecanismoGrounding ?? mecanismoContexto,
             prompt,
             resposta: resposta.texto,
             timestamp: new Date().toISOString(),
@@ -161,6 +173,9 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
             tokens: resposta.tokens,
             finish_reason: resposta.finishReason,
             tools_chamadas: resposta.toolsChamadas,
+            ...(resposta.voltas !== undefined ? { voltas: resposta.voltas } : {}),
+            ...(resposta.toolsErros !== undefined ? { tools_erros: resposta.toolsErros } : {}),
+            ...(resposta.toolsErroExemplo ? { tools_erro_exemplo: resposta.toolsErroExemplo } : {}),
             dataset_versao: banco.dataset_versao,
             itens_versao: banco.versao,
           };

@@ -265,3 +265,81 @@ describe('selecionarBalanceado', () => {
     expect(tarefas.size).toBe(4); // A, B, C e D presentes
   });
 });
+
+describe('modo contexto (D14)', () => {
+  it('injeta a listagem do escopo no prompt, sem grounding, e carimba o mecanismo', async () => {
+    const itens = selecionarBalanceado(banco.itens, 4);
+    const prompts: string[] = [];
+    const grounded: boolean[] = [];
+    const provedor: Provedor = {
+      id: 'fake',
+      async completar(chamada) {
+        prompts.push(chamada.prompt);
+        grounded.push(chamada.grounded);
+        return {
+          texto: 'ok',
+          versaoModelo: 'fake-1',
+          finishReason: 'fim',
+          tokens: { entrada: 1, saida: 1 },
+          custoUsd: 0,
+          toolsChamadas: 0,
+          mecanismoGrounding: null,
+        };
+      },
+    };
+    const resultado = await executarBateria({
+      banco,
+      itens,
+      def: DEF,
+      provedor,
+      modo: 'contexto',
+      parafrases: 1,
+      cache: new CacheDisco(join(dirTemporario, 'ctx')),
+    });
+    expect(resultado.registros.length).toBe(4);
+    expect(grounded.every((g) => g === false)).toBe(true);
+    for (const p of prompts) expect(p.startsWith('Dados oficiais do bncc.dev')).toBe(true);
+    for (const r of resultado.registros) {
+      expect(r.modo).toBe('contexto');
+      expect(r.mecanismo_grounding).toBe('contexto:listagem-escopo-v1');
+      expect(r.prompt).toContain('Pergunta: ');
+    }
+  });
+
+  it('a chave de cache distingue contexto de seco para o mesmo item', async () => {
+    const itens = selecionarBalanceado(banco.itens, 2);
+    const contador = { chamadas: 0 };
+    const cache = new CacheDisco(join(dirTemporario, 'ctx2'));
+    await executarBateria({ banco, itens, def: DEF, provedor: provedorFake(contador), modo: 'seco', parafrases: 1, cache });
+    await executarBateria({ banco, itens, def: DEF, provedor: provedorFake(contador), modo: 'contexto', parafrases: 1, cache });
+    expect(contador.chamadas).toBe(4);
+  });
+});
+
+describe('versão dos dados do MCP na chave de cache (D14)', () => {
+  it('mudar a versão invalida o cache da rodada grounded', async () => {
+    const itens = selecionarBalanceado(banco.itens, 2);
+    const contador = { chamadas: 0 };
+    const cache = new CacheDisco(join(dirTemporario, 'mcpv'));
+    const base = { banco, itens, def: DEF, provedor: provedorFake(contador), modo: 'grounded' as const, parafrases: 1, cache };
+    await executarBateria({ ...base, mcpDadosVersao: 'dados-2026.07.1' });
+    await executarBateria({ ...base, mcpDadosVersao: 'dados-2026.07.1' });
+    expect(contador.chamadas).toBe(2);
+    await executarBateria({ ...base, mcpDadosVersao: 'dados-2026.08.0' });
+    expect(contador.chamadas).toBe(4);
+  });
+});
+
+describe('hash das tools do MCP na chave de cache', () => {
+  it('mudar as tools (correção no servidor) invalida o cache grounded mesmo com a mesma versão de dados', async () => {
+    const itens = selecionarBalanceado(banco.itens, 2);
+    const contador = { chamadas: 0 };
+    const cache = new CacheDisco(join(dirTemporario, 'mcph'));
+    const base = { banco, itens, def: DEF, provedor: provedorFake(contador), modo: 'grounded' as const, parafrases: 1, cache, mcpDadosVersao: 'dados-2026.07.1' };
+    await executarBateria({ ...base, mcpToolsHash: 'aaaaaaaaaaaa' });
+    await executarBateria({ ...base, mcpToolsHash: 'aaaaaaaaaaaa' });
+    expect(contador.chamadas).toBe(2);
+    await executarBateria({ ...base, mcpToolsHash: 'bbbbbbbbbbbb' });
+    expect(contador.chamadas).toBe(4);
+  });
+});

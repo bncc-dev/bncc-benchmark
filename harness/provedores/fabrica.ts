@@ -1,7 +1,9 @@
 import { criarProvedorAnthropic } from './anthropic.js';
 import { criarProvedorBedrock } from './bedrock.js';
 import { criarProvedorGoogle } from './google.js';
+import { criarProvedorGoogleInteractions } from './google-interactions.js';
 import { criarProvedorOpenAiCompat } from './openai-compat.js';
+import { criarProvedorOpenAiResponses } from './openai-responses.js';
 import type { DefModelo, Provedor } from './tipos.js';
 
 export function criarProvedor(def: DefModelo, ambiente: Record<string, string | undefined>): Provedor {
@@ -16,5 +18,9 @@ export function criarProvedor(def: DefModelo, ambiente: Record<string, string | 
       return criarProvedorOpenAiCompat(def, key);
     case 'google':
       return criarProvedorGoogle(def, key);
+    case 'openai-responses':
+      return criarProvedorOpenAiResponses(def, key);
+    case 'google-interactions':
+      return criarProvedorGoogleInteractions(def, key);
   }
 }

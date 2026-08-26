@@ -10,7 +10,7 @@ function contar(registro: Record<string, number>, chave: string, quanto = 1): vo
 }
 
 /** Julgamento conta como alucinação? (por tarefa; abstenção nunca conta.) */
-function alucinacoes(j: Julgamento): number {
+export function alucinacoes(j: Julgamento): number {
   switch (j.tarefa) {
     case 'A':
       return j.veredito === 'inventado' || j.veredito === 'texto_de_outra' ? 1 : 0;
@@ -32,7 +32,15 @@ export function agregar(
 
   for (const j of julgados) {
     const modelo = (por_modelo[j.modelo] ??= { modo: {} as never });
-    const modos = modelo.modo as Record<Modo, { tarefas: Record<string, Record<string, number>>; estratos: Record<string, Record<string, number>>; total_julgamentos: number }>;
+    const modos = modelo.modo as Record<
+      Modo,
+      {
+        tarefas: Record<string, Record<string, number>>;
+        estratos: Record<string, Record<string, number>>;
+        total_julgamentos: number;
+        fonte?: Record<string, number>;
+      }
+    >;
     const modo = (modos[j.modo] ??= { tarefas: {}, estratos: {}, total_julgamentos: 0 });
     modo.total_julgamentos++;
 
@@ -59,6 +67,25 @@ export function agregar(
       contar(tarefa, 'codigos_fora_escopo', j.codigos_citados.filter((c) => c.escopo === 'fora').length);
       for (const c of j.codigos_citados) {
         if (c.texto) contar(tarefa, `texto:${c.texto}`);
+      }
+    }
+
+    // D14: métricas de fonte. Só em modos com fonte e só quando o julgado
+    // carrega tools_chamadas (julgados antigos ficam intocados: o CI recalcula).
+    if (j.modo !== 'seco' && j.tools_chamadas !== undefined) {
+      const fonte = (modo.fonte ??= {});
+      contar(fonte, 'total');
+      const usou = j.tools_chamadas > 0;
+      if (!usou && j.modo === 'grounded') contar(fonte, 'nao_chamou');
+      const errou = alucinacoes(j) > 0 || (j.tarefa !== 'C' && j.veredito === 'incorreto');
+      if (usou && errou) contar(fonte, 'chamou_e_errou');
+      if (j.tarefa === 'B' && j.tipo.startsWith('falso')) {
+        contar(fonte, 'b_falsos_total');
+        if (j.veredito === 'incorreto') contar(fonte, 'rejeicao_negativa');
+      }
+      if (j.tarefa === 'C' && j.codigos_citados) {
+        contar(fonte, 'c_codigos_citados', j.codigos_citados.length);
+        contar(fonte, 'alucinacao_residual', j.codigos_citados.filter((c) => !c.existe).length);
       }
     }
 

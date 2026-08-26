@@ -5,7 +5,7 @@
  * formato tools/tool_calls da API OpenAI.
  */
 
-import { chamarToolMcp, listarToolsMcp, URL_MCP } from '../lib/mcp-cliente.js';
+import { executarToolMcp, listarToolsMcp, URL_MCP } from '../lib/mcp-cliente.js';
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
 
@@ -22,6 +22,11 @@ interface MensagemApi {
   content: string | null;
   tool_calls?: ToolCallApi[];
   tool_call_id?: string;
+  // Campos que alguns provedores exigem de volta na volta seguinte:
+  // reasoning_content (DeepSeek/Kimi com thinking), extra_content com
+  // thought_signature (Gemini via endpoint compatível). Reenviados como vieram.
+  reasoning_content?: string;
+  [extra: string]: unknown;
 }
 
 interface RespostaApi {
@@ -48,7 +53,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
     const corpo: Record<string, unknown> = {
       model: def.modelo,
       temperature: 0,
-      max_tokens: maxTokens,
+      [def.parametroMaxTokens ?? 'max_tokens']: maxTokens,
       messages: mensagens,
       ...def.corpoExtra,
     };
@@ -101,9 +106,13 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
       let saida = 0;
       let reasoning: number | undefined;
       let toolsChamadas = 0;
+      let toolsErros = 0;
+      let toolsErroExemplo: string | undefined;
+      let voltas = 0;
       let dados!: RespostaApi;
 
       for (let volta = 0; ; volta++) {
+        voltas = volta + 1;
         dados = await completions(mensagens, chamada.maxTokens, chamada.grounded);
         entrada += dados.usage!.prompt_tokens;
         saida += dados.usage!.completion_tokens;
@@ -114,14 +123,18 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
         const pedidos = msg.tool_calls ?? [];
         if (!chamada.grounded || pedidos.length === 0 || volta >= MAX_VOLTAS_TOOLS) break;
 
-        mensagens.push({ role: 'assistant', content: msg.content ?? null, tool_calls: pedidos });
+        // A mensagem do assistente volta COMO VEIO (reasoning_content, thought
+        // signatures etc.); reconstruí-la perdia campos que o provedor exige.
+        mensagens.push({ ...msg, role: 'assistant', content: msg.content ?? null, tool_calls: pedidos });
         for (const pedido of pedidos) {
           toolsChamadas++;
           let textoResultado: string;
           try {
             const argumentos = pedido.function.arguments ? JSON.parse(pedido.function.arguments) : {};
-            textoResultado = await chamarToolMcp(pedido.function.name, argumentos);
+            textoResultado = (await executarToolMcp(pedido.function.name, argumentos)).texto;
           } catch (erro) {
+            toolsErros++; // só transporte/protocolo; isError da tool é resposta legítima
+            toolsErroExemplo ??= (erro as Error).message.slice(0, 200);
             textoResultado = `Erro na tool: ${(erro as Error).message}`;
           }
           mensagens.push({ role: 'tool', content: textoResultado, tool_call_id: pedido.id });
@@ -152,6 +165,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
         },
         custoUsd: (entrada * def.precos.entrada + saida * def.precos.saida) / 1_000_000,
         toolsChamadas,
+        ...(chamada.grounded ? { voltas, toolsErros, ...(toolsErroExemplo ? { toolsErroExemplo } : {}) } : {}),
         mecanismoGrounding: chamada.grounded ? `mcp-loop:${URL_MCP}` : null,
       };
     },

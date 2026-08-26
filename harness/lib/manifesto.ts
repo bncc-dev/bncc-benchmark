@@ -28,6 +28,10 @@ export interface EntradaExecucao {
   flags: Record<string, unknown>;
   dataset_versao: string;
   itens_versao: string;
+  /** Grounded: versão dos dados servida pelo mcp.bncc.dev no início da execução (D14). */
+  mcp_dados_versao?: { data_version: string; commit?: string };
+  /** Grounded: hash das tools servidas (nomes, descrições, schemas) no início da execução. */
+  mcp_tools_hash?: string;
   modelos: Array<{ id: string; def: DefModelo; resultado: ResultadoModeloManifesto }>;
 }
 

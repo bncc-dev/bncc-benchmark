@@ -21,3 +21,4 @@ cache-*/
 # oficial). Ficam no disco do time, fora do repositório público — o bncc-dados
 # faz o mesmo com o plano de abertura dele.
 interno/
+cache-expurgado-*/

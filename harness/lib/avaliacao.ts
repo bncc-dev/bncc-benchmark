@@ -78,11 +78,19 @@ function julgamentoBase(item: Item, registro: RegistroBruto): Omit<Julgamento, '
   if (item.verificacao_antivexame?.categoria) {
     base.antivexame_categoria = item.verificacao_antivexame.categoria;
   }
+  // D14: uso da fonte acompanha o julgamento para as métricas do estudo.
+  if (registro.tools_chamadas !== undefined) base.tools_chamadas = registro.tools_chamadas;
   return base;
 }
 
-/** Truncamento/bloqueio do provedor invalida a resposta para julgamento. */
+/**
+ * Truncamento/bloqueio do provedor invalida a resposta para julgamento. O mesmo
+ * vale para chamadas de tool que devolveram erro ao modelo (tools_erros > 0):
+ * o modelo respondeu sem a fonte que a condição prometia (artefato de execução,
+ * emenda de 25/ago/2026 ao pré-registro do estudo).
+ */
 function respostaInvalida(registro: RegistroBruto): boolean {
+  if (registro.tools_erros !== undefined && registro.tools_erros > 0) return true;
   return registro.finish_reason !== undefined && registro.finish_reason !== 'fim';
 }
 
