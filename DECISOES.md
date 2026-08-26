@@ -293,3 +293,139 @@ Os brutos parciais permanecem no repositório e no cache: servem para retomar a
 medição numa release seguinte, sem custo repetido.
 
 Decisão de 16/ago/2026, durante a rodada `oficial-seca-2026-08`.
+
+## D14 · Grounded é estudo de intervenção, não leaderboard
+
+A rodada grounded (modelo conectado ao `mcp.bncc.dev`, prevista em D9 e
+prometida como release MINOR na v0.1.0 e na v0.2.0) não entra no leaderboard
+como segunda coluna de nota. Ela é publicada como **estudo de intervenção**
+("acesso à fonte"), com artefato e vocabulário próprios.
+
+### Racional
+
+1. **Construtos diferentes.** A rodada seca mede conhecimento memorizado
+   sobre a BNCC. A grounded mede competência de uso de ferramenta e fidelidade
+   à fonte. Colocar as duas notas lado a lado, com os mesmos ids e a mesma
+   nota composta, convida à leitura de que são a mesma medida.
+2. **Fonte e gabarito são o mesmo dataset.** O MCP serve exatamente os dados
+   contra os quais o julgamento é feito. Um modelo que chama `bncc_lookup` e
+   copia acerta a tarefa A por construção (smoke de 16/jul/2026: 10/10
+   `fiel_exato`). Como ranking, o resultado é quase trivial; como demonstração
+   de que a alucinação desaparece com acesso à fonte, é a tese do projeto.
+3. **Conflito de interesse.** Quem mantém o benchmark mantém a ferramenta.
+   Ablações fonte-fechada × fonte-aberta são desenho padrão na área (Roberts
+   et al. 2020; Lewis et al. 2020; Chen et al. 2023, RGB), mas exigem
+   declaração explícita e um controle que separe o mérito do dado do mérito
+   do instrumento.
+
+### O que o estudo mede
+
+O objeto é o **efeito da intervenção**, não o modelo: o delta seco→grounded
+por modelo, com intervalo de confiança. Além dele, quatro medidas que não são
+triviais mesmo com a fonte disponível:
+
+- **Uso da ferramenta**: o modelo consulta ou responde de memória
+  (`tools_chamadas = 0`)?
+- **Rejeição negativa** (tarefa B): quando a fonte diz que o código não
+  existe, o modelo aceita ou insiste?
+- **Alucinação residual** (tarefa C): lista o que a fonte devolveu ou
+  acrescenta itens inventados?
+- **Erro apesar da fonte**: chamou, recebeu o dado correto e respondeu errado
+  — separado de "não chamou", como a METODOLOGIA já prometia.
+
+### Regras
+
+1. **Três condições, não duas.** Além de *seca* e *MCP*, uma condição de
+   controle *contexto*: os registros relevantes do gabarito colocados no
+   prompt, sem ferramenta. A comparação MCP × contexto isola o que é mérito
+   de ter o dado e o que é mérito do mecanismo de tool-use. Sem esse controle,
+   todo ganho é atribuível a "ter informação", e o MCP como instrumento fica
+   sem evidência própria.
+2. **Um mecanismo por estudo.** O loop de tool-use no cliente (`mcp-loop`,
+   D9) alcança todo o elenco; os connectors MCP nativos (OpenAI, Anthropic,
+   xAI, Google; levantamento de 24/ago/2026) cobrem menos da metade e mudam
+   quem controla as voltas, o teto e a latência. A condição MCP usa o
+   `mcp-loop` para todos os modelos. Connector nativo, se medido, é condição
+   distinta e declarada, nunca misturada na mesma tabela.
+3. **Versão da fonte carimbada.** A versão dos dados servida pelo MCP entra
+   no manifesto da rodada e na identidade de cache (lacuna registrada no
+   commit `a408a3d`: a chave não capturava a data-version remota).
+4. **Declaração de conflito de interesse** no artefato publicado: a fonte de
+   grounding e o gabarito são o mesmo dataset, mantido pelo mesmo time.
+5. **Artefato à parte.** Relatório próprio com delta por modelo (IC), uso de
+   ferramenta, rejeição negativa, alucinação residual, custo e latência. Sem
+   coluna no leaderboard principal; no máximo um link. Versionado como série
+   própria (não é MINOR da série do leaderboard, porque introduz condições
+   novas; se um dia entrar na série, é MAJOR conforme D11).
+6. **Vocabulário público.** "Estudo de intervenção: acesso à fonte" (ou
+   "ablação: efeito do grounding"). Nunca "benchmark do MCP" nem "leaderboard
+   grounded". A mensagem é: sem acesso à fonte os modelos inventam X%; com
+   acesso ao dado estruturado, Y%; o MCP do bncc.dev é uma das formas de dar
+   esse acesso.
+
+### Consequências
+
+- A promessa "rodada grounded em release MINOR futura" (RELEASES.md v0.1.0 e
+  v0.2.0) fica **reinterpretada**: o que sai é o estudo descrito aqui, não
+  uma coluna nova no leaderboard. A próxima entrada de release registra isso.
+- Antes da bateria: avaliador e agregador passam a ler `tools_chamadas` e a
+  distinguir as quatro medidas acima; a condição *contexto* precisa de
+  gerador de prompt próprio; o adapter Anthropic direto está defasado em
+  relação ao connector atual (beta `mcp-client-2025-11-20` + `mcp_toolset`)
+  e só importa se a condição "connector nativo" for medida.
+- Rejeitado: publicar leaderboard grounded ao lado do seco com os mesmos ids
+  e nota composta; usar só connectors nativos na rodada oficial (dois regimes
+  de medição, elenco pela metade).
+
+Decisão de 24/ago/2026, a partir do levantamento de como cada empresa trata
+MCP em chamadas de API (registro na sessão de análise; nada implementado).
+
+### Emenda D14.1 (24/ago/2026) · O estudo roda pelas APIs diretas de cada empresa
+
+A política de rotas de 13/jul/2026 (execução só via Bedrock e OpenRouter,
+por controle de faturamento) vale para o **leaderboard**. O estudo de
+intervenção fica **fora dela**: todas as suas condições (seca pareada,
+contexto, MCP e connector nativo) rodam pela API direta de cada empresa,
+com as keys do time.
+
+Racional, a partir dos smokes de 24/ago/2026 (`smoke-direto-2026-08`,
+`smoke-mcp-2026-08`; registro em `interno/revisoes/`):
+
+1. **O agregador traduzia parâmetros em silêncio.** Pela rota direta
+   descobrimos que a OpenAI rejeita `max_tokens` nos gpt-5.x, só aceita
+   function tools em Chat Completions sem raciocínio, e que Claude 5 e
+   gpt-5.6 (Responses) rejeitam `temperature`. Nada disso era visível via
+   OpenRouter. Num estudo cujo objeto é o mecanismo de acesso à fonte, o
+   que chega ao modelo precisa ser exatamente o que enviamos.
+2. **Connector nativo só existe na rota direta.** A condição "connector
+   nativo" (regra 2) é impossível por agregador.
+3. **As três condições na mesma rota.** A seca pareada também roda direta,
+   na mesma janela e com o mesmo cache: o estudo fica autocontido e não
+   depende da seca do leaderboard (rota e data diferentes).
+4. **Custo.** ≈ US$ 80–110 distribuídos por oito provedores, sem aporte no
+   OpenRouter.
+
+Regras:
+
+- **Ids com sufixo de mecanismo**: `-direto` (loop no cliente, `mcp-loop:`)
+  e `-mcp` (connector nativo, `mcp:`). Nunca reaproveitam ids do leaderboard
+  (D13.1); não entram no leaderboard.
+- **Condições que o protocolo previa e a rota direta não permite são
+  declaradas por modelo, não silenciadas**: temperatura ausente (gpt-5.6 na
+  Responses API; Sonnet 5, Opus 5, Fable 5), temperatura 1 (Kimi K3),
+  raciocínio desligado (gpt-5.6 em Chat Completions, condição A). O campo
+  correspondente fica no registro (`semTemperatura`, `corpoExtra`) e a
+  ressalva vai para o relatório do estudo.
+- **Modelo sem rota direta viável não entra no estudo** — hoje, Qwen
+  (sem acesso à API da Alibaba; connector exige SSE). Decisão de 24/ago/2026:
+  o estudo segue sem a Alibaba, declarando a lacuna de cobertura no
+  relatório; Qwen entra numa expansão futura se a rota abrir. Não se recorre
+  ao agregador para completá-lo.
+- **Anthropic na condição A**: via Bedrock (loop já existente, token
+  próprio) ou via loop de tool-use na Messages API, a implementar; nunca via
+  OpenRouter.
+
+Consequência para o `.env`: as keys diretas, antes ociosas, passam a ser
+operacionais; `carregarEnv` deve dar precedência ao `.env` sobre variáveis
+de shell (hoje é o inverso, e keys antigas exportadas no perfil quebraram o
+primeiro smoke).

@@ -17,6 +17,7 @@ import { CacheDisco } from './lib/cache.js';
 import { carregarEnv } from './lib/env.js';
 import { executarBateria, selecionarBalanceado } from './lib/execucao.js';
 import { commitHarness, registrarExecucao, type EntradaExecucao } from './lib/manifesto.js';
+import { hashToolsMcp, versaoDadosMcp } from './lib/mcp-cliente.js';
 import type { BancoItens, Modo } from './lib/tipos.js';
 import { criarProvedor } from './provedores/fabrica.js';
 import { MODELOS } from './provedores/registro.js';
@@ -28,7 +29,7 @@ const { values: args } = parseArgs({
   options: {
     rodada: { type: 'string', default: 'smoke' },
     modelos: { type: 'string', default: 'claude-haiku' },
-    modo: { type: 'string', default: 'seco' }, // seco | grounded
+    modo: { type: 'string', default: 'seco' }, // seco | grounded | contexto (D14)
     itens: { type: 'string', default: resolve(RAIZ, 'itens/itens-v1.json') },
     limite: { type: 'string' },
     parafrases: { type: 'string', default: '3' },
@@ -39,8 +40,8 @@ const { values: args } = parseArgs({
 });
 
 const modo = args.modo as Modo;
-if (modo !== 'seco' && modo !== 'grounded') {
-  throw new Error(`--modo deve ser "seco" ou "grounded", recebi "${args.modo}"`);
+if (modo !== 'seco' && modo !== 'grounded' && modo !== 'contexto') {
+  throw new Error(`--modo deve ser "seco", "grounded" ou "contexto", recebi "${args.modo}"`);
 }
 
 const banco = JSON.parse(readFileSync(args.itens!, 'utf8')) as BancoItens;
@@ -78,6 +79,15 @@ console.log(
   `Rodada "${args.rodada}" · modo ${modo} · ${itens.length} itens × até ${args.parafrases} paráfrases · modelos: ${ids.join(', ')}`,
 );
 
+// D14: a versão dos dados do MCP é carimbada antes de qualquer chamada e entra
+// na chave de cache; MCP fora do ar aborta a rodada grounded (nunca mede às cegas).
+const mcpVersao = modo === 'grounded' ? await versaoDadosMcp() : undefined;
+const mcpTools = modo === 'grounded' ? await hashToolsMcp() : undefined;
+if (mcpVersao) {
+  const commitCurto = mcpVersao.commit ? ` (${mcpVersao.commit.slice(0, 7)})` : '';
+  console.log(`MCP bncc.dev: dados ${mcpVersao.data_version}${commitCurto} · tools ${mcpTools}`);
+}
+
 const entradaManifesto: EntradaExecucao = {
   executado_em: new Date().toISOString(),
   modo,
@@ -93,6 +103,8 @@ const entradaManifesto: EntradaExecucao = {
   },
   dataset_versao: banco.dataset_versao,
   itens_versao: banco.versao,
+  ...(mcpVersao ? { mcp_dados_versao: mcpVersao } : {}),
+  ...(mcpTools ? { mcp_tools_hash: mcpTools } : {}),
   modelos: [],
 };
 
@@ -117,6 +129,8 @@ for (const id of ids) {
     cache,
     concorrencia: Number(args.concorrencia),
     maxTokens: Number(args['max-tokens']),
+    mcpDadosVersao: mcpVersao?.data_version,
+    mcpToolsHash: mcpTools,
     aoProgresso: (feito, total, doCache) => {
       if (feito % 25 === 0 || feito === total) {
         process.stdout.write(`\r  ${id}: ${feito}/${total}${doCache ? ' (cache)' : ''}      `);

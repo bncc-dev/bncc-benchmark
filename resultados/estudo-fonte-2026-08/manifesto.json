@@ -1,0 +1,1319 @@
+{
+ "rodada": "estudo-fonte-2026-08",
+ "execucoes": [
+  {
+   "executado_em": "2026-08-25T00:29:34.263Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-sol-direto",
+     "def": {
+      "id": "gpt-sol-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "corpoExtra": {
+       "reasoning_effort": "none"
+      },
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 0.283332,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T00:33:08.082Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-sol-direto",
+     "def": {
+      "id": "gpt-sol-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "corpoExtra": {
+       "reasoning_effort": "none"
+      },
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 2.1891,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T00:35:50.026Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "gpt-sol-direto",
+     "def": {
+      "id": "gpt-sol-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "corpoExtra": {
+       "reasoning_effort": "none"
+      },
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 3.384796,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:17:05.635Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-sol-direto",
+     "def": {
+      "id": "gpt-sol-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "corpoExtra": {
+       "reasoning_effort": "none"
+      },
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:17:06.117Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-sol-direto",
+     "def": {
+      "id": "gpt-sol-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "corpoExtra": {
+       "reasoning_effort": "none"
+      },
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:17:07.002Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "gpt-sol-direto",
+     "def": {
+      "id": "gpt-sol-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "corpoExtra": {
+       "reasoning_effort": "none"
+      },
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:17:07.461Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-flash-direto",
+     "def": {
+      "id": "deepseek-flash-direto",
+      "maxTokensPadrao": 32768,
+      "provedor": "openai-compat",
+      "modelo": "deepseek-v4-flash",
+      "envKey": "DEEPSEEK_API_KEY",
+      "baseUrl": "https://api.deepseek.com",
+      "precos": {
+       "entrada": 0.44,
+       "saida": 1.32
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 54,
+      "do_cache": 246,
+      "custo_usd": 0.112717,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:21:46.942Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "deepseek-flash-direto",
+     "def": {
+      "id": "deepseek-flash-direto",
+      "maxTokensPadrao": 32768,
+      "provedor": "openai-compat",
+      "modelo": "deepseek-v4-flash",
+      "envKey": "DEEPSEEK_API_KEY",
+      "baseUrl": "https://api.deepseek.com",
+      "precos": {
+       "entrada": 0.44,
+       "saida": 1.32
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 300,
+      "do_cache": 0,
+      "custo_usd": 0.357779,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:26:26.206Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "deepseek-flash-direto",
+     "def": {
+      "id": "deepseek-flash-direto",
+      "maxTokensPadrao": 32768,
+      "provedor": "openai-compat",
+      "modelo": "deepseek-v4-flash",
+      "envKey": "DEEPSEEK_API_KEY",
+      "baseUrl": "https://api.deepseek.com",
+      "precos": {
+       "entrada": 0.44,
+       "saida": 1.32
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 300,
+      "do_cache": 0,
+      "custo_usd": 0.728689,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:32:20.579Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:32:21.000Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 0.62652,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:33:47.627Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 0.214469,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:37:13.837Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 2
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:37:14.272Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 0.128685,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T01:39:54.468Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 0.049454,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T03:25:51.638Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "grok-46-direto",
+     "def": {
+      "id": "grok-46-direto",
+      "provedor": "openai-compat",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 0.431364,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T04:22:20.240Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "grok-46-direto",
+     "def": {
+      "id": "grok-46-direto",
+      "provedor": "openai-compat",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 1.398712,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T04:33:21.234Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "grok-46-direto",
+     "def": {
+      "id": "grok-46-direto",
+      "provedor": "openai-compat",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 2.962824,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T04:41:20.669Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sonnet-bedrock",
+     "def": {
+      "id": "sonnet-bedrock",
+      "provedor": "bedrock",
+      "modelo": "us.anthropic.claude-sonnet-4-6",
+      "envKey": "AWS_BEARER_TOKEN_BEDROCK",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 0,
+      "do_cache": 300,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T04:41:21.086Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sonnet-bedrock",
+     "def": {
+      "id": "sonnet-bedrock",
+      "provedor": "bedrock",
+      "modelo": "us.anthropic.claude-sonnet-4-6",
+      "envKey": "AWS_BEARER_TOKEN_BEDROCK",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 2.265495,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T04:44:30.984Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "sonnet-bedrock",
+     "def": {
+      "id": "sonnet-bedrock",
+      "provedor": "bedrock",
+      "modelo": "us.anthropic.claude-sonnet-4-6",
+      "envKey": "AWS_BEARER_TOKEN_BEDROCK",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 5.843343,
+      "incompletas": 6
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T07:05:57.386Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "kimi-k3-direto",
+     "def": {
+      "id": "kimi-k3-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "kimi-k3",
+      "envKey": "MOONSHOT_API_KEY",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "corpoExtra": {
+       "temperature": 1
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 3.301677,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T10:44:12.510Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "sonnet-5-mcp",
+     "def": {
+      "id": "sonnet-5-mcp",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 270,
+      "do_cache": 30,
+      "custo_usd": 5.848734,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T10:51:10.646Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 2,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "kimi-k3-direto",
+     "def": {
+      "id": "kimi-k3-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "kimi-k3",
+      "envKey": "MOONSHOT_API_KEY",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "corpoExtra": {
+       "temperature": 1
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 1,
+      "do_cache": 299,
+      "custo_usd": 0.094161,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T10:54:48.855Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 2,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "kimi-k3-direto",
+     "def": {
+      "id": "kimi-k3-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "kimi-k3",
+      "envKey": "MOONSHOT_API_KEY",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "corpoExtra": {
+       "temperature": 1
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 2,
+      "do_cache": 298,
+      "custo_usd": 0.041529,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T17:58:21.806Z",
+   "modo": "seco",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gemini-37-flash",
+     "def": {
+      "id": "gemini-37-flash",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "google/gemini-3.7-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Google"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.375,
+       "saida": 1.875
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 300,
+      "do_cache": 0,
+      "custo_usd": 0.516032,
+      "incompletas": 2
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T18:12:24.606Z",
+   "modo": "contexto",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gemini-37-flash",
+     "def": {
+      "id": "gemini-37-flash",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "google/gemini-3.7-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Google"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.375,
+       "saida": 1.875
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 300,
+      "do_cache": 0,
+      "custo_usd": 0.345081,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T18:17:52.335Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "gemini-37-flash",
+     "def": {
+      "id": "gemini-37-flash",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "google/gemini-3.7-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Google"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.375,
+       "saida": 1.875
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 300,
+      "chamadas_novas": 300,
+      "do_cache": 0,
+      "custo_usd": 0.438795,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-25T18:32:53.523Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": null,
+    "parafrases": 3,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "mcp_dados_versao": {
+    "data_version": "dados-2026.07.1",
+    "commit": "58eb2098a5e047b4627bfdd95f52ee0a6f545112"
+   },
+   "modelos": [
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 600,
+      "do_cache": 300,
+      "custo_usd": 0.744241,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 900,
+      "chamadas_novas": 600,
+      "do_cache": 300,
+      "custo_usd": 0.129162,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": [
+  {
+   "avaliado_em": "2026-08-25T10:58:42.032Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 7200,
+   "pendentes_a": 465,
+   "pendentes_c": 1049,
+   "juiz_chamadas": 1514,
+   "juiz_custo_usd": 0.242727
+  },
+  {
+   "avaliado_em": "2026-08-25T18:29:58.427Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 8100,
+   "pendentes_a": 509,
+   "pendentes_c": 1141,
+   "juiz_chamadas": 1650,
+   "juiz_custo_usd": 0.044117
+  },
+  {
+   "avaliado_em": "2026-08-25T19:09:19.989Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 9300,
+   "pendentes_a": 530,
+   "pendentes_c": 1203,
+   "juiz_chamadas": 1733,
+   "juiz_custo_usd": 0.02637
+  }
+ ]
+}

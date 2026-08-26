@@ -6,7 +6,7 @@
  * provedores OpenAI/Google ainda não têm essa rota.
  */
 
-import { chamarToolMcp, listarToolsMcp, URL_MCP } from '../lib/mcp-cliente.js';
+import { executarToolMcp, listarToolsMcp, URL_MCP } from '../lib/mcp-cliente.js';
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
 
@@ -80,9 +80,13 @@ export function criarProvedorBedrock(def: DefModelo, token: string): Provedor {
       let entrada = 0;
       let saida = 0;
       let toolsChamadas = 0;
+      let toolsErros = 0;
+      let toolsErroExemplo: string | undefined;
+      let voltas = 0;
       let ultima: RespostaConverse;
 
       for (let volta = 0; ; volta++) {
+        voltas = volta + 1;
         ultima = await converse(mensagens, chamada.maxTokens, chamada.grounded);
         entrada += ultima.usage.inputTokens;
         saida += ultima.usage.outputTokens;
@@ -98,8 +102,12 @@ export function criarProvedorBedrock(def: DefModelo, token: string): Provedor {
           let textoResultado: string;
           let status = 'success';
           try {
-            textoResultado = await chamarToolMcp(name, input);
+            const r = await executarToolMcp(name, input);
+            textoResultado = r.texto;
+            if (r.isError) status = 'error'; // sinal para o modelo; não conta como falha
           } catch (erro) {
+            toolsErros++; // só transporte/protocolo
+            toolsErroExemplo ??= (erro as Error).message.slice(0, 200);
             textoResultado = `Erro na tool: ${(erro as Error).message}`;
             status = 'error';
           }
@@ -131,6 +139,7 @@ export function criarProvedorBedrock(def: DefModelo, token: string): Provedor {
         tokens: { entrada, saida },
         custoUsd: (entrada * def.precos.entrada + saida * def.precos.saida) / 1_000_000,
         toolsChamadas,
+        ...(chamada.grounded ? { voltas, toolsErros, ...(toolsErroExemplo ? { toolsErroExemplo } : {}) } : {}),
         mecanismoGrounding: chamada.grounded ? `mcp-loop:${URL_MCP}` : null,
       };
     },

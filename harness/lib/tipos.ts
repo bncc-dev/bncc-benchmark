@@ -14,7 +14,12 @@ export type TipoItem =
 
 export type Etapa = 'EI' | 'EF' | 'EM';
 export type Modulo = 'bncc-2018' | 'computacao-2022';
-export type Modo = 'seco' | 'grounded';
+/**
+ * seco = sem fonte; grounded = MCP (loop no cliente ou connector nativo);
+ * contexto = listagem do escopo do item no prompt, sem ferramenta (condição de
+ * controle do estudo de intervenção, D14).
+ */
+export type Modo = 'seco' | 'grounded' | 'contexto';
 
 export interface Estrato {
   etapa: Etapa;
@@ -102,6 +107,17 @@ export interface RegistroBruto {
    */
   finish_reason?: string;
   tools_chamadas?: number;
+  /** Voltas do loop de tool-use no cliente (mcp-loop); ausente no connector nativo. */
+  voltas?: number;
+  /**
+   * Chamadas de tool que falharam por TRANSPORTE (HTTP, rede, timeout). Respostas
+   * legítimas com isError (código inexistente) e erros de argumentos do modelo
+   * não contam. Resposta com tools_erros > 0 é artefato de execução, não medição
+   * (25/ago/2026: queda de ~2 min do MCP virou 49 "não" do sabiazinho-4).
+   */
+  tools_erros?: number;
+  /** Primeira mensagem de erro de transporte da tool (auditoria; truncada). */
+  tools_erro_exemplo?: string;
   dataset_versao: string;
   itens_versao: string;
 }
@@ -150,6 +166,12 @@ export interface Julgamento {
   /** D10: categoria anti-vexame do código falso (itens da tarefa B). */
   antivexame_categoria?: 'limpo' | 'derivado' | 'cinzenta-federal';
   veredito: Veredito;
+  /**
+   * Chamadas de tool registradas no bruto (grounded: >0 = usou a fonte; contexto:
+   * 0). Base das métricas de fonte do estudo de intervenção (D14). Ausente em
+   * julgados anteriores a 24/ago/2026.
+   */
+  tools_chamadas?: number;
   /** Tarefa C: detalhe por código citado. */
   codigos_citados?: CodigoCitado[];
   juiz?: { veredito: 'sim' | 'nao' | 'parcial' | 'indeterminado'; modelo: string };
@@ -170,6 +192,13 @@ export interface AgregadoModelo {
       tarefas: Record<string, Record<string, number>>;
       estratos: Record<string, Record<string, number>>;
       total_julgamentos: number;
+      /**
+       * Métricas do estudo de intervenção (D14), só em modos com fonte e só
+       * quando os julgados carregam `tools_chamadas`: total, nao_chamou,
+       * chamou_e_errou, b_falsos_total, rejeicao_negativa, c_codigos_citados,
+       * alucinacao_residual.
+       */
+      fonte?: Record<string, number>;
     }
   >;
 }

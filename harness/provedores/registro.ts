@@ -35,6 +35,7 @@ export const MODELOS: Record<string, DefModelo> = {
     provedor: 'anthropic',
     modelo: 'claude-sonnet-5',
     envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true, // Claude 4.6+ removeu o parâmetro (400 em 24/ago/2026)
     precos: { entrada: 3, saida: 15 },
     suportaGrounded: true,
   },
@@ -286,6 +287,254 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'DEEPSEEK_API_KEY',
     baseUrl: 'https://api.deepseek.com',
     precos: { entrada: 0.27, saida: 1.1 }, // conferir na data da rodada
+    suportaGrounded: true,
+  },
+
+  // ---------------------------------------------------------------------
+  // ROTAS DIRETAS (API de cada empresa) — o ESTUDO DE INTERVENÇÃO roda
+  // exclusivamente por elas (DECISOES.md D14.1, 24/ago/2026); a política de
+  // rotas de 13/jul/2026 (Bedrock + OpenRouter) segue valendo só para o
+  // leaderboard. Sufixo `-direto` = loop de tool-use no cliente (`mcp-loop`);
+  // `-mcp` (abaixo) = connector nativo. Nunca colidem com os ids oficiais
+  // (D13.1) e não entram no leaderboard. Divergências de condição impostas
+  // pela rota (temperatura, raciocínio) ficam declaradas na própria entrada.
+  // Identificadores e preços conferidos na doc de cada empresa em 24/ago/2026.
+  // ---------------------------------------------------------------------
+  'gpt-sol-direto': {
+    id: 'gpt-sol-direto',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'gpt-5.6-sol',
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens', // a API direta rejeita max_tokens nos gpt-5.x
+    // A API direta recusa function tools em /chat/completions com raciocínio
+    // ligado ("use /v1/responses or set reasoning_effort to 'none'", 24/ago/2026).
+    // CONDIÇÃO DISTINTA da rota OpenRouter: aqui o modelo roda SEM raciocínio.
+    // Alternativa fiel ao raciocínio exigiria adapter da Responses API.
+    corpoExtra: { reasoning_effort: 'none' },
+    precos: { entrada: 4, saida: 20 },
+    suportaGrounded: true,
+  },
+  'gpt-luna-direto': {
+    id: 'gpt-luna-direto',
+    provedor: 'openai-compat',
+    modelo: 'gpt-5.6-luna',
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens', // idem
+    corpoExtra: { reasoning_effort: 'none' }, // idem: sem raciocínio na rota direta
+    precos: { entrada: 0.2, saida: 1.2 },
+    suportaGrounded: true,
+  },
+  'grok-46-direto': {
+    id: 'grok-46-direto',
+    provedor: 'openai-compat',
+    modelo: 'grok-4.6',
+    envKey: 'XAI_API_KEY',
+    baseUrl: 'https://api.x.ai/v1',
+    precos: { entrada: 2, saida: 6 },
+    suportaGrounded: true,
+  },
+  'deepseek-pro-direto': {
+    id: 'deepseek-pro-direto',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'deepseek-v4-pro',
+    envKey: 'DEEPSEEK_API_KEY',
+    baseUrl: 'https://api.deepseek.com',
+    precos: { entrada: 1.32, saida: 3.96 }, // tarifa de pico
+    suportaGrounded: true,
+  },
+  'deepseek-flash-direto': {
+    id: 'deepseek-flash-direto',
+    // 32768 (24/ago/2026, Portão 2 do estudo): a 8192 o modelo truncou 4/30 na
+    // seca do piloto — raciocina até o teto. Condição declarada (D13.2).
+    maxTokensPadrao: 32768,
+    provedor: 'openai-compat',
+    modelo: 'deepseek-v4-flash',
+    envKey: 'DEEPSEEK_API_KEY',
+    baseUrl: 'https://api.deepseek.com',
+    precos: { entrada: 0.44, saida: 1.32 }, // tarifa de pico
+    suportaGrounded: true,
+  },
+  'kimi-k3-direto': {
+    id: 'kimi-k3-direto',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'kimi-k3',
+    envKey: 'MOONSHOT_API_KEY',
+    baseUrl: 'https://api.moonshot.ai/v1',
+    // A API direta rejeita temperature 0 ("only 1 is allowed for this model",
+    // 24/ago/2026). CONDIÇÃO DISTINTA do protocolo (temperatura 0): declarar.
+    corpoExtra: { temperature: 1 },
+    precos: { entrada: 3, saida: 15 },
+    suportaGrounded: true,
+  },
+  // Google direto, endpoint compatível com OpenAI (para o loop de tool-use no
+  // cliente, condição A; o google.ts nativo não faz loop). Os tool_calls trazem
+  // extra_content.google.thought_signature, reenviado como veio pelo adapter.
+  'gemini-37-flash-direto': {
+    id: 'gemini-37-flash-direto',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'gemini-3.7-flash',
+    envKey: 'GEMINI_API_KEY',
+    baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',
+    precos: { entrada: 0.375, saida: 1.875 },
+    suportaGrounded: true,
+  },
+  'gemini-pro-direto': {
+    id: 'gemini-pro-direto',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'gemini-3.1-pro-preview',
+    envKey: 'GEMINI_API_KEY',
+    baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',
+    precos: { entrada: 2, saida: 12 },
+    suportaGrounded: true,
+  },
+  // Qwen: fora do estudo de intervenção (D14.1, 24/ago/2026): sem rota direta
+  // disponível na data. Entradas mantidas para quando a rota abrir.
+  'qwen-38-max-direto': {
+    id: 'qwen-38-max-direto',
+    maxTokensPadrao: 32768,
+    provedor: 'openai-compat',
+    modelo: 'qwen3.8-max',
+    envKey: 'DASHSCOPE_API_KEY',
+    baseUrl: 'https://dashscope-us.aliyuncs.com/compatible-mode/v1',
+    precos: { entrada: 2, saida: 6 },
+    suportaGrounded: true,
+  },
+  'qwen-plus-direto': {
+    id: 'qwen-plus-direto',
+    maxTokensPadrao: 32768,
+    provedor: 'openai-compat',
+    modelo: 'qwen3.7-plus',
+    envKey: 'DASHSCOPE_API_KEY',
+    baseUrl: 'https://dashscope-us.aliyuncs.com/compatible-mode/v1',
+    precos: { entrada: 0.32, saida: 1.28 },
+    suportaGrounded: true,
+  },
+  'qwen-flash-direto': {
+    id: 'qwen-flash-direto',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'qwen3.7-flash',
+    envKey: 'DASHSCOPE_API_KEY',
+    baseUrl: 'https://dashscope-us.aliyuncs.com/compatible-mode/v1',
+    precos: { entrada: 0.03, saida: 0.13 },
+    suportaGrounded: true,
+  },
+  'muse-spark-direto': {
+    id: 'muse-spark-direto',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'muse-spark-1.2',
+    envKey: 'META_API_KEY',
+    baseUrl: 'https://api.meta.ai/v1',
+    precos: { entrada: 1.25, saida: 4.25 },
+    suportaGrounded: true,
+  },
+
+  // ---------------------------------------------------------------------
+  // CONNECTORS MCP NATIVOS (sufixo `-mcp`): a empresa conecta ao
+  // mcp.bncc.dev do lado dela e resolve o loop numa única requisição
+  // (mecanismo `mcp:`, condição distinta do `mcp-loop:` — D14 regra 2).
+  // Só quatro empresas oferecem isso (levantamento de 24/ago/2026); a
+  // Alibaba exige transporte SSE, que o servidor não tem. Mesma exceção de
+  // rota direta das entradas `-direto`.
+  // ---------------------------------------------------------------------
+  'gpt-sol-mcp': {
+    id: 'gpt-sol-mcp',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-responses',
+    modelo: 'gpt-5.6-sol',
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    // Responses API: raciocínio permitido com MCP (ao contrário do
+    // /chat/completions), mas `temperature` é rejeitada nos gpt-5.x —
+    // CONDIÇÃO DISTINTA do protocolo (temperatura 0): declarar.
+    semTemperatura: true,
+    opcoesResponses: { requireApproval: true },
+    precos: { entrada: 4, saida: 20 },
+    suportaGrounded: true,
+  },
+  'gpt-luna-mcp': {
+    id: 'gpt-luna-mcp',
+    provedor: 'openai-responses',
+    modelo: 'gpt-5.6-luna',
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    semTemperatura: true,
+    opcoesResponses: { requireApproval: true }, // idem
+    precos: { entrada: 0.2, saida: 1.2 },
+    suportaGrounded: true,
+  },
+  'grok-46-mcp': {
+    id: 'grok-46-mcp',
+    provedor: 'openai-responses',
+    modelo: 'grok-4.6',
+    envKey: 'XAI_API_KEY',
+    baseUrl: 'https://api.x.ai/v1',
+    opcoesResponses: {}, // xAI não aceita require_approval; aceita temperature
+    precos: { entrada: 2, saida: 6 },
+    suportaGrounded: true,
+  },
+  'gemini-37-flash-mcp': {
+    id: 'gemini-37-flash-mcp',
+    maxTokensPadrao: 8192,
+    provedor: 'google-interactions',
+    modelo: 'gemini-3.7-flash',
+    envKey: 'GEMINI_API_KEY',
+    precos: { entrada: 0.375, saida: 1.875 },
+    suportaGrounded: true,
+  },
+  'gemini-pro-mcp': {
+    id: 'gemini-pro-mcp',
+    maxTokensPadrao: 8192,
+    provedor: 'google-interactions',
+    modelo: 'gemini-3.1-pro-preview',
+    envKey: 'GEMINI_API_KEY',
+    precos: { entrada: 2, saida: 12 },
+    suportaGrounded: true,
+  },
+  'sonnet-5-mcp': {
+    id: 'sonnet-5-mcp',
+    maxTokensPadrao: 4096,
+    provedor: 'anthropic',
+    modelo: 'claude-sonnet-5',
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true, // Claude 4.6+ removeu o parâmetro (400 em 24/ago/2026)
+    precos: { entrada: 3, saida: 15 },
+    suportaGrounded: true,
+  },
+  'haiku-45-mcp': {
+    id: 'haiku-45-mcp',
+    provedor: 'anthropic',
+    modelo: 'claude-haiku-4-5-20251001',
+    envKey: 'ANTHROPIC_API_KEY',
+    precos: { entrada: 1, saida: 5 },
+    suportaGrounded: true,
+  },
+  'opus-5-mcp': {
+    id: 'opus-5-mcp',
+    maxTokensPadrao: 4096,
+    provedor: 'anthropic',
+    modelo: 'claude-opus-5',
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true, // Claude 4.6+ removeu o parâmetro (400 em 24/ago/2026)
+    precos: { entrada: 5, saida: 25 },
+    suportaGrounded: true,
+  },
+  'fable-5-mcp': {
+    id: 'fable-5-mcp',
+    maxTokensPadrao: 8192,
+    provedor: 'anthropic',
+    modelo: 'claude-fable-5',
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true, // Claude 4.6+ removeu o parâmetro (400 em 24/ago/2026)
+    precos: { entrada: 10, saida: 50 },
     suportaGrounded: true,
   },
 };

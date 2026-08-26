@@ -1,0 +1,390 @@
+{
+ "rodada": "smoke-mcp-2026-08",
+ "execucoes": [
+  {
+   "executado_em": "2026-08-24T21:13:55.099Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "../../../../private/tmp/claude-501/-Users-marcosbeto-Dev-bncc-benchmark/1e8e03b7-681b-4834-9689-e47413fe0e02/scratchpad/itens-smoke-direto.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 4,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-luna-mcp",
+     "def": {
+      "id": "gpt-luna-mcp",
+      "provedor": "openai-responses",
+      "modelo": "gpt-5.6-luna",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "opcoesResponses": {
+       "requireApproval": true,
+       "semTemperatura": true
+      },
+      "precos": {
+       "entrada": 0.2,
+       "saida": 1.2
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000456,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "grok-46-mcp",
+     "def": {
+      "id": "grok-46-mcp",
+      "provedor": "openai-responses",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "opcoesResponses": {},
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.013386,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-37-flash-mcp",
+     "def": {
+      "id": "gemini-37-flash-mcp",
+      "maxTokensPadrao": 8192,
+      "provedor": "google-interactions",
+      "modelo": "gemini-3.7-flash",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 0.375,
+       "saida": 1.875
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.001008,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "haiku-45-mcp",
+     "def": {
+      "id": "haiku-45-mcp",
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-4-5-20251001",
+      "envKey": "ANTHROPIC_API_KEY",
+      "precos": {
+       "entrada": 1,
+       "saida": 5
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.007026,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-24T21:14:44.049Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "../../../../private/tmp/claude-501/-Users-marcosbeto-Dev-bncc-benchmark/1e8e03b7-681b-4834-9689-e47413fe0e02/scratchpad/itens-smoke-direto.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-luna-mcp",
+     "def": {
+      "id": "gpt-luna-mcp",
+      "provedor": "openai-responses",
+      "modelo": "gpt-5.6-luna",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "opcoesResponses": {
+       "requireApproval": true,
+       "semTemperatura": true
+      },
+      "precos": {
+       "entrada": 0.2,
+       "saida": 1.2
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 11,
+      "do_cache": 1,
+      "custo_usd": 0.00598,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gpt-sol-mcp",
+     "def": {
+      "id": "gpt-sol-mcp",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-responses",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "opcoesResponses": {
+       "requireApproval": true,
+       "semTemperatura": true
+      },
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.096196,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "grok-46-mcp",
+     "def": {
+      "id": "grok-46-mcp",
+      "provedor": "openai-responses",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "opcoesResponses": {},
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 11,
+      "do_cache": 1,
+      "custo_usd": 0.172416,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-37-flash-mcp",
+     "def": {
+      "id": "gemini-37-flash-mcp",
+      "maxTokensPadrao": 8192,
+      "provedor": "google-interactions",
+      "modelo": "gemini-3.7-flash",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 0.375,
+       "saida": 1.875
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 11,
+      "do_cache": 1,
+      "custo_usd": 0.014205,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-pro-mcp",
+     "def": {
+      "id": "gemini-pro-mcp",
+      "maxTokensPadrao": 8192,
+      "provedor": "google-interactions",
+      "modelo": "gemini-3.1-pro-preview",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 2,
+       "saida": 12
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.065092,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "haiku-45-mcp",
+     "def": {
+      "id": "haiku-45-mcp",
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-4-5-20251001",
+      "envKey": "ANTHROPIC_API_KEY",
+      "precos": {
+       "entrada": 1,
+       "saida": 5
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 11,
+      "do_cache": 1,
+      "custo_usd": 0.103841,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-24T21:18:43.949Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "../../../../private/tmp/claude-501/-Users-marcosbeto-Dev-bncc-benchmark/1e8e03b7-681b-4834-9689-e47413fe0e02/scratchpad/itens-smoke-direto.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "sonnet-5-mcp",
+     "def": {
+      "id": "sonnet-5-mcp",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.25479,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "opus-5-mcp",
+     "def": {
+      "id": "opus-5-mcp",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 5,
+       "saida": 25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.60323,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "fable-5-mcp",
+     "def": {
+      "id": "fable-5-mcp",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 10,
+       "saida": 50
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.91846,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": [
+  {
+   "avaliado_em": "2026-08-24T21:17:47.609Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 72,
+   "pendentes_a": 0,
+   "pendentes_c": 0,
+   "juiz_chamadas": 0,
+   "juiz_custo_usd": 0
+  },
+  {
+   "avaliado_em": "2026-08-24T21:20:08.046Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 108,
+   "pendentes_a": 0,
+   "pendentes_c": 4,
+   "juiz_chamadas": 4,
+   "juiz_custo_usd": 0.001494
+  }
+ ]
+}

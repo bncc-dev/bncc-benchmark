@@ -16,6 +16,47 @@ anunciando a release anterior como a mais recente, que é o primeiro lugar
 onde a maioria das pessoas olha. Alterou qualquer julgamento depois? Número
 novo, nunca sobrescrever.
 
+## estudo-fonte-v0.1.0 · 25/ago/2026 · estudo de intervenção "acesso à fonte" (série própria)
+
+A rodada grounded prometida na v0.1.0 e na v0.2.0 foi realizada e publicada
+**como estudo de intervenção, em série própria** (DECISOES.md D14): mede o
+efeito do acesso ao dado do bncc.dev, não classifica modelos. O leaderboard
+não muda; esta série tem numeração independente da série `vX.Y.Z`.
+
+- **Rodadas**: `estudo-fonte-2026-08` (bateria, 24–25/ago) e
+  `estudo-fonte-2026-08-buscar-v2` (re-medição dos dois Sabiá após correção
+  do `bncc_buscar` no servidor MCP; condição distinta, apresentada ao lado da
+  original). Piloto `piloto-fonte-2026-08` publicado para auditoria da
+  sequência pré-registro → piloto → bateria.
+- **Desenho**: 300 itens do `itens-v1`, 1 paráfrase; 8 modelos (um por
+  critério fixado antes da bateria); três condições pareadas (seca, contexto,
+  MCP) + connector nativo em 3 modelos; pré-registro fechado antes da
+  primeira chamada, com cinco emendas datadas (`docs/estudo-fonte/pre-registro.md`).
+- **Resultado**: seca 31,9% de alucinação (elenco A agregado) → contexto 0,2%
+  → MCP 2,3%; queda média de 30,6 pp por modelo, IC 95% por bootstrap por
+  item, em todos os 8 modelos; zero "não chamou a ferramenta" em 2.400
+  respostas; zero código inventado em listas. Erros residuais concentrados
+  nos dois Sabiá, no lookup inverso; após a correção do `bncc_buscar`:
+  Sabiá-4 4,0% → 1,0%, Sabiazinho-4 5,3% → 3,5%, falsos aceitos 0/180.
+- **Achados devolvidos ao produto**: dois defeitos do `bncc_buscar` (filtro
+  de Computação; busca literal) corrigidos em `@bncc/mcp` 0.3.0 / worker
+  0.2.2; rate limit de 60 req/min por IP documentado.
+- **Ressalvas** (por modelo, no relatório): rotas diretas (D14.1); gpt-5.6
+  sem raciocínio na condição A; Claude 5 e gpt-5.6 sem `temperature`; Kimi K3
+  a temperatura 1; Gemini via OpenRouter por indisponibilidade do Google;
+  connector do Gemini incompleto (91/300, retomada em PATCH); seca de três
+  modelos reaproveitada do cache de 15–18/ago; três passagens da re-medição
+  descartadas por defeitos do próprio cliente de medição (registradas).
+- **Julgamento**: avaliador v2 · rubrica-v1 · juiz haiku-bedrock, os mesmos
+  do leaderboard. Dataset dados-2026.07 (MCP em dados-2026.07.1).
+- **Custo**: US$ 61,9 de execução (bateria 59,9 + re-medição 2,0) + ~US$ 0,5
+  de juiz; passagens descartadas ≈ US$ 3 adicionais, fora do publicado.
+- **Artefatos**: brutos, julgados, agregados, manifestos e `estudo.json` em
+  `resultados/estudo-fonte-*/`; relatório `estudo.html` anexado à Release.
+  Página no bncc.dev prevista; até lá, a Release é o ponto de leitura.
+- **Conflito de interesse declarado**: fonte de grounding e gabarito são o
+  mesmo dataset, mantido pelo mesmo time.
+
 ## v0.2.0 · 18/ago/2026 · elenco renovado, 19 modelos
 
 Segunda medição de referência: 17.100 respostas, 19 modelos. Bateria executada

@@ -1,4 +1,5 @@
-/** Carrega .env da raiz do repo (sem dependência externa). */
+/** Carrega .env da raiz do repo (sem dependência externa). Valores do .env
+ * têm precedência sobre process.env; variáveis só na shell continuam visíveis. */
 
 import { existsSync, readFileSync } from 'node:fs';
 
@@ -12,7 +13,9 @@ export function carregarEnv(caminho = '.env'): Record<string, string | undefined
     if (igual < 1) continue;
     const nome = limpa.slice(0, igual).trim();
     const valor = limpa.slice(igual + 1).trim().replace(/^["']|["']$/g, '');
-    if (!(nome in process.env)) ambiente[nome] = valor;
+    // O .env vence variáveis de shell (D14.1): keys antigas exportadas no perfil
+    // do usuário sobrepunham as do projeto e quebraram o primeiro smoke direto.
+    ambiente[nome] = valor;
   }
   return ambiente;
 }

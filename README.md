@@ -104,6 +104,28 @@ Metodologia completa em [`METODOLOGIA.md`](METODOLOGIA.md), decisões de desenho
 numeradas em [`DECISOES.md`](DECISOES.md), composição de cada release em
 [`RELEASES.md`](RELEASES.md).
 
+## Com acesso à fonte: o estudo de intervenção
+
+A rodada grounded prometida nas duas primeiras releases foi feita como
+**estudo de intervenção**, em série própria, porque não é um ranking: a fonte
+de grounding (o MCP do bncc.dev) e o gabarito são o mesmo dataset, mantido
+por nós, e um modelo que consulta e copia acerta por construção. O que se
+mede é o **efeito do acesso ao dado**, com uma condição de controle (o dado
+colado no prompt, sem ferramenta) para separar o mérito do dado do mérito do
+instrumento.
+
+Resultado (8 modelos, 300 itens, três condições pareadas, pré-registro
+fechado antes da bateria): sem fonte, **31,9%** das respostas têm alucinação;
+com o dado no prompt, **0,2%**; consultando o MCP, **2,3%**. A queda vale
+para todos os modelos (média de 30,6 pontos; IC 95% por bootstrap por item).
+Os erros que sobram estão em dois modelos pequenos e numa tarefa (dado o
+texto, achar o código), e metade deles sumiu quando o estudo revelou dois
+defeitos na busca do próprio servidor, corrigidos e re-medidos.
+
+Relatório completo, ressalvas por modelo e artefatos auditáveis: Release
+[`estudo-fonte-v0.1.0`](https://github.com/bncc-dev/bncc-benchmark/releases/tag/estudo-fonte-v0.1.0)
+e `resultados/estudo-fonte-2026-08/`. Decisões: `DECISOES.md` D14 e D14.1.
+
 ## O conjunto held-out
 
 Além do banco público, existe um conjunto de itens gerado pelo mesmo pipeline

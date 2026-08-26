@@ -41,6 +41,13 @@ check que o CI roda a cada push e o que impede uma nota de ser editada à mão.
 **exportar-site** (`harness/exportar-site.ts`) destila o leaderboard para o
 bncc.dev. Artefato derivado: não altera resultado nenhum.
 
+**exportar-estudo** (`harness/exportar-estudo.ts`) resume o estudo de intervenção
+"acesso à fonte" (`DECISOES.md` D14): deltas pareados seco→contexto→MCP com IC
+por bootstrap e as métricas de uso da fonte. Artefato à parte do leaderboard.
+O modo `contexto` (`lib/contexto.ts`) e os connectors MCP nativos
+(`provedores/openai-responses.ts`, `google-interactions.ts`) existem só para
+esse estudo.
+
 `congelar-itens.ts` fecha o banco `v1-rc` em `v1`, aplicando a pré-triagem dos
 códigos falsos (D10).
 
@@ -74,7 +81,7 @@ Peças que merecem atenção antes de mexer:
 ```ts
 'meu-modelo': {
   id: 'meu-modelo',                        // usado em --modelos e nos nomes de arquivo
-  provedor: 'openai-compat',               // anthropic | bedrock | openai-compat | google
+  provedor: 'openai-compat',               // anthropic | bedrock | openai-compat | google | openai-responses | google-interactions
   modelo: 'fornecedor/modelo-1.2',         // nome exato na API
   envKey: 'MINHA_API_KEY',                 // variável no .env
   baseUrl: 'https://api.exemplo.com/v1',   // só para openai-compat

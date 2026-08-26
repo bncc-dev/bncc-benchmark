@@ -34,12 +34,15 @@ export function criarProvedorAnthropic(def: DefModelo, key: string): Provedor {
       const corpo: Record<string, unknown> = {
         model: def.modelo,
         max_tokens: chamada.maxTokens,
-        temperature: 0,
+        // Claude 4.6+ rejeita temperature (400): omitir quando semTemperatura.
+        ...(def.semTemperatura ? {} : { temperature: 0 }),
         messages: [{ role: 'user', content: chamada.prompt }],
       };
       if (chamada.grounded) {
-        headers['anthropic-beta'] = 'mcp-client-2025-04-04';
+        headers['anthropic-beta'] = 'mcp-client-2025-11-20';
         corpo.mcp_servers = [{ type: 'url', url: URL_MCP_BNCC, name: 'bncc' }];
+        // Obrigatório desde o beta 2025-11-20: sem o toolset a API rejeita a requisição.
+        corpo.tools = [{ type: 'mcp_toolset', mcp_server_name: 'bncc' }];
       }
 
       const resposta = await fetch('https://api.anthropic.com/v1/messages', {

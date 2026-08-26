@@ -1,0 +1,270 @@
+{
+ "rodada": "smoke-direto-2026-08",
+ "execucoes": [
+  {
+   "executado_em": "2026-08-24T19:55:05.337Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "../../../../private/tmp/claude-501/-Users-marcosbeto-Dev-bncc-benchmark/1e8e03b7-681b-4834-9689-e47413fe0e02/scratchpad/itens-smoke-direto.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-luna-direto",
+     "def": {
+      "id": "gpt-luna-direto",
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-luna",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "corpoExtra": {
+       "reasoning_effort": "none"
+      },
+      "precos": {
+       "entrada": 0.2,
+       "saida": 1.2
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.007646,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gpt-sol-direto",
+     "def": {
+      "id": "gpt-sol-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "corpoExtra": {
+       "reasoning_effort": "none"
+      },
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.14998,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "grok-46-direto",
+     "def": {
+      "id": "grok-46-direto",
+      "provedor": "openai-compat",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.149542,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "deepseek-pro-direto",
+     "def": {
+      "id": "deepseek-pro-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek-v4-pro",
+      "envKey": "DEEPSEEK_API_KEY",
+      "baseUrl": "https://api.deepseek.com",
+      "precos": {
+       "entrada": 1.32,
+       "saida": 3.96
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.07743,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "deepseek-flash-direto",
+     "def": {
+      "id": "deepseek-flash-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek-v4-flash",
+      "envKey": "DEEPSEEK_API_KEY",
+      "baseUrl": "https://api.deepseek.com",
+      "precos": {
+       "entrada": 0.44,
+       "saida": 1.32
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.03493,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "muse-spark-direto",
+     "def": {
+      "id": "muse-spark-direto",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "muse-spark-1.2",
+      "envKey": "META_API_KEY",
+      "baseUrl": "https://api.meta.ai/v1",
+      "precos": {
+       "entrada": 1.25,
+       "saida": 4.25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.138449,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabia-4",
+     "def": {
+      "id": "sabia-4",
+      "provedor": "openai-compat",
+      "modelo": "sabia-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.93,
+       "saida": 3.7
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.00884,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sabiazinho-4",
+     "def": {
+      "id": "sabiazinho-4",
+      "provedor": "openai-compat",
+      "modelo": "sabiazinho-4",
+      "envKey": "MARITACA_API_KEY",
+      "baseUrl": "https://chat.maritaca.ai/api",
+      "precos": {
+       "entrada": 0.19,
+       "saida": 0.74
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.002218,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-08-24T19:58:28.839Z",
+   "modo": "grounded",
+   "harness_commit": "9fb11e7",
+   "flags": {
+    "itens": "../../../../private/tmp/claude-501/-Users-marcosbeto-Dev-bncc-benchmark/1e8e03b7-681b-4834-9689-e47413fe0e02/scratchpad/itens-smoke-direto.json",
+    "limite": null,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "kimi-k3-direto",
+     "def": {
+      "id": "kimi-k3-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "kimi-k3",
+      "envKey": "MOONSHOT_API_KEY",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "corpoExtra": {
+       "temperature": 1
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 12,
+      "chamadas_novas": 12,
+      "do_cache": 0,
+      "custo_usd": 0.20931,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": [
+  {
+   "avaliado_em": "2026-08-24T19:59:21.718Z",
+   "harness_commit": "9fb11e7",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 108,
+   "pendentes_a": 0,
+   "pendentes_c": 6,
+   "juiz_chamadas": 6,
+   "juiz_custo_usd": 0.001774
+  }
+ ]
+}
