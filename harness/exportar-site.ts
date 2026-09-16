@@ -53,6 +53,14 @@ export const APRESENTACAO: Record<string, Apresentacao> = {
   'qwen-flash': { nome: 'Qwen 3.7 Flash', empresa: 'Alibaba', tier: 'econômico' },
   'sabia-4': { nome: 'Sabiá-4', empresa: 'Maritaca AI', tier: 'topo de linha' },
   'sabiazinho-4': { nome: 'Sabiazinho-4', empresa: 'Maritaca AI', tier: 'econômico' },
+  // Ids a partir de set/2026 (lançamentos entre a v0.2.0 e a rodada seguinte).
+  'gpt-6-astra': { nome: 'GPT-6 Astra', empresa: 'OpenAI', tier: 'topo de linha' },
+  'fable-5-1': { nome: 'Claude Fable 5.1', empresa: 'Anthropic', tier: 'topo de linha' },
+  'gemini-38-flash': { nome: 'Gemini 3.8 Flash', empresa: 'Google', tier: 'econômico' },
+  'deepseek-flash-41': { nome: 'DeepSeek V4.1 Flash', empresa: 'DeepSeek', tier: 'econômico' },
+  'qwen-38-max-0902': { nome: 'Qwen 3.8 Max (0902)', empresa: 'Alibaba', tier: 'topo de linha' },
+  'qwen-38-flash': { nome: 'Qwen 3.8 Flash', empresa: 'Alibaba', tier: 'econômico' },
+  'muse-spark-13': { nome: 'Muse Spark 1.3', empresa: 'Meta', tier: 'topo de linha' },
 };
 
 function lerJsonl<T>(caminho: string): T[] {

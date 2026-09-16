@@ -1,5 +1,8 @@
 /** Contrato dos adapters de provedor (fetch puro, DECISOES.md D1). */
 
+/** Desconto das Batch APIs de OpenAI, Anthropic e Google em 16/set/2026; conferir na data da rodada. */
+export const FATOR_PRECO_BATCH = 0.5;
+
 export interface ChamadaModelo {
   prompt: string;
   /** true = conectar ao bncc.dev (MCP ou tool-use); ver METODOLOGIA. */
@@ -38,6 +41,50 @@ export interface RespostaModelo {
 export interface Provedor {
   id: string;
   completar(chamada: ChamadaModelo): Promise<RespostaModelo>;
+}
+
+/** Um pedido dentro de um lote; `customId` identifica a chamada (item × paráfrase). */
+export interface PedidoBatch {
+  customId: string;
+  chamada: ChamadaModelo; // grounded sempre false: batch não aceita tools
+}
+
+/** O que a submissão devolve; `extras` guarda ids auxiliares (arquivo de entrada, URL de resultados). */
+export interface LoteRemoto {
+  id: string;
+  extras?: Record<string, string>;
+}
+
+export interface EstadoLoteRemoto {
+  fase: 'processando' | 'concluido' | 'falhou';
+  /** Valor cru do provedor (validating, in_progress, ended, BATCH_STATE_RUNNING...). */
+  bruto: string;
+  contagens?: { total?: number; concluidos?: number; falhos?: number };
+  /** Atualizações a persistir em `LoteRemoto.extras` (output_file_id, results_url...). */
+  extras?: Record<string, string>;
+  /** Mensagem quando fase = 'falhou' (ex.: arquivo reprovado na validação). */
+  erro?: string;
+}
+
+/** Uma linha coletada; `custoUsd` da resposta JÁ vem com o fator de batch aplicado. */
+export type LinhaLote =
+  | { customId: string; resposta: RespostaModelo }
+  | { customId: string; erro: string };
+
+/**
+ * Transporte assíncrono (Batch API). Mesmo corpo do síncrono, submetido em
+ * lote; o harness consulta e coleta em invocações separadas (lib/execucao-batch).
+ */
+export interface ProvedorBatch {
+  id: string;
+  submeter(pedidos: PedidoBatch[], rotulo: string): Promise<LoteRemoto>;
+  estado(lote: LoteRemoto): Promise<EstadoLoteRemoto>;
+  coletar(lote: LoteRemoto): Promise<LinhaLote[]>;
+}
+
+/** Aplica o desconto de batch ao custo de uma resposta convertida pelo adapter síncrono. */
+export function comDescontoBatch(resposta: RespostaModelo, fator: number): RespostaModelo {
+  return { ...resposta, custoUsd: resposta.custoUsd * fator };
 }
 
 export interface DefModelo {
@@ -86,6 +133,14 @@ export interface DefModelo {
    * 16/set/2026: grok direto 10×, gemini-pro direto 17×).
    */
   contagemRaciocinio?: 'na-saida' | 'fora-da-saida' | 'nao-informado';
+  /**
+   * Habilita a execução em lote pela Batch API da empresa (só modo seco; sem
+   * tools). `api` deve casar com `provedor` (openai ↔ openai-compat em
+   * api.openai.com; anthropic ↔ anthropic; google ↔ google): o corpo da
+   * requisição é o mesmo do síncrono, então a medição é comparável.
+   * `fatorPreco` multiplica `precos` (default FATOR_PRECO_BATCH).
+   */
+  batch?: { api: 'openai' | 'anthropic' | 'google'; fatorPreco?: number };
   /** Ajustes do adapter openai-responses (connector MCP nativo). */
   opcoesResponses?: {
     /** Enviar `require_approval: "never"` no tool MCP (OpenAI exige; xAI rejeita). */

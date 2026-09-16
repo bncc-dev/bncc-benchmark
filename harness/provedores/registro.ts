@@ -47,106 +47,199 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 1, saida: 5 },
     suportaGrounded: true,
   },
-  // OpenRouter (uma key para GPT/Gemini/chineses; provedor pinado por requisição,
-  // endpoint que serviu fica registrado no versao_modelo).
+  // ---------------------------------------------------------------------
+  // LEADERBOARD · rota direta de cada empresa onde funciona; OpenRouter ou
+  // Bedrock só onde não (D15, 16/set/2026, substitui a política de 13/jul).
+  // O id identifica o modelo (D13.1); a rota fica registrada por chamada no
+  // versao_modelo e no campo `rotas` do leaderboard (D9). Condições impostas
+  // pela rota (temperatura, raciocínio) ficam declaradas na própria entrada
+  // (D13.2). `batch` marca quem pode rodar pela Batch API da empresa (50%).
+  // Preços conferidos em 16/set/2026; conferir de novo na data da rodada.
+  // ---------------------------------------------------------------------
+
+  // OpenAI direta (chat/completions). Os gpt-5.x/6 com raciocínio rejeitam
+  // `temperature` e exigem `max_completion_tokens`; via OpenRouter isso era
+  // traduzido em silêncio (smoke de 16/set/2026).
+  'gpt-6-astra': {
+    id: 'gpt-6-astra',
+    maxTokensPadrao: 8192, // raciocina antes de responder; conferir no smoke
+    provedor: 'openai-compat',
+    modelo: 'gpt-6-astra', // lançado em 03/set/2026, sucessor do gpt-5.6-sol; sem snapshot datado
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens',
+    semTemperatura: true,
+    precos: { entrada: 10, saida: 50 },
+    batch: { api: 'openai' },
+    suportaGrounded: false, // com tools o chat/completions exige raciocínio desligado; grounded só pelo estudo
+  },
   'gpt-sol': {
     id: 'gpt-sol',
     maxTokensPadrao: 4096,
     provedor: 'openai-compat',
-    modelo: 'openai/gpt-5.6-sol',
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['OpenAI'], allow_fallbacks: false } },
-    precos: { entrada: 5, saida: 30 },
-    suportaGrounded: true,
+    modelo: 'gpt-5.6-sol', // sucedido pelo gpt-6-astra (03/set/2026); fora do elenco, mantido para reprodução
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens',
+    semTemperatura: true,
+    precos: { entrada: 4, saida: 20 }, // repreçado em 21/ago/2026 (era 5/30)
+    batch: { api: 'openai' },
+    suportaGrounded: false,
   },
-  // POLÍTICA (decisão do time, 13/jul/2026): modelos Anthropic rodam via
-  // Bedrock sempre que a conta tiver acesso (sonnet-bedrock/haiku-bedrock
-  // acima). Os três abaixo estão 403 no Bedrock da conta ("contact AWS
-  // Sales"); ficam via OpenRouter como EXCEÇÃO TEMPORÁRIA até a liberação.
-  // Quando liberar: migrar para provedor 'bedrock' e aposentar estas entradas.
-  'sonnet-5': {
-    id: 'sonnet-5',
-    maxTokensPadrao: 4096,
+  'gpt-luna': {
+    id: 'gpt-luna',
     provedor: 'openai-compat',
-    modelo: 'anthropic/claude-sonnet-5',
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['Amazon Bedrock'], allow_fallbacks: false } },
-    precos: { entrada: 2, saida: 10 },
-    suportaGrounded: true,
+    modelo: 'gpt-5.6-luna',
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens',
+    semTemperatura: true,
+    // Histórico: na v0.1.0 o custo saiu inflado ~10× (preço 1/6 no registro;
+    // OpenRouter cobrava 0.1/0.6). Release imutável (D11), anotado na v0.2.0.
+    precos: { entrada: 0.2, saida: 1.2 }, // preço de lista da API direta
+    batch: { api: 'openai' },
+    suportaGrounded: false,
   },
-  'opus-5': {
-    id: 'opus-5',
-    maxTokensPadrao: 4096,
-    provedor: 'openai-compat',
-    modelo: 'anthropic/claude-opus-5', // sucessor do opus-4.8 (aposentado em ago/2026)
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['Amazon Bedrock'], allow_fallbacks: false } },
-    precos: { entrada: 5, saida: 25 },
+
+  // Anthropic direta (Messages API). Claude 5 rejeita `temperature` e pensa
+  // por padrão (thinking_tokens dentro de output_tokens). O Bedrock da conta
+  // segue 403 para Sonnet 5, Opus 5 e Fable; sonnet-4.6 e haiku-4.5 ficam no
+  // Bedrock (entradas acima) por continuidade do juiz.
+  'fable-5-1': {
+    id: 'fable-5-1',
+    maxTokensPadrao: 8192,
+    provedor: 'anthropic',
+    modelo: 'claude-fable-5-1', // lançado em 01/set/2026, sucessor do claude-fable-5
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true,
+    precos: { entrada: 10, saida: 50 },
+    batch: { api: 'anthropic' },
     suportaGrounded: true,
   },
   'fable-5': {
     id: 'fable-5',
     maxTokensPadrao: 8192,
-    provedor: 'openai-compat',
-    modelo: 'anthropic/claude-fable-5',
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    // Sem pin, o OpenRouter desviou 2 das 900 chamadas da rodada 2026-08 para
-    // o Google, misturando duas medições na mesma linha (D9). O pin natural
-    // seria 'Amazon Bedrock', que serviu as outras 898 — mas em 18/ago/2026
-    // essa rota passou a responder 404 ("Claude Fable 5 is not available",
-    // gating de acesso do fornecedor) e as 2 chamadas ficaram irreproduzíveis
-    // por ela. Rotas que respondiam naquela data: Anthropic e Google.
-    // Pinado em 'Anthropic'; conferir na data da próxima rodada.
-    corpoExtra: { provider: { order: ['Anthropic'], allow_fallbacks: false } },
+    provedor: 'anthropic',
+    modelo: 'claude-fable-5', // sucedido pelo fable-5-1; fora do elenco, mantido para reprodução
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true,
     precos: { entrada: 10, saida: 50 },
+    batch: { api: 'anthropic' },
     suportaGrounded: true,
   },
-  'gpt-luna': {
-    id: 'gpt-luna',
-    provedor: 'openai-compat',
-    modelo: 'openai/gpt-5.6-luna',
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['OpenAI'], allow_fallbacks: false } },
-    // Corrigido em 15/ago/2026: estava 1/6, dez vezes o cobrado. A OpenAI via
-    // OpenRouter cobra 0.1/0.6 (conferido no endpoint do provedor pinado).
-    // Consequência: o custo do gpt-luna na v0.1.0 saiu inflado ~10× (US$ 2,29
-    // publicados; ~US$ 0,23 reais). Release imutável (D11), corrigido daqui
-    // em diante e anotado na v0.2.0.
-    precos: { entrada: 0.1, saida: 0.6 },
+  'opus-5': {
+    id: 'opus-5',
+    maxTokensPadrao: 4096,
+    provedor: 'anthropic',
+    modelo: 'claude-opus-5', // sucessor do opus-4.8 (aposentado em ago/2026)
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true,
+    precos: { entrada: 5, saida: 25 },
+    batch: { api: 'anthropic' },
     suportaGrounded: true,
   },
-  // POLÍTICA (decisão do time, 13/jul/2026): execução SÓ via Bedrock e
-  // OpenRouter, onde o faturamento é controlado. A rota direta do Google
-  // (AI Studio) fica suspensa até decisão em contrário; o OpenRouter serve
-  // Gemini pelo próprio Google e registra o endpoint nos brutos.
+  'sonnet-5': {
+    id: 'sonnet-5',
+    maxTokensPadrao: 4096,
+    provedor: 'anthropic',
+    modelo: 'claude-sonnet-5',
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true,
+    precos: { entrada: 2, saida: 10 }, // aumento previsto para 01/set/2026 não ocorreu
+    batch: { api: 'anthropic' },
+    suportaGrounded: true,
+  },
+
+  // Google direta, endpoint nativo (generateContent): informa os pensamentos
+  // (thoughtsTokenCount) e é o formato que a Batch API exige. O endpoint
+  // compatível com OpenAI (entradas `-direto` abaixo) não informa o raciocínio
+  // e só serve ao loop de tools do estudo.
   'gemini-pro': {
     id: 'gemini-pro',
     maxTokensPadrao: 8192,
-    provedor: 'openai-compat',
-    modelo: 'google/gemini-3.1-pro-preview',
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['Google'], allow_fallbacks: false } },
+    provedor: 'google',
+    modelo: 'gemini-3.1-pro-preview',
+    envKey: 'GEMINI_API_KEY',
     precos: { entrada: 2, saida: 12 },
-    suportaGrounded: true,
+    batch: { api: 'google' },
+    suportaGrounded: false, // google.ts não faz loop de tools; grounded só pelo estudo (gemini-pro-direto)
+  },
+  'gemini-38-flash': {
+    id: 'gemini-38-flash',
+    maxTokensPadrao: 8192,
+    provedor: 'google',
+    modelo: 'gemini-3.8-flash', // lançado em 02/set/2026, sucessor do 3.7-flash
+    envKey: 'GEMINI_API_KEY',
+    precos: { entrada: 0.75, saida: 3.75 }, // promocional até 31/dez/2026; depois 1.5/7.5
+    batch: { api: 'google' },
+    suportaGrounded: false,
   },
   'gemini-37-flash': {
     id: 'gemini-37-flash',
     maxTokensPadrao: 8192,
+    provedor: 'google',
+    modelo: 'gemini-3.7-flash', // sucedido pelo gemini-38-flash; fora do elenco, mantido para reprodução
+    envKey: 'GEMINI_API_KEY',
+    precos: { entrada: 0.75, saida: 3.75 }, // idem (via OpenRouter constava 0.375/1.875 em ago/2026)
+    batch: { api: 'google' },
+    suportaGrounded: false,
+  },
+
+  // xAI direta. Cobra o raciocínio como saída mas NÃO o inclui em
+  // completion_tokens (sondagem de 16/set/2026); sem `contagemRaciocinio` o
+  // custo saía 10× menor. Sem desconto de batch publicado para o 4.6.
+  'grok-46': {
+    id: 'grok-46',
     provedor: 'openai-compat',
-    modelo: 'google/gemini-3.7-flash', // sucessor do 3.5-flash (13/ago/2026)
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['Google'], allow_fallbacks: false } },
-    precos: { entrada: 0.375, saida: 1.875 },
+    modelo: 'grok-4.6', // sucessor do grok-4.5 (12/ago/2026)
+    envKey: 'XAI_API_KEY',
+    baseUrl: 'https://api.x.ai/v1',
+    contagemRaciocinio: 'fora-da-saida',
+    precos: { entrada: 2, saida: 6 },
     suportaGrounded: true,
   },
-  // Fronteira dos demais provedores, via OpenRouter (bateria piloto).
+
+  // Moonshot direta. A API rejeita temperature 0 ("only 1 is allowed for this
+  // model", 24/ago/2026): CONDIÇÃO DISTINTA do protocolo, declarada (D13.2).
+  // Sem tarifa de batch para o K3.
+  'kimi-k3': {
+    id: 'kimi-k3',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'kimi-k3', // sucessor do k2.6 (16/jul/2026)
+    envKey: 'MOONSHOT_API_KEY',
+    baseUrl: 'https://api.moonshot.ai/v1',
+    corpoExtra: { temperature: 1 },
+    precos: { entrada: 3, saida: 15 },
+    suportaGrounded: true,
+  },
+
+  // Meta direta, camada standard (a camada "contributor", mais barata, cede os
+  // prompts para treino: nunca usar no benchmark).
+  'muse-spark-13': {
+    id: 'muse-spark-13',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'muse-spark-1.3', // lançado em 02/set/2026, sucessor do 1.2
+    envKey: 'META_API_KEY',
+    baseUrl: 'https://api.meta.ai/v1',
+    precos: { entrada: 1.25, saida: 4.25 },
+    suportaGrounded: true,
+  },
+  'muse-spark': {
+    id: 'muse-spark',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'muse-spark-1.2', // sucedido pelo muse-spark-13; fora do elenco, mantido para reprodução
+    envKey: 'META_API_KEY',
+    baseUrl: 'https://api.meta.ai/v1',
+    precos: { entrada: 1.25, saida: 4.25 },
+    suportaGrounded: true,
+  },
+
+  // DeepSeek via OpenRouter/Fireworks: a primeira parte segue excluída pela
+  // política de privacidade da conta (decisão mantida em 16/set/2026); a
+  // Fireworks (sem quantização) é a rota efetiva. Sem batch.
   'deepseek-pro': {
     id: 'deepseek-pro',
     maxTokensPadrao: 4096,
@@ -154,37 +247,58 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'deepseek/deepseek-v4-pro-0813', // snapshot datado (fixado em ago/2026; o alias sem data deriva)
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } }, // 1ª parte excluída pela política de privacidade da conta; Fireworks (sem quantização) como rota efetiva
-    precos: { entrada: 1.32, saida: 3.96 }, // preço da Fireworks no snapshot -0813 (DeepSeek direto cobraria 0.435/0.87, mas está vetado)
+    corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } },
+    precos: { entrada: 1.32, saida: 3.96 }, // preço da Fireworks no snapshot -0813
     suportaGrounded: true,
   },
-  'grok-46': {
-    id: 'grok-46',
+  'deepseek-flash-41': {
+    id: 'deepseek-flash-41',
+    maxTokensPadrao: 4096, // raciocina por padrão; conferir no smoke se 4096 basta
     provedor: 'openai-compat',
-    modelo: 'x-ai/grok-4.6', // sucessor do grok-4.5 (12/ago/2026), mesmo preço
+    modelo: 'deepseek/deepseek-v4.1-flash', // lançado em 10/set/2026, sucessor do v4-flash-0731 (aposentado)
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['xAI'], allow_fallbacks: false } },
+    corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } },
+    precos: { entrada: 0.3, saida: 1.2 }, // preço de lista da DeepSeek; conferir o da Fireworks na data
+    suportaGrounded: true,
+  },
+  // APOSENTADO: o snapshot -0731 saiu do ar em 10/set/2026 (V4 Flash
+  // substituído pelo V4.1 Flash). Entrada mantida para reprodução da v0.2.0.
+  'deepseek-flash': {
+    id: 'deepseek-flash',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'deepseek/deepseek-v4-flash-0731',
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } },
+    precos: { entrada: 0.14, saida: 0.28 },
+    suportaGrounded: true,
+  },
+
+  // Alibaba via OpenRouter: a API direta (DashScope) responde 403 para a conta
+  // (AccessDenied, 24/ago e 16/set/2026). Entradas `-direto` abaixo ficam para
+  // quando a rota abrir. Sem batch por esta rota.
+  'qwen-38-max-0902': {
+    id: 'qwen-38-max-0902',
+    maxTokensPadrao: 32768, // raciocina antes de responder; ver histórico do qwen-38-max
+    provedor: 'openai-compat',
+    modelo: 'qwen/qwen3.8-max-0902', // snapshot datado (D12); o alias qwen3.8-max passou a apontar para ele em 05/set/2026
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
     precos: { entrada: 2, saida: 6 },
     suportaGrounded: true,
   },
-  'kimi-k3': {
-    id: 'kimi-k3',
-    maxTokensPadrao: 8192,
-    provedor: 'openai-compat',
-    modelo: 'moonshotai/kimi-k3', // sucessor do k2.6 (16/jul/2026); NB: sobe de faixa de preço
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['Moonshot AI'], allow_fallbacks: false } },
-    precos: { entrada: 3, saida: 15 },
-    suportaGrounded: true,
-  },
+  // Medido na v0.2.0 pelo alias sem data; em 05/set/2026 a Alibaba trocou o
+  // snapshot por baixo do alias, então o id fica congelado nesta release e o
+  // snapshot novo entra como qwen-38-max-0902 (D12 regra 3, D13.1).
   'qwen-38-max': {
     id: 'qwen-38-max',
     // 32768 (ago/2026): com 4096 (escalando a 8192) 304 das 900 chamadas
     // truncaram e voltaram VAZIAS — a resposta vem depois do raciocínio.
     // Smoke com teto folgado: raciocínio médio 6.330, máximo 15.550, nenhuma
-    // truncada. Mesmo motivo do qwen-plus acima.
+    // truncada. Mesmo motivo do qwen-plus abaixo.
     maxTokensPadrao: 32768,
     provedor: 'openai-compat',
     modelo: 'qwen/qwen3.8-max', // sucessor do 3.7-max (03/ago/2026)
@@ -192,18 +306,6 @@ export const MODELOS: Record<string, DefModelo> = {
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
     precos: { entrada: 2, saida: 6 },
-    suportaGrounded: true,
-  },
-  // Segundo escalão (Fase 2), via OpenRouter.
-  'deepseek-flash': {
-    id: 'deepseek-flash',
-    maxTokensPadrao: 4096, // o snapshot -0731 raciocina antes de responder; 1024 truncava com resposta vazia
-    provedor: 'openai-compat',
-    modelo: 'deepseek/deepseek-v4-flash-0731', // snapshot datado (fixado em ago/2026); a Fireworks saiu do alias sem data, mas serve o snapshot
-    envKey: 'OPENROUTER_API_KEY',
-    baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } }, // 1ª parte excluída pela política de privacidade da conta; Fireworks (sem quantização) como rota efetiva
-    precos: { entrada: 0.14, saida: 0.28 },
     suportaGrounded: true,
   },
   'qwen-plus': {
@@ -223,30 +325,30 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 0.32, saida: 1.28 },
     suportaGrounded: true,
   },
-  // Entrantes da rodada 2026-08 (decisão: cobrir a Meta e reforçar a faixa
-  // ultra-barata; ver conversa/decisões de 15/ago/2026).
-  'muse-spark': {
-    id: 'muse-spark',
-    maxTokensPadrao: 4096,
+  'qwen-38-flash': {
+    id: 'qwen-38-flash',
+    maxTokensPadrao: 4096, // raciocina antes de responder; conferir no smoke
     provedor: 'openai-compat',
-    modelo: 'meta/muse-spark-1.2',
+    modelo: 'qwen/qwen3.8-flash', // lançado em 26/ago/2026, sucessor do 3.7-flash
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['Meta'], allow_fallbacks: false } },
-    precos: { entrada: 1.25, saida: 4.25 },
+    corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
+    precos: { entrada: 0.15, saida: 0.47 },
     suportaGrounded: true,
   },
   'qwen-flash': {
     id: 'qwen-flash',
     maxTokensPadrao: 4096, // raciocina antes de responder; 1024 truncava com resposta vazia
     provedor: 'openai-compat',
-    modelo: 'qwen/qwen3.7-flash',
+    modelo: 'qwen/qwen3.7-flash', // sucedido pelo qwen-38-flash; fora do elenco, mantido para reprodução
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
     corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
     precos: { entrada: 0.03, saida: 0.13 },
     suportaGrounded: true,
   },
+  // APOSENTADO pela Moonshot em 31/ago/2026 (404); nunca medido (v0.2.0
+  // revogou a promessa). Entrada mantida só para o histórico do registro.
   'kimi-k25': {
     id: 'kimi-k25',
     maxTokensPadrao: 8192,
@@ -258,10 +360,10 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 0.38, saida: 2.02 },
     suportaGrounded: true,
   },
-  // Maritaca DIRETO (exceção à política Bedrock+OpenRouter, aprovada pelo
-  // time em 15/jul/2026: Sabiá não existe nos agregadores; conta pré-paga em
+
+  // Maritaca direta (Sabiá não existe nos agregadores; conta pré-paga em
   // reais). Preços oficiais em BRL convertidos a ~R$5,40/US$ para o custo
-  // informativo: sabia-4 R$5/R$20 por MTok; sabiazinho-4 R$1/R$4.
+  // informativo: sabia-4 R$5/R$20 por MTok; sabiazinho-4 R$1/R$4. Sem batch.
   'sabia-4': {
     id: 'sabia-4',
     provedor: 'openai-compat',
@@ -291,10 +393,11 @@ export const MODELOS: Record<string, DefModelo> = {
   },
 
   // ---------------------------------------------------------------------
-  // ROTAS DIRETAS (API de cada empresa) — o ESTUDO DE INTERVENÇÃO roda
-  // exclusivamente por elas (DECISOES.md D14.1, 24/ago/2026); a política de
-  // rotas de 13/jul/2026 (Bedrock + OpenRouter) segue valendo só para o
-  // leaderboard. Sufixo `-direto` = loop de tool-use no cliente (`mcp-loop`);
+  // ROTAS DIRETAS do ESTUDO DE INTERVENÇÃO (DECISOES.md D14.1, 24/ago/2026).
+  // Desde a D15 (16/set/2026) o leaderboard também roda direto (entradas
+  // acima); estas ficam separadas porque carregam condições do estudo (ex.:
+  // gpt-5.6 sem raciocínio para aceitar tools). Sufixo `-direto` = loop de
+  // tool-use no cliente (`mcp-loop`);
   // `-mcp` (abaixo) = connector nativo. Nunca colidem com os ids oficiais
   // (D13.1) e não entram no leaderboard. Divergências de condição impostas
   // pela rota (temperatura, raciocínio) ficam declaradas na própria entrada.
@@ -315,23 +418,6 @@ export const MODELOS: Record<string, DefModelo> = {
     corpoExtra: { reasoning_effort: 'none' },
     precos: { entrada: 4, saida: 20 },
     suportaGrounded: true,
-  },
-  // PROVISÓRIO (smoke de rota direta para o leaderboard, 16/set/2026): igual ao
-  // gpt-sol-direto, mas SEM desligar o raciocínio. A seca não usa tools, então
-  // a restrição de /chat/completions não se aplica e o modelo roda na mesma
-  // condição de raciocínio da rota OpenRouter. Os gpt-5.x com raciocínio
-  // rejeitam `temperature` (400), daí semTemperatura. Não entra no leaderboard.
-  'gpt-sol-direto-raciocinio': {
-    id: 'gpt-sol-direto-raciocinio',
-    maxTokensPadrao: 4096,
-    provedor: 'openai-compat',
-    modelo: 'gpt-5.6-sol',
-    envKey: 'OPENAI_API_KEY',
-    baseUrl: 'https://api.openai.com/v1',
-    parametroMaxTokens: 'max_completion_tokens',
-    semTemperatura: true,
-    precos: { entrada: 4, saida: 20 },
-    suportaGrounded: false, // com tools a API exige raciocínio desligado; usar gpt-sol-direto ou gpt-sol-mcp
   },
   'gpt-luna-direto': {
     id: 'gpt-luna-direto',
