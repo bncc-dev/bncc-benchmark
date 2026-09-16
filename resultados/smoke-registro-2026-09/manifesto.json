@@ -1,0 +1,449 @@
+{
+ "rodada": "smoke-registro-2026-09",
+ "execucoes": [
+  {
+   "executado_em": "2026-09-16T18:31:37.268Z",
+   "modo": "seco",
+   "harness_commit": "0717509",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 3,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-6-astra",
+     "def": {
+      "id": "gpt-6-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 10,
+       "saida": 50
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.04482,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gpt-sol",
+     "def": {
+      "id": "gpt-sol",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.030168,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gpt-luna",
+     "def": {
+      "id": "gpt-luna",
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-luna",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.2,
+       "saida": 1.2
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.001478,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "fable-5-1",
+     "def": {
+      "id": "fable-5-1",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-1",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 10,
+       "saida": 50
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.25911,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "opus-5",
+     "def": {
+      "id": "opus-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 5,
+       "saida": 25
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.134175,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sonnet-5",
+     "def": {
+      "id": "sonnet-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.01208,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-pro",
+     "def": {
+      "id": "gemini-pro",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-3.1-pro-preview",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 2,
+       "saida": 12
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.039816,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-38-flash",
+     "def": {
+      "id": "gemini-38-flash",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-3.8-flash",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 0.75,
+       "saida": 3.75
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.041561,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "grok-46",
+     "def": {
+      "id": "grok-46",
+      "provedor": "openai-compat",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "contagemRaciocinio": "fora-da-saida",
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.031472,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "kimi-k3",
+     "def": {
+      "id": "kimi-k3",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "kimi-k3",
+      "envKey": "MOONSHOT_API_KEY",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "corpoExtra": {
+       "temperature": 1
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.111501,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "muse-spark-13",
+     "def": {
+      "id": "muse-spark-13",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "muse-spark-1.3",
+      "envKey": "META_API_KEY",
+      "baseUrl": "https://api.meta.ai/v1",
+      "precos": {
+       "entrada": 1.25,
+       "saida": 4.25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.03582,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "deepseek-flash-41",
+     "def": {
+      "id": "deepseek-flash-41",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "deepseek/deepseek-v4.1-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "deepseek",
+         "fireworks"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.3,
+       "saida": 1.2
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.005457,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "qwen-38-max-0902",
+     "def": {
+      "id": "qwen-38-max-0902",
+      "maxTokensPadrao": 32768,
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.8-max-0902",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.174834,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "qwen-38-flash",
+     "def": {
+      "id": "qwen-38-flash",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.8-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.15,
+       "saida": 0.47
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.007598,
+      "incompletas": 1
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-09-16T18:45:26.267Z",
+   "modo": "seco",
+   "harness_commit": "5fe8e53",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 3,
+    "parafrases": 1,
+    "concorrencia": 3,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "sincrona"
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "qwen-38-flash",
+     "def": {
+      "id": "qwen-38-flash",
+      "maxTokensPadrao": 32768,
+      "provedor": "openai-compat",
+      "modelo": "qwen/qwen3.8-flash",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Alibaba"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 0.15,
+       "saida": 0.47
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 3,
+      "chamadas_novas": 3,
+      "do_cache": 0,
+      "custo_usd": 0.009886,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": []
+}

@@ -1,0 +1,58 @@
+{
+ "versao": 1,
+ "modelo": "gpt-luna",
+ "modo": "seco",
+ "api": "openai",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 3,
+  "parafrases": 2,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 1024,
+   "remoto": {
+    "id": "batch_6aaae24d6ea88190a96ebb8f0ce6529b",
+    "extras": {
+     "input_file_id": "file-9onpmnK8UDAh7zvw3o8VoG"
+    }
+   },
+   "submetido_em": "2026-09-16T18:39:10.219Z",
+   "ultimo_estado": {
+    "em": "2026-09-16T21:00:58.285Z",
+    "bruto": "in_progress",
+    "contagens": {
+     "total": 3,
+     "concluidos": 2,
+     "falhos": 0
+    }
+   }
+  }
+ ],
+ "pedidos": {
+  "a-001-p1": {
+   "item_id": "a-001",
+   "parafrase": 1,
+   "chave": "4996a9e0ddf05e9cbe3c00c43b82c4eb78ba75fc19f9dc614e1953cc59148033",
+   "lote": 0,
+   "situacao": "submetido"
+  },
+  "b-001-p1": {
+   "item_id": "b-001",
+   "parafrase": 1,
+   "chave": "a48c7f97c5ab72b74095ac18a1481bacdab7d85aa9a5efdfacc8b85a6abb2c50",
+   "lote": 0,
+   "situacao": "submetido"
+  },
+  "c-001-p1": {
+   "item_id": "c-001",
+   "parafrase": 1,
+   "chave": "62ee2a0e1c8215c116fb7fcfbff35b96d9aeffa1598f928c896077cd0abc2ac9",
+   "lote": 0,
+   "situacao": "submetido"
+  }
+ }
+}

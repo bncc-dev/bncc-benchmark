@@ -1,0 +1,49 @@
+{
+ "versao": 1,
+ "modelo": "gemini-pro",
+ "modo": "seco",
+ "api": "google",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 5,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "batches/72g2etg6v5oaikgmvhgzamg93687rejcqpqg"
+   },
+   "submetido_em": "2026-09-16T18:48:38.629Z",
+   "ultimo_estado": {
+    "em": "2026-09-16T19:00:44.302Z",
+    "bruto": "BATCH_STATE_SUCCEEDED",
+    "contagens": {
+     "total": 2,
+     "concluidos": 2,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-09-16T19:00:44.930Z"
+  }
+ ],
+ "pedidos": {
+  "d-001-p0": {
+   "item_id": "d-001",
+   "parafrase": 0,
+   "chave": "29e93b5b6148105ab741b4b2b2b8ff1937f794b81dd1cc8b48edb15003ad0f72",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-002-p0": {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "chave": "d1a18f5688ae71cb52d5807aa26fa9b12e4f4a594cbe62376691fcd2a22da96d",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}
