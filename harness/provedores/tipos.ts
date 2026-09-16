@@ -3,6 +3,9 @@
 /** Desconto das Batch APIs de OpenAI, Anthropic e Google em 16/set/2026; conferir na data da rodada. */
 export const FATOR_PRECO_BATCH = 0.5;
 
+/** Timeout por requisição síncrona; sem timeout, socket pendurado trava o slot para sempre. */
+export const TIMEOUT_PADRAO_MS = 300_000;
+
 export interface ChamadaModelo {
   prompt: string;
   /** true = conectar ao bncc.dev (MCP ou tool-use); ver METODOLOGIA. */
@@ -141,6 +144,12 @@ export interface DefModelo {
    * `fatorPreco` multiplica `precos` (default FATOR_PRECO_BATCH).
    */
   batch?: { api: 'openai' | 'anthropic' | 'google'; fatorPreco?: number };
+  /**
+   * Timeout por requisição (ms), default TIMEOUT_PADRAO_MS. Modelos que
+   * raciocinam até tetos de 32k tokens passam de 5 min numa única resposta
+   * (qwen3.8-max no ensaio de 16/set/2026: mesma chamada abortada 6 vezes).
+   */
+  timeoutMs?: number;
   /** Ajustes do adapter openai-responses (connector MCP nativo). */
   opcoesResponses?: {
     /** Enviar `require_approval: "never"` no tool MCP (OpenAI exige; xAI rejeita). */

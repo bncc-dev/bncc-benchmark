@@ -281,6 +281,7 @@ export const MODELOS: Record<string, DefModelo> = {
   // quando a rota abrir. Sem batch por esta rota.
   'qwen-38-max-0902': {
     id: 'qwen-38-max-0902',
+    timeoutMs: 900_000, // raciocínio até 32k tokens passa de 5 min numa chamada (ensaio de 16/set/2026)
     maxTokensPadrao: 32768, // raciocina antes de responder; ver histórico do qwen-38-max
     provedor: 'openai-compat',
     modelo: 'qwen/qwen3.8-max-0902', // snapshot datado (D12); o alias qwen3.8-max passou a apontar para ele em 05/set/2026
@@ -295,6 +296,7 @@ export const MODELOS: Record<string, DefModelo> = {
   // snapshot novo entra como qwen-38-max-0902 (D12 regra 3, D13.1).
   'qwen-38-max': {
     id: 'qwen-38-max',
+    timeoutMs: 900_000, // raciocínio até 32k tokens passa de 5 min numa chamada (ensaio de 16/set/2026)
     // 32768 (ago/2026): com 4096 (escalando a 8192) 304 das 900 chamadas
     // truncaram e voltaram VAZIAS — a resposta vem depois do raciocínio.
     // Smoke com teto folgado: raciocínio médio 6.330, máximo 15.550, nenhuma

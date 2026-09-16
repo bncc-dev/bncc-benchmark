@@ -12,6 +12,7 @@
 import { URL_MCP } from '../lib/mcp-cliente.js';
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
+import { TIMEOUT_PADRAO_MS } from './tipos.js';
 
 interface Passo {
   type: string;
@@ -50,7 +51,7 @@ export function criarProvedorGoogleInteractions(def: DefModelo, key: string): Pr
 
       const resposta = await fetch(URL_API, {
         method: 'POST',
-        signal: AbortSignal.timeout(300_000),
+        signal: AbortSignal.timeout(def.timeoutMs ?? TIMEOUT_PADRAO_MS),
         headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
         body: JSON.stringify(corpo),
       });

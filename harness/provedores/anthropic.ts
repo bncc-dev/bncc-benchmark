@@ -10,6 +10,7 @@
 
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
+import { TIMEOUT_PADRAO_MS } from './tipos.js';
 
 const URL_MCP_BNCC = 'https://mcp.bncc.dev/mcp';
 
@@ -91,7 +92,7 @@ export function criarProvedorAnthropic(def: DefModelo, key: string): Provedor {
       const { corpo, headers } = montarCorpoAnthropic(def, chamada);
       const resposta = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
-        signal: AbortSignal.timeout(300_000), // sem timeout, socket pendurado trava o slot para sempre
+        signal: AbortSignal.timeout(def.timeoutMs ?? TIMEOUT_PADRAO_MS), // sem timeout, socket pendurado trava o slot para sempre
         headers: {
           'content-type': 'application/json',
           'x-api-key': key,

@@ -8,6 +8,7 @@
 import { executarToolMcp, listarToolsMcp, URL_MCP } from '../lib/mcp-cliente.js';
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
+import { TIMEOUT_PADRAO_MS } from './tipos.js';
 
 const MAX_VOLTAS_TOOLS = 8;
 
@@ -144,7 +145,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
     }
     const resposta = await fetch(`${def.baseUrl}/chat/completions`, {
       method: 'POST',
-      signal: AbortSignal.timeout(300_000), // sem timeout, socket pendurado trava o slot para sempre
+      signal: AbortSignal.timeout(def.timeoutMs ?? TIMEOUT_PADRAO_MS), // sem timeout, socket pendurado trava o slot para sempre
       headers: {
         'content-type': 'application/json',
         authorization: `Bearer ${key}`,

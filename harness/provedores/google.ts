@@ -8,6 +8,7 @@
 
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
+import { TIMEOUT_PADRAO_MS } from './tipos.js';
 
 export interface RespostaApiGoogle {
   modelVersion?: string;
@@ -70,7 +71,7 @@ export function criarProvedorGoogle(def: DefModelo, key: string): Provedor {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${def.modelo}:generateContent`;
       const resposta = await fetch(url, {
         method: 'POST',
-        signal: AbortSignal.timeout(300_000), // sem timeout, socket pendurado trava o slot para sempre
+        signal: AbortSignal.timeout(def.timeoutMs ?? TIMEOUT_PADRAO_MS), // sem timeout, socket pendurado trava o slot para sempre
         headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
         body: JSON.stringify(montarCorpoGoogle(chamada)),
       });
