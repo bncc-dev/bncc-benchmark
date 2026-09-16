@@ -327,7 +327,10 @@ export const MODELOS: Record<string, DefModelo> = {
   },
   'qwen-38-flash': {
     id: 'qwen-38-flash',
-    maxTokensPadrao: 4096, // raciocina antes de responder; conferir no smoke
+    // 32768 (smoke de 16/set/2026): a 4096 escalando a 8192, 1 de 3 respostas
+    // truncou VAZIA — raciocina 15 mil tokens antes de responder, como os
+    // demais Qwen 3.x. Mesmo teto dos irmãos plus/max.
+    maxTokensPadrao: 32768,
     provedor: 'openai-compat',
     modelo: 'qwen/qwen3.8-flash', // lançado em 26/ago/2026, sucessor do 3.7-flash
     envKey: 'OPENROUTER_API_KEY',
