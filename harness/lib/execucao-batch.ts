@@ -175,7 +175,6 @@ export async function avancarLote(o: OpcoesLote): Promise<ResultadoLote> {
       if (linha.resposta.finishReason === 'max_tokens' && lote.geracao === 1 && escalado !== null) {
         // Como no síncrono, a resposta cortada é descartada e refeita com o dobro.
         p.situacao = 'escalar';
-        aEscalar.push(linha.customId);
         continue;
       }
       const registro = montarRegistro(c, linha.resposta, lote.max_tokens, { banco: o.banco, def, modo }, { execucao: 'batch', lote_id: lote.remoto.id });
@@ -193,7 +192,13 @@ export async function avancarLote(o: OpcoesLote): Promise<ResultadoLote> {
     persistir();
   }
 
-  // 7. Escalada: um lote de geração 2 para as linhas cortadas.
+  // 7. Escalada: um lote de geração 2 para as linhas cortadas. Lê do ESTADO,
+  // não só desta passada: se a submissão da escalada falhou numa passada
+  // anterior (ex.: 429 na Google), os pedidos 'escalar' ficariam órfãos.
+  aEscalar.length = 0;
+  for (const [id, p] of Object.entries(estado.pedidos)) {
+    if (p.situacao === 'escalar' && porCustomId.has(id)) aEscalar.push(id);
+  }
   if (aEscalar.length > 0) {
     const escalado = orcamentoEscalado(plano[0].orcamentoBase)!;
     await submeter(aEscalar, 2, escalado);

@@ -222,6 +222,31 @@ describe('avancarLote', () => {
     expect(r4.situacao).toBe('concluido');
   });
 
+  it('pedidos "escalar" órfãos de uma passada anterior são submetidos na passada seguinte', async () => {
+    const { cache, itens, fake, avancar, caminhoEstado } = cenario('escala-orfa', DEF, 2048);
+    await avancar();
+    fake.programar((p) => ({ customId: p.customId, resposta: resposta('cortada', { finishReason: 'max_tokens' }) }));
+    fake.liberar('lote-1');
+    // A submissão da escalada falha (ex.: 429): a coleta já gravou 'escalar' no estado.
+    const original = fake.provedor.submeter;
+    fake.provedor.submeter = async () => { throw new Error('429'); };
+    await expect(avancar()).rejects.toThrow('429');
+    const estado = lerLote(caminhoEstado)!;
+    expect(Object.values(estado.pedidos).every((p) => p.situacao === 'escalar')).toBe(true);
+    expect(estado.submissao_em_curso).toBeDefined();
+    // Conciliação manual: apaga a marca; a passada seguinte submete a geração 2.
+    delete estado.submissao_em_curso;
+    const { gravarLote } = await import('../harness/lib/lote.js');
+    gravarLote(caminhoEstado, estado);
+    fake.provedor.submeter = original;
+    const r = await avancar();
+    expect(r.situacao).toBe('em-andamento');
+    expect(fake.submetidos).toHaveLength(2);
+    expect(fake.submetidos[1].pedidos).toHaveLength(itens.length);
+    expect(fake.submetidos[1].pedidos[0].chamada.maxTokens).toBe(4096);
+    expect(cache.obter(lerLote(caminhoEstado)!.pedidos[fake.submetidos[1].pedidos[0].customId].chave)).toBeNull();
+  });
+
   it('customId ausente na coleta vira erro "sem resultado no lote"', async () => {
     const { itens, fake, avancar } = cenario('ausente');
     await avancar();
