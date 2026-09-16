@@ -435,7 +435,11 @@ export function montarExport(entrada: EntradaExport): ExportSite {
       const custo = registros.reduce((s, r) => s + r.custo_usd, 0);
       const metricas = calcularMetricas(js, custo);
       const rotas: Record<string, number> = {};
-      for (const r of registros) rotas[r.versao_modelo] = (rotas[r.versao_modelo] ?? 0) + 1;
+      for (const r of registros) {
+        // Batch é transporte distinto (fila, 50% do preço): aparece separado na rota.
+        const rota = r.execucao === 'batch' ? `${r.versao_modelo} (batch)` : r.versao_modelo;
+        rotas[rota] = (rotas[rota] ?? 0) + 1;
+      }
       return {
         id,
         posicao: 0,

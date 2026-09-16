@@ -29,6 +29,18 @@ cache em disco, indexado por identidade de requisição — reexecutar uma rodad
 interrompida não recobra o que já foi pago. É a única etapa que gasta dinheiro,
 e roda sempre localmente: o CI nunca executa o benchmark (D3).
 
+Há dois transportes para a mesma bateria. O **síncrono** (`lib/execucao.ts`)
+chama item a item, com concorrência, retry e escalada de orçamento. O **lote**
+(`--execucao batch`, `lib/execucao-batch.ts`) monta os mesmos pedidos e os
+submete à Batch API da empresa (OpenAI, Anthropic, Google), que processa em
+até 24 h por metade do preço; só vale no modo seco, porque lotes não aceitam
+tools. A identidade da chamada e a chave de cache são as mesmas nos dois
+caminhos (`planejarChamadas`), então uma resposta obtida por lote é
+reaproveitada pelo síncrono e vice-versa. Cada invocação em lote avança uma
+etapa (submete, consulta, coleta e escala, ou finaliza) e sai com código 2
+enquanto houver fila; o estado fica em `resultados/<rodada>/lotes-<modelo>-<modo>.json`
+(`lib/lote.ts`) e o bruto ganha `execucao: 'batch'` e `lote_id`.
+
 **avaliar** (`harness/avaliar.ts`) julga. Tarefas B e D têm verificação
 programática; A e C passam por pré-filtro de normalização e, quando não são
 triviais, vão a um juiz LLM. O `juiz.jsonl` guarda a trilha completa do juiz,
@@ -57,7 +69,7 @@ códigos falsos (D10).
 |---|---|
 | `harness/*.ts` | Os CLIs — um por etapa do pipeline |
 | `harness/lib/` | A lógica: geração, avaliação, agregação, cache, códigos, manifesto |
-| `harness/provedores/` | Um adapter por API de modelo, sobre `fetch` puro |
+| `harness/provedores/` | Um adapter por API de modelo, sobre `fetch` puro; `*-batch.ts` reutilizam o corpo do adapter síncrono |
 | `harness/prompts/` | Prompts das quatro tarefas e do juiz |
 | `itens/` | Banco de itens versionado e congelado |
 | `resultados/<rodada>/` | Brutos, julgamentos, agregados e manifesto |
@@ -86,6 +98,7 @@ Peças que merecem atenção antes de mexer:
   envKey: 'MINHA_API_KEY',                 // variável no .env
   baseUrl: 'https://api.exemplo.com/v1',   // só para openai-compat
   precos: { entrada: 1, saida: 5 },        // USD por milhão de tokens, informativo
+  batch: { api: 'openai' },                // opcional: habilita --execucao batch (só rota direta da própria empresa)
   suportaGrounded: false,
 },
 ```

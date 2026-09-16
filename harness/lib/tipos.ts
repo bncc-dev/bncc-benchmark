@@ -106,6 +106,10 @@ export interface RegistroBruto {
    * válidos, limitação documentada).
    */
   finish_reason?: string;
+  /** 'batch' quando a resposta veio pela Batch API da empresa (mesmo corpo, transporte assíncrono, 50% do preço). Ausente = síncrono. */
+  execucao?: 'batch';
+  /** Id remoto do lote que produziu a linha (auditoria). */
+  lote_id?: string;
   tools_chamadas?: number;
   /** Voltas do loop de tool-use no cliente (mcp-loop); ausente no connector nativo. */
   voltas?: number;

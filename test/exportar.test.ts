@@ -112,4 +112,18 @@ describe('montarExport', () => {
     expect(exp.meta.custo_total_usd).toBe(0.01);
     expect(exp.amostras.length).toBeGreaterThan(0);
   });
+
+  it('rotas separa o transporte batch do síncrono para a mesma versão servida', () => {
+    const js = [julgamento({ item_id: 'b-001', modelo: 'm1', tarefa: 'B', tipo: 'real', veredito: 'correto' })];
+    const exp = montarExport({
+      rodada: 'r',
+      versao: 'v9.9.9',
+      banco,
+      itens: new Map([[item.id, item]]),
+      julgados: js,
+      brutos: new Map([['m1', [bruto, { ...bruto, parafrase: 1, execucao: 'batch', lote_id: 'L1' }]]]),
+      apresentacao: { m1: { nome: 'Modelo Um', empresa: 'ACME', tier: 'econômico' } },
+    });
+    expect(exp.modelos[0].rotas).toEqual({ 'm1-v': 1, 'm1-v (batch)': 1 });
+  });
 });

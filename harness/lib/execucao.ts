@@ -5,7 +5,7 @@
  */
 
 import { ErroProvedor } from '../provedores/erro.js';
-import type { DefModelo, Provedor } from '../provedores/tipos.js';
+import type { DefModelo, Provedor, RespostaModelo } from '../provedores/tipos.js';
 import { CacheDisco, chaveCache } from './cache.js';
 import { URL_MCP } from './mcp-cliente.js';
 import { criarLimitador } from './concorrencia.js';
@@ -80,44 +80,39 @@ export async function comRetry<T>(
   throw ultimoErro;
 }
 
-export async function executarBateria(opcoes: OpcoesExecucao): Promise<ResultadoExecucao> {
-  const {
-    banco,
-    itens,
-    def,
-    provedor,
-    modo,
-    parafrases,
-    cache,
-    concorrencia = 5,
-    maxTokens = 1024,
-    mcpDadosVersao,
-    mcpToolsHash,
-    tentativas = 3,
-    esperaBaseMs = 1000,
-    aoProgresso,
-  } = opcoes;
+/** Teto da escalada automática de orçamento (tokens). */
+export const TETO_ESCALADA = 16384;
 
-  const limitador = criarLimitador(concorrencia);
-  // Cada trabalho NUNCA rejeita (resolve com {erro} em falha): com dezenas de
-  // promessas em voo aguardadas sequencialmente, uma rejeição anterior ao
-  // await vira unhandledRejection e o Node mata o processo inteiro, por fora
-  // de qualquer try/catch (queda 4 da rodada oficial).
-  type Trabalho = { registro: RegistroBruto; doCache: boolean } | { erro: unknown };
-  const trabalhos: Array<Promise<Trabalho>> = [];
+/** Uma chamada da bateria com sua identidade (chave de cache) já resolvida. */
+export interface ChamadaPlanejada {
+  item: Item;
+  parafrase: number;
+  prompt: string;
+  chave: string;
+  orcamentoBase: number;
+  mecanismoContexto: string | null;
+}
 
+/**
+ * Planeja (modelo × item × paráfrase) com a chave de cache de cada chamada.
+ * Compartilhado pelo caminho síncrono e pelo caminho em lote (execucao-batch):
+ * a identidade da chamada é uma só, independente do transporte.
+ */
+export function planejarChamadas(
+  o: Pick<OpcoesExecucao, 'banco' | 'itens' | 'def' | 'modo' | 'parafrases' | 'maxTokens' | 'mcpDadosVersao' | 'mcpToolsHash'>,
+): ChamadaPlanejada[] {
+  const { banco, itens, def, modo, parafrases, maxTokens = 1024, mcpDadosVersao, mcpToolsHash } = o;
   // Orçamento efetivo: o maior entre a config da rodada e o mínimo do modelo
   // (modelos com raciocínio interno precisam de folga para não sair cortados).
   const orcamentoBase = Math.max(maxTokens, def.maxTokensPadrao ?? 0);
-  const TETO_ESCALADA = 16384;
-
+  const grounded = modo === 'grounded';
+  const mecanismoContexto = modo === 'contexto' ? `contexto:${CONTEXTO_VERSAO}` : null;
+  const plano: ChamadaPlanejada[] = [];
   for (const item of itens) {
     const nParafrases = Math.min(parafrases, item.parafrases.length);
     for (let p = 0; p < nParafrases; p++) {
       // Condição contexto (D14): a listagem do escopo entra no prompt; sem tool.
       const prompt = modo === 'contexto' ? promptComContexto(item, item.parafrases[p]) : item.parafrases[p];
-      const grounded = modo === 'grounded';
-      const mecanismoContexto = modo === 'contexto' ? `contexto:${CONTEXTO_VERSAO}` : null;
       // MaxTokens e o mecanismo de grounding fazem parte da identidade
       // da chamada; sem eles, uma re-execução com config diferente reutilizaria
       // respostas incompatíveis (ex.: truncadas) em silêncio.
@@ -134,59 +129,105 @@ export async function executarBateria(opcoes: OpcoesExecucao): Promise<Resultado
           ? `${def.provedor}:${URL_MCP}${mcpDadosVersao ? `@${mcpDadosVersao}` : ''}${mcpToolsHash ? `#${mcpToolsHash}` : ''}`
           : mecanismoContexto,
       });
+      plano.push({ item, parafrase: p, prompt, chave, orcamentoBase, mecanismoContexto });
+    }
+  }
+  return plano;
+}
 
-      trabalhos.push(
-        limitador(async () => {
-          const emCache = cache.obter<RegistroBruto>(chave);
-          if (emCache) return { registro: emCache, doCache: true };
+/** Orçamento da segunda tentativa quando a resposta saiu cortada; null = não escala. */
+export function orcamentoEscalado(base: number): number | null {
+  return base < TETO_ESCALADA ? Math.min(base * 2, TETO_ESCALADA) : null;
+}
 
-          // Escalada automática: resposta cortada por max_tokens ganha uma
-          // segunda chance com o dobro do orçamento (o custo real fica nos
-          // tokens registrados; a chave de cache usa o orçamento base, então
-          // o checkpoint continua determinístico).
-          let orcamentoUsado = orcamentoBase;
-          let resposta = await comRetry(
-            () => provedor.completar({ prompt, grounded, maxTokens: orcamentoBase }),
+/** Monta o registro bruto de uma resposta; `extras` carimba a execução em lote. */
+export function montarRegistro(
+  chamada: ChamadaPlanejada,
+  resposta: RespostaModelo,
+  orcamentoUsado: number,
+  ctx: { banco: BancoItens; def: DefModelo; modo: Modo },
+  extras?: { execucao: 'batch'; lote_id: string },
+): RegistroBruto {
+  return {
+    item_id: chamada.item.id,
+    modelo: ctx.def.id,
+    versao_modelo: resposta.versaoModelo,
+    parafrase: chamada.parafrase,
+    modo: ctx.modo,
+    mecanismo_grounding: resposta.mecanismoGrounding ?? chamada.mecanismoContexto,
+    prompt: chamada.prompt,
+    resposta: resposta.texto,
+    timestamp: new Date().toISOString(),
+    custo_usd: resposta.custoUsd,
+    max_tokens: orcamentoUsado,
+    tokens: resposta.tokens,
+    finish_reason: resposta.finishReason,
+    tools_chamadas: resposta.toolsChamadas,
+    ...(resposta.voltas !== undefined ? { voltas: resposta.voltas } : {}),
+    ...(resposta.toolsErros !== undefined ? { tools_erros: resposta.toolsErros } : {}),
+    ...(resposta.toolsErroExemplo ? { tools_erro_exemplo: resposta.toolsErroExemplo } : {}),
+    ...(extras ? { execucao: extras.execucao, lote_id: extras.lote_id } : {}),
+    dataset_versao: ctx.banco.dataset_versao,
+    itens_versao: ctx.banco.versao,
+  };
+}
+
+export async function executarBateria(opcoes: OpcoesExecucao): Promise<ResultadoExecucao> {
+  const {
+    banco,
+    def,
+    provedor,
+    modo,
+    cache,
+    concorrencia = 5,
+    tentativas = 3,
+    esperaBaseMs = 1000,
+    aoProgresso,
+  } = opcoes;
+
+  const limitador = criarLimitador(concorrencia);
+  // Cada trabalho NUNCA rejeita (resolve com {erro} em falha): com dezenas de
+  // promessas em voo aguardadas sequencialmente, uma rejeição anterior ao
+  // await vira unhandledRejection e o Node mata o processo inteiro, por fora
+  // de qualquer try/catch (queda 4 da rodada oficial).
+  type Trabalho = { registro: RegistroBruto; doCache: boolean } | { erro: unknown };
+  const trabalhos: Array<Promise<Trabalho>> = [];
+  const grounded = modo === 'grounded';
+
+  for (const chamada of planejarChamadas(opcoes)) {
+    const { prompt, chave, orcamentoBase } = chamada;
+    trabalhos.push(
+      limitador(async () => {
+        const emCache = cache.obter<RegistroBruto>(chave);
+        if (emCache) return { registro: emCache, doCache: true };
+
+        // Escalada automática: resposta cortada por max_tokens ganha uma
+        // segunda chance com o dobro do orçamento (o custo real fica nos
+        // tokens registrados; a chave de cache usa o orçamento base, então
+        // o checkpoint continua determinístico).
+        let orcamentoUsado = orcamentoBase;
+        let resposta = await comRetry(
+          () => provedor.completar({ prompt, grounded, maxTokens: orcamentoBase }),
+          tentativas,
+          esperaBaseMs,
+        );
+        const escalado = orcamentoEscalado(orcamentoBase);
+        if (resposta.finishReason === 'max_tokens' && escalado !== null) {
+          orcamentoUsado = escalado;
+          resposta = await comRetry(
+            () => provedor.completar({ prompt, grounded, maxTokens: orcamentoUsado }),
             tentativas,
             esperaBaseMs,
           );
-          if (resposta.finishReason === 'max_tokens' && orcamentoBase < TETO_ESCALADA) {
-            orcamentoUsado = Math.min(orcamentoBase * 2, TETO_ESCALADA);
-            resposta = await comRetry(
-              () => provedor.completar({ prompt, grounded, maxTokens: orcamentoUsado }),
-              tentativas,
-              esperaBaseMs,
-            );
-          }
-          const registro: RegistroBruto = {
-            item_id: item.id,
-            modelo: def.id,
-            versao_modelo: resposta.versaoModelo,
-            parafrase: p,
-            modo,
-            mecanismo_grounding: resposta.mecanismoGrounding ?? mecanismoContexto,
-            prompt,
-            resposta: resposta.texto,
-            timestamp: new Date().toISOString(),
-            custo_usd: resposta.custoUsd,
-            max_tokens: orcamentoUsado,
-            tokens: resposta.tokens,
-            finish_reason: resposta.finishReason,
-            tools_chamadas: resposta.toolsChamadas,
-            ...(resposta.voltas !== undefined ? { voltas: resposta.voltas } : {}),
-            ...(resposta.toolsErros !== undefined ? { tools_erros: resposta.toolsErros } : {}),
-            ...(resposta.toolsErroExemplo ? { tools_erro_exemplo: resposta.toolsErroExemplo } : {}),
-            dataset_versao: banco.dataset_versao,
-            itens_versao: banco.versao,
-          };
-          cache.gravar(chave, registro);
-          return { registro, doCache: false };
-        }).then(
-          (ok) => ok as Trabalho,
-          (erro) => ({ erro }) as Trabalho,
-        ),
-      );
-    }
+        }
+        const registro = montarRegistro(chamada, resposta, orcamentoUsado, { banco, def, modo });
+        cache.gravar(chave, registro);
+        return { registro, doCache: false };
+      }).then(
+        (ok) => ok as Trabalho,
+        (erro) => ({ erro }) as Trabalho,
+      ),
+    );
   }
 
   const total = trabalhos.length;

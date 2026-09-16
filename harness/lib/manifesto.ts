@@ -19,6 +19,15 @@ export interface ResultadoModeloManifesto {
   do_cache: number;
   custo_usd: number;
   incompletas: number;
+  /** Execução em lote: lotes remotos que produziram as chamadas novas (auditoria). */
+  lotes?: Array<{
+    id: string;
+    geracao: 1 | 2;
+    max_tokens: number;
+    submetido_em: string;
+    coletado_em?: string;
+    contagens?: { total?: number; concluidos?: number; falhos?: number };
+  }>;
 }
 
 export interface EntradaExecucao {

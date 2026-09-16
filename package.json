@@ -11,6 +11,7 @@
     "test": "vitest run",
     "gerar": "tsx harness/gerar-itens.ts",
     "executar": "tsx harness/executar.ts",
+    "executar-batch": "tsx harness/executar.ts --execucao batch",
     "avaliar": "tsx harness/avaliar.ts",
     "agregar": "tsx harness/agregar.ts",
     "exportar-site": "tsx harness/exportar-site.ts",
