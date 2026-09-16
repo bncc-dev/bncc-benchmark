@@ -103,7 +103,7 @@ describe('google-interactions', () => {
     expect(chamadas[0].headers['x-goog-api-key']).toBe('k');
     expect(chamadas[0].corpo.tools).toEqual([{ type: 'mcp_server', name: 'bncc', url: 'https://mcp.bncc.dev/mcp' }]);
     expect(chamadas[0].corpo.generation_config).toEqual({ temperature: 0, max_output_tokens: 100 });
-    expect(r).toMatchObject({ texto: 'Sim', finishReason: 'fim', toolsChamadas: 1, tokens: { entrada: 2114, saida: 22, reasoning: 71 } });
+    expect(r).toMatchObject({ texto: 'Sim', finishReason: 'fim', toolsChamadas: 1, tokens: { entrada: 2114, saida: 93, reasoning: 71 } }); // saída = 22 visíveis + 71 de pensamento (convenção de tipos.ts)
   });
 
   it('status incomplete vira max_tokens', async () => {

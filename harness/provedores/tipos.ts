@@ -10,6 +10,11 @@ export interface ChamadaModelo {
 export interface RespostaModelo {
   texto: string;
   versaoModelo: string;
+  /**
+   * CONVENÇÃO (16/set/2026): `saida` é o total de tokens de saída COBRADOS,
+   * raciocínio incluído; `reasoning` é a parcela de raciocínio dentro dele.
+   * O custo usa `saida`. Cada API informa isso de um jeito; o adapter normaliza.
+   */
   tokens: { entrada: number; saida: number; reasoning?: number };
   custoUsd: number;
   /**
@@ -69,6 +74,18 @@ export interface DefModelo {
    * API. CONDIÇÃO DISTINTA do protocolo (temperatura 0): declarar na release.
    */
   semTemperatura?: boolean;
+  /**
+   * Como a API (openai-compat) informa os tokens de raciocínio no `usage`:
+   * - 'na-saida' (default): `completion_tokens` já inclui o raciocínio
+   *   (OpenAI, Moonshot, OpenRouter).
+   * - 'fora-da-saida': `reasoning_tokens` vem à parte e NÃO está em
+   *   `completion_tokens`, embora seja cobrado como saída (xAI).
+   * - 'nao-informado': nenhum campo traz o raciocínio; ele é a diferença
+   *   `total_tokens − prompt − completion` (Gemini pelo endpoint compatível).
+   * Errar isso subestima o custo em até uma ordem de grandeza (smoke de
+   * 16/set/2026: grok direto 10×, gemini-pro direto 17×).
+   */
+  contagemRaciocinio?: 'na-saida' | 'fora-da-saida' | 'nao-informado';
   /** Ajustes do adapter openai-responses (connector MCP nativo). */
   opcoesResponses?: {
     /** Enviar `require_approval: "never"` no tool MCP (OpenAI exige; xAI rejeita). */

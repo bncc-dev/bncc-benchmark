@@ -53,20 +53,17 @@ export function criarProvedorGoogle(def: DefModelo, key: string): Provedor {
               : bruto === 'SAFETY' || bruto === 'PROHIBITED_CONTENT' || bruto === 'BLOCKLIST'
                 ? 'bloqueado'
                 : bruto;
+      // candidatesTokenCount NÃO inclui os pensamentos, que são cobrados como
+      // saída: a saída registrada é a soma (convenção de tipos.ts).
       const reasoning = dados.usageMetadata.thoughtsTokenCount;
+      const entrada = dados.usageMetadata.promptTokenCount;
+      const saida = (dados.usageMetadata.candidatesTokenCount ?? 0) + (reasoning ?? 0);
       return {
         texto,
         versaoModelo: dados.modelVersion ?? def.modelo,
         finishReason,
-        tokens: {
-          entrada: dados.usageMetadata.promptTokenCount,
-          saida: dados.usageMetadata.candidatesTokenCount ?? 0,
-          ...(reasoning !== undefined ? { reasoning } : {}),
-        },
-        custoUsd:
-          (dados.usageMetadata.promptTokenCount * def.precos.entrada +
-            (dados.usageMetadata.candidatesTokenCount ?? 0) * def.precos.saida) /
-          1_000_000,
+        tokens: { entrada, saida, ...(reasoning !== undefined ? { reasoning } : {}) },
+        custoUsd: (entrada * def.precos.entrada + saida * def.precos.saida) / 1_000_000,
         toolsChamadas: 0,
         mecanismoGrounding: null,
       };

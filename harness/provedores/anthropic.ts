@@ -18,7 +18,8 @@ interface BlocoConteudo {
 interface RespostaApi {
   model: string;
   content: BlocoConteudo[];
-  usage: { input_tokens: number; output_tokens: number };
+  /** output_tokens já inclui o pensamento; thinking_tokens é a parcela (Claude 5 pensa por padrão). */
+  usage: { input_tokens: number; output_tokens: number; output_tokens_details?: { thinking_tokens?: number } };
   stop_reason: string;
 }
 
@@ -70,11 +71,16 @@ export function criarProvedorAnthropic(def: DefModelo, key: string): Provedor {
             ? 'max_tokens'
             : dados.stop_reason;
 
+      const reasoning = dados.usage.output_tokens_details?.thinking_tokens;
       return {
         texto,
         versaoModelo: dados.model,
         finishReason,
-        tokens: { entrada: dados.usage.input_tokens, saida: dados.usage.output_tokens },
+        tokens: {
+          entrada: dados.usage.input_tokens,
+          saida: dados.usage.output_tokens,
+          ...(reasoning !== undefined ? { reasoning } : {}),
+        },
         custoUsd:
           (dados.usage.input_tokens * def.precos.entrada +
             dados.usage.output_tokens * def.precos.saida) /

@@ -36,10 +36,35 @@ interface RespostaApi {
   usage?: {
     prompt_tokens: number;
     completion_tokens: number;
+    total_tokens?: number;
     completion_tokens_details?: { reasoning_tokens?: number };
   };
   /** OpenRouter pode devolver HTTP 200 com erro no corpo (falha do upstream). */
   error?: { code?: number | string; message?: string };
+}
+
+/**
+ * Normaliza o `usage` para a convenção de tipos.ts (saída = total cobrado,
+ * raciocínio incluído). Ver `DefModelo.contagemRaciocinio`.
+ */
+export function contarUso(
+  usage: NonNullable<RespostaApi['usage']>,
+  contagem: NonNullable<DefModelo['contagemRaciocinio']>,
+): { entrada: number; saida: number; reasoning?: number } {
+  const entrada = usage.prompt_tokens;
+  const visivel = usage.completion_tokens;
+  const informado = usage.completion_tokens_details?.reasoning_tokens;
+  switch (contagem) {
+    case 'na-saida':
+      return { entrada, saida: visivel, ...(informado !== undefined ? { reasoning: informado } : {}) };
+    case 'fora-da-saida':
+      return { entrada, saida: visivel + (informado ?? 0), ...(informado !== undefined ? { reasoning: informado } : {}) };
+    case 'nao-informado': {
+      if (informado !== undefined) return { entrada, saida: visivel + informado, reasoning: informado };
+      const implicito = Math.max(0, (usage.total_tokens ?? entrada + visivel) - entrada - visivel);
+      return { entrada, saida: visivel + implicito, ...(implicito > 0 ? { reasoning: implicito } : {}) };
+    }
+  }
 }
 
 export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor {
@@ -52,7 +77,8 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
   ): Promise<RespostaApi> {
     const corpo: Record<string, unknown> = {
       model: def.modelo,
-      temperature: 0,
+      // gpt-5.x com raciocínio rejeitam temperature (400): omitir quando semTemperatura.
+      ...(def.semTemperatura ? {} : { temperature: 0 }),
       [def.parametroMaxTokens ?? 'max_tokens']: maxTokens,
       messages: mensagens,
       ...def.corpoExtra,
@@ -114,10 +140,10 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
       for (let volta = 0; ; volta++) {
         voltas = volta + 1;
         dados = await completions(mensagens, chamada.maxTokens, chamada.grounded);
-        entrada += dados.usage!.prompt_tokens;
-        saida += dados.usage!.completion_tokens;
-        const r = dados.usage!.completion_tokens_details?.reasoning_tokens;
-        if (r !== undefined) reasoning = (reasoning ?? 0) + r;
+        const uso = contarUso(dados.usage!, def.contagemRaciocinio ?? 'na-saida');
+        entrada += uso.entrada;
+        saida += uso.saida;
+        if (uso.reasoning !== undefined) reasoning = (reasoning ?? 0) + uso.reasoning;
 
         const msg = dados.choices![0].message;
         const pedidos = msg.tool_calls ?? [];

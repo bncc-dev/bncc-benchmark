@@ -316,6 +316,23 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 4, saida: 20 },
     suportaGrounded: true,
   },
+  // PROVISÓRIO (smoke de rota direta para o leaderboard, 16/set/2026): igual ao
+  // gpt-sol-direto, mas SEM desligar o raciocínio. A seca não usa tools, então
+  // a restrição de /chat/completions não se aplica e o modelo roda na mesma
+  // condição de raciocínio da rota OpenRouter. Os gpt-5.x com raciocínio
+  // rejeitam `temperature` (400), daí semTemperatura. Não entra no leaderboard.
+  'gpt-sol-direto-raciocinio': {
+    id: 'gpt-sol-direto-raciocinio',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'gpt-5.6-sol',
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens',
+    semTemperatura: true,
+    precos: { entrada: 4, saida: 20 },
+    suportaGrounded: false, // com tools a API exige raciocínio desligado; usar gpt-sol-direto ou gpt-sol-mcp
+  },
   'gpt-luna-direto': {
     id: 'gpt-luna-direto',
     provedor: 'openai-compat',
@@ -333,6 +350,9 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'grok-4.6',
     envKey: 'XAI_API_KEY',
     baseUrl: 'https://api.x.ai/v1',
+    // A xAI cobra o raciocínio como saída mas NÃO o inclui em completion_tokens
+    // (sondagem de 16/set/2026); sem isto o custo saía 10× menor.
+    contagemRaciocinio: 'fora-da-saida',
     precos: { entrada: 2, saida: 6 },
     suportaGrounded: true,
   },
@@ -381,6 +401,9 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'gemini-3.7-flash',
     envKey: 'GEMINI_API_KEY',
     baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',
+    // O endpoint compatível não informa os pensamentos em campo nenhum (só no
+    // total_tokens); sem isto o custo saía 17× menor (smoke de 16/set/2026).
+    contagemRaciocinio: 'nao-informado',
     precos: { entrada: 0.375, saida: 1.875 },
     suportaGrounded: true,
   },
@@ -391,6 +414,9 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'gemini-3.1-pro-preview',
     envKey: 'GEMINI_API_KEY',
     baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',
+    // O endpoint compatível não informa os pensamentos em campo nenhum (só no
+    // total_tokens); sem isto o custo saía 17× menor (smoke de 16/set/2026).
+    contagemRaciocinio: 'nao-informado',
     precos: { entrada: 2, saida: 12 },
     suportaGrounded: true,
   },

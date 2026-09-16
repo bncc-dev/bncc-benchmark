@@ -90,7 +90,15 @@ Peças que merecem atenção antes de mexer:
 },
 ```
 
-Quatro coisas que costumam morder:
+Cinco coisas que costumam morder:
+
+**Conferir como a API conta o raciocínio.** A convenção dos brutos é
+`saida` = total de tokens de saída cobrados, raciocínio incluído. OpenAI,
+Moonshot e OpenRouter já entregam assim; a xAI informa o raciocínio à parte
+(`contagemRaciocinio: 'fora-da-saida'`) e o endpoint compatível do Gemini não
+informa em campo nenhum (`'nao-informado'`, derivado do `total_tokens`). Sem
+o campo certo o custo sai até 17× menor (smoke de 16/set/2026). Os adapters
+nativos do Google e da Anthropic já somam os pensamentos sozinhos.
 
 **Modelos com raciocínio interno precisam de `maxTokensPadrao` maior.** Eles
 gastam orçamento pensando antes de escrever; sem folga a resposta sai truncada
