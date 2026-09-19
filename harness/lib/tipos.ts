@@ -178,7 +178,7 @@ export interface Julgamento {
   tools_chamadas?: number;
   /** Tarefa C: detalhe por código citado. */
   codigos_citados?: CodigoCitado[];
-  juiz?: { veredito: 'sim' | 'nao' | 'parcial' | 'indeterminado'; modelo: string };
+  juiz?: { veredito: 'sim' | 'nao' | 'parcial' | 'abstencao' | 'indeterminado'; modelo: string };
 }
 
 export interface Agregados {

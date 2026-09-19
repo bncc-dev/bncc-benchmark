@@ -74,7 +74,7 @@ for (const registro of registros) {
 }
 
 // Juiz LLM nos pendentes.
-type VereditoJuiz = 'sim' | 'nao' | 'parcial' | 'indeterminado';
+type VereditoJuiz = 'sim' | 'nao' | 'parcial' | 'abstencao' | 'indeterminado';
 interface LinhaJuiz {
   item_id: string;
   modelo: string;
@@ -213,9 +213,11 @@ if (args.juiz !== 'nenhum' && pendentesA.length + pendentesC.length > 0) {
             ? 'fiel_parafrase'
             : veredito === 'parcial'
               ? 'parcial'
-              : veredito === 'indeterminado'
-                ? 'indeterminado'
-                : 'inventado';
+              : veredito === 'abstencao'
+                ? 'abstencao'
+                : veredito === 'indeterminado'
+                  ? 'indeterminado'
+                  : 'inventado';
       }),
     ),
     ...pendentesC.map(({ julgamento, citado }) =>
@@ -229,6 +231,8 @@ if (args.juiz !== 'nenhum' && pendentesA.length + pendentesC.length > 0) {
           modo: julgamento.modo,
           codigo: citado.codigo,
         });
+        // Na C o trecho já é um texto atribuído a um código; 'abstencao' aqui
+        // significa que o modelo não sustentou o texto, o que é divergente.
         citado.texto =
           veredito === 'sim' ? 'ok' : veredito === 'indeterminado' ? 'indeterminado' : 'divergente';
       }),

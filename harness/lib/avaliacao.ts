@@ -17,7 +17,7 @@ import { obter, todas } from './gabarito.js';
 import type { CodigoCitado, Item, Julgamento, RegistroBruto } from './tipos.js';
 
 /** Versão da lógica de julgamento; gravada em cada Julgamento (auditoria). */
-export const AVALIADOR_VERSAO = '2';
+export const AVALIADOR_VERSAO = '3';
 
 const FRASES_ABSTENCAO = [
   'nao sei',
