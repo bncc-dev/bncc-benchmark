@@ -165,6 +165,49 @@ export function julgarA(item: Item, registro: RegistroBruto): Julgamento {
   return { ...julgamentoBase(item, registro), veredito };
 }
 
+/**
+ * Texto que o modelo APRESENTOU como sendo o da aprendizagem pedida, mesmo com
+ * ressalvas ("pelo que recordo, o enunciado é: ..."). Procura um trecho de 60+
+ * caracteres que comece por verbo no infinitivo (formato das habilidades da
+ * BNCC) entre aspas, em blockquote ou depois de dois-pontos. Serve de guarda
+ * para os vereditos 'abstencao' e 'negacao' do juiz: quem atribuiu texto não
+ * se absteve nem apenas negou, e o texto atribuído é julgado por fidelidade
+ * (conteúdo antes da abstenção).
+ *
+ * Um trecho rotulado com OUTRO código ("se você procurava a EM13LP08, o texto
+ * é ...") não conta: não foi atribuído ao código pedido.
+ */
+export function extrairTextoCandidato(resposta: string, codigoPedido?: string): string | null {
+  const limpar = (t: string) => t.replace(/[*_`]/g, '').trim();
+  const candidatos: Array<{ texto: string; inicio: number }> = [];
+  const juntar = (re: RegExp) => {
+    for (const m of resposta.matchAll(re)) {
+      candidatos.push({ texto: m[1], inicio: (m.index ?? 0) + m[0].indexOf(m[1]) });
+    }
+  };
+  juntar(/[“"«]([^”"»\n]{60,})[”"»]/g);
+  juntar(/^\s*>\s*(.{60,})$/gm);
+  juntar(/:\s*\n?\s*([^\n]{60,})/g);
+  candidatos.sort((a, b) => a.inicio - b.inicio);
+
+  const infinitivo = /^[\s“"«(]*\p{Lu}\p{Ll}+(?:ar|er|ir|or)\b/u;
+  const codigoRe = /\b(?:EI\d{2}[A-Z]{2}\d{2}|E[FM]\d{2}[A-Z]{2,3}\d{2,3})\b/g;
+  for (const c of candidatos) {
+    const prefixoCodigo = limpar(c.texto).match(/^([A-Z]{2}\d{2}[A-Z]{2,3}\d{2,3})\s*[:–-]\s*/);
+    const limpo = limpar(c.texto).replace(/^[A-Z]{2}\d{2}[A-Z]{2,3}\d{2,3}\s*[:–-]\s*/, '');
+    if (!infinitivo.test(limpo)) continue;
+    if (codigoPedido) {
+      // Código mais próximo antes do trecho (ou colado nele): se for outro, o texto é de outra aprendizagem.
+      const antes = resposta.slice(Math.max(0, c.inicio - 160), c.inicio);
+      const mencoes = [...antes.matchAll(codigoRe)].map((m) => m[0]);
+      const rotulo = prefixoCodigo?.[1] ?? mencoes[mencoes.length - 1];
+      if (rotulo && rotulo !== codigoPedido) continue;
+    }
+    return limpo.replace(/^[“"«(]+|[”"»)]+$/g, '').trim();
+  }
+  return null;
+}
+
 const TAMANHO_MAX_TRECHO = 500;
 
 /**

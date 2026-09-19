@@ -113,6 +113,23 @@ describe('montarExport', () => {
     expect(exp.amostras.length).toBeGreaterThan(0);
   });
 
+  it('negação de código real na A fica fora de fidelidade, alucinação e abstenção', () => {
+    const base = { item_id: 'a-001', modelo: 'm1', tarefa: 'A' as const, tipo: 'real' as const };
+    const m = calcularMetricas(
+      [
+        julgamento({ ...base, parafrase: 0, veredito: 'negacao' }),
+        julgamento({ ...base, parafrase: 1, veredito: 'abstencao' }),
+        julgamento({ ...base, parafrase: 2, veredito: 'inventado' }),
+        julgamento({ ...base, item_id: 'a-002', parafrase: 0, veredito: 'fiel_exato' }),
+      ],
+      0,
+    );
+    expect(m.a_negacao).toBeCloseTo(0.25);
+    expect(m.a_abstencao).toBeCloseTo(0.25);
+    expect(m.a_aluc).toBeCloseTo(0.25);
+    expect(m.a_fiel).toBeCloseTo(0.25);
+  });
+
   it('rotas separa o transporte batch do síncrono para a mesma versão servida', () => {
     const js = [julgamento({ item_id: 'b-001', modelo: 'm1', tarefa: 'B', tipo: 'real', veredito: 'correto' })];
     const exp = montarExport({
