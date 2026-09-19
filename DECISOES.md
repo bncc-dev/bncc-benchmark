@@ -429,3 +429,94 @@ Consequência para o `.env`: as keys diretas, antes ociosas, passam a ser
 operacionais; `carregarEnv` deve dar precedência ao `.env` sobre variáveis
 de shell (hoje é o inverso, e keys antigas exportadas no perfil quebraram o
 primeiro smoke).
+
+## D15 · Rotas diretas no leaderboard e execução em lote
+
+A política de rotas de 13/jul/2026 (execução só via Bedrock e OpenRouter,
+por controle de faturamento) deixa de valer para o leaderboard. A D14.1 já a
+tinha revogado para o estudo de intervenção; esta decisão estende a regra ao
+leaderboard e acrescenta a execução em lote.
+
+### Racional
+
+1. **O agregador traduzia parâmetros em silêncio.** O smoke de 16/set/2026
+   (`resultados/smoke-direto-leaderboard-2026-09/`, 30 itens, seis modelos,
+   rota direta × OpenRouter) confirmou o que a D14.1 tinha visto no estudo:
+   Claude 5 e gpt-5.6 rejeitam `temperature`, a OpenAI exige
+   `max_completion_tokens`, Kimi K3 só aceita temperatura 1. Via OpenRouter
+   nada disso era visível, e a rodada v0.2.0 rodou esses modelos sem
+   temperatura 0 sem que o benchmark soubesse. A METODOLOGIA promete
+   temperatura 0; a rota direta é a única em que essa promessa é verificável
+   e, quando impossível, declarável (D13.2).
+2. **A rota não muda a régua.** No smoke pareado de 16/set (30 itens, seis
+   modelos nas duas rotas) foram 157 de 180 vereditos iguais. Na rodada
+   oficial, comparando os mesmos 300 itens de agosto e setembro, os modelos
+   que trocaram de rota variaram dentro da faixa dos que não trocaram: o
+   piso de variação natural entre rodadas é 86% a 98% de concordância
+   (sabiazinho-4 e haiku-bedrock, mesma rota), e quem trocou ficou entre 79%
+   e 90%. Sete dos oito modelos comparáveis variaram menos de 3 pontos na
+   nota; a exceção é o grok-46, discutido como ressalva na v0.3.0. A
+   diferença que importa não é a nota, é a fidelidade do que chega ao modelo.
+3. **Contagem de raciocínio.** Cada API informa os tokens de raciocínio de
+   um jeito; o OpenRouter normalizava. Os adapters diretos foram corrigidos
+   em 16/set (xAI fora de `completion_tokens`, Gemini compatível sem campo,
+   Anthropic em subcampo); sem isso o custo saía até 17× menor. A correção é
+   pré-requisito desta decisão, e os brutos do estudo de agosto para grok e
+   gemini na rota direta carregam custo subestimado (a declarar na release).
+4. **Batch paga o que promete.** OpenAI, Anthropic e Google processam lotes
+   em até 24 h por metade do preço, e o volume de tokens medido foi o mesmo
+   do síncrono (Fable 1,12→0,60; Opus 1,03→0,53; Gemini Pro 0,67→0,33 nos
+   30 itens). Só existe pela rota direta e só aceita chamadas sem tools.
+5. **Anthropic direta resolve a exceção temporária.** O Bedrock da conta
+   segue 403 para Sonnet 5, Opus 5 e Fable; a key direta tem acesso a todos.
+
+### Regras
+
+1. **Rota**: cada modelo do leaderboard roda pela API direta da própria
+   empresa. OpenRouter ou Bedrock só onde a rota direta não é viável, como
+   exceção declarada na entrada do registro (hoje: Qwen, sem acesso na
+   Alibaba; DeepSeek, primeira parte vetada pela política de privacidade da
+   conta, servido pela Fireworks; sonnet-4.6 e haiku-4.5 no Bedrock, por
+   continuidade do juiz).
+2. **Ids**: o id identifica o modelo (D13.1) e não muda com a rota. A rota
+   fica registrada por chamada em `versao_modelo` e no campo `rotas` do
+   leaderboard, o que satisfaz a D9 (provedores diferentes são medições
+   distintas e o leaderboard identifica o provedor).
+3. **Batch é transporte, não condição**: mesmo corpo de requisição, mesma
+   identidade de chamada e mesma chave de cache do síncrono; registrado por
+   chamada (`execucao: 'batch'`, `lote_id`) e separado no campo `rotas`
+   ("(batch)"). Só no modo seco. Escalada de orçamento e retomada seguem as
+   regras do síncrono (segundo lote para as cortadas; estado em
+   `lotes-<modelo>-<modo>.json`). O desconto (`FATOR_PRECO_BATCH`) entra no
+   custo registrado e é conferido na data da rodada.
+4. **Condições impostas pela rota são declaradas por modelo** (D13.2):
+   temperatura ausente (Claude 5, gpt-5.x/6), temperatura 1 (Kimi K3),
+   contagem de raciocínio (xAI, Gemini). Ficam no registro e na release.
+5. **Snapshot por baixo do alias**: quando a empresa troca o modelo sob o
+   mesmo nome (qwen3.8-max → 0902 em 05/set/2026), o id medido fica
+   congelado na release em que foi medido e o snapshot novo entra com id
+   próprio (D12 regra 3 + D13.1).
+6. **Numeração**: a próxima rodada oficial muda rota, transporte e elenco
+   de uma vez e quebra a comparabilidade com a v0.2.0. Ela sai como
+   **v0.3.0**, seguindo a série existente: em 0.x a D11 admite mudança de
+   metodologia sem MAJOR, e o zero à esquerda é justamente o aviso. A
+   entrada de release declara que a série recomeça nesta versão e não
+   compara notas com a v0.2.0 (fotografias datadas, D13.1). Decisão do time
+   em 16/set/2026.
+
+### Consequências
+
+- Registro reescrito (commit `e9d8c62`): rotas diretas, sete modelos novos
+  (gpt-6-astra, fable-5-1, gemini-38-flash, deepseek-flash-41,
+  qwen-38-max-0902, qwen-38-flash, muse-spark-13), aposentadorias
+  (deepseek-v4-flash-0731, kimi-k2.5), gpt-sol repreçado. Só os sucessores
+  entram no elenco; antecessores ativos ficam no registro para reprodução.
+- Caminho de execução em lote (commit `5fe8e53`).
+- A entrada da próxima release precisa listar: rota por modelo, batch por
+  modelo, condições declaradas, aposentados, custo real dos brutos do estudo
+  de agosto (grok e gemini direto) com a contagem corrigida.
+- Fora desta decisão: ativar Qwen na Alibaba, rever o veto ao DeepSeek,
+  concorrência por provedor.
+
+Decisão do time em 16/set/2026, a partir dos smokes de rota direta e de
+batch do mesmo dia.

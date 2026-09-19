@@ -64,9 +64,15 @@ código (ex.: EF01AR01, porque Arte no Fundamental numera por blocos de anos).
   ao bncc.dev via MCP em `https://mcp.bncc.dev/mcp`, ou tool-use na API REST
   onde MCP não for suportado; o mecanismo fica registrado por chamada).
   A rodada grounded é publicada como **estudo de intervenção**, à parte do
-  leaderboard, e roda pelas **APIs diretas** de cada empresa; condições que
-  a rota direta não permite (ex.: temperatura 0 em alguns modelos) são
-  declaradas por modelo no relatório (ver `DECISOES.md` D14 e D14.1).
+  leaderboard (ver `DECISOES.md` D14 e D14.1).
+- **Rota**: leaderboard e estudo rodam pelas **APIs diretas** de cada
+  empresa; agregador (OpenRouter) ou Bedrock só onde a rota direta não é
+  viável, como exceção declarada. A rota que serviu cada chamada fica
+  registrada nos brutos e no leaderboard. Condições que a rota direta não
+  permite (ex.: temperatura 0 em alguns modelos) são declaradas por modelo.
+  Onde a empresa oferece Batch API, a rodada seca pode ser executada em
+  lote: mesma requisição, transporte assíncrono, registrado por chamada
+  (ver `DECISOES.md` D15).
 - Abstenção honesta ("não tenho certeza") é categoria própria em todas as
   tarefas e é reportada positivamente: o benchmark premia calibração.
 - Orçamento de tokens por resposta: há um default por rodada e alguns modelos

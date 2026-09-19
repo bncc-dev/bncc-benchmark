@@ -28,7 +28,7 @@ esta seção — não é julgamento sobre o mérito técnico da contribuição.
 |---|---|
 | **Item com problema** (ambíguo, gabarito errado) | Abra uma **issue**, não um PR. Inclua o código do item, o valor observado × o esperado e a justificativa com fonte. Se procede, a correção entra na **próxima versão do banco de itens**, registrada em `DECISOES.md` e com novo congelamento. |
 | **Proposta de item novo** | Issue. Itens são gerados pelo pipeline (seed + gramáticas), não escritos à mão; a proposta orienta a próxima geração. |
-| **Modelo novo no leaderboard** | Issue. Entra em release MINOR, condicionado a rota estável (Bedrock/OpenRouter/direta) e custo. |
+| **Modelo novo no leaderboard** | Issue. Entra em release MINOR, condicionado a rota estável (direta da empresa; OpenRouter ou Bedrock como exceção declarada, ver `DECISOES.md` D15) e custo. |
 | **Harness, avaliador, exportadores, docs** | PR normal, com CI verde. Só não pode alterar notas de rodadas publicadas — o check de consistência do CI reprova automaticamente. |
 | **Dúvida de metodologia** | Leia `METODOLOGIA.md` e as respostas cruas em `resultados/`; tudo é público. Se a doc estiver confusa, isso vira um ótimo PR. |
 
