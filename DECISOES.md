@@ -450,8 +450,9 @@ leaderboard e acrescenta a execução em lote.
    e, quando impossível, declarável (D13.2).
 2. **A rota não muda a régua.** No smoke pareado de 16/set (30 itens, seis
    modelos nas duas rotas) foram 157 de 180 vereditos iguais. Na rodada
-   oficial, comparando os mesmos 300 itens de agosto e setembro, os modelos
-   que trocaram de rota variaram dentro da faixa dos que não trocaram: o
+   oficial, comparando os mesmos 300 itens de agosto e setembro (vereditos
+   novos projetados na escala da rubrica v1), os modelos que trocaram de
+   rota variaram perto da faixa dos que não trocaram: o
    piso de variação natural entre rodadas é 86% a 98% de concordância
    (sabiazinho-4 e haiku-bedrock, mesma rota), e quem trocou ficou entre 79%
    e 90%. Sete dos oito modelos comparáveis variaram menos de 3 pontos na
