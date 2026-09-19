@@ -22,11 +22,11 @@ dependendo do modelo.
 
 | # | Modelo | Nota | Texto fiel | Aceitou código falso |
 |---|---|---|---|---|
-| 1 | GPT-6 Astra · OpenAI | 94,6 | 88% | 3% |
-| 2 | Claude Fable 5.1 · Anthropic | 81,7 | 80% | 0% |
-| 3 | Muse Spark 1.3 · Meta | 79,3 | 73% | 10% |
-| 4 | Gemini 3.1 Pro · Google | 77,8 | 66% | 3% |
-| 5 | Claude Opus 5 · Anthropic | 76,6 | 71% | 4% |
+| 1 | GPT-6 Astra · OpenAI | 94,7 | 88% | 3% |
+| 2 | Claude Fable 5.1 · Anthropic | 81,8 | 80% | 0% |
+| 3 | Muse Spark 1.3 · Meta | 79,4 | 73% | 10% |
+| 4 | Gemini 3.1 Pro · Google | 78,0 | 67% | 3% |
+| 5 | Claude Opus 5 · Anthropic | 76,8 | 71% | 4% |
 
 *Nota* é a média de cinco dimensões (reconhecer códigos reais, recusar falsos,
 fidelidade do texto, lookup inverso e citação correta em geração aberta).
@@ -40,17 +40,19 @@ Os 19 modelos, todas as métricas e os exemplos estão em
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="resultados/oficial-seca-2026-09/site/dispersao-v0.3.0-escuro.svg">
-  <img alt="Dispersão dos 19 modelos: fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul. GPT-6 Astra aparece isolado no alto, com 88% de fidelidade e apenas 3% de aceitação de códigos falsos; Claude Fable 5.1 fica ao lado dele, com 80% de fidelidade e nenhuma aceitação; GPT-5.6 Luna tem fidelidade alta (75%) mas aceita 42% dos falsos; a maioria dos modelos se aglomera na faixa abaixo de 25% de fidelidade." src="resultados/oficial-seca-2026-09/site/dispersao-v0.3.0-claro.svg">
+  <img alt="Dispersão dos 19 modelos: fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul. GPT-6 Astra aparece isolado no alto, com 88% de fidelidade e apenas 3% de aceitação de códigos falsos; Claude Fable 5.1 fica ao lado dele, com 80% de fidelidade e nenhuma aceitação; GPT-5.6 Luna tem fidelidade alta (76%) mas aceita 42% dos falsos; a maioria dos modelos se aglomera na faixa abaixo de 25% de fidelidade." src="resultados/oficial-seca-2026-09/site/dispersao-v0.3.0-claro.svg">
 </picture>
 
 Duas leituras que o ranking sozinho não dá. **Acertar o texto e recusar
 invenções são habilidades distintas** — por isso os pontos se espalham em vez
 de formar uma diagonal. GPT-5.6 Luna e Claude Fable 5.1 reproduzem o texto
-oficial com fidelidade parecida (75% e 80%), mas o primeiro aceita 42% dos
-códigos inventados e o segundo, nenhum. E **recusar responder não é o mesmo
-que errar**: Claude Sonnet 5 e Claude Haiku 4.5 ficam no fim da tabela não
-por inventar, mas por abster-se em 46% e 41% das perguntas de texto — a nota
-premia quem acerta, e a abstenção é reportada à parte.
+oficial com fidelidade parecida (76% e 80%), mas o primeiro aceita 42% dos
+códigos inventados e o segundo, nenhum. E **não acertar não é tudo igual**: na
+tarefa de transcrever uma habilidade, o benchmark separa quem inventa texto,
+quem nega que o código exista e quem recusa responder. Claude Sonnet 5 e
+Claude Haiku 4.5 têm nota baixa, mas recusam 36% e 37% das perguntas em vez
+de inventar; Qwen 3.8 Flash, com nota parecida, inventa em 86%. A nota premia
+quem acerta; as outras taxas saem lado a lado.
 
 O gráfico é gerado a partir do leaderboard publicado
 (`pnpm exportar-grafico`), não desenhado à mão: ele não tem como divergir dos
@@ -73,11 +75,13 @@ parâmetros como temperatura eram traduzidos em silêncio, e o benchmark não
 tinha como saber.
 
 Esta release também corrigiu a rubrica do juiz. Até a v0.2.0, um modelo que
-recusava responder mas explicava o motivo era contado como se tivesse
-inventado texto. São 726 respostas nesta rodada, e a correção derrubou pela
-metade a taxa de alucinação dos modelos mais calibrados, sem mexer no
-ranking. As releases anteriores não são reescritas, e a ressalva está em
-[`RELEASES.md`](RELEASES.md).
+recusava responder, ou que negava que o código existisse, era contado como se
+tivesse inventado texto. Nesta rodada são 476 recusas e 207 negações em 5.016
+respostas — e 195 dessas negações são de Computação: vários modelos afirmam
+que "CO" não é componente da BNCC, porque não conhecem o complemento de 2022.
+A correção derrubou pela metade a taxa de alucinação dos modelos que recusam,
+quase sem mexer no ranking. As releases anteriores não são reescritas, e a
+ressalva está em [`RELEASES.md`](RELEASES.md).
 
 Metodologia completa em [`METODOLOGIA.md`](METODOLOGIA.md), decisões de desenho
 numeradas em [`DECISOES.md`](DECISOES.md), composição de cada release em
