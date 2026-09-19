@@ -3,7 +3,7 @@
 [![Validação](https://github.com/bncc-dev/bncc-benchmark/actions/workflows/validacao.yml/badge.svg)](https://github.com/bncc-dev/bncc-benchmark/actions/workflows/validacao.yml)
 [![Dados: CC BY 4.0](https://img.shields.io/badge/dados-CC%20BY%204.0-lightgrey.svg)](LICENSE-DADOS.md)
 [![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-green.svg)](LICENSE-CODIGO.md)
-[![Release: v0.2.0](https://img.shields.io/badge/release-v0.2.0-blue.svg)](RELEASES.md)
+[![Release: v0.3.0](https://img.shields.io/badge/release-v0.3.0-blue.svg)](RELEASES.md)
 
 Benchmark público de alucinação de LLMs sobre a BNCC (Base Nacional Comum
 Curricular). Mede, com metodologia aberta e dados brutos publicados, quanto os
@@ -11,22 +11,22 @@ modelos de linguagem inventam códigos e textos da BNCC quando respondem sem
 acesso à fonte estruturada, e quanto o problema desaparece com grounding via
 bncc.dev (MCP e API).
 
-A rodada `oficial-seca-2026-08` mediu **19 modelos × 900 respostas cada**, e as
+A rodada `oficial-seca-2026-09` mediu **19 modelos × 900 respostas cada**, e as
 17.100 respostas cruas estão neste repositório, uma a uma.
 
 ## Resultados
 
 Pergunte a um LLM o texto exato de uma habilidade da BNCC, sem dar acesso à
-fonte. A taxa de respostas fiéis ao texto oficial vai de **90% a 0%**,
+fonte. A taxa de respostas fiéis ao texto oficial vai de **88% a 3%**,
 dependendo do modelo.
 
 | # | Modelo | Nota | Texto fiel | Aceitou código falso |
 |---|---|---|---|---|
-| 1 | GPT-5.6 Sol · OpenAI | 86,4 | 90% | 25% |
-| 2 | Claude Fable 5 · Anthropic | 80,2 | 77% | 3% |
-| 3 | Gemini 3.1 Pro · Google | 76,0 | 61% | 4% |
-| 4 | Claude Opus 5 · Anthropic | 75,0 | 67% | 4% |
-| 5 | GPT-5.6 Luna · OpenAI | 73,8 | 75% | 43% |
+| 1 | GPT-6 Astra · OpenAI | 94,6 | 88% | 3% |
+| 2 | Claude Fable 5.1 · Anthropic | 81,7 | 80% | 0% |
+| 3 | Muse Spark 1.3 · Meta | 79,3 | 73% | 10% |
+| 4 | Gemini 3.1 Pro · Google | 77,8 | 66% | 3% |
+| 5 | Claude Opus 5 · Anthropic | 76,6 | 71% | 4% |
 
 *Nota* é a média de cinco dimensões (reconhecer códigos reais, recusar falsos,
 fidelidade do texto, lookup inverso e citação correta em geração aberta).
@@ -39,66 +39,45 @@ Os 19 modelos, todas as métricas e os exemplos estão em
 [`resultados/`](resultados/) e no leaderboard em [bncc.dev](https://bncc.dev).
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="resultados/oficial-seca-2026-08/site/dispersao-v0.2.0-escuro.svg">
-  <img alt="Dispersão dos 19 modelos: fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul. GPT-5.6 Sol aparece isolado no alto, com 90% de fidelidade, mas aceita 25% dos códigos falsos; Claude Fable 5, Gemini 3.1 Pro e Claude Opus 5 ficam à esquerda, entre 3% e 4% de aceitação; GPT-5.6 Luna tem fidelidade alta (75%) e aceita 43% dos falsos; a maioria dos modelos se aglomera na faixa abaixo de 25% de fidelidade." src="resultados/oficial-seca-2026-08/site/dispersao-v0.2.0-claro.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/oficial-seca-2026-09/site/dispersao-v0.3.0-escuro.svg">
+  <img alt="Dispersão dos 19 modelos: fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul. GPT-6 Astra aparece isolado no alto, com 88% de fidelidade e apenas 3% de aceitação de códigos falsos; Claude Fable 5.1 fica ao lado dele, com 80% de fidelidade e nenhuma aceitação; GPT-5.6 Luna tem fidelidade alta (75%) mas aceita 42% dos falsos; a maioria dos modelos se aglomera na faixa abaixo de 25% de fidelidade." src="resultados/oficial-seca-2026-09/site/dispersao-v0.3.0-claro.svg">
 </picture>
 
-Duas leituras que o ranking sozinho não dá. **Nota alta não significa modelo
-confiável**: o primeiro colocado ainda aceita 25% dos códigos falsos como
-reais. E **acertar o texto e recusar invenções são habilidades distintas** —
-por isso os pontos se espalham em vez de formar uma diagonal. GPT-5.6 Luna e
-Claude Fable 5 reproduzem o texto oficial com fidelidade parecida (75% e 77%),
-mas o primeiro aceita 43% dos códigos inventados e o segundo, 3% — quatorze
-vezes menos, com a mesma competência de texto.
+Duas leituras que o ranking sozinho não dá. **Acertar o texto e recusar
+invenções são habilidades distintas** — por isso os pontos se espalham em vez
+de formar uma diagonal. GPT-5.6 Luna e Claude Fable 5.1 reproduzem o texto
+oficial com fidelidade parecida (75% e 80%), mas o primeiro aceita 42% dos
+códigos inventados e o segundo, nenhum. E **recusar responder não é o mesmo
+que errar**: Claude Sonnet 5 e Claude Haiku 4.5 ficam no fim da tabela não
+por inventar, mas por abster-se em 46% e 41% das perguntas de texto — a nota
+premia quem acerta, e a abstenção é reportada à parte.
 
 O gráfico é gerado a partir do leaderboard publicado
 (`pnpm exportar-grafico`), não desenhado à mão: ele não tem como divergir dos
 números da tabela.
 
-## Um mês depois: o que mudou entre as rodadas
+## Por que esta rodada recomeça a série
 
-A rodada de julho (v0.1.0) mediu 17 modelos; a de agosto, 19. Comparar as duas
-exige separar três situações diferentes — o identificador de um modelo designa
-**aquele modelo**, não uma vaga no elenco, então "o kimi melhorou" seria uma
-leitura errada quando o que houve foi troca de geração (ver `DECISOES.md` D13).
+A rodada de setembro (v0.3.0) mudou três coisas ao mesmo tempo: passou a
+chamar **as APIs diretas de cada empresa** em vez de um agregador, passou a
+usar **execução em lote** em sete modelos, e renovou sete vagas do elenco.
+Por isso **as notas não são comparáveis com a v0.2.0**, e o leaderboard
+recomeça aqui como a primeira fotografia da série nova (ver `DECISOES.md`
+D15 e a entrada da release).
 
-**Mesmo modelo, mesma condição.** Nove modelos foram remedidos do zero, com
-chamadas novas:
+A rota direta não muda a régua, e isso foi medido: nos mesmos 300 itens, os
+modelos que trocaram de rota concordaram com a medição anterior entre 79% e
+90% dos vereditos, dentro da faixa dos que **não** trocaram (86% a 98%). O
+que a rota direta muda é a fidelidade do que chega ao modelo: pelo agregador,
+parâmetros como temperatura eram traduzidos em silêncio, e o benchmark não
+tinha como saber.
 
-| Modelo | Julho | Agosto | Δ |
-|---|---|---|---|
-| GPT-5.6 Sol | 89,2 | 86,4 | −2,8 |
-| GPT-5.6 Luna | 75,3 | 73,8 | −1,5 |
-| Gemini 3.1 Pro | 77,0 | 76,0 | −1,1 |
-| Claude Fable 5 | 81,3 | 80,2 | −1,0 |
-| Sabiá-4 · Sonnet 5 · Sonnet 4.6 · Haiku 4.5 | — | — | ±0,1 |
-| Sabiazinho-4 | 27,3 | 29,1 | +1,8 |
-
-Todos dentro de ±3 pontos, quatro deles dentro de ±0,1. **É o resultado mais
-importante desta comparação**: um mês depois, com cache novo e chamadas
-frescas, a régua dá a mesma medida. Sem isso, nenhuma das outras comparações
-significaria nada.
-
-**Geração nova na mesma vaga.** Aqui são modelos diferentes, e a diferença
-mede o que a empresa entregou na versão seguinte:
-
-| Vaga | Julho | Agosto | Δ |
-|---|---|---|---|
-| Google econômico | Gemini 3.5 Flash · 41,4 | Gemini 3.7 Flash · 70,9 | **+29,5** |
-| Anthropic topo | Claude Opus 4.8 · 45,7 | Claude Opus 5 · 75,0 | **+29,3** |
-| Moonshot topo | Kimi K2.6 · 30,4 | Kimi K3 · 43,8 | +13,5 |
-| xAI topo | Grok 4.5 · 48,0 | Grok 4.6 · 54,5 | +6,6 |
-| Alibaba topo | Qwen 3.7 Max · 44,3 | Qwen 3.8 Max · 43,0 | −1,3 |
-
-Duas gerações novas saltaram ~30 pontos em um mês; uma andou para trás. Não há
-tendência única — depende da empresa.
-
-**Entrantes**: Muse Spark 1.2 (Meta) estreia em 7º com 70,6; Qwen 3.7 Flash
-entra em 19º com 27,3.
-
-Ficam de fora da comparação os três modelos cuja *condição de medição* mudou
-junto (snapshot datado ou orçamento de tokens): DeepSeek V4 Pro, V4 Flash e
-Qwen 3.7 Plus. As ressalvas estão em [`RELEASES.md`](RELEASES.md).
+Esta release também corrigiu a rubrica do juiz. Até a v0.2.0, um modelo que
+recusava responder mas explicava o motivo era contado como se tivesse
+inventado texto. São 726 respostas nesta rodada, e a correção derrubou pela
+metade a taxa de alucinação dos modelos mais calibrados, sem mexer no
+ranking. As releases anteriores não são reescritas, e a ressalva está em
+[`RELEASES.md`](RELEASES.md).
 
 Metodologia completa em [`METODOLOGIA.md`](METODOLOGIA.md), decisões de desenho
 numeradas em [`DECISOES.md`](DECISOES.md), composição de cada release em
