@@ -1,0 +1,109 @@
+{
+ "rodada": "smoke-batch-2026-09",
+ "gerado_em": "2026-09-16T21:01:10.923Z",
+ "dataset_versao": "dados-2026.07",
+ "itens_versao": "v1",
+ "por_modelo": {
+  "gemini-38-flash": {
+   "modo": {
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 2,
+       "veredito:inventado": 1,
+       "veredito:parcial": 1
+      },
+      "B": {
+       "total": 2,
+       "veredito:correto": 2,
+       "tipo:real:correto": 2
+      },
+      "C": {
+       "total": 2,
+       "veredito:avaliado": 2,
+       "codigos_citados": 10,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 9,
+       "texto:divergente": 1
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 4,
+       "alucinacoes": 1
+      },
+      "etapa:EM": {
+       "total": 2,
+       "alucinacoes": 1
+      },
+      "computacao-2022": {
+       "total": 2,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 2,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 2,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 6
+    }
+   }
+  },
+  "sonnet-5": {
+   "modo": {
+    "seco": {
+     "tarefas": {
+      "A": {
+       "total": 2,
+       "veredito:inventado": 2
+      },
+      "B": {
+       "total": 2,
+       "veredito:incorreto": 2,
+       "tipo:real:incorreto": 2
+      },
+      "C": {
+       "total": 2,
+       "veredito:avaliado": 2,
+       "codigos_citados": 10,
+       "codigos_inventados": 0,
+       "codigos_forma_invalida": 0,
+       "codigos_fora_escopo": 0,
+       "texto:ok": 8,
+       "texto:divergente": 2
+      }
+     },
+     "estratos": {
+      "bncc-2018": {
+       "total": 4,
+       "alucinacoes": 2
+      },
+      "etapa:EM": {
+       "total": 2,
+       "alucinacoes": 2
+      },
+      "computacao-2022": {
+       "total": 2,
+       "alucinacoes": 0
+      },
+      "etapa:EF": {
+       "total": 2,
+       "alucinacoes": 0
+      },
+      "etapa:EI": {
+       "total": 2,
+       "alucinacoes": 0
+      }
+     },
+     "total_julgamentos": 6
+    }
+   }
+  }
+ }
+}

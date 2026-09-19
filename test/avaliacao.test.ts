@@ -197,7 +197,7 @@ describe('cenários da revisão pré-bateria', () => {
   });
 
   it('todo julgamento carimba a versão do avaliador', () => {
-    expect(julgar(itemBReal, registroCom(itemBReal, 'Sim.')).avaliador_versao).toBe('2');
+    expect(julgar(itemBReal, registroCom(itemBReal, 'Sim.')).avaliador_versao).toBe('3');
   });
 });
 

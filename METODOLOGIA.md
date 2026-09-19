@@ -64,9 +64,15 @@ código (ex.: EF01AR01, porque Arte no Fundamental numera por blocos de anos).
   ao bncc.dev via MCP em `https://mcp.bncc.dev/mcp`, ou tool-use na API REST
   onde MCP não for suportado; o mecanismo fica registrado por chamada).
   A rodada grounded é publicada como **estudo de intervenção**, à parte do
-  leaderboard, e roda pelas **APIs diretas** de cada empresa; condições que
-  a rota direta não permite (ex.: temperatura 0 em alguns modelos) são
-  declaradas por modelo no relatório (ver `DECISOES.md` D14 e D14.1).
+  leaderboard (ver `DECISOES.md` D14 e D14.1).
+- **Rota**: leaderboard e estudo rodam pelas **APIs diretas** de cada
+  empresa; agregador (OpenRouter) ou Bedrock só onde a rota direta não é
+  viável, como exceção declarada. A rota que serviu cada chamada fica
+  registrada nos brutos e no leaderboard. Condições que a rota direta não
+  permite (ex.: temperatura 0 em alguns modelos) são declaradas por modelo.
+  Onde a empresa oferece Batch API, a rodada seca pode ser executada em
+  lote: mesma requisição, transporte assíncrono, registrado por chamada
+  (ver `DECISOES.md` D15).
 - Abstenção honesta ("não tenho certeza") é categoria própria em todas as
   tarefas e é reportada positivamente: o benchmark premia calibração.
 - Orçamento de tokens por resposta: há um default por rodada e alguns modelos
@@ -83,9 +89,25 @@ código (ex.: EF01AR01, porque Arte no Fundamental numera por blocos de anos).
 
 - Tarefas B e D: verificação programática contra o gabarito.
 - Tarefas A e C: pré-filtro por normalização de texto (casos triviais);
-  casos não triviais vão a um juiz LLM com rubrica fechada ("mesmo conteúdo
-  pedagógico? sim / não / parcial"), com prompt versionado neste repositório.
-  O juiz é validado contra uma amostra julgada por humanos (Equipe Pedagógica
+  casos não triviais vão a um juiz LLM com rubrica fechada, com prompt
+  versionado neste repositório (`harness/prompts/juiz.ts`). Desde a
+  rubrica-v3 (v0.3.0) o juiz decide em ordem: se o modelo **atribuiu um
+  texto** à aprendizagem, mesmo com ressalvas, julga o conteúdo pedagógico
+  (sim / parcial / não); se não atribuiu e **negou** que o código exista,
+  é *negação*; se não atribuiu e apenas declarou não saber, é *abstenção*.
+  Uma guarda programática impede que texto atribuído com ressalva passe por
+  abstenção: o trecho candidato é julgado sozinho por fidelidade.
+- Na tarefa A, portanto, cada resposta cai em uma de cinco situações:
+  **fiel** (exata ou paráfrase), **parcial**, **alucinação** (texto
+  inventado ou de outra aprendizagem), **negação** de um código real e
+  **abstenção** honesta. Só a fidelidade entra na nota; as demais taxas são
+  reportadas lado a lado, porque errar com confiança, negar e recusar são
+  comportamentos diferentes.
+- As rubricas v1 (releases v0.1.0, v0.2.0 e estudo-fonte-v0.1.0) só
+  ofereciam sim / parcial / não: recusas e negações com algum contexto
+  eram contadas como alucinação. Essas releases não são reescritas; a
+  ressalva está na entrada da v0.3.0 em `RELEASES.md`.
+- O juiz é validado contra uma amostra julgada por humanos (Equipe Pedagógica
   Profy, revisora nomeada do dataset); a taxa de concordância é publicada.
 
 ## Reprodutibilidade

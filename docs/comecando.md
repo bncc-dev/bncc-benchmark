@@ -40,6 +40,7 @@ pnpm agregar --rodada smoke --verificar                    # o mesmo check de co
 Os artefatos saem em `resultados/<rodada>/`: respostas brutas em JSONL, julgamentos (`juiz.jsonl`), agregados e manifesto com versão do dataset e checksums.
 
 - **Retomada por cache**: execução interrompida pode ser reinvocada com o mesmo comando; respostas já obtidas não são refeitas.
+- **Execução em lote**: modelos com `batch` no registro (OpenAI, Anthropic e Google pela rota direta) aceitam `--execucao batch`, que submete os pedidos à Batch API da empresa por metade do preço. O comando não espera: submete e sai com código 2; rode-o de novo para consultar e coletar (a fila leva de minutos a horas, no máximo 24 h). Só no modo seco. Para esperar sem ficar de olho: `until pnpm executar --rodada r --modelos m --execucao batch; do sleep 600; done`.
 - **Custo**: a rodada smoke acima custa centavos. A bateria oficial completa (17 modelos × 300 itens × repetições) custou ~US$ 115 — não rode sem querer.
 
 ## O que NÃO fazer

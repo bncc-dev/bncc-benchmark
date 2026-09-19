@@ -12,6 +12,7 @@
 import { URL_MCP } from '../lib/mcp-cliente.js';
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
+import { TIMEOUT_PADRAO_MS } from './tipos.js';
 
 interface Passo {
   type: string;
@@ -50,7 +51,7 @@ export function criarProvedorGoogleInteractions(def: DefModelo, key: string): Pr
 
       const resposta = await fetch(URL_API, {
         method: 'POST',
-        signal: AbortSignal.timeout(300_000),
+        signal: AbortSignal.timeout(def.timeoutMs ?? TIMEOUT_PADRAO_MS),
         headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
         body: JSON.stringify(corpo),
       });
@@ -79,8 +80,11 @@ export function criarProvedorGoogleInteractions(def: DefModelo, key: string): Pr
       // Resultados de tool entram no contexto do modelo: contam como entrada
       // (mesma convenção do mcp-loop, onde voltam como mensagens de tool).
       const entrada = (dados.usage?.total_input_tokens ?? 0) + (dados.usage?.total_tool_use_tokens ?? 0);
-      const saida = dados.usage?.total_output_tokens ?? 0;
+      // total_output_tokens NÃO inclui os pensamentos (sondagem de 16/set/2026:
+      // 152 de saída, 722 de pensamento, 892 no total), que são cobrados como
+      // saída: a saída registrada é a soma (convenção de tipos.ts).
       const reasoning = dados.usage?.total_thought_tokens;
+      const saida = (dados.usage?.total_output_tokens ?? 0) + (reasoning ?? 0);
 
       return {
         texto,

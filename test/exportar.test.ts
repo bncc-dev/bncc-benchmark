@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { calcularMetricas, montarExport } from '../harness/lib/exportar.js';
+import { calcularMetricas, montarExport, recorteA } from '../harness/lib/exportar.js';
 import type { BancoItens, Item, Julgamento, RegistroBruto } from '../harness/lib/tipos.js';
 
 function julgamento(parcial: Partial<Julgamento>): Julgamento {
@@ -111,5 +111,54 @@ describe('montarExport', () => {
     expect(exp.meta.total_respostas).toBe(1);
     expect(exp.meta.custo_total_usd).toBe(0.01);
     expect(exp.amostras.length).toBeGreaterThan(0);
+  });
+
+  it('negação de código real na A fica fora de fidelidade, alucinação e abstenção', () => {
+    const base = { item_id: 'a-001', modelo: 'm1', tarefa: 'A' as const, tipo: 'real' as const };
+    const m = calcularMetricas(
+      [
+        julgamento({ ...base, parafrase: 0, veredito: 'negacao' }),
+        julgamento({ ...base, parafrase: 1, veredito: 'abstencao' }),
+        julgamento({ ...base, parafrase: 2, veredito: 'inventado' }),
+        julgamento({ ...base, item_id: 'a-002', parafrase: 0, veredito: 'fiel_exato' }),
+      ],
+      0,
+    );
+    expect(m.a_negacao).toBeCloseTo(0.25);
+    expect(m.a_abstencao).toBeCloseTo(0.25);
+    expect(m.a_aluc).toBeCloseTo(0.25);
+    expect(m.a_fiel).toBeCloseTo(0.25);
+  });
+
+  it('recorteA reporta alucinação, fidelidade, negação e abstenção com o mesmo denominador', () => {
+    const base = { modelo: 'm1', tarefa: 'A' as const, tipo: 'real' as const, parafrase: 0 };
+    const js = [
+      julgamento({ ...base, item_id: 'a-1', veredito: 'inventado' }),
+      julgamento({ ...base, item_id: 'a-2', veredito: 'negacao' }),
+      julgamento({ ...base, item_id: 'a-3', veredito: 'abstencao' }),
+      julgamento({ ...base, item_id: 'a-4', veredito: 'fiel_exato' }),
+      julgamento({ ...base, item_id: 'a-5', veredito: 'parcial' }),
+      julgamento({ ...base, item_id: 'a-6', veredito: 'resposta_invalida' }), // fora do denominador
+    ];
+    const [linha] = recorteA(js, () => 'Computação 2022');
+    expect(linha).toMatchObject({ rotulo: 'Computação 2022' });
+    expect(linha.taxa).toBeCloseTo(0.2);
+    expect(linha.negacao).toBeCloseTo(0.2);
+    expect(linha.abstencao).toBeCloseTo(0.2);
+    expect(linha.fiel).toBeCloseTo(0.2);
+  });
+
+  it('rotas separa o transporte batch do síncrono para a mesma versão servida', () => {
+    const js = [julgamento({ item_id: 'b-001', modelo: 'm1', tarefa: 'B', tipo: 'real', veredito: 'correto' })];
+    const exp = montarExport({
+      rodada: 'r',
+      versao: 'v9.9.9',
+      banco,
+      itens: new Map([[item.id, item]]),
+      julgados: js,
+      brutos: new Map([['m1', [bruto, { ...bruto, parafrase: 1, execucao: 'batch', lote_id: 'L1' }]]]),
+      apresentacao: { m1: { nome: 'Modelo Um', empresa: 'ACME', tier: 'econômico' } },
+    });
+    expect(exp.modelos[0].rotas).toEqual({ 'm1-v': 1, 'm1-v (batch)': 1 });
   });
 });

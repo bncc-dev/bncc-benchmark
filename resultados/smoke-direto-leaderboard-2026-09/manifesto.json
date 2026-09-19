@@ -1,0 +1,604 @@
+{
+ "rodada": "smoke-direto-leaderboard-2026-09",
+ "execucoes": [
+  {
+   "executado_em": "2026-09-16T12:34:31.141Z",
+   "modo": "seco",
+   "harness_commit": "ead7fdd",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-sol-direto-raciocinio",
+     "def": {
+      "id": "gpt-sol-direto-raciocinio",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.007944,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "opus-5-mcp",
+     "def": {
+      "id": "opus-5-mcp",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 5,
+       "saida": 25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.039235,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "fable-5-mcp",
+     "def": {
+      "id": "fable-5-mcp",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 10,
+       "saida": 50
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.02922,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-pro-direto",
+     "def": {
+      "id": "gemini-pro-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gemini-3.1-pro-preview",
+      "envKey": "GEMINI_API_KEY",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "precos": {
+       "entrada": 2,
+       "saida": 12
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.00067,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "grok-46-direto",
+     "def": {
+      "id": "grok-46-direto",
+      "provedor": "openai-compat",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 0,
+      "do_cache": 1,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "kimi-k3-direto",
+     "def": {
+      "id": "kimi-k3-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "kimi-k3",
+      "envKey": "MOONSHOT_API_KEY",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "corpoExtra": {
+       "temperature": 1
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 0,
+      "do_cache": 1,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-09-16T12:36:19.679Z",
+   "modo": "seco",
+   "harness_commit": "ead7fdd",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 30,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-sol-direto-raciocinio",
+     "def": {
+      "id": "gpt-sol-direto-raciocinio",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "gpt-5.6-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 29,
+      "do_cache": 1,
+      "custo_usd": 0.347576,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "opus-5-mcp",
+     "def": {
+      "id": "opus-5-mcp",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 5,
+       "saida": 25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 29,
+      "do_cache": 1,
+      "custo_usd": 0.991215,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "fable-5-mcp",
+     "def": {
+      "id": "fable-5-mcp",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 10,
+       "saida": 50
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 29,
+      "do_cache": 1,
+      "custo_usd": 1.09278,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-pro-direto",
+     "def": {
+      "id": "gemini-pro-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gemini-3.1-pro-preview",
+      "envKey": "GEMINI_API_KEY",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "precos": {
+       "entrada": 2,
+       "saida": 12
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 29,
+      "do_cache": 1,
+      "custo_usd": 0.040932,
+      "incompletas": 1
+     }
+    },
+    {
+     "id": "grok-46-direto",
+     "def": {
+      "id": "grok-46-direto",
+      "provedor": "openai-compat",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 0,
+      "do_cache": 30,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "kimi-k3-direto",
+     "def": {
+      "id": "kimi-k3-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "kimi-k3",
+      "envKey": "MOONSHOT_API_KEY",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "corpoExtra": {
+       "temperature": 1
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 0,
+      "do_cache": 30,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gpt-sol",
+     "def": {
+      "id": "gpt-sol",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "openai/gpt-5.6-sol",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "OpenAI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 5,
+       "saida": 30
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 0,
+      "do_cache": 30,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "opus-5",
+     "def": {
+      "id": "opus-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "openai-compat",
+      "modelo": "anthropic/claude-opus-5",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Amazon Bedrock"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 5,
+       "saida": 25
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 0,
+      "do_cache": 30,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "fable-5",
+     "def": {
+      "id": "fable-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "anthropic/claude-fable-5",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Anthropic"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 10,
+       "saida": 50
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 0,
+      "do_cache": 30,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-pro",
+     "def": {
+      "id": "gemini-pro",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "google/gemini-3.1-pro-preview",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Google"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 2,
+       "saida": 12
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 0,
+      "do_cache": 30,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "grok-46",
+     "def": {
+      "id": "grok-46",
+      "provedor": "openai-compat",
+      "modelo": "x-ai/grok-4.6",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "xAI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 30,
+      "do_cache": 0,
+      "custo_usd": 0.520564,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "kimi-k3",
+     "def": {
+      "id": "kimi-k3",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "moonshotai/kimi-k3",
+      "envKey": "OPENROUTER_API_KEY",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "corpoExtra": {
+       "provider": {
+        "order": [
+         "Moonshot AI"
+        ],
+        "allow_fallbacks": false
+       }
+      },
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 30,
+      "do_cache": 0,
+      "custo_usd": 1.019553,
+      "incompletas": 0
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-09-16T13:44:57.395Z",
+   "modo": "seco",
+   "harness_commit": "ead7fdd",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 30,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "grok-46-direto",
+     "def": {
+      "id": "grok-46-direto",
+      "provedor": "openai-compat",
+      "modelo": "grok-4.6",
+      "envKey": "XAI_API_KEY",
+      "baseUrl": "https://api.x.ai/v1",
+      "contagemRaciocinio": "fora-da-saida",
+      "precos": {
+       "entrada": 2,
+       "saida": 6
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 30,
+      "do_cache": 0,
+      "custo_usd": 0.488824,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "gemini-pro-direto",
+     "def": {
+      "id": "gemini-pro-direto",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gemini-3.1-pro-preview",
+      "envKey": "GEMINI_API_KEY",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "contagemRaciocinio": "nao-informado",
+      "precos": {
+       "entrada": 2,
+       "saida": 12
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 30,
+      "chamadas_novas": 30,
+      "do_cache": 0,
+      "custo_usd": 0.665254,
+      "incompletas": 1
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": [
+  {
+   "avaliado_em": "2026-09-16T13:09:40.057Z",
+   "harness_commit": "ead7fdd",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 360,
+   "pendentes_a": 50,
+   "pendentes_c": 167,
+   "juiz_chamadas": 217,
+   "juiz_custo_usd": 0.041712
+  },
+  {
+   "avaliado_em": "2026-09-16T13:54:59.826Z",
+   "harness_commit": "0717509",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 360,
+   "pendentes_a": 50,
+   "pendentes_c": 173,
+   "juiz_chamadas": 223,
+   "juiz_custo_usd": 0.010026
+  }
+ ]
+}

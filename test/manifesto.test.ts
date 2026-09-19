@@ -24,8 +24,8 @@ function entrada(momento: string): EntradaExecucao {
     itens_versao: 'v1',
     modelos: [
       {
-        id: 'gpt-sol',
-        def: MODELOS['gpt-sol'],
+        id: 'qwen-38-max-0902',
+        def: MODELOS['qwen-38-max-0902'],
         resultado: { registros: 9, chamadas_novas: 9, do_cache: 0, custo_usd: 0.1, incompletas: 0 },
       },
     ],
@@ -56,7 +56,7 @@ describe('manifesto da rodada', () => {
     expect(m.avaliacoes).toHaveLength(1);
     // Auditoria dos pins: a def registrada carrega o corpoExtra do momento.
     expect(m.execucoes[0].modelos[0].def.corpoExtra).toEqual({
-      provider: { order: ['OpenAI'], allow_fallbacks: false },
+      provider: { order: ['Alibaba'], allow_fallbacks: false },
     });
     expect(m.execucoes[0].executado_em).toBe('2026-07-15T10:00:00Z');
     expect(m.execucoes[1].executado_em).toBe('2026-07-15T11:00:00Z');

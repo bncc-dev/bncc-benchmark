@@ -1,0 +1,189 @@
+{
+ "rodada": "smoke-batch-2026-09",
+ "execucoes": [
+  {
+   "executado_em": "2026-09-16T18:45:11.426Z",
+   "modo": "seco",
+   "harness_commit": "5fe8e53",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 3,
+    "parafrases": 2,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gemini-38-flash",
+     "def": {
+      "id": "gemini-38-flash",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-3.8-flash",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 0.75,
+       "saida": 3.75
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 6,
+      "chamadas_novas": 3,
+      "do_cache": 3,
+      "custo_usd": 0.020098,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/empgsh5r5m4dxuq8jliwpi8jyse5vy2bt4i7",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-09-16T18:39:06.681Z",
+        "coletado_em": "2026-09-16T18:45:13.221Z",
+        "contagens": {
+         "total": 3,
+         "concluidos": 3,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5",
+     "def": {
+      "id": "sonnet-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 6,
+      "chamadas_novas": 3,
+      "do_cache": 3,
+      "custo_usd": 0.007103,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01CoV6dmxugC92g8seAczS4o",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-09-16T18:39:10.750Z",
+        "coletado_em": "2026-09-16T18:45:14.472Z",
+        "contagens": {
+         "total": 3,
+         "concluidos": 3,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-09-16T18:48:12.780Z",
+   "modo": "seco",
+   "harness_commit": "5fe8e53",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 3,
+    "parafrases": 2,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "sincrona"
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gemini-38-flash",
+     "def": {
+      "id": "gemini-38-flash",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-3.8-flash",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 0.75,
+       "saida": 3.75
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 6,
+      "chamadas_novas": 0,
+      "do_cache": 6,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    },
+    {
+     "id": "sonnet-5",
+     "def": {
+      "id": "sonnet-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 6,
+      "chamadas_novas": 0,
+      "do_cache": 6,
+      "custo_usd": 0,
+      "incompletas": 0
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": [
+  {
+   "avaliado_em": "2026-09-16T21:01:10.502Z",
+   "harness_commit": "956439a",
+   "avaliador_versao": "2",
+   "rubrica_versao": "rubrica-v1",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 12,
+   "pendentes_a": 4,
+   "pendentes_c": 4,
+   "juiz_chamadas": 8,
+   "juiz_custo_usd": 0.002075
+  }
+ ]
+}

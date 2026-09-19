@@ -1,0 +1,59 @@
+{
+ "versao": 1,
+ "modelo": "sonnet-5",
+ "modo": "seco",
+ "api": "anthropic",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 3,
+  "parafrases": 2,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 4096,
+   "remoto": {
+    "id": "msgbatch_01CoV6dmxugC92g8seAczS4o",
+    "extras": {
+     "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_01CoV6dmxugC92g8seAczS4o/results"
+    }
+   },
+   "submetido_em": "2026-09-16T18:39:10.750Z",
+   "ultimo_estado": {
+    "em": "2026-09-16T18:45:14.099Z",
+    "bruto": "ended",
+    "contagens": {
+     "total": 3,
+     "concluidos": 3,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-09-16T18:45:14.472Z"
+  }
+ ],
+ "pedidos": {
+  "a-001-p1": {
+   "item_id": "a-001",
+   "parafrase": 1,
+   "chave": "2cf2bf92ec01eb92c31cf77b99375a39b978845932910afb733009174fb92f01",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-001-p1": {
+   "item_id": "b-001",
+   "parafrase": 1,
+   "chave": "492bb3e79ddf894149ee7ba3cf626ff5ab360fc0154248795d9ec02cfa5b4152",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-001-p1": {
+   "item_id": "c-001",
+   "parafrase": 1,
+   "chave": "3cf9a4a78b664a6b905940ba9be73017a0f8663fd5d9a0415f4fe4d27e56dff4",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}

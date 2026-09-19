@@ -30,6 +30,8 @@ export interface MetricasModelo {
   a_fiel: number;
   a_aluc: number;
   a_abstencao: number;
+  /** Tarefa A: negou a existência de um código real, sem atribuir texto (rubrica-v3). Informativo, fora da nota. */
+  a_negacao: number;
   d_ok: number;
   c_inventados: number;
   c_texto_ok: number;
@@ -75,7 +77,16 @@ export interface AmostraCrua {
 
 export interface RecorteLinha {
   rotulo: string;
+  /** Taxa de alucinação na tarefa A (inventado + texto_de_outra). */
   taxa: number;
+  /**
+   * Demais saídas da tarefa A no mesmo recorte e com o mesmo denominador (a
+   * partir da v0.3.0, rubrica-v3). Opcionais para que exports antigos sigam
+   * válidos. Com `parcial`, as quatro somam 1.
+   */
+  fiel?: number;
+  negacao?: number;
+  abstencao?: number;
 }
 
 export interface ExportSite {
@@ -89,6 +100,8 @@ export interface ExportSite {
     total_respostas: number;
     total_modelos: number;
     abstencoes_a: number;
+    /** Tarefa A: negações de código real (rubrica-v3). */
+    negacoes_a: number;
     medido_em: string;
     custo_total_usd: number;
   };
@@ -111,6 +124,7 @@ interface Contadores {
   a_fiel: number;
   a_aluc: number;
   a_abst: number;
+  a_neg: number;
   a_n: number;
   d_ok: number;
   d_n: number;
@@ -123,7 +137,7 @@ interface Contadores {
 function contar(julgados: Julgamento[]): Contadores {
   const c: Contadores = {
     br_ok: 0, br_n: 0, limpo_aceito: 0, limpo_n: 0, deriv_aceito: 0, deriv_n: 0,
-    a_fiel: 0, a_aluc: 0, a_abst: 0, a_n: 0, d_ok: 0, d_n: 0,
+    a_fiel: 0, a_aluc: 0, a_abst: 0, a_neg: 0, a_n: 0, d_ok: 0, d_n: 0,
     c_citados: 0, c_inventados: 0, c_texto_ok: 0, invalidas: 0,
   };
   for (const j of julgados) {
@@ -151,6 +165,7 @@ function contar(julgados: Julgamento[]): Contadores {
       if (j.veredito === 'fiel_exato' || j.veredito === 'fiel_parafrase') c.a_fiel++;
       else if (j.veredito === 'inventado' || j.veredito === 'texto_de_outra') c.a_aluc++;
       else if (j.veredito === 'abstencao') c.a_abst++;
+      else if (j.veredito === 'negacao') c.a_neg++;
     } else if (j.tarefa === 'D') {
       c.d_n++;
       if (j.veredito === 'correto') c.d_ok++;
@@ -182,6 +197,7 @@ export function calcularMetricas(julgados: Julgamento[], custoUsd: number): Metr
     a_fiel: pct(c.a_fiel, c.a_n),
     a_aluc: pct(c.a_aluc, c.a_n),
     a_abstencao: pct(c.a_abst, c.a_n),
+    a_negacao: pct(c.a_neg, c.a_n),
     d_ok: pct(c.d_ok, c.d_n),
     c_inventados: pct(c.c_inventados, c.c_citados),
     c_texto_ok: pct(c.c_texto_ok, c.c_citados),
@@ -191,20 +207,33 @@ export function calcularMetricas(julgados: Julgamento[], custoUsd: number): Metr
   };
 }
 
-/** Taxa de alucinação na tarefa A (inventado + texto_de_outra), no recorte dado. */
-function recorteA(julgados: Julgamento[], grupo: (j: Julgamento) => string | null): RecorteLinha[] {
-  const acc = new Map<string, { aluc: number; n: number }>();
+/**
+ * Saídas da tarefa A no recorte dado: alucinação (`taxa`), fidelidade,
+ * negação e abstenção, todas sobre as respostas A válidas do recorte.
+ * Exportado para teste.
+ */
+export function recorteA(julgados: Julgamento[], grupo: (j: Julgamento) => string | null): RecorteLinha[] {
+  const acc = new Map<string, { aluc: number; fiel: number; neg: number; abst: number; n: number }>();
   for (const j of julgados) {
     if (j.tarefa !== 'A' || j.veredito === 'resposta_invalida') continue;
     const chave = grupo(j);
     if (!chave) continue;
-    const g = acc.get(chave) ?? { aluc: 0, n: 0 };
+    const g = acc.get(chave) ?? { aluc: 0, fiel: 0, neg: 0, abst: 0, n: 0 };
     g.n++;
     if (j.veredito === 'inventado' || j.veredito === 'texto_de_outra') g.aluc++;
+    else if (j.veredito === 'fiel_exato' || j.veredito === 'fiel_parafrase') g.fiel++;
+    else if (j.veredito === 'negacao') g.neg++;
+    else if (j.veredito === 'abstencao') g.abst++;
     acc.set(chave, g);
   }
   return [...acc.entries()]
-    .map(([rotulo, g]) => ({ rotulo, taxa: pct(g.aluc, g.n) }))
+    .map(([rotulo, g]) => ({
+      rotulo,
+      taxa: pct(g.aluc, g.n),
+      fiel: pct(g.fiel, g.n),
+      negacao: pct(g.neg, g.n),
+      abstencao: pct(g.abst, g.n),
+    }))
     .sort((a, b) => a.taxa - b.taxa);
 }
 
@@ -435,7 +464,11 @@ export function montarExport(entrada: EntradaExport): ExportSite {
       const custo = registros.reduce((s, r) => s + r.custo_usd, 0);
       const metricas = calcularMetricas(js, custo);
       const rotas: Record<string, number> = {};
-      for (const r of registros) rotas[r.versao_modelo] = (rotas[r.versao_modelo] ?? 0) + 1;
+      for (const r of registros) {
+        // Batch é transporte distinto (fila, 50% do preço): aparece separado na rota.
+        const rota = r.execucao === 'batch' ? `${r.versao_modelo} (batch)` : r.versao_modelo;
+        rotas[rota] = (rotas[rota] ?? 0) + 1;
+      }
       return {
         id,
         posicao: 0,
@@ -467,6 +500,7 @@ export function montarExport(entrada: EntradaExport): ExportSite {
       total_modelos: modelos.length,
       abstencoes_a: julgadosElenco.filter((j) => j.tarefa === 'A' && j.veredito === 'abstencao')
         .length,
+      negacoes_a: julgadosElenco.filter((j) => j.tarefa === 'A' && j.veredito === 'negacao').length,
       medido_em: medidoEm.slice(0, 10),
       custo_total_usd: Math.round(custoTotal * 100) / 100,
     },

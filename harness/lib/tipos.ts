@@ -106,6 +106,10 @@ export interface RegistroBruto {
    * válidos, limitação documentada).
    */
   finish_reason?: string;
+  /** 'batch' quando a resposta veio pela Batch API da empresa (mesmo corpo, transporte assíncrono, 50% do preço). Ausente = síncrono. */
+  execucao?: 'batch';
+  /** Id remoto do lote que produziu a linha (auditoria). */
+  lote_id?: string;
   tools_chamadas?: number;
   /** Voltas do loop de tool-use no cliente (mcp-loop); ausente no connector nativo. */
   voltas?: number;
@@ -144,6 +148,12 @@ export type Veredito =
   | 'inventado'
   | 'incorreto'
   | 'abstencao'
+  /**
+   * Tarefa A: o modelo afirmou que um código REAL não existe (ou não é da
+   * BNCC) sem atribuir texto. Erro confiante, mas não é texto inventado:
+   * fica fora da fidelidade, da alucinação e da abstenção (rubrica-v3).
+   */
+  | 'negacao'
   | 'pendente_juiz'
   /** Juiz não emitiu veredito parseável mesmo após retry; nunca conta como alucinação. */
   | 'indeterminado'
@@ -174,7 +184,7 @@ export interface Julgamento {
   tools_chamadas?: number;
   /** Tarefa C: detalhe por código citado. */
   codigos_citados?: CodigoCitado[];
-  juiz?: { veredito: 'sim' | 'nao' | 'parcial' | 'indeterminado'; modelo: string };
+  juiz?: { veredito: 'sim' | 'nao' | 'parcial' | 'abstencao' | 'negacao' | 'indeterminado'; modelo: string };
 }
 
 export interface Agregados {

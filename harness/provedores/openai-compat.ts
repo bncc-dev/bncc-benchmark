@@ -8,6 +8,7 @@
 import { executarToolMcp, listarToolsMcp, URL_MCP } from '../lib/mcp-cliente.js';
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
+import { TIMEOUT_PADRAO_MS } from './tipos.js';
 
 const MAX_VOLTAS_TOOLS = 8;
 
@@ -17,7 +18,7 @@ interface ToolCallApi {
   function: { name: string; arguments: string };
 }
 
-interface MensagemApi {
+export interface MensagemApi {
   role: 'user' | 'assistant' | 'tool';
   content: string | null;
   tool_calls?: ToolCallApi[];
@@ -29,17 +30,97 @@ interface MensagemApi {
   [extra: string]: unknown;
 }
 
-interface RespostaApi {
+export interface RespostaApi {
   model: string;
   provider?: string; // OpenRouter informa qual endpoint serviu
   choices?: Array<{ message: MensagemApi; finish_reason?: string }>;
   usage?: {
     prompt_tokens: number;
     completion_tokens: number;
+    total_tokens?: number;
     completion_tokens_details?: { reasoning_tokens?: number };
   };
   /** OpenRouter pode devolver HTTP 200 com erro no corpo (falha do upstream). */
   error?: { code?: number | string; message?: string };
+}
+
+/**
+ * Normaliza o `usage` para a convenção de tipos.ts (saída = total cobrado,
+ * raciocínio incluído). Ver `DefModelo.contagemRaciocinio`.
+ */
+export function contarUso(
+  usage: NonNullable<RespostaApi['usage']>,
+  contagem: NonNullable<DefModelo['contagemRaciocinio']>,
+): { entrada: number; saida: number; reasoning?: number } {
+  const entrada = usage.prompt_tokens;
+  const visivel = usage.completion_tokens;
+  const informado = usage.completion_tokens_details?.reasoning_tokens;
+  switch (contagem) {
+    case 'na-saida':
+      return { entrada, saida: visivel, ...(informado !== undefined ? { reasoning: informado } : {}) };
+    case 'fora-da-saida':
+      return { entrada, saida: visivel + (informado ?? 0), ...(informado !== undefined ? { reasoning: informado } : {}) };
+    case 'nao-informado': {
+      if (informado !== undefined) return { entrada, saida: visivel + informado, reasoning: informado };
+      const implicito = Math.max(0, (usage.total_tokens ?? entrada + visivel) - entrada - visivel);
+      return { entrada, saida: visivel + implicito, ...(implicito > 0 ? { reasoning: implicito } : {}) };
+    }
+  }
+}
+
+/** Corpo de uma chamada chat/completions (sem tools); compartilhado com openai-batch.ts. */
+export function montarCorpoChat(
+  def: DefModelo,
+  mensagens: MensagemApi[],
+  maxTokens: number,
+): Record<string, unknown> {
+  return {
+    model: def.modelo,
+    // gpt-5.x com raciocínio rejeitam temperature (400): omitir quando semTemperatura.
+    ...(def.semTemperatura ? {} : { temperature: 0 }),
+    [def.parametroMaxTokens ?? 'max_tokens']: maxTokens,
+    messages: mensagens,
+    ...def.corpoExtra,
+  };
+}
+
+/** Stop = completa; length = truncada; content_filter = bloqueada. */
+function mapearFinishChat(bruto: string | undefined): string {
+  return bruto === 'stop'
+    ? 'fim'
+    : bruto === 'length'
+      ? 'max_tokens'
+      : bruto === 'content_filter'
+        ? 'bloqueado'
+        : bruto === 'tool_calls'
+          ? 'max_tokens' // estourou MAX_VOLTAS ainda pedindo tools: trata como cortada, nunca válida
+          : (bruto ?? 'bloqueado'); // sem choice = bloqueio/anomalia, nunca resposta válida
+}
+
+/** OpenRouter informa qual endpoint serviu; rotas diretas não. */
+function versaoServida(dados: RespostaApi): string {
+  return dados.provider ? `${dados.model} (via ${dados.provider})` : dados.model;
+}
+
+/**
+ * Converte UMA resposta chat/completions (volta única, sem tools) na
+ * RespostaModelo normalizada; usado pelo adapter de lote. O loop grounded
+ * acumula uso por volta e não passa por aqui.
+ */
+export function converterRespostaChat(def: DefModelo, dados: RespostaApi): RespostaModelo {
+  if (!dados.choices?.length || !dados.usage) {
+    throw new ErroProvedor(502, `${def.id} resposta sem choices/usage (anomalia do upstream)`);
+  }
+  const uso = contarUso(dados.usage, def.contagemRaciocinio ?? 'na-saida');
+  return {
+    texto: dados.choices[0].message.content ?? '',
+    versaoModelo: versaoServida(dados),
+    finishReason: mapearFinishChat(dados.choices[0].finish_reason),
+    tokens: { entrada: uso.entrada, saida: uso.saida, ...(uso.reasoning !== undefined ? { reasoning: uso.reasoning } : {}) },
+    custoUsd: (uso.entrada * def.precos.entrada + uso.saida * def.precos.saida) / 1_000_000,
+    toolsChamadas: 0,
+    mecanismoGrounding: null,
+  };
 }
 
 export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor {
@@ -50,13 +131,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
     maxTokens: number,
     comTools: boolean,
   ): Promise<RespostaApi> {
-    const corpo: Record<string, unknown> = {
-      model: def.modelo,
-      temperature: 0,
-      [def.parametroMaxTokens ?? 'max_tokens']: maxTokens,
-      messages: mensagens,
-      ...def.corpoExtra,
-    };
+    const corpo = montarCorpoChat(def, mensagens, maxTokens);
     if (comTools) {
       const tools = await listarToolsMcp();
       corpo.tools = tools.map((t) => ({
@@ -70,7 +145,7 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
     }
     const resposta = await fetch(`${def.baseUrl}/chat/completions`, {
       method: 'POST',
-      signal: AbortSignal.timeout(300_000), // sem timeout, socket pendurado trava o slot para sempre
+      signal: AbortSignal.timeout(def.timeoutMs ?? TIMEOUT_PADRAO_MS), // sem timeout, socket pendurado trava o slot para sempre
       headers: {
         'content-type': 'application/json',
         authorization: `Bearer ${key}`,
@@ -114,10 +189,10 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
       for (let volta = 0; ; volta++) {
         voltas = volta + 1;
         dados = await completions(mensagens, chamada.maxTokens, chamada.grounded);
-        entrada += dados.usage!.prompt_tokens;
-        saida += dados.usage!.completion_tokens;
-        const r = dados.usage!.completion_tokens_details?.reasoning_tokens;
-        if (r !== undefined) reasoning = (reasoning ?? 0) + r;
+        const uso = contarUso(dados.usage!, def.contagemRaciocinio ?? 'na-saida');
+        entrada += uso.entrada;
+        saida += uso.saida;
+        if (uso.reasoning !== undefined) reasoning = (reasoning ?? 0) + uso.reasoning;
 
         const msg = dados.choices![0].message;
         const pedidos = msg.tool_calls ?? [];
@@ -141,23 +216,10 @@ export function criarProvedorOpenAiCompat(def: DefModelo, key: string): Provedor
         }
       }
 
-      // Stop = completa; length = truncada; content_filter = bloqueada.
-      const bruto = dados.choices![0]?.finish_reason;
-      const finishReason =
-        bruto === 'stop'
-          ? 'fim'
-          : bruto === 'length'
-            ? 'max_tokens'
-            : bruto === 'content_filter'
-              ? 'bloqueado'
-              : bruto === 'tool_calls'
-                ? 'max_tokens' // estourou MAX_VOLTAS ainda pedindo tools: trata como cortada, nunca válida
-                : (bruto ?? 'bloqueado'); // sem choice = bloqueio/anomalia, nunca resposta válida
-
       return {
         texto: dados.choices![0]?.message.content ?? '',
-        versaoModelo: dados.provider ? `${dados.model} (via ${dados.provider})` : dados.model,
-        finishReason,
+        versaoModelo: versaoServida(dados),
+        finishReason: mapearFinishChat(dados.choices![0]?.finish_reason),
         tokens: {
           entrada,
           saida,

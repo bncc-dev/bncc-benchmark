@@ -14,6 +14,7 @@ pontuou.
 | `julgados.jsonl` | Respostas cruzadas com o julgamento |
 | `agregados.json` | Notas por modelo e por tarefa |
 | `manifesto.json` | Registro auditável: quando rodou, com qual commit do harness, contra qual versão do banco de itens e do dataset |
+| `lotes-<modelo>-<modo>.json` | Execução em lote (Batch API): ids dos lotes remotos, tempos de submissão e coleta, situação de cada pedido. Sem respostas nem chaves |
 
 Os agregados são recalculáveis a partir dos brutos — é o que o CI verifica a
 cada push (`pnpm agregar --rodada <nome> --verificar`). Se alguém editar uma

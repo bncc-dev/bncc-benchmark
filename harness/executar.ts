@@ -16,10 +16,12 @@ import { gravarBrutos } from './lib/brutos.js';
 import { CacheDisco } from './lib/cache.js';
 import { carregarEnv } from './lib/env.js';
 import { executarBateria, selecionarBalanceado } from './lib/execucao.js';
-import { commitHarness, registrarExecucao, type EntradaExecucao } from './lib/manifesto.js';
+import { avancarLote } from './lib/execucao-batch.js';
+import { caminhoLote } from './lib/lote.js';
+import { commitHarness, registrarExecucao, type EntradaExecucao, type ResultadoModeloManifesto } from './lib/manifesto.js';
 import { hashToolsMcp, versaoDadosMcp } from './lib/mcp-cliente.js';
 import type { BancoItens, Modo } from './lib/tipos.js';
-import { criarProvedor } from './provedores/fabrica.js';
+import { criarProvedor, criarProvedorBatch } from './provedores/fabrica.js';
 import { MODELOS } from './provedores/registro.js';
 
 const RAIZ = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -36,12 +38,25 @@ const { values: args } = parseArgs({
     concorrencia: { type: 'string', default: '5' },
     'max-tokens': { type: 'string', default: '1024' },
     'aceitar-antivexame-pendente': { type: 'boolean', default: false },
+    // Transporte: 'sincrona' (default) ou 'batch' (Batch API da empresa, só
+    // modo seco). Em batch cada invocação avança uma etapa (submete /
+    // consulta / coleta) e sai com código 2 enquanto houver lote em fila.
+    execucao: { type: 'string', default: 'sincrona' },
+    'batch-reenviar-falhas': { type: 'boolean', default: false },
   },
 });
+
+const emBatch = args.execucao === 'batch';
+if (args.execucao !== 'sincrona' && !emBatch) {
+  throw new Error(`--execucao deve ser "sincrona" ou "batch", recebi "${args.execucao}"`);
+}
 
 const modo = args.modo as Modo;
 if (modo !== 'seco' && modo !== 'grounded' && modo !== 'contexto') {
   throw new Error(`--modo deve ser "seco", "grounded" ou "contexto", recebi "${args.modo}"`);
+}
+if (emBatch && modo !== 'seco') {
+  throw new Error('--execucao batch só vale no modo seco: as Batch APIs não aceitam tools');
 }
 
 const banco = JSON.parse(readFileSync(args.itens!, 'utf8')) as BancoItens;
@@ -100,6 +115,8 @@ const entradaManifesto: EntradaExecucao = {
     concorrencia: Number(args.concorrencia),
     max_tokens_flag: Number(args['max-tokens']),
     aceitar_antivexame_pendente: args['aceitar-antivexame-pendente'],
+    execucao: emBatch ? 'batch' : 'sincrona',
+    ...(emBatch ? { batch_reenviar_falhas: args['batch-reenviar-falhas'] } : {}),
   },
   dataset_versao: banco.dataset_versao,
   itens_versao: banco.versao,
@@ -109,16 +126,66 @@ const entradaManifesto: EntradaExecucao = {
 };
 
 const falhas: string[] = [];
+const emAndamento: string[] = [];
 for (const id of ids) {
   const def = MODELOS[id];
   if (modo === 'grounded' && !def.suportaGrounded) {
     console.warn(`AVISO: ${id} não suporta modo grounded; pulando.`);
     continue;
   }
-  const provedor = criarProvedor(def, ambiente);
+  if (emBatch && !def.batch) {
+    console.warn(`AVISO: ${id} não tem Batch API; rode-o sem --execucao batch. Pulando.`);
+    continue;
+  }
   const inicio = Date.now();
   let resultado;
+  let lotes: ResultadoModeloManifesto['lotes'];
   try {
+    if (emBatch) {
+      const dirRodada = resolve(RAIZ, 'resultados', args.rodada!);
+      mkdirSync(dirRodada, { recursive: true });
+      const r = await avancarLote({
+        banco,
+        itens,
+        def,
+        modo,
+        parafrases: Number(args.parafrases),
+        cache,
+        maxTokens: Number(args['max-tokens']),
+        provedorBatch: criarProvedorBatch(def, ambiente),
+        caminhoEstado: caminhoLote(dirRodada, id, modo),
+        flags: {
+          itens: relative(RAIZ, resolve(args.itens!)),
+          itens_versao: banco.versao,
+          limite: args.limite ? Number(args.limite) : null,
+          parafrases: Number(args.parafrases),
+          max_tokens_flag: Number(args['max-tokens']),
+        },
+        rotulo: `${args.rodada}/${id}`,
+        reenviarFalhas: args['batch-reenviar-falhas'],
+      });
+      if (r.situacao === 'em-andamento') {
+        console.log(`  ${r.resumo}`);
+        emAndamento.push(id);
+        continue;
+      }
+      lotes = r.lotes.map((l) => ({
+        id: l.remoto.id,
+        geracao: l.geracao,
+        max_tokens: l.max_tokens,
+        submetido_em: l.submetido_em,
+        ...(l.coletado_em ? { coletado_em: l.coletado_em } : {}),
+        ...(l.ultimo_estado?.contagens ? { contagens: l.ultimo_estado.contagens } : {}),
+      }));
+      if (r.situacao === 'incompleto') {
+        throw new Error(
+          `${r.faltantes.length} de ${r.resultado.registros.length + r.faltantes.length} pedido(s) sem resposta no lote (ex.: ${r.faltantes[0].customId}: ${r.faltantes[0].erro}); ` +
+            'complete com --batch-reenviar-falhas ou rode sem --execucao batch (só as faltantes custam)',
+        );
+      }
+      resultado = r.resultado;
+    } else {
+    const provedor = criarProvedor(def, ambiente);
     resultado = await executarBateria({
     banco,
     itens,
@@ -137,6 +204,7 @@ for (const id of ids) {
       }
     },
   });
+    }
   } catch (erro) {
     // Um modelo instável não derruba a bateria: o que ele completou está no
     // cache; a fila continua e ele é retomado num re-run do mesmo comando.
@@ -176,6 +244,7 @@ for (const id of ids) {
       do_cache: resultado.doCache,
       custo_usd: Number(resultado.custoUsd.toFixed(6)),
       incompletas,
+      ...(lotes ? { lotes } : {}),
     },
   });
 
@@ -188,6 +257,9 @@ for (const id of ids) {
 if (falhas.length > 0) {
   console.error(`\nModelos com falha nesta invocação: ${falhas.join(', ')} — re-rode o mesmo comando para completá-los.`);
   process.exitCode = 1;
+} else if (emAndamento.length > 0) {
+  console.log(`\nLotes em andamento: ${emAndamento.join(', ')} — rode o mesmo comando mais tarde para coletar (código de saída 2).`);
+  process.exitCode = 2;
 }
 
 if (entradaManifesto.modelos.length > 0) {

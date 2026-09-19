@@ -1,0 +1,75 @@
+{
+ "versao": 1,
+ "modelo": "gpt-luna",
+ "modo": "seco",
+ "api": "openai",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 5,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 1024,
+   "remoto": {
+    "id": "batch_6aaae481d4448190a77d8829ac24a9e1",
+    "extras": {
+     "input_file_id": "file-DFYg3bnbHRmhvMmnrVvYcL",
+     "output_file_id": "file-YWo3uVtjP3KXjJnubH4Sp2"
+    }
+   },
+   "submetido_em": "2026-09-16T18:48:34.029Z",
+   "ultimo_estado": {
+    "em": "2026-09-16T20:53:44.041Z",
+    "bruto": "completed",
+    "contagens": {
+     "total": 2,
+     "concluidos": 2,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-09-16T20:53:45.213Z"
+  },
+  {
+   "geracao": 2,
+   "max_tokens": 2048,
+   "remoto": {
+    "id": "batch_6aab01dad3e08190bb8ba247c2b84e2b",
+    "extras": {
+     "input_file_id": "file-BpKfRjrRo6fXwnPizD5skF",
+     "output_file_id": "file-FwKn9MmmCV1yXTJGY5gUyt"
+    }
+   },
+   "submetido_em": "2026-09-16T20:53:47.454Z",
+   "ultimo_estado": {
+    "em": "2026-09-16T21:00:56.954Z",
+    "bruto": "completed",
+    "contagens": {
+     "total": 1,
+     "concluidos": 1,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-09-16T21:00:57.534Z"
+  }
+ ],
+ "pedidos": {
+  "d-001-p0": {
+   "item_id": "d-001",
+   "parafrase": 0,
+   "chave": "2288207ebea784a3dfaa4980074abe137bb0f25321a01371f5d49868f11b39de",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-002-p0": {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "chave": "01d653e0590365214e8ce4d0778dbe8c09aa5f44e635b32697a1c3d2f714c7a5",
+   "lote": 1,
+   "situacao": "ok"
+  }
+ }
+}

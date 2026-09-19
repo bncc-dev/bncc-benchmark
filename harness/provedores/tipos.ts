@@ -1,5 +1,11 @@
 /** Contrato dos adapters de provedor (fetch puro, DECISOES.md D1). */
 
+/** Desconto das Batch APIs de OpenAI, Anthropic e Google em 16/set/2026; conferir na data da rodada. */
+export const FATOR_PRECO_BATCH = 0.5;
+
+/** Timeout por requisição síncrona; sem timeout, socket pendurado trava o slot para sempre. */
+export const TIMEOUT_PADRAO_MS = 300_000;
+
 export interface ChamadaModelo {
   prompt: string;
   /** true = conectar ao bncc.dev (MCP ou tool-use); ver METODOLOGIA. */
@@ -10,6 +16,11 @@ export interface ChamadaModelo {
 export interface RespostaModelo {
   texto: string;
   versaoModelo: string;
+  /**
+   * CONVENÇÃO (16/set/2026): `saida` é o total de tokens de saída COBRADOS,
+   * raciocínio incluído; `reasoning` é a parcela de raciocínio dentro dele.
+   * O custo usa `saida`. Cada API informa isso de um jeito; o adapter normaliza.
+   */
   tokens: { entrada: number; saida: number; reasoning?: number };
   custoUsd: number;
   /**
@@ -33,6 +44,50 @@ export interface RespostaModelo {
 export interface Provedor {
   id: string;
   completar(chamada: ChamadaModelo): Promise<RespostaModelo>;
+}
+
+/** Um pedido dentro de um lote; `customId` identifica a chamada (item × paráfrase). */
+export interface PedidoBatch {
+  customId: string;
+  chamada: ChamadaModelo; // grounded sempre false: batch não aceita tools
+}
+
+/** O que a submissão devolve; `extras` guarda ids auxiliares (arquivo de entrada, URL de resultados). */
+export interface LoteRemoto {
+  id: string;
+  extras?: Record<string, string>;
+}
+
+export interface EstadoLoteRemoto {
+  fase: 'processando' | 'concluido' | 'falhou';
+  /** Valor cru do provedor (validating, in_progress, ended, BATCH_STATE_RUNNING...). */
+  bruto: string;
+  contagens?: { total?: number; concluidos?: number; falhos?: number };
+  /** Atualizações a persistir em `LoteRemoto.extras` (output_file_id, results_url...). */
+  extras?: Record<string, string>;
+  /** Mensagem quando fase = 'falhou' (ex.: arquivo reprovado na validação). */
+  erro?: string;
+}
+
+/** Uma linha coletada; `custoUsd` da resposta JÁ vem com o fator de batch aplicado. */
+export type LinhaLote =
+  | { customId: string; resposta: RespostaModelo }
+  | { customId: string; erro: string };
+
+/**
+ * Transporte assíncrono (Batch API). Mesmo corpo do síncrono, submetido em
+ * lote; o harness consulta e coleta em invocações separadas (lib/execucao-batch).
+ */
+export interface ProvedorBatch {
+  id: string;
+  submeter(pedidos: PedidoBatch[], rotulo: string): Promise<LoteRemoto>;
+  estado(lote: LoteRemoto): Promise<EstadoLoteRemoto>;
+  coletar(lote: LoteRemoto): Promise<LinhaLote[]>;
+}
+
+/** Aplica o desconto de batch ao custo de uma resposta convertida pelo adapter síncrono. */
+export function comDescontoBatch(resposta: RespostaModelo, fator: number): RespostaModelo {
+  return { ...resposta, custoUsd: resposta.custoUsd * fator };
 }
 
 export interface DefModelo {
@@ -69,6 +124,32 @@ export interface DefModelo {
    * API. CONDIÇÃO DISTINTA do protocolo (temperatura 0): declarar na release.
    */
   semTemperatura?: boolean;
+  /**
+   * Como a API (openai-compat) informa os tokens de raciocínio no `usage`:
+   * - 'na-saida' (default): `completion_tokens` já inclui o raciocínio
+   *   (OpenAI, Moonshot, OpenRouter).
+   * - 'fora-da-saida': `reasoning_tokens` vem à parte e NÃO está em
+   *   `completion_tokens`, embora seja cobrado como saída (xAI).
+   * - 'nao-informado': nenhum campo traz o raciocínio; ele é a diferença
+   *   `total_tokens − prompt − completion` (Gemini pelo endpoint compatível).
+   * Errar isso subestima o custo em até uma ordem de grandeza (smoke de
+   * 16/set/2026: grok direto 10×, gemini-pro direto 17×).
+   */
+  contagemRaciocinio?: 'na-saida' | 'fora-da-saida' | 'nao-informado';
+  /**
+   * Habilita a execução em lote pela Batch API da empresa (só modo seco; sem
+   * tools). `api` deve casar com `provedor` (openai ↔ openai-compat em
+   * api.openai.com; anthropic ↔ anthropic; google ↔ google): o corpo da
+   * requisição é o mesmo do síncrono, então a medição é comparável.
+   * `fatorPreco` multiplica `precos` (default FATOR_PRECO_BATCH).
+   */
+  batch?: { api: 'openai' | 'anthropic' | 'google'; fatorPreco?: number };
+  /**
+   * Timeout por requisição (ms), default TIMEOUT_PADRAO_MS. Modelos que
+   * raciocinam até tetos de 32k tokens passam de 5 min numa única resposta
+   * (qwen3.8-max no ensaio de 16/set/2026: mesma chamada abortada 6 vezes).
+   */
+  timeoutMs?: number;
   /** Ajustes do adapter openai-responses (connector MCP nativo). */
   opcoesResponses?: {
     /** Enviar `require_approval: "never"` no tool MCP (OpenAI exige; xAI rejeita). */

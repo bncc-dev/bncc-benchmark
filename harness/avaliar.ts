@@ -17,7 +17,7 @@ import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import { julgar } from './lib/avaliacao.js';
+import { extrairTextoCandidato, julgar } from './lib/avaliacao.js';
 import { CacheDisco, chaveCache } from './lib/cache.js';
 import { criarLimitador } from './lib/concorrencia.js';
 import { carregarEnv } from './lib/env.js';
@@ -74,7 +74,7 @@ for (const registro of registros) {
 }
 
 // Juiz LLM nos pendentes.
-type VereditoJuiz = 'sim' | 'nao' | 'parcial' | 'indeterminado';
+type VereditoJuiz = 'sim' | 'nao' | 'parcial' | 'abstencao' | 'negacao' | 'indeterminado';
 interface LinhaJuiz {
   item_id: string;
   modelo: string;
@@ -201,21 +201,33 @@ if (args.juiz !== 'nenhum' && pendentesA.length + pendentesC.length > 0) {
         const item = porId.get(j.item_id)!;
         if (item.gabarito.tipo !== 'texto') return;
         const registro = registroDe.get(`${j.modelo}|${j.item_id}|${j.parafrase}|${j.modo}`)!;
-        const veredito = await julgarComJuiz(item.gabarito.texto, registro.resposta, {
-          item_id: j.item_id,
-          modelo: j.modelo,
-          parafrase: j.parafrase,
-          modo: j.modo,
-        });
+        const ref = { item_id: j.item_id, modelo: j.modelo, parafrase: j.parafrase, modo: j.modo };
+        let veredito = await julgarComJuiz(item.gabarito.texto, registro.resposta, ref);
+        // Guarda do texto atribuído: se o modelo apresentou um texto como sendo
+        // o da aprendizagem pedida (ainda que com ressalvas, ou depois de negar
+        // o código), ele não se absteve nem apenas negou. O trecho candidato é
+        // julgado sozinho por fidelidade; diante de um texto atribuído,
+        // 'abstencao' e 'negacao' do juiz valem 'nao'.
+        if (veredito === 'abstencao' || veredito === 'negacao') {
+          const candidato = extrairTextoCandidato(registro.resposta, item.codigo);
+          if (candidato) {
+            const doCandidato = await julgarComJuiz(item.gabarito.texto, candidato, ref);
+            veredito = doCandidato === 'abstencao' || doCandidato === 'negacao' ? 'nao' : doCandidato;
+          }
+        }
         j.juiz = { veredito, modelo: defJuiz.id };
         j.veredito =
           veredito === 'sim'
             ? 'fiel_parafrase'
             : veredito === 'parcial'
               ? 'parcial'
-              : veredito === 'indeterminado'
-                ? 'indeterminado'
-                : 'inventado';
+              : veredito === 'abstencao'
+                ? 'abstencao'
+                : veredito === 'negacao'
+                  ? 'negacao'
+                  : veredito === 'indeterminado'
+                  ? 'indeterminado'
+                  : 'inventado';
       }),
     ),
     ...pendentesC.map(({ julgamento, citado }) =>
@@ -229,6 +241,8 @@ if (args.juiz !== 'nenhum' && pendentesA.length + pendentesC.length > 0) {
           modo: julgamento.modo,
           codigo: citado.codigo,
         });
+        // Na C o trecho já é um texto atribuído a um código; 'abstencao' ou
+        // 'negacao' aqui significam que o texto não se sustenta: divergente.
         citado.texto =
           veredito === 'sim' ? 'ok' : veredito === 'indeterminado' ? 'indeterminado' : 'divergente';
       }),

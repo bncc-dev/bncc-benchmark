@@ -16,6 +16,147 @@ anunciando a release anterior como a mais recente, que é o primeiro lugar
 onde a maioria das pessoas olha. Alterou qualquer julgamento depois? Número
 novo, nunca sobrescrever.
 
+## v0.3.0 · 19/set/2026 · rotas diretas, execução em lote, série recomeça
+
+Terceira medição de referência: 17.100 respostas, 19 modelos. Bateria
+executada em 16-18/set/2026. Primeira rodada pelas APIs diretas das empresas
+e primeira com execução em lote (Batch API), conforme a D15.
+
+- **Rodada**: `oficial-seca-2026-09`, modo seco. **17.100 respostas, 19
+  modelos, todos com a bateria completa** (900 chamadas cada: 300 itens × 3
+  paráfrases). Nenhum modelo ficou parcial, então a D13.3 não foi acionada.
+- **A série recomeça nesta versão.** Rota, transporte e elenco mudaram
+  juntos; **as notas não são comparáveis com a v0.2.0** e nenhuma leitura de
+  "subiu" ou "caiu" entre as duas releases é válida. O benchmark é uma
+  sequência de fotografias datadas (D13.1), e esta é a primeira da série
+  nova. Em 0.x a metodologia ainda pode mudar (D11).
+- **Julgamento**: **avaliador v3 · rubrica-v3** · juiz haiku-bedrock (9.113
+  julgamentos na trilha, `juiz.jsonl`). A rubrica mudou nesta release, ver o
+  bullet da abstenção e da negação. Dataset dados-2026.07, banco `itens-v1`.
+- **Líder**: gpt-6-astra (nota 94,7), com 88% de fidelidade ao texto oficial e
+  nenhuma alucinação na tarefa A: quando não sabe, recusa (11%). **Lanterna**:
+  haiku-bedrock (28,2), que recusa 37% das perguntas de texto e confirma só
+  11% dos códigos reais. Agregados verificados por CI.
+- **Rotas (D15)**: 12 modelos pela API direta da empresa (OpenAI, Anthropic,
+  Google, xAI, Moonshot, Meta, Maritaca), 5 via OpenRouter e 2 via Bedrock.
+  As exceções são declaradas: os três Qwen porque a conta da Alibaba responde
+  `AccessDenied.Unpurchased` na região em que a chave vale; os dois DeepSeek
+  porque a primeira parte segue vetada pela política de privacidade da conta,
+  e a Fireworks é a rota efetiva; sonnet-4.6 e haiku-4.5 seguem no Bedrock por
+  continuidade do juiz. O endpoint que serviu cada chamada está em `rotas`.
+- **Execução em lote em 7 modelos** (gpt-6-astra, gpt-luna, fable-5-1, opus-5,
+  sonnet-5, gemini-pro, gemini-38-flash): mesma requisição do caminho
+  síncrono, submetida à Batch API da empresa por metade do preço, com a mesma
+  identidade de chamada e a mesma chave de cache. O leaderboard distingue o
+  transporte em `rotas`, com o sufixo `(batch)`; os brutos trazem `execucao`
+  e `lote_id`, e o estado de cada lote está em `lotes-<modelo>-seco.json`.
+  Tempo entre submissão e coleta (teto, porque a coleta depende de reexecutar
+  o comando): cerca de 10 minutos para gpt-6-astra, fable-5-1 e o primeiro
+  lote do gemini-38-flash; cerca de 50 minutos para sonnet-5 e gemini-pro; 2
+  horas para gpt-luna; **cerca de 12 horas por lote no opus-5**, que precisou
+  de dois. Respostas cortadas geram um segundo lote com o dobro do orçamento,
+  como no síncrono (gpt-luna 131, opus-5 31, gemini-pro 13, gemini-38-flash
+  9). O Google recusou 100 pedidos do gemini-38-flash com "Precondition check
+  failed", reenviados num lote próprio.
+- **Recusar e negar deixaram de ser contados como invenção (rubrica-v3).** Até
+  a v0.2.0, na tarefa A, um modelo que não atribuía texto nenhum mas
+  acrescentava contexto (a área, o ano, onde consultar) caía no juiz, e a
+  rubrica só oferecia sim, parcial e não: o veredito virava `inventado`. A
+  revisão de fechamento desta release leu amostras e separou três
+  comportamentos que estavam misturados. A rubrica agora decide em ordem: o
+  modelo **atribuiu um texto** (mesmo com ressalva)? Julga-se o conteúdo. Não
+  atribuiu e **negou** que o código exista? É `negacao`. Não atribuiu e só
+  declarou não saber? É `abstencao`. Uma guarda programática
+  (`extrairTextoCandidato`) impede que texto atribuído com ressalva, ou
+  depois de negar o código, escape como recusa: o trecho é julgado sozinho por
+  fidelidade. Nesta rodada, das 5.016 respostas da tarefa A, **476 são
+  abstenções e 207 são negações** que a rubrica antiga contaria como
+  alucinação. Das 207 negações, **195 são de Computação 2022**: o modelo
+  afirma que "CO" não é componente da BNCC, porque não conhece o complemento
+  de 2022. A nota composta quase não muda (só a fidelidade entra nela), mas a
+  taxa de alucinação muda muito nos modelos que recusam: sonnet-5 de 0,86 para
+  0,42, haiku-bedrock de 0,76 para 0,36, kimi-k3 de 0,73 para 0,38, opus-5 de
+  0,22 para 0,04, gpt-6-astra de 0,11 para 0,00. As quatro taxas da tarefa A
+  (`a_fiel`, `a_aluc`, `a_negacao`, `a_abstencao`) saem lado a lado no
+  leaderboard. Dois exemplos que iriam para o site rotulados como invenção
+  eram recusas honestas e saíram. Limitação declarada: a fronteira entre
+  negar e contextualizar ("não está na BNCC de 2017, é do complemento de
+  2022") é decisão do juiz, e cerca de 36 negações reconhecem o complemento.
+  O manifesto registra as três passagens do juiz (rubricas v1, v2
+  intermediária e v3).
+  **Errata das releases anteriores**: v0.1.0, v0.2.0 e estudo-fonte-v0.1.0
+  foram julgadas com a rubrica v1 e têm a taxa de alucinação da tarefa A
+  inflada pelo mesmo motivo. Releases são imutáveis (D11) e não serão
+  reescritas; a ressalva fica registrada aqui.
+- **Elenco (19)**: sete entrantes — gpt-6-astra (sucede gpt-5.6-sol),
+  fable-5-1 (sucede fable-5), gemini-38-flash (sucede gemini-37-flash),
+  muse-spark-13 (sucede muse-spark-1.2), deepseek-flash-41 (o v4-flash-0731
+  foi aposentado pela DeepSeek em 10/set), qwen-38-flash (sucede qwen-flash) e
+  qwen-38-max-0902 (ver ids abaixo). Saíram do leaderboard os sete ids
+  correspondentes; eles continuam no registro e seguem citáveis nas releases
+  em que foram medidos.
+- **Ids de modelo (D13.1)**: `qwen-38-max` designa o modelo medido em agosto
+  pelo alias `qwen3.8-max`. Em 05/set a Alibaba trocou o snapshot por baixo
+  desse alias, então a medição nova entra como `qwen-38-max-0902`, id próprio,
+  e o id antigo fica congelado na v0.2.0 (D12 regra 3). Ids não são
+  reapontados. Modelo que apenas mudou de rota mantém o id, porque o id
+  designa o modelo e a rota fica registrada por chamada (D9 + D15 regra 2).
+- **Condições de execução declaradas (D13.2)**: Claude 5 (fable-5-1, opus-5,
+  sonnet-5) e os gpt-5.x/6 rejeitam `temperature` e rodaram sem o parâmetro;
+  kimi-k3 só aceita temperatura 1 na API direta; qwen-38-flash subiu de 4.096
+  para 32.768 tokens de orçamento porque truncava com resposta vazia;
+  qwen-38-max-0902 recebeu timeout de 15 minutos por requisição, já que uma
+  resposta chegou a 11 minutos. Comparar esses modelos com outras releases
+  exige a ressalva.
+- **Contagem de tokens de raciocínio corrigida**: cada API informa o
+  raciocínio de um jeito e o agregador normalizava. Pela rota direta, a xAI
+  reporta `reasoning_tokens` fora de `completion_tokens`, o endpoint
+  compatível do Gemini não reporta em campo nenhum, e a Anthropic traz o
+  pensamento num subcampo. Sem a correção o custo saía até 17 vezes menor.
+  **Errata**: os brutos do estudo de intervenção de agosto, para
+  `grok-46-direto` e `gemini-*-direto`, têm custo subestimado pelo mesmo
+  motivo. Só o custo; os vereditos não mudam.
+- **Respostas cortadas**: 152 de 17.100 (0,9%), expostas no campo `cortados`.
+  Truncamento após a escalada automática em 122 casos, concentrados em
+  deepseek-flash-41 (29), qwen-38-max-0902 (29), gpt-luna (27) e
+  muse-spark-13 (22), todos abaixo de 3,3%. **Causa nova nesta rodada**: 28
+  bloqueios por `RECITATION` no Google (gemini-pro 16, gemini-38-flash 12),
+  em que o modelo se recusa a reproduzir texto que reconhece como citação
+  literal, sempre na tarefa C. Mais 2 casos de `finish_reason: error` no
+  DeepSeek via Fireworks, com resposta vazia.
+- **Ressalva do grok-46**: ele é o único modelo comparável que caiu de forma
+  relevante contra agosto (54,5 → 47,9), e a queda está inteira nas três
+  dimensões de memória do texto oficial (fidelidade na A, acerto na D e texto
+  correto na C); reconhecer códigos reais e recusar falsos não mudou. Mudaram
+  ao mesmo tempo a rota (OpenRouter → xAI direta), a data e o comportamento
+  do modelo, que gerou 47% mais tokens de raciocínio. Os dados não permitem
+  separar as causas, e nenhuma nova medição foi feita. Para contraste, o
+  gpt-luna trocou de rota e transporte no mesmo período e subiu 2,7 pontos.
+  Régua da variação entre rodadas, nos mesmos 300 itens e projetando os
+  vereditos novos na escala da rubrica v1: quem **não** trocou de rota
+  concorda com agosto em 86% a 98% dos vereditos (sabiazinho-4 e
+  haiku-bedrock nos extremos); quem trocou, em 79% a 90%.
+- **Custo do resultado publicado**: US$ 175,18 de execução. Os quatro mais
+  caros somam US$ 118: qwen-38-max-0902 (47,03), kimi-k3 (35,43), fable-5-1
+  (21,18) e grok-46 (14,84). Os mais baratos: sabiazinho-4 (0,11), gpt-luna
+  (0,23) e sabia-4 (0,33). O lote cortou o custo pela metade onde foi usado.
+  O juiz custa cerca de US$ 5 por passagem completa; o manifesto registra
+  US$ 9,48 somando as passagens das três rubricas. Custo publicado é o dos
+  brutos que compõem a release, não o da conta: a fatura real foi maior por
+  causa das retomadas e de chamadas que falharam depois de gerar tokens.
+- **Achados operacionais**: crédito do OpenRouter esgotado duas vezes durante
+  a bateria, porque o agregador reserva o teto de tokens por chamada e os
+  Qwen pedem 32.768; conta da Moonshot suspensa por saldo no meio do kimi-k3;
+  429 persistentes da Fireworks, que cederam com retomadas sucessivas, como
+  em agosto; 404 intermitente do Bedrock no juiz, que aborta a avaliação
+  inteira por não ser tratado como transitório; e 429 da Google na submissão
+  de lotes de escalada.
+- **Comparabilidade**: mesmo `itens-v1` e mesmo dataset dados-2026.07 das
+  releases anteriores, mas **rubrica e rota mudaram**, então a série recomeça
+  aqui. Cache novo (D12): o de agosto foi arquivado em `cache-2026-08/`.
+- **Rodada grounded**: segue publicada à parte, como estudo de intervenção
+  (D14). Ela não roda em lote, porque Batch API não aceita ferramentas.
+
 ## estudo-fonte-v0.1.0 · 25/ago/2026 · estudo de intervenção "acesso à fonte" (série própria)
 
 A rodada grounded prometida na v0.1.0 e na v0.2.0 foi realizada e publicada

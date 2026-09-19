@@ -13,6 +13,7 @@
 import { URL_MCP } from '../lib/mcp-cliente.js';
 import { ErroProvedor } from './erro.js';
 import type { ChamadaModelo, DefModelo, Provedor, RespostaModelo } from './tipos.js';
+import { TIMEOUT_PADRAO_MS } from './tipos.js';
 
 interface ItemSaida {
   type: string;
@@ -61,7 +62,7 @@ export function criarProvedorOpenAiResponses(def: DefModelo, key: string): Prove
 
       const resposta = await fetch(`${def.baseUrl}/responses`, {
         method: 'POST',
-        signal: AbortSignal.timeout(300_000),
+        signal: AbortSignal.timeout(def.timeoutMs ?? TIMEOUT_PADRAO_MS),
         headers: { 'content-type': 'application/json', authorization: `Bearer ${key}` },
         body: JSON.stringify(corpo),
       });

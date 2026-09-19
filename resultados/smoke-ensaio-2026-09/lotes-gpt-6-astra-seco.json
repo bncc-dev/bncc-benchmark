@@ -1,0 +1,53 @@
+{
+ "versao": 1,
+ "modelo": "gpt-6-astra",
+ "modo": "seco",
+ "api": "openai",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 5,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "batch_6aaae480618081909757e4a9eb58dd1e",
+    "extras": {
+     "input_file_id": "file-GEaHF6ShvKGgRSQh4FdNWB",
+     "output_file_id": "file-YKLcHjmqt2cNMZSakbvSgL"
+    }
+   },
+   "submetido_em": "2026-09-16T18:48:32.728Z",
+   "ultimo_estado": {
+    "em": "2026-09-16T19:00:35.884Z",
+    "bruto": "completed",
+    "contagens": {
+     "total": 2,
+     "concluidos": 2,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-09-16T19:00:37.878Z"
+  }
+ ],
+ "pedidos": {
+  "d-001-p0": {
+   "item_id": "d-001",
+   "parafrase": 0,
+   "chave": "81877fdb27681d23e203e8fc64419a8de0eac032c0b8793947dd6e8aa4fc6797",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-002-p0": {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "chave": "84f957995f148070b2df596cf7de9f60b3621cccc8f7e206b21cc5a8d06c27e8",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}

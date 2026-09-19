@@ -1,0 +1,56 @@
+{
+ "versao": 1,
+ "modelo": "gemini-38-flash",
+ "modo": "seco",
+ "api": "google",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 3,
+  "parafrases": 2,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "batches/empgsh5r5m4dxuq8jliwpi8jyse5vy2bt4i7"
+   },
+   "submetido_em": "2026-09-16T18:39:06.681Z",
+   "ultimo_estado": {
+    "em": "2026-09-16T18:45:12.478Z",
+    "bruto": "BATCH_STATE_SUCCEEDED",
+    "contagens": {
+     "total": 3,
+     "concluidos": 3,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-09-16T18:45:13.221Z"
+  }
+ ],
+ "pedidos": {
+  "a-001-p1": {
+   "item_id": "a-001",
+   "parafrase": 1,
+   "chave": "1f245d53a31fab06b618f8816103dc570ee3a1890000cb04e9271e8d7778778c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-001-p1": {
+   "item_id": "b-001",
+   "parafrase": 1,
+   "chave": "ab9605435600e10f4d33f227dbb09b11b6991665128935873ea5f4d78d01eae7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-001-p1": {
+   "item_id": "c-001",
+   "parafrase": 1,
+   "chave": "63e495057bc12c71fce6396f711cb494dcc8cfd7b64e1d87c11010618412abef",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}
