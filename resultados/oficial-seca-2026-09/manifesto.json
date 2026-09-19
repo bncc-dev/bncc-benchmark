@@ -9126,6 +9126,51 @@
    "pendentes_c": 6015,
    "juiz_chamadas": 9089,
    "juiz_custo_usd": 4.769449
+  },
+  {
+   "avaliado_em": "2026-09-19T13:47:23.996Z",
+   "harness_commit": "b51fb45",
+   "avaliador_versao": "3",
+   "rubrica_versao": "rubrica-v2",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 17100,
+   "pendentes_a": 3074,
+   "pendentes_c": 6015,
+   "juiz_chamadas": 9172,
+   "juiz_custo_usd": 0.036237
+  },
+  {
+   "avaliado_em": "2026-09-19T14:12:24.534Z",
+   "harness_commit": "b51fb45",
+   "avaliador_versao": "3",
+   "rubrica_versao": "rubrica-v3",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 17100,
+   "pendentes_a": 3074,
+   "pendentes_c": 6015,
+   "juiz_chamadas": 9097,
+   "juiz_custo_usd": 2.214171
+  },
+  {
+   "avaliado_em": "2026-09-19T14:14:05.082Z",
+   "harness_commit": "b51fb45",
+   "avaliador_versao": "3",
+   "rubrica_versao": "rubrica-v3",
+   "juiz": {
+    "id": "haiku-bedrock",
+    "modelo": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+   },
+   "julgados": 17100,
+   "pendentes_a": 3074,
+   "pendentes_c": 6015,
+   "juiz_chamadas": 9113,
+   "juiz_custo_usd": 0.009185
   }
  ]
 }
