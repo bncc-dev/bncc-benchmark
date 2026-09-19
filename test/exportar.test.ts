@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { calcularMetricas, montarExport } from '../harness/lib/exportar.js';
+import { calcularMetricas, montarExport, recorteA } from '../harness/lib/exportar.js';
 import type { BancoItens, Item, Julgamento, RegistroBruto } from '../harness/lib/tipos.js';
 
 function julgamento(parcial: Partial<Julgamento>): Julgamento {
@@ -128,6 +128,24 @@ describe('montarExport', () => {
     expect(m.a_abstencao).toBeCloseTo(0.25);
     expect(m.a_aluc).toBeCloseTo(0.25);
     expect(m.a_fiel).toBeCloseTo(0.25);
+  });
+
+  it('recorteA reporta alucinação, fidelidade, negação e abstenção com o mesmo denominador', () => {
+    const base = { modelo: 'm1', tarefa: 'A' as const, tipo: 'real' as const, parafrase: 0 };
+    const js = [
+      julgamento({ ...base, item_id: 'a-1', veredito: 'inventado' }),
+      julgamento({ ...base, item_id: 'a-2', veredito: 'negacao' }),
+      julgamento({ ...base, item_id: 'a-3', veredito: 'abstencao' }),
+      julgamento({ ...base, item_id: 'a-4', veredito: 'fiel_exato' }),
+      julgamento({ ...base, item_id: 'a-5', veredito: 'parcial' }),
+      julgamento({ ...base, item_id: 'a-6', veredito: 'resposta_invalida' }), // fora do denominador
+    ];
+    const [linha] = recorteA(js, () => 'Computação 2022');
+    expect(linha).toMatchObject({ rotulo: 'Computação 2022' });
+    expect(linha.taxa).toBeCloseTo(0.2);
+    expect(linha.negacao).toBeCloseTo(0.2);
+    expect(linha.abstencao).toBeCloseTo(0.2);
+    expect(linha.fiel).toBeCloseTo(0.2);
   });
 
   it('rotas separa o transporte batch do síncrono para a mesma versão servida', () => {

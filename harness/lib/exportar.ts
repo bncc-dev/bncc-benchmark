@@ -77,7 +77,16 @@ export interface AmostraCrua {
 
 export interface RecorteLinha {
   rotulo: string;
+  /** Taxa de alucinação na tarefa A (inventado + texto_de_outra). */
   taxa: number;
+  /**
+   * Demais saídas da tarefa A no mesmo recorte e com o mesmo denominador (a
+   * partir da v0.3.0, rubrica-v3). Opcionais para que exports antigos sigam
+   * válidos. Com `parcial`, as quatro somam 1.
+   */
+  fiel?: number;
+  negacao?: number;
+  abstencao?: number;
 }
 
 export interface ExportSite {
@@ -198,20 +207,33 @@ export function calcularMetricas(julgados: Julgamento[], custoUsd: number): Metr
   };
 }
 
-/** Taxa de alucinação na tarefa A (inventado + texto_de_outra), no recorte dado. */
-function recorteA(julgados: Julgamento[], grupo: (j: Julgamento) => string | null): RecorteLinha[] {
-  const acc = new Map<string, { aluc: number; n: number }>();
+/**
+ * Saídas da tarefa A no recorte dado: alucinação (`taxa`), fidelidade,
+ * negação e abstenção, todas sobre as respostas A válidas do recorte.
+ * Exportado para teste.
+ */
+export function recorteA(julgados: Julgamento[], grupo: (j: Julgamento) => string | null): RecorteLinha[] {
+  const acc = new Map<string, { aluc: number; fiel: number; neg: number; abst: number; n: number }>();
   for (const j of julgados) {
     if (j.tarefa !== 'A' || j.veredito === 'resposta_invalida') continue;
     const chave = grupo(j);
     if (!chave) continue;
-    const g = acc.get(chave) ?? { aluc: 0, n: 0 };
+    const g = acc.get(chave) ?? { aluc: 0, fiel: 0, neg: 0, abst: 0, n: 0 };
     g.n++;
     if (j.veredito === 'inventado' || j.veredito === 'texto_de_outra') g.aluc++;
+    else if (j.veredito === 'fiel_exato' || j.veredito === 'fiel_parafrase') g.fiel++;
+    else if (j.veredito === 'negacao') g.neg++;
+    else if (j.veredito === 'abstencao') g.abst++;
     acc.set(chave, g);
   }
   return [...acc.entries()]
-    .map(([rotulo, g]) => ({ rotulo, taxa: pct(g.aluc, g.n) }))
+    .map(([rotulo, g]) => ({
+      rotulo,
+      taxa: pct(g.aluc, g.n),
+      fiel: pct(g.fiel, g.n),
+      negacao: pct(g.neg, g.n),
+      abstencao: pct(g.abst, g.n),
+    }))
     .sort((a, b) => a.taxa - b.taxa);
 }
 
