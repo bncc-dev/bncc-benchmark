@@ -247,7 +247,10 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'deepseek/deepseek-v4-pro-0813', // snapshot datado (fixado em ago/2026; o alias sem data deriva)
     envKey: 'OPENROUTER_API_KEY',
     baseUrl: 'https://openrouter.ai/api/v1',
-    corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } },
+    // Rota trocada em 24/nov/2026: a Fireworks deixou de servir o -0813 (404
+    // no smoke). Together, mesmo preço, quantização não informada. Mudança de
+    // rota mantém o id (D15 regra 2) e é declarada na release.
+    corpoExtra: { provider: { order: ['together'], allow_fallbacks: false } },
     precos: { entrada: 1.32, saida: 3.96 }, // preço da Fireworks no snapshot -0813
     suportaGrounded: true,
   },
@@ -310,6 +313,9 @@ export const MODELOS: Record<string, DefModelo> = {
     precos: { entrada: 2, saida: 6 },
     suportaGrounded: true,
   },
+  // FORA do elenco de nov/2026 (decisão do time, 24/nov/2026): latência
+  // ~186 s por chamada no smoke (~4× setembro), sem sucessor 3.8/4 Plus.
+  // Saída por tempo, não por resultado; declarar na release (D13.3).
   'qwen-plus': {
     id: 'qwen-plus',
     // 32768 (ago/2026): com o teto anterior (1024, default da flag) 427 das 900
@@ -394,6 +400,251 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'DEEPSEEK_API_KEY',
     baseUrl: 'https://api.deepseek.com',
     precos: { entrada: 0.27, saida: 1.1 }, // conferir na data da rodada
+    suportaGrounded: true,
+  },
+
+  // ---------------------------------------------------------------------
+  // ELENCO DE NOV/2026 · lançamentos entre 16/set e 24/nov/2026
+  // (levantamento em interno/revisoes/2026-11-24-levantamento-modelos.md).
+  // Sucessões (D13.1, ids antigos ficam acima para reprodução):
+  //   gpt-6-astra→gpt-62-astra · gpt-luna→gpt-6-luna · fable-5-1→fable-5-2 ·
+  //   opus-5→opus-5-5 · sonnet-5→sonnet-5-5 · gemini-pro→gemini-4-neon ·
+  //   gemini-38-flash→gemini-4-hydrogen · grok-46→grok-47 ·
+  //   kimi-k3→kimi-k31-pro · deepseek-flash-41→deepseek-flash-41-1017 ·
+  //   qwen-38-max-0902→qwen-4-max · sabia-4→s5 · sabiazinho-4→s5-nano.
+  // Entrantes: haiku-5-5, gpt-62-sol, gemini-4-carbon, muse-wonder, muse-ember.
+  // Preços conferidos em 24/nov/2026; tetos de tokens a conferir no smoke.
+  // ---------------------------------------------------------------------
+
+  // OpenAI direta. Os 6.x rejeitam temperature/top_p; tools só pela
+  // Responses API (irrelevante na seca). Não existe 6.1/6.2-luna.
+  'gpt-62-astra': {
+    id: 'gpt-62-astra',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'gpt-6.2-astra', // lançado em 17/nov/2026, sucessor do gpt-6-astra; sem snapshot datado
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens',
+    semTemperatura: true,
+    precos: { entrada: 8, saida: 40 },
+    batch: { api: 'openai' },
+    suportaGrounded: false,
+  },
+  'gpt-62-sol': {
+    id: 'gpt-62-sol',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'gpt-6.2-sol', // lançado em 17/nov/2026; entrante (faixa "dia a dia")
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens',
+    semTemperatura: true,
+    precos: { entrada: 2, saida: 10 },
+    batch: { api: 'openai' },
+    suportaGrounded: false,
+  },
+  'gpt-6-luna': {
+    id: 'gpt-6-luna',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'gpt-6-luna', // lançado em 22/set/2026, sucessor do gpt-5.6-luna
+    envKey: 'OPENAI_API_KEY',
+    baseUrl: 'https://api.openai.com/v1',
+    parametroMaxTokens: 'max_completion_tokens',
+    semTemperatura: true, // doc não diz; a família 6.x rejeita. Conferir no smoke
+    precos: { entrada: 0.1, saida: 0.5 },
+    batch: { api: 'openai' },
+    suportaGrounded: false,
+  },
+
+  // Anthropic direta. Nenhum aceita temperature; thinking adaptativo.
+  'fable-5-2': {
+    id: 'fable-5-2',
+    maxTokensPadrao: 8192,
+    provedor: 'anthropic',
+    modelo: 'claude-fable-5-2', // lançado em 09/nov/2026, sucessor do fable-5-1; exige retenção de 30 dias
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true,
+    precos: { entrada: 8, saida: 40 },
+    batch: { api: 'anthropic' },
+    suportaGrounded: true,
+  },
+  'opus-5-5': {
+    id: 'opus-5-5',
+    maxTokensPadrao: 8192,
+    provedor: 'anthropic',
+    modelo: 'claude-opus-5-5', // lançado em 22/set/2026, sucessor do opus-5
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true,
+    precos: { entrada: 4, saida: 20 },
+    batch: { api: 'anthropic' },
+    suportaGrounded: true,
+  },
+  'sonnet-5-5': {
+    id: 'sonnet-5-5',
+    maxTokensPadrao: 8192,
+    provedor: 'anthropic',
+    modelo: 'claude-sonnet-5-5', // lançado em 28/set/2026, sucessor do sonnet-5
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true,
+    precos: { entrada: 2, saida: 10 },
+    batch: { api: 'anthropic' },
+    suportaGrounded: true,
+  },
+  'haiku-5-5': {
+    id: 'haiku-5-5',
+    maxTokensPadrao: 4096,
+    provedor: 'anthropic',
+    modelo: 'claude-haiku-5-5', // lançado em 07/out/2026; entrante (haiku-bedrock 4.5 segue pelo juiz)
+    envKey: 'ANTHROPIC_API_KEY',
+    semTemperatura: true,
+    precos: { entrada: 0.1, saida: 0.5 }, // até 100k de prompt
+    batch: { api: 'anthropic' },
+    suportaGrounded: true,
+  },
+
+  // Google direta, endpoint nativo. Gemini 4 usa codinomes; o mapeamento de
+  // vaga vem da doc "choosing-a-model" (3.1 Pro→Neon, 3.x Flash→Hydrogen).
+  'gemini-4-neon': {
+    id: 'gemini-4-neon',
+    maxTokensPadrao: 8192,
+    provedor: 'google',
+    modelo: 'gemini-4-neon', // GA em 18/nov/2026, sucessor do gemini-3.1-pro-preview
+    envKey: 'GEMINI_API_KEY',
+    precos: { entrada: 3, saida: 15 },
+    batch: { api: 'google' },
+    suportaGrounded: false,
+  },
+  'gemini-4-hydrogen': {
+    id: 'gemini-4-hydrogen',
+    maxTokensPadrao: 8192,
+    provedor: 'google',
+    // GA em 12/nov/2026, sucessor do gemini-3.8-flash. IGNORA temperature
+    // (valor na faixa é ignorado; fora dela, 400): o temperature 0 do
+    // montarCorpoGoogle não vale. CONDIÇÃO DISTINTA, declarar (D13.2).
+    modelo: 'gemini-4-hydrogen',
+    envKey: 'GEMINI_API_KEY',
+    precos: { entrada: 1.5, saida: 7.5 },
+    batch: { api: 'google' },
+    suportaGrounded: false,
+  },
+  'gemini-4-carbon': {
+    id: 'gemini-4-carbon',
+    maxTokensPadrao: 8192,
+    provedor: 'google',
+    modelo: 'gemini-4-carbon', // GA em 10/nov/2026; entrante
+    envKey: 'GEMINI_API_KEY',
+    precos: { entrada: 4, saida: 20 }, // 2/10 introdutório até 30/nov/2026
+    batch: { api: 'google' },
+    suportaGrounded: false,
+  },
+
+  // xAI direta. Raciocínio não desliga; batch com 20% de desconto (não 50%).
+  'grok-47': {
+    id: 'grok-47',
+    provedor: 'openai-compat',
+    modelo: 'grok-4.7', // set/2026, sucessor do grok-4.6
+    envKey: 'XAI_API_KEY',
+    baseUrl: 'https://api.x.ai/v1',
+    contagemRaciocinio: 'fora-da-saida', // como no 4.6; conferir no smoke
+    precos: { entrada: 2, saida: 6 },
+    suportaGrounded: true,
+  },
+
+  // Moonshot direta. Pós-treino do K3; temperatura fixa em 1 como no K3 (D13.2).
+  'kimi-k31-pro': {
+    id: 'kimi-k31-pro',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'kimi-k3.1-pro', // ~23/out/2026, sucessor do kimi-k3
+    envKey: 'MOONSHOT_API_KEY',
+    baseUrl: 'https://api.moonshot.ai/v1',
+    corpoExtra: { temperature: 1 },
+    precos: { entrada: 2, saida: 10 },
+    suportaGrounded: true,
+  },
+
+  // Meta direta, camada standard. Wonder (preview) e Ember não têm camada
+  // contributor. Raciocínio padrão `max`, não desliga.
+  'muse-wonder': {
+    id: 'muse-wonder',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'muse-wonder-1.0', // 12/out/2026, preview; entrante (faixa acima do Spark)
+    envKey: 'META_API_KEY',
+    baseUrl: 'https://api.meta.ai/v1',
+    precos: { entrada: 4, saida: 20 },
+    suportaGrounded: true,
+  },
+  'muse-ember': {
+    id: 'muse-ember',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'muse-ember-1.0', // 09/nov/2026; entrante (faixa abaixo do Spark)
+    envKey: 'META_API_KEY',
+    baseUrl: 'https://api.meta.ai/v1',
+    precos: { entrada: 0.1, saida: 0.5 },
+    suportaGrounded: true,
+  },
+
+  // DeepSeek via OpenRouter, mesma política do deepseek-flash-41. O alias
+  // deepseek-flash passou a servir o 1017 em 17/out: id novo (D12 regra 3).
+  'deepseek-flash-41-1017': {
+    id: 'deepseek-flash-41-1017',
+    maxTokensPadrao: 4096,
+    provedor: 'openai-compat',
+    modelo: 'deepseek/deepseek-v4.1-flash-1017', // snapshot datado de 17/out/2026
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['deepseek', 'fireworks'], allow_fallbacks: false } },
+    precos: { entrada: 0.3, saida: 1.2 },
+    suportaGrounded: true,
+  },
+
+  // Alibaba via OpenRouter (DashScope direto: AccessDenied.Unpurchased em
+  // 24/nov/2026). Sem snapshot datado: risco de troca por baixo do alias (D12).
+  'qwen-4-max': {
+    id: 'qwen-4-max',
+    timeoutMs: 900_000,
+    maxTokensPadrao: 32768, // thinking padrão com budget 131072; mesmo teto dos Qwen 3.8
+    provedor: 'openai-compat',
+    modelo: 'qwen/qwen4-max', // lançado em 16/nov/2026, sucessor do qwen3.8-max
+    envKey: 'OPENROUTER_API_KEY',
+    baseUrl: 'https://openrouter.ai/api/v1',
+    corpoExtra: { provider: { order: ['Alibaba'], allow_fallbacks: false } },
+    precos: { entrada: 1.5, saida: 4.5 },
+    suportaGrounded: true,
+  },
+
+  // Maritaca direta. Preços em BRL convertidos a ~R$5,40/US$: S5 R$0,50/R$2,50;
+  // S5-nano R$0,10/R$0,60. Raciocínio padrão `xhigh` no S5.
+  s5: {
+    id: 's5',
+    maxTokensPadrao: 8192,
+    provedor: 'openai-compat',
+    modelo: 'S5', // 03/nov/2026, sucessor do sabia-4
+    // A API rejeita temperature 0 ("Only the default (1) value is supported",
+    // smoke de 24/nov/2026): CONDIÇÃO DISTINTA do protocolo, declarar (D13.2).
+    semTemperatura: true,
+    envKey: 'MARITACA_API_KEY',
+    baseUrl: 'https://chat.maritaca.ai/api',
+    precos: { entrada: 0.093, saida: 0.46 },
+    suportaGrounded: true,
+  },
+  's5-nano': {
+    id: 's5-nano',
+    // 32768 = saída máxima documentada. A 8192 escalando a 16384, 2 de 3
+    // respostas truncaram VAZIAS só raciocinando (smoke de 24/nov/2026).
+    maxTokensPadrao: 32768,
+    provedor: 'openai-compat',
+    modelo: 'S5-nano', // nov/2026, sucessor do sabiazinho-4
+    // A API rejeita temperature 0 ("Only the default (1) value is supported",
+    // smoke de 24/nov/2026): CONDIÇÃO DISTINTA do protocolo, declarar (D13.2).
+    semTemperatura: true,
+    envKey: 'MARITACA_API_KEY',
+    baseUrl: 'https://chat.maritaca.ai/api',
+    precos: { entrada: 0.019, saida: 0.11 },
     suportaGrounded: true,
   },
 

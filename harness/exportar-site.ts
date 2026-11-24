@@ -61,6 +61,25 @@ export const APRESENTACAO: Record<string, Apresentacao> = {
   'qwen-38-max-0902': { nome: 'Qwen 3.8 Max (0902)', empresa: 'Alibaba', tier: 'topo de linha' },
   'qwen-38-flash': { nome: 'Qwen 3.8 Flash', empresa: 'Alibaba', tier: 'econômico' },
   'muse-spark-13': { nome: 'Muse Spark 1.3', empresa: 'Meta', tier: 'topo de linha' },
+  // Ids a partir de nov/2026.
+  'gpt-62-astra': { nome: 'GPT-6.2 Astra', empresa: 'OpenAI', tier: 'topo de linha' },
+  'gpt-62-sol': { nome: 'GPT-6.2 Sol', empresa: 'OpenAI', tier: 'topo de linha' },
+  'gpt-6-luna': { nome: 'GPT-6 Luna', empresa: 'OpenAI', tier: 'econômico' },
+  'fable-5-2': { nome: 'Claude Fable 5.2', empresa: 'Anthropic', tier: 'topo de linha' },
+  'opus-5-5': { nome: 'Claude Opus 5.5', empresa: 'Anthropic', tier: 'topo de linha' },
+  'sonnet-5-5': { nome: 'Claude Sonnet 5.5', empresa: 'Anthropic', tier: 'topo de linha' },
+  'haiku-5-5': { nome: 'Claude Haiku 5.5', empresa: 'Anthropic', tier: 'econômico' },
+  'gemini-4-neon': { nome: 'Gemini 4 Neon', empresa: 'Google', tier: 'topo de linha' },
+  'gemini-4-carbon': { nome: 'Gemini 4 Carbon', empresa: 'Google', tier: 'topo de linha' },
+  'gemini-4-hydrogen': { nome: 'Gemini 4 Hydrogen', empresa: 'Google', tier: 'econômico' },
+  'grok-47': { nome: 'Grok 4.7', empresa: 'xAI', tier: 'topo de linha' },
+  'kimi-k31-pro': { nome: 'Kimi K3.1 Pro', empresa: 'Moonshot', tier: 'topo de linha' },
+  'muse-wonder': { nome: 'Muse Wonder 1.0', empresa: 'Meta', tier: 'topo de linha' },
+  'muse-ember': { nome: 'Muse Ember 1.0', empresa: 'Meta', tier: 'econômico' },
+  'deepseek-flash-41-1017': { nome: 'DeepSeek V4.1 Flash (1017)', empresa: 'DeepSeek', tier: 'econômico' },
+  'qwen-4-max': { nome: 'Qwen 4 Max', empresa: 'Alibaba', tier: 'topo de linha' },
+  s5: { nome: 'S5', empresa: 'Maritaca AI', tier: 'topo de linha' },
+  's5-nano': { nome: 'S5-nano', empresa: 'Maritaca AI', tier: 'econômico' },
 };
 
 function lerJsonl<T>(caminho: string): T[] {
