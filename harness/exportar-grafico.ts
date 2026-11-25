@@ -134,10 +134,10 @@ function desenhar(t: Tema): string {
     `<text x="${L.esq}" y="30" fill="${t.tintaPrimaria}" font-size="17" font-weight="600">Fidelidade ao texto oficial × aceitação de códigos inventados</text>`,
   );
   p.push(
-    `<text x="${L.esq}" y="50" fill="${t.tintaSecundaria}" font-size="13">17 modelos · rodada oficial-seca-2026-07 · sem acesso à fonte. Canto superior esquerdo é o melhor desempenho.</text>`,
+    `<text x="${L.esq}" y="50" fill="${t.tintaSecundaria}" font-size="13">${modelos.length} modelos · rodada ${esc(args.rodada!)} · sem acesso à fonte. Canto superior esquerdo é o melhor desempenho.</text>`,
   );
   p.push(
-    `<text x="${L.esq}" y="70" fill="${t.tintaSecundaria}" font-size="12.5">Em azul, os 5 melhores por nota composta; em cinza, os outros 12.</text>`,
+    `<text x="${L.esq}" y="70" fill="${t.tintaSecundaria}" font-size="12.5">Em azul, os ${nDestaque} melhores por nota composta; em cinza, os outros ${modelos.length - nDestaque}.</text>`,
   );
 
   // Grade recessiva, hairline, sólida.
