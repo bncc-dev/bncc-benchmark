@@ -1,0 +1,42 @@
+{
+ "versao": 1,
+ "modelo": "gemini-4-hydrogen",
+ "modo": "seco",
+ "api": "google",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 1,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h"
+   },
+   "submetido_em": "2026-11-24T16:37:35.120Z",
+   "ultimo_estado": {
+    "em": "2026-11-24T16:42:50.381Z",
+    "bruto": "BATCH_STATE_SUCCEEDED",
+    "contagens": {
+     "total": 1,
+     "concluidos": 1,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-11-24T16:42:50.847Z"
+  }
+ ],
+ "pedidos": {
+  "a-001-p0": {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "chave": "7f76bb9b0895c85db634d0ecd0e938645b1163f4cd9620da7db9eb742d880c85",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}

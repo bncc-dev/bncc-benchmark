@@ -1,0 +1,46 @@
+{
+ "versao": 1,
+ "modelo": "gpt-62-sol",
+ "modo": "seco",
+ "api": "openai",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 1,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+    "extras": {
+     "input_file_id": "file-GNkM8JXUzot9cZsZLhrywf",
+     "output_file_id": "file-RQ3WcLyLDu955m4FvhSp6g"
+    }
+   },
+   "submetido_em": "2026-11-24T16:37:25.957Z",
+   "ultimo_estado": {
+    "em": "2026-11-24T16:42:44.829Z",
+    "bruto": "completed",
+    "contagens": {
+     "total": 1,
+     "concluidos": 1,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-11-24T16:42:45.476Z"
+  }
+ ],
+ "pedidos": {
+  "a-001-p0": {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "chave": "1eb4218d813e60562a6e13c104ff5cb5efc074593fd1f2fc57c8cc0b49963942",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}

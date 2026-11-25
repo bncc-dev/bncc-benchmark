@@ -1,0 +1,42 @@
+{
+ "versao": 1,
+ "modelo": "gemini-4-carbon",
+ "modo": "seco",
+ "api": "google",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 1,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot"
+   },
+   "submetido_em": "2026-11-24T16:37:37.656Z",
+   "ultimo_estado": {
+    "em": "2026-11-24T16:42:51.258Z",
+    "bruto": "BATCH_STATE_SUCCEEDED",
+    "contagens": {
+     "total": 1,
+     "concluidos": 1,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-11-24T16:42:51.690Z"
+  }
+ ],
+ "pedidos": {
+  "a-001-p0": {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "chave": "07321ff379ab09d937ee0ae914aeb68de43690dc9349337e83e93472a3542e76",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}

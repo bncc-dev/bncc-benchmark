@@ -1,0 +1,44 @@
+{
+ "versao": 1,
+ "modelo": "gpt-6-luna",
+ "modo": "seco",
+ "api": "openai",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 1,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 4096,
+   "remoto": {
+    "id": "batch_6b05bd46bd2c819088cb93f586c292d7",
+    "extras": {
+     "input_file_id": "file-3SJjJMWicAQcAuZswFscpx"
+    }
+   },
+   "submetido_em": "2026-11-24T16:37:26.886Z",
+   "ultimo_estado": {
+    "em": "2026-11-24T17:23:00.027Z",
+    "bruto": "in_progress",
+    "contagens": {
+     "total": 1,
+     "concluidos": 0,
+     "falhos": 0
+    }
+   }
+  }
+ ],
+ "pedidos": {
+  "a-001-p0": {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "chave": "28d3ebb023898c0b66a975180ada3c31294373cc8cc07b87659eb2dc0f039226",
+   "lote": 0,
+   "situacao": "submetido"
+  }
+ }
+}
