@@ -1,0 +1,6359 @@
+{
+ "versao": 1,
+ "modelo": "haiku-5-5",
+ "modo": "seco",
+ "api": "anthropic",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": null,
+  "parafrases": 3,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 4096,
+   "remoto": {
+    "id": "msgbatch_01JgewcFm3WEYsVEGBzTxCrg",
+    "extras": {
+     "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_01JgewcFm3WEYsVEGBzTxCrg/results"
+    }
+   },
+   "submetido_em": "2026-11-24T17:27:18.692Z",
+   "ultimo_estado": {
+    "em": "2026-11-24T17:43:03.759Z",
+    "bruto": "ended",
+    "contagens": {
+     "total": 900,
+     "concluidos": 900,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-11-24T17:43:05.752Z"
+  },
+  {
+   "geracao": 2,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "msgbatch_01NEcm25WNwt5xA39mLJjZyB",
+    "extras": {
+     "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_01NEcm25WNwt5xA39mLJjZyB/results"
+    }
+   },
+   "submetido_em": "2026-11-24T17:43:06.364Z",
+   "ultimo_estado": {
+    "em": "2026-11-24T17:58:40.143Z",
+    "bruto": "ended",
+    "contagens": {
+     "total": 1,
+     "concluidos": 1,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-11-24T17:58:40.517Z"
+  }
+ ],
+ "pedidos": {
+  "a-001-p0": {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "chave": "826720c826b513dc896552f7b7aff25735178502a7fd8c793bbeb135734199c0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-001-p1": {
+   "item_id": "a-001",
+   "parafrase": 1,
+   "chave": "6a96423e32c9be5a65aa147a0366f6577a65746b480a833eafd9a1afe8a924d1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-001-p2": {
+   "item_id": "a-001",
+   "parafrase": 2,
+   "chave": "e674109a8789a3d905567eb7ca052152eaf33248b1a0839f228770ad9a088f10",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-002-p0": {
+   "item_id": "a-002",
+   "parafrase": 0,
+   "chave": "85ea935267e18ecccef908b07675a6bfb4753acb2f3670e2eecbfd00e0e750f4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-002-p1": {
+   "item_id": "a-002",
+   "parafrase": 1,
+   "chave": "c197012362d5895f311be4a307ee80d8d74c90539868a6dfdb646ded39abdd4e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-002-p2": {
+   "item_id": "a-002",
+   "parafrase": 2,
+   "chave": "07eb501dc070fc1a40aeb9488359c80b51b9d0e576bd103735e98c6dee8905ee",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-003-p0": {
+   "item_id": "a-003",
+   "parafrase": 0,
+   "chave": "3e728d22df8e13f54d0edc007074c397ebfeab1dc0ac83a672692eefc9e4c848",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-003-p1": {
+   "item_id": "a-003",
+   "parafrase": 1,
+   "chave": "f182a3ad4e140212c0e2953f741e0e7fb4cc439dcdd956008fdcc106d95ce351",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-003-p2": {
+   "item_id": "a-003",
+   "parafrase": 2,
+   "chave": "84039094aabbf0add1dc291b07c776ec6378a81e515d97cc190e3d72f63e2182",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-004-p0": {
+   "item_id": "a-004",
+   "parafrase": 0,
+   "chave": "af0f5baaaa9934d47b4f3a9a41c9da4835aa985eeeed58e32af3331100884221",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-004-p1": {
+   "item_id": "a-004",
+   "parafrase": 1,
+   "chave": "0cd591220a84543ac392512a835e68b8b9b219b168691fa1418417ea23a27c9c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-004-p2": {
+   "item_id": "a-004",
+   "parafrase": 2,
+   "chave": "34b16fee800ef28ddcf2ba017d4807e86d0c33a9927d0994d09914551dc02ac9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-005-p0": {
+   "item_id": "a-005",
+   "parafrase": 0,
+   "chave": "e4ccbdcb5fe4c856e3cc60e715e1d88d769519961c71f07ec028b9931d712259",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-005-p1": {
+   "item_id": "a-005",
+   "parafrase": 1,
+   "chave": "30c03d3387cefb1a2e61bcd33554fa7ae2aed303f099e6a8d6e302d8427dc353",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-005-p2": {
+   "item_id": "a-005",
+   "parafrase": 2,
+   "chave": "86da2d4acbfdab3cc2f40813b6d09bc31fa19e6cd0955139dcb56e8a40525648",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-006-p0": {
+   "item_id": "a-006",
+   "parafrase": 0,
+   "chave": "2e90928182b307e0d848a18e8659da864a363a23e345f321577d89f7cf910a0a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-006-p1": {
+   "item_id": "a-006",
+   "parafrase": 1,
+   "chave": "3fd61fcdc72aeccf8b86e63a8a16840bdb442bbaf550f78bf1937f02cdcf5852",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-006-p2": {
+   "item_id": "a-006",
+   "parafrase": 2,
+   "chave": "0e3e179f201a9783764856eab7f23aab568226d95b3d127bc0bcf5f88da8536d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-007-p0": {
+   "item_id": "a-007",
+   "parafrase": 0,
+   "chave": "956597eabbbdc00ceb7c56a9b7a60d8d9410ca0d2a7fa251cb7bf8f077e679ba",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-007-p1": {
+   "item_id": "a-007",
+   "parafrase": 1,
+   "chave": "8aaf598dd30e70b3e285b01e2c209117f25a3fc7a237fa77e85583b95aa13523",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-007-p2": {
+   "item_id": "a-007",
+   "parafrase": 2,
+   "chave": "536458291efc9c8afbdd9b884093123624f54a26d3815e52af77f48434a2bc01",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-008-p0": {
+   "item_id": "a-008",
+   "parafrase": 0,
+   "chave": "2e5ab31f3418918caa087f90066e2f329d8a5c5ed512518c4ca2c34bc43dc1a0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-008-p1": {
+   "item_id": "a-008",
+   "parafrase": 1,
+   "chave": "c9b6bc1c8c68fb1bd6f70aa573d3c08333a30697b9cb2738f3f7a2c95690807c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-008-p2": {
+   "item_id": "a-008",
+   "parafrase": 2,
+   "chave": "85a9119c38436b9208b88bc74f63f2b781c405ddb58010ffc95e1640c7ca72c1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-009-p0": {
+   "item_id": "a-009",
+   "parafrase": 0,
+   "chave": "80506e5358b9dd8e4e21c88b44f0c27dc5317e719a2859d547915a2c0062cad7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-009-p1": {
+   "item_id": "a-009",
+   "parafrase": 1,
+   "chave": "383507369b3e5bbb81d6607013976d84b6d844fe55196c22d69264650285095e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-009-p2": {
+   "item_id": "a-009",
+   "parafrase": 2,
+   "chave": "d8c2009babea5fa20c79823478b12926e7ccbf6cecf775c98a8e7031ed171f78",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-010-p0": {
+   "item_id": "a-010",
+   "parafrase": 0,
+   "chave": "b1f6d30058136fd54bd286f924cd3b9dba9eed6f9fa5e64fd55d018a48962d53",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-010-p1": {
+   "item_id": "a-010",
+   "parafrase": 1,
+   "chave": "6ad4daa02a47d5a692c6b17473549789cce2267d6da2608caf81568a76108758",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-010-p2": {
+   "item_id": "a-010",
+   "parafrase": 2,
+   "chave": "b1ecb3c9ae6f7290d1e36bd3fdc70f10a8add8cef6250a962c652fec1477698e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-011-p0": {
+   "item_id": "a-011",
+   "parafrase": 0,
+   "chave": "302880a6ee9d92da15002e27fb51644d7e750f6bb599c1ae3a4bc94c448c1e93",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-011-p1": {
+   "item_id": "a-011",
+   "parafrase": 1,
+   "chave": "e8ed4219ad7cc570a29b904881823f5c95386cb8a04569633782d17f5b838e28",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-011-p2": {
+   "item_id": "a-011",
+   "parafrase": 2,
+   "chave": "3c476e61ba4e9d96ce5cb9d2956080b7601d20bd1787fce315985b082f0d1386",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-012-p0": {
+   "item_id": "a-012",
+   "parafrase": 0,
+   "chave": "53af5a8af313d526c6c78f61754e26c89d78fabf66ba912988c1bd5db86d3dd5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-012-p1": {
+   "item_id": "a-012",
+   "parafrase": 1,
+   "chave": "167d3a54724a463dc79c41c4e9cb1c82b58884d2d416f6d522c6910d818ea49f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-012-p2": {
+   "item_id": "a-012",
+   "parafrase": 2,
+   "chave": "8e93b032552ac3c53b2466ccfc38084abdd28c8f0d2b6fcd9fdd88a7600fda38",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-013-p0": {
+   "item_id": "a-013",
+   "parafrase": 0,
+   "chave": "cd45e33b581ced3a15370c7ef531ab5a265acbb08786000a735517c7e94b1349",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-013-p1": {
+   "item_id": "a-013",
+   "parafrase": 1,
+   "chave": "7c6d4ccea5ef11d99ab4ea3770889e0226479a33c4305d82a6ddddf35c1ca4e7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-013-p2": {
+   "item_id": "a-013",
+   "parafrase": 2,
+   "chave": "1d708dab26daa102df8217641820dd113e91e50c372e93cc4515dc36d9084078",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-014-p0": {
+   "item_id": "a-014",
+   "parafrase": 0,
+   "chave": "f1a935253b98e931d5d18a5995518750ded5402ee6507f4d8c4e4887fefe4f4b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-014-p1": {
+   "item_id": "a-014",
+   "parafrase": 1,
+   "chave": "92dd4827471235177b9d62e77864b1f4cfd25e186cf552312997cdf6259fe8c4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-014-p2": {
+   "item_id": "a-014",
+   "parafrase": 2,
+   "chave": "14a91f5d6f63cdddc753dc7ac834d55573ce7a97ad2415bb05880879419c4416",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-015-p0": {
+   "item_id": "a-015",
+   "parafrase": 0,
+   "chave": "dd57879b5b1696064638f2f6c89dc1821f1eaaf789af7ca09dc99621652af2be",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-015-p1": {
+   "item_id": "a-015",
+   "parafrase": 1,
+   "chave": "d5462a06ac95437bc327724687148308fa20bd7bf09c7f851e2cda9e16f1884e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-015-p2": {
+   "item_id": "a-015",
+   "parafrase": 2,
+   "chave": "286ad29ceae20209874d2ab1c916b9d6acc4cefe57cde198b6d39614a1396258",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-016-p0": {
+   "item_id": "a-016",
+   "parafrase": 0,
+   "chave": "9447b0a86d56451725ac3a845be51aab7221b66a54d347fdd067b0173b3dd2b0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-016-p1": {
+   "item_id": "a-016",
+   "parafrase": 1,
+   "chave": "5d34586e80d36a960e511022bd866bb9850d1773669f85a16f6acfe3b9f0ab64",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-016-p2": {
+   "item_id": "a-016",
+   "parafrase": 2,
+   "chave": "88821f3c25984eb3811a569b0292d2f4348ee371f4cd78f177f59a4416fc7505",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-017-p0": {
+   "item_id": "a-017",
+   "parafrase": 0,
+   "chave": "3fb63a92690c7b1114c28d075b60a97da269b9bfb9b7d71290fee4542f2e207e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-017-p1": {
+   "item_id": "a-017",
+   "parafrase": 1,
+   "chave": "225be14e0ad31449e86d4dd978fadd641a05f416308d9dc5d63b8b27842f0663",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-017-p2": {
+   "item_id": "a-017",
+   "parafrase": 2,
+   "chave": "ab28d971045040e3c4b8e0a51c21ede7dc944f1e01c6d95bfc8e90d279d7dfec",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-018-p0": {
+   "item_id": "a-018",
+   "parafrase": 0,
+   "chave": "98bb9ce4fb985a0ca6149c54f25764601e1d3b957bd52601811575b2de7b2069",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-018-p1": {
+   "item_id": "a-018",
+   "parafrase": 1,
+   "chave": "26ae2060619f2cc0c84ddd9ca155af5192d2c286026d4686379b6f799e481a0c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-018-p2": {
+   "item_id": "a-018",
+   "parafrase": 2,
+   "chave": "33734feda71d5e45a997b27875ad90456f9f6aa1571f3c57df4656a35ccb8748",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-019-p0": {
+   "item_id": "a-019",
+   "parafrase": 0,
+   "chave": "79e5d986ab275a043a0d2b068589e0bf4c733a2f1e9abf7b37a5d3a1ce3c700d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-019-p1": {
+   "item_id": "a-019",
+   "parafrase": 1,
+   "chave": "e53bc8b9a0bebec59bb2a2994a5c413e813a805fdb8a92888089b8ccf81a7fc9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-019-p2": {
+   "item_id": "a-019",
+   "parafrase": 2,
+   "chave": "73684bf1cd7488bf32a176d50a97aba5264835fa603adb6e6197306856733945",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-020-p0": {
+   "item_id": "a-020",
+   "parafrase": 0,
+   "chave": "e29b20bba51365e88e52e2ae93120635320be3f00edb7ee6725e7e966632af17",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-020-p1": {
+   "item_id": "a-020",
+   "parafrase": 1,
+   "chave": "b4e05eaf2e5aaac9d274a3b63997cdb52f46d8e141440744dfb5fa6e135877af",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-020-p2": {
+   "item_id": "a-020",
+   "parafrase": 2,
+   "chave": "7eb9ed955c08caade52be05b992defd977de25a668cd851ba9d6555d12311c2b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-021-p0": {
+   "item_id": "a-021",
+   "parafrase": 0,
+   "chave": "07c8f32b59a15222a3d0b1027e9158d3a86b64df4691248be56d0000bb4d5ab8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-021-p1": {
+   "item_id": "a-021",
+   "parafrase": 1,
+   "chave": "6b6400393ddc4906280397bfa11a9449c7f1b530b36ba79a59f48bd2445515d5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-021-p2": {
+   "item_id": "a-021",
+   "parafrase": 2,
+   "chave": "65e6590686219e9eeeaacc03f3d4d0cc97b45a3299e8563710989c39458488b1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-022-p0": {
+   "item_id": "a-022",
+   "parafrase": 0,
+   "chave": "f28b70c445e034bf57edf32be9e74ce08e3e082cd120d29baded989fc64f492d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-022-p1": {
+   "item_id": "a-022",
+   "parafrase": 1,
+   "chave": "9cbec8bbaa3d649aa965fbcc4bf8b09d5dd96e79fce91b28343778dbf26cfa78",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-022-p2": {
+   "item_id": "a-022",
+   "parafrase": 2,
+   "chave": "35e9a22a6106c0f0ba8d726e43f927e1a423b735baab361d23639123a95bd88d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-023-p0": {
+   "item_id": "a-023",
+   "parafrase": 0,
+   "chave": "272d5eb890bff5f5633f7e5ea91574ecfdfe602495d1d82dcfea9e5e3fde510c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-023-p1": {
+   "item_id": "a-023",
+   "parafrase": 1,
+   "chave": "8882b9446b1f079e588cc6ac41a64e9981efd058bce979a118d068abb8abee24",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-023-p2": {
+   "item_id": "a-023",
+   "parafrase": 2,
+   "chave": "ec862d1f76cc4aa13b96a7ebb3bdde7d3340a032efbbf36b009e985489f2afd9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-024-p0": {
+   "item_id": "a-024",
+   "parafrase": 0,
+   "chave": "15bc3d861cf74ac6d390aad8abe24baecc3a99ef457189899a51a71f9046f0aa",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-024-p1": {
+   "item_id": "a-024",
+   "parafrase": 1,
+   "chave": "8ac078b499d1030dc48b270fd0326a29734763a48cf1393f2e904b699a4dbee4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-024-p2": {
+   "item_id": "a-024",
+   "parafrase": 2,
+   "chave": "b8ce623385fe0015dd188ac4eb634247a714dd8b402275f165e656bd9dabd7a5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-025-p0": {
+   "item_id": "a-025",
+   "parafrase": 0,
+   "chave": "e8ea8cffb8e540539ba53aad456ceaa2cccd5ba67af3a7449d94742eae8b7efe",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-025-p1": {
+   "item_id": "a-025",
+   "parafrase": 1,
+   "chave": "a71bd548ecc92c038c5e701097d2c0c4f279df564982aa81ef6565b1eeae3185",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-025-p2": {
+   "item_id": "a-025",
+   "parafrase": 2,
+   "chave": "584abbc540a63e488ea3d4651ac3f026c18b27f4682c94343f5ed2524315f21b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-026-p0": {
+   "item_id": "a-026",
+   "parafrase": 0,
+   "chave": "f9a048d34d34267a887f9dc68d2588f5bfc3aaeaf2a4eb65a058b0bc08162515",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-026-p1": {
+   "item_id": "a-026",
+   "parafrase": 1,
+   "chave": "df464460f681cc19c12fbc9216a538d3dbbf7a474a3e2286539b557d4d767b33",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-026-p2": {
+   "item_id": "a-026",
+   "parafrase": 2,
+   "chave": "caeb22c55631e43c37b80ecdc033faec6ccce6efe48c4b2874cd865f7fa34cd6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-027-p0": {
+   "item_id": "a-027",
+   "parafrase": 0,
+   "chave": "c48d569b1a9ef2b3c9b27565dce77f7a89cf3d6a7fe991b9cf06a7d3fadf2d60",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-027-p1": {
+   "item_id": "a-027",
+   "parafrase": 1,
+   "chave": "34034f503cce4c73d8c5d25ebade482e0dd2f8b0e3799bc49380b73675d7cf6c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-027-p2": {
+   "item_id": "a-027",
+   "parafrase": 2,
+   "chave": "0eca31be257562a8d3d274c64a57054edc4ea604bd43c31a4934f93d2da727e5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-028-p0": {
+   "item_id": "a-028",
+   "parafrase": 0,
+   "chave": "8859ad65d40de5163ec24d3293dda62aac2160b882f04517e5360c210174113f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-028-p1": {
+   "item_id": "a-028",
+   "parafrase": 1,
+   "chave": "65517127e9256056f280426a6c8b07bd7bac65ddc1b901f1cebd45ba71d68b55",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-028-p2": {
+   "item_id": "a-028",
+   "parafrase": 2,
+   "chave": "9d3c4108e9ea019a6cffa2e0b2191345cbe9336acf8126215970dfdbb4ab5084",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-029-p0": {
+   "item_id": "a-029",
+   "parafrase": 0,
+   "chave": "5ce602d266479a12aad5936b3739438615962f6492cf21803c4356e3264ca35f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-029-p1": {
+   "item_id": "a-029",
+   "parafrase": 1,
+   "chave": "5044526da934e2a2f278fd13c783d65ff7513161c6c22a1db5902dbad19c047b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-029-p2": {
+   "item_id": "a-029",
+   "parafrase": 2,
+   "chave": "9499a2c171f58dfd7f6c89b13a6d651511e5f9d1c0096db26ddb5d17e8002a90",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-030-p0": {
+   "item_id": "a-030",
+   "parafrase": 0,
+   "chave": "314faf8c2d8d3d7bb926357f29830614456176269cdd3e3f3dbf32a24d2cd16e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-030-p1": {
+   "item_id": "a-030",
+   "parafrase": 1,
+   "chave": "bda4c9b175cd38d301b5b8f7ce6994300c6fdb324760bd2ad8d7e04309407550",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-030-p2": {
+   "item_id": "a-030",
+   "parafrase": 2,
+   "chave": "8cfa1244a6aad1f8984681dd1d9d6472fc4f905af07bf0e58df4b48066afb5ed",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-031-p0": {
+   "item_id": "a-031",
+   "parafrase": 0,
+   "chave": "3d1d5a012c29fc77b76924ab50f27bb8ccfe57e880e12fe2a420d32802123c8c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-031-p1": {
+   "item_id": "a-031",
+   "parafrase": 1,
+   "chave": "1239af7bab6fccbe626906708230675a0f4524907b1fd01acb3152a2af26f559",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-031-p2": {
+   "item_id": "a-031",
+   "parafrase": 2,
+   "chave": "f050fa79b6e230d446fdf1b63bd3541660708b5fe23d76879c3f7602aa60487d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-032-p0": {
+   "item_id": "a-032",
+   "parafrase": 0,
+   "chave": "b92ec6b0d3c7a9001bc0cbaf7ba1027ef8d72af360f8aa68b5e9f79aa95dc4c1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-032-p1": {
+   "item_id": "a-032",
+   "parafrase": 1,
+   "chave": "9e8d47eccb2cc96e9c8ba6f7064a715f3ed719bb51998711bf96437055e5667d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-032-p2": {
+   "item_id": "a-032",
+   "parafrase": 2,
+   "chave": "a45f0c3f3cec62e16c685806238576cdc239e63f71ed23f704e4b662281264fa",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-033-p0": {
+   "item_id": "a-033",
+   "parafrase": 0,
+   "chave": "20626c9c3590c6f60ea5450d0a9c571d8795c20d9f389e2349dccda1fc14e23d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-033-p1": {
+   "item_id": "a-033",
+   "parafrase": 1,
+   "chave": "c7978120efe14402fab3db547e63831c322ae38c137445cd62d25c103755ed97",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-033-p2": {
+   "item_id": "a-033",
+   "parafrase": 2,
+   "chave": "14dcaf422c8656ad1dc384126fba303a257dd55537be8531bb324b78050904c5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-034-p0": {
+   "item_id": "a-034",
+   "parafrase": 0,
+   "chave": "4abbdf76458735261da81819abefee24f541b4af17a0501ed1861f5c459084a3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-034-p1": {
+   "item_id": "a-034",
+   "parafrase": 1,
+   "chave": "4a6641e861a130df097feb0d8d4564b97383085d4cd2db548519611df7e64c64",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-034-p2": {
+   "item_id": "a-034",
+   "parafrase": 2,
+   "chave": "4deed254749c8046a0c2d9e212769d895ca49f92e4e51707fe66e5540974ed87",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-035-p0": {
+   "item_id": "a-035",
+   "parafrase": 0,
+   "chave": "f839a06a4e1de9220943ccfaa0620e93309c1512a27dd780da68d12a0fe2670f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-035-p1": {
+   "item_id": "a-035",
+   "parafrase": 1,
+   "chave": "46a8a265dc4c2acc4f51bebeea1f7727bec8db8b4add482985f8f876c6dbe77d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-035-p2": {
+   "item_id": "a-035",
+   "parafrase": 2,
+   "chave": "1472f44b39f187326d23a2af46d374da4bbe529dc86b099d25abcdcf6d17ef20",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-036-p0": {
+   "item_id": "a-036",
+   "parafrase": 0,
+   "chave": "2b2df2e3a22e0dea43073c004daac5704f10b67084603521f3f6cb606b0ec701",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-036-p1": {
+   "item_id": "a-036",
+   "parafrase": 1,
+   "chave": "ada0ac02237a2b38e5ae6623851a72915644a0209342f049086b6ae6d8e15832",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-036-p2": {
+   "item_id": "a-036",
+   "parafrase": 2,
+   "chave": "1aa30326733175fc34df6f1acfca6c706f7180c0b6898f3a9863e2ca88bedbe7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-037-p0": {
+   "item_id": "a-037",
+   "parafrase": 0,
+   "chave": "c9f8329ae22bac88280c45789be2ba26030894c134ed0c172c4b268cf499afd5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-037-p1": {
+   "item_id": "a-037",
+   "parafrase": 1,
+   "chave": "0f0335c650a93bdce71871ff596b01c0ae1e7140a79d9662b4dfcf195f8e411c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-037-p2": {
+   "item_id": "a-037",
+   "parafrase": 2,
+   "chave": "7822699e1ef4bb921b7db1bc28b40303b0685ba7da7110c4def767c7d264caa1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-038-p0": {
+   "item_id": "a-038",
+   "parafrase": 0,
+   "chave": "86d4aa54d746ce716c656592da55c33f10dfc3a2043defddbc969d0e67db8f6b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-038-p1": {
+   "item_id": "a-038",
+   "parafrase": 1,
+   "chave": "a7502ed672345dd50b580a6d8f9ee9c9b8da4dc58cfec10a2db9a8a74b09e5f1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-038-p2": {
+   "item_id": "a-038",
+   "parafrase": 2,
+   "chave": "ed9dc3523e7f7628b8a7010d1c3163db31fcbc42c57d3dff2695ebe885b5ab5e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-039-p0": {
+   "item_id": "a-039",
+   "parafrase": 0,
+   "chave": "39421cd47d66b84c7a51b78306c1687401e606ed33dd84accb131a77f8b68729",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-039-p1": {
+   "item_id": "a-039",
+   "parafrase": 1,
+   "chave": "413f234dc1fcef2079b28c97acd9c3d8fd153af9c4deb2663f1fb44ee36a363c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-039-p2": {
+   "item_id": "a-039",
+   "parafrase": 2,
+   "chave": "c1ef88b8df00ea3c5ba6d81b246b1228e535739aafa7ff9ae73b3bb0bd10c8b2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-040-p0": {
+   "item_id": "a-040",
+   "parafrase": 0,
+   "chave": "271d7a88344e68a48c3760b911cb901160875478d3e346a795a4c79589b99217",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-040-p1": {
+   "item_id": "a-040",
+   "parafrase": 1,
+   "chave": "6df068fad2cabc3465c1cceff1d0b5a8db19729f2a3ffa97766c96d61605404a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-040-p2": {
+   "item_id": "a-040",
+   "parafrase": 2,
+   "chave": "a72930000a315c45c4dfe666a5b7b417838d02960156bdc1ed30f3b04bb516b4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-041-p0": {
+   "item_id": "a-041",
+   "parafrase": 0,
+   "chave": "926edf0569b977ff7193173aff79f3702a05aa9b67edf493bc7dd981da46ee2f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-041-p1": {
+   "item_id": "a-041",
+   "parafrase": 1,
+   "chave": "4a84e5a33ce31fa3127159f3e412914f772f5a08b84ee01c19d1aebf9338ef0b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-041-p2": {
+   "item_id": "a-041",
+   "parafrase": 2,
+   "chave": "8ff35630ca9d6c42894e28cbf51cf1e54d127e9164c5e86a7785ef027fc11232",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-042-p0": {
+   "item_id": "a-042",
+   "parafrase": 0,
+   "chave": "6e0ce347777c018e4277d198aaeacd02ee2d95d55cd4a06b8fdec5b9b3094fec",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-042-p1": {
+   "item_id": "a-042",
+   "parafrase": 1,
+   "chave": "3427b7523b88389e08d1535eca21efc3f00f3e70908f492efb407b15f369ef49",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-042-p2": {
+   "item_id": "a-042",
+   "parafrase": 2,
+   "chave": "5a714829094f4808d9334c276ba3501c45fd5c6ffb48c06922b0e746bf7579ff",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-043-p0": {
+   "item_id": "a-043",
+   "parafrase": 0,
+   "chave": "1872a401a7f419e87e1fd03f18a7c38284181bd0272493be302429c0d524b4b9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-043-p1": {
+   "item_id": "a-043",
+   "parafrase": 1,
+   "chave": "7940adcad9e3c7c0fd0f48f9e46f441446a5b0c8335b3982049fc7a981a2ac14",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-043-p2": {
+   "item_id": "a-043",
+   "parafrase": 2,
+   "chave": "443a4dc5e4b826ba158ee2e3dc55156acdd90566b70d3e930e48ceb602810407",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-044-p0": {
+   "item_id": "a-044",
+   "parafrase": 0,
+   "chave": "3993eb79d195583daa9cdab988d092e33f052933bc4bee0d5cee2d79601ae9bd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-044-p1": {
+   "item_id": "a-044",
+   "parafrase": 1,
+   "chave": "fcfe7a0c8adb9816a5c97e170bc9ec5a13ac5e4de685b5dca726fd04b2f1d889",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-044-p2": {
+   "item_id": "a-044",
+   "parafrase": 2,
+   "chave": "0c025281cca3b1854c4e1290690a5ff7ca0b6c0a44e2a4c60a2ba7db227acee0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-045-p0": {
+   "item_id": "a-045",
+   "parafrase": 0,
+   "chave": "de89ab71099cf7ee4a60d9e7cb546d516d3d71093b4f03837e03263ec5e7d0fa",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-045-p1": {
+   "item_id": "a-045",
+   "parafrase": 1,
+   "chave": "02b643bc9dfe99b3a0afb688aa3ecea8a88be8f3032a06729968674c824aef60",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-045-p2": {
+   "item_id": "a-045",
+   "parafrase": 2,
+   "chave": "2659282d966de8f102a9690080a653d8f9e9d1336e80f253b6826b8010aea0b9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-046-p0": {
+   "item_id": "a-046",
+   "parafrase": 0,
+   "chave": "7d6d803d65f16af032b26b964228726aac8ace803cd5c3b086e761a2bf29d918",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-046-p1": {
+   "item_id": "a-046",
+   "parafrase": 1,
+   "chave": "2ce02e7dbaa5daaf342e39b593eece82b15bbb9d36a9977e485e4f93b6233817",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-046-p2": {
+   "item_id": "a-046",
+   "parafrase": 2,
+   "chave": "13eccc9d43732483228dd71fe192b7245053de00738af00f8121e51810e1f221",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-047-p0": {
+   "item_id": "a-047",
+   "parafrase": 0,
+   "chave": "9feab095b4620e092b250974e54f24bdcc262a5f6b5f134930887435ee41ea18",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-047-p1": {
+   "item_id": "a-047",
+   "parafrase": 1,
+   "chave": "f1ff8634ba7d9106eb8307d041e6f4f5c2a7d5ad8293aaf766272b8e9e727c64",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-047-p2": {
+   "item_id": "a-047",
+   "parafrase": 2,
+   "chave": "b806ad100a2f6cac7cde0138fc149149af6ea0a48b442b4b278dd3984a7cbeb3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-048-p0": {
+   "item_id": "a-048",
+   "parafrase": 0,
+   "chave": "d35df7835fc804ba740e95f8fee627105436e434bce593c5d63d1b9d39015dab",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-048-p1": {
+   "item_id": "a-048",
+   "parafrase": 1,
+   "chave": "0e443f0c7a1c754e150f08cc246ef18c24afebfcabd7b8a51a1c267605ea0c41",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-048-p2": {
+   "item_id": "a-048",
+   "parafrase": 2,
+   "chave": "3698e813365496a1e515d732de5898700003a778fffcc72af983fca9e0045409",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-049-p0": {
+   "item_id": "a-049",
+   "parafrase": 0,
+   "chave": "4c9e59f3e7cb00df505aabe815dbeda69b919a92e60b214efab2cced31ae8403",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-049-p1": {
+   "item_id": "a-049",
+   "parafrase": 1,
+   "chave": "186cce5694c40296a41e9d19b5e4e5184f2f0f0d13b0b68d6dffb6522382d0a4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-049-p2": {
+   "item_id": "a-049",
+   "parafrase": 2,
+   "chave": "ff454303e74a3a59a091e19177b5894417394f754d058bffb1a4c79c4d7cc666",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-050-p0": {
+   "item_id": "a-050",
+   "parafrase": 0,
+   "chave": "c1b49fecacaf20e2707b7f3beb31a838e79544c2ccc84c2249f5b49126ee6689",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-050-p1": {
+   "item_id": "a-050",
+   "parafrase": 1,
+   "chave": "fef0efdb7db12f1678193227aaa0ffedbdcb2caf932f32067924b03141b6c776",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-050-p2": {
+   "item_id": "a-050",
+   "parafrase": 2,
+   "chave": "c0e226a9c3e63bc632adcbb62b78c825fa920354e72802bd0313adf7d8a2a80a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-051-p0": {
+   "item_id": "a-051",
+   "parafrase": 0,
+   "chave": "81edbf859147bbb3f410e35afdf624233c0a81735b08b98b10f6737315fb3713",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-051-p1": {
+   "item_id": "a-051",
+   "parafrase": 1,
+   "chave": "119faba74a38d21d9e70eebf0253866367239ae69b46dc9e8f73e12592cd1b18",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-051-p2": {
+   "item_id": "a-051",
+   "parafrase": 2,
+   "chave": "57779e8be4a3a59d88b46e3686a409712db69d9db2e3c2aa0445006301f51d22",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-052-p0": {
+   "item_id": "a-052",
+   "parafrase": 0,
+   "chave": "d7c788c6273174552032c6bb8894db1b71d05ccf9afd82556514e4c1b633a7e7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-052-p1": {
+   "item_id": "a-052",
+   "parafrase": 1,
+   "chave": "63e396d91ceb001ba89fe981286793d0975854a761db0cf8421b7fe83fcfb4a1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-052-p2": {
+   "item_id": "a-052",
+   "parafrase": 2,
+   "chave": "5a0207ba9fa57f992600a07bc4df17084b59f39ecaab62926940783962eed72d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-053-p0": {
+   "item_id": "a-053",
+   "parafrase": 0,
+   "chave": "a30075b7ac06e71772f4757ba2956e4567c0ae637f64ecafce91e63880e4148b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-053-p1": {
+   "item_id": "a-053",
+   "parafrase": 1,
+   "chave": "d1c2985b0fe99715a94951a9c4c2f8b686d0cf6610e35c232b57a2d03f87da7a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-053-p2": {
+   "item_id": "a-053",
+   "parafrase": 2,
+   "chave": "b741873b9c0da732340c4fed4815c9e3e5e59bb8a98ad3edbe4f3f5a53b8e79c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-054-p0": {
+   "item_id": "a-054",
+   "parafrase": 0,
+   "chave": "002dfe368dacc0b50843e0ad501a8bedd20646b8899a1f375023769dfea8175f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-054-p1": {
+   "item_id": "a-054",
+   "parafrase": 1,
+   "chave": "b73eafa180317d3e093747086216fb6dd06cba45e5742eace397a793a950b08f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-054-p2": {
+   "item_id": "a-054",
+   "parafrase": 2,
+   "chave": "4f759e02c012cf147c60915b6b3964ea26da422da9477819b2ea7eacb26fdf52",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-055-p0": {
+   "item_id": "a-055",
+   "parafrase": 0,
+   "chave": "026c64d644d2791147120a53799d5f1f955c608aa46e817b3dc6bb622f0cce56",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-055-p1": {
+   "item_id": "a-055",
+   "parafrase": 1,
+   "chave": "19ac82aebf3fbdf1b6035f83c403670330d47ac57b3c706a0e338d6fd2a0417b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-055-p2": {
+   "item_id": "a-055",
+   "parafrase": 2,
+   "chave": "443ff0916c3be8f50bcd2773f4a783853f27b62394b4a77d2e5fdb32447de49e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-056-p0": {
+   "item_id": "a-056",
+   "parafrase": 0,
+   "chave": "8646643b72d0f60da3b038e51fb7acaaab764257a9d89f7ceb3da8101288b08b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-056-p1": {
+   "item_id": "a-056",
+   "parafrase": 1,
+   "chave": "e8fb37a1986b9491326250afcc8da6fd548019b1bd833cf683c4f502de9c0d82",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-056-p2": {
+   "item_id": "a-056",
+   "parafrase": 2,
+   "chave": "138b2926c37f35df56a582f9dd7715280621bd37a854e9f4c1389fd3d654e91d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-057-p0": {
+   "item_id": "a-057",
+   "parafrase": 0,
+   "chave": "b57fbfa0bcce4ef0f62c63dd7b5ce52086e45a6ed6e2e284832855c819ad09ed",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-057-p1": {
+   "item_id": "a-057",
+   "parafrase": 1,
+   "chave": "90666e01699f3b67136f47d26596c15417285644a23c0215b160380ed66de3ed",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-057-p2": {
+   "item_id": "a-057",
+   "parafrase": 2,
+   "chave": "844bb9ac7c4fd993d9b787631330346bc5d334b1e8494f54eb1a8c07799b4bcc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-058-p0": {
+   "item_id": "a-058",
+   "parafrase": 0,
+   "chave": "853a51cec8899707fd2fd0016776df41a7b7e39086e1f2a57e0e2cff8c36dc58",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-058-p1": {
+   "item_id": "a-058",
+   "parafrase": 1,
+   "chave": "0b7f2af841f271d307ea0985004d962d9da360224d52b32abb3f065fe8ac517d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-058-p2": {
+   "item_id": "a-058",
+   "parafrase": 2,
+   "chave": "3f1fb30bafbfcc72246ccec8005ff4db02588ced332dd1e6f25d2935e9dab49a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-059-p0": {
+   "item_id": "a-059",
+   "parafrase": 0,
+   "chave": "033808694aa0aef89400e361479c28fbb8fd36b5880ec1965cdb755d3b576309",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-059-p1": {
+   "item_id": "a-059",
+   "parafrase": 1,
+   "chave": "2adc8885b6f8526cb7f14a927de090df38ff0b1120f182994845756573b957d1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-059-p2": {
+   "item_id": "a-059",
+   "parafrase": 2,
+   "chave": "348387721b99c559e37b7ce4e16cff1fe41bfc441758851016a5bffe0729b9cb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-060-p0": {
+   "item_id": "a-060",
+   "parafrase": 0,
+   "chave": "bc982d2a88fbf4fbfbe575ca5451037b3e4450d4030fdb207413ad4ecbfaf6c3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-060-p1": {
+   "item_id": "a-060",
+   "parafrase": 1,
+   "chave": "bdb5d86517575b0f0aa05bb92d9ad275d87e78f3954563ab0922a0edc41debbf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-060-p2": {
+   "item_id": "a-060",
+   "parafrase": 2,
+   "chave": "9b8e437b0387aa6a688bbfcec5fdcfd1e8429904eadcc596713d8d04222fa788",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-061-p0": {
+   "item_id": "a-061",
+   "parafrase": 0,
+   "chave": "447e68b9a41b9f87cdfd2c82c00e4395b923de0d640264c8645a2ddec667cdad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-061-p1": {
+   "item_id": "a-061",
+   "parafrase": 1,
+   "chave": "0b52a585b3b213e91933f31d579804ea51aa09ef309f8b4ef1828bfcc94c917a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-061-p2": {
+   "item_id": "a-061",
+   "parafrase": 2,
+   "chave": "2cd99e9f8702cc4f00d381de2334d424da30e7ff4be4741bf240f8f5c038953e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-062-p0": {
+   "item_id": "a-062",
+   "parafrase": 0,
+   "chave": "0365a0b7ec624b87ff7ee0fda8f72a1cce95920d418263091439f3a2c5831bea",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-062-p1": {
+   "item_id": "a-062",
+   "parafrase": 1,
+   "chave": "eb74755caebdb0b29cd18f3366a74738ed25fb27282145750d3eb3319d48de27",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-062-p2": {
+   "item_id": "a-062",
+   "parafrase": 2,
+   "chave": "65020412761bafaebcf0953eb651131baad8231a68f6e3981b28aa03e6122585",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-063-p0": {
+   "item_id": "a-063",
+   "parafrase": 0,
+   "chave": "7fa8eea8753b795b1613b27881c6fdea14e80188a74478adbfa37335e5c7af34",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-063-p1": {
+   "item_id": "a-063",
+   "parafrase": 1,
+   "chave": "0aa69d4dc0c77bcf0297c00a558ea44bccc69d5de74268dc30bd62be576da8c8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-063-p2": {
+   "item_id": "a-063",
+   "parafrase": 2,
+   "chave": "1ee32ac044f3df1376c5b8f832ae098e0a20108cd88c333b5cfedbf2c42800f0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-064-p0": {
+   "item_id": "a-064",
+   "parafrase": 0,
+   "chave": "b92e84018af0fbf8c226a76353335bf8afbd62fb112d7c6ff8a2666cfa90efa9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-064-p1": {
+   "item_id": "a-064",
+   "parafrase": 1,
+   "chave": "cdc936238d0122add118cba6806f448a737ae5a5051351430defcb1c82433a9c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-064-p2": {
+   "item_id": "a-064",
+   "parafrase": 2,
+   "chave": "c7e2fde9bdc6f9422929137ebbfd20d90d6f5c1706b8d0d2fead9efde92fb017",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-065-p0": {
+   "item_id": "a-065",
+   "parafrase": 0,
+   "chave": "0b25259a1fc510a7b47dd7271aee9e2f3402d1b0ccb3c68dcf8a3423061c3d15",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-065-p1": {
+   "item_id": "a-065",
+   "parafrase": 1,
+   "chave": "0f44d9f411915d1e5e7c5cea01ea491b0739f7fd6b7c290d26ac6629ca8a1254",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-065-p2": {
+   "item_id": "a-065",
+   "parafrase": 2,
+   "chave": "539c99df3338d779c3fb3c6d1b5bf33375cf3cc2940cea65f096345408b58dcb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-066-p0": {
+   "item_id": "a-066",
+   "parafrase": 0,
+   "chave": "22f5d7986240ae62050618f9815d4804083101e696f7fe41ca060edab72a3a56",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-066-p1": {
+   "item_id": "a-066",
+   "parafrase": 1,
+   "chave": "86d3553382e11e4b03cc9c144dca4ed7201c49c771c4caf6092276b243404003",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-066-p2": {
+   "item_id": "a-066",
+   "parafrase": 2,
+   "chave": "450a6122da84264bd1cf14911d0beb255b219732a2e279d6119b221f7f6ab84a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-067-p0": {
+   "item_id": "a-067",
+   "parafrase": 0,
+   "chave": "36b6ff20afbd26d328aa9ad8106f796b91851d7935bbc4797ff5e44ec533b83e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-067-p1": {
+   "item_id": "a-067",
+   "parafrase": 1,
+   "chave": "b0526fbc763c454a6c0377041fa2e5871f5862d58a1c0fccc7a15c7a145148ba",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-067-p2": {
+   "item_id": "a-067",
+   "parafrase": 2,
+   "chave": "1fb49599c53bf4dedfc0376271a4547f578e096ae3c0c2eaeea2cc08bb9ef8f8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-068-p0": {
+   "item_id": "a-068",
+   "parafrase": 0,
+   "chave": "3fefed909e8e4eac045e37926ffed95f18d79d6fa5fbe87668d0367e1a8847a0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-068-p1": {
+   "item_id": "a-068",
+   "parafrase": 1,
+   "chave": "5f2ae422be5e6606db03e6dc7fa3f98568f19fdc4918f6bf23942dcc98da18b8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-068-p2": {
+   "item_id": "a-068",
+   "parafrase": 2,
+   "chave": "177f5570c1f21e8727440995650195f159fa990ae7be2e2bc321b3b8df5eafc8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-069-p0": {
+   "item_id": "a-069",
+   "parafrase": 0,
+   "chave": "4d0acb09741ed559eb3e75766a2f1ba05d697621bc9eec6bd8f2b6bf985a0a19",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-069-p1": {
+   "item_id": "a-069",
+   "parafrase": 1,
+   "chave": "3b9e4bf8e14ba835e34af8f717085e8e17fdcdfe62eb69d9ad0c20383438826a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-069-p2": {
+   "item_id": "a-069",
+   "parafrase": 2,
+   "chave": "c2dc27da0e3b4d09b908e1e10ad8676bacaf166d7d6a7cb98105b279758e2699",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-070-p0": {
+   "item_id": "a-070",
+   "parafrase": 0,
+   "chave": "c09a56a84477e6f7d32f377021e661a7a781d03029c05f5db621d3334bcd552d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-070-p1": {
+   "item_id": "a-070",
+   "parafrase": 1,
+   "chave": "aaed170fc41bfbd39814d2e7c2e14ca6e16d342bb0abb150beb1ba55747854d4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-070-p2": {
+   "item_id": "a-070",
+   "parafrase": 2,
+   "chave": "6f25d838a055983d33cafaec034cf09d9eca2523d636a647d788104042eca9a2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-071-p0": {
+   "item_id": "a-071",
+   "parafrase": 0,
+   "chave": "26b638be3bbca8b1aff2d2dec177806e6f556d51873f0b777916cedb361f3284",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-071-p1": {
+   "item_id": "a-071",
+   "parafrase": 1,
+   "chave": "283d87449866e7d09471b5441ae93d8a1275d8665b8c2d4b0f61dba1237b4022",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-071-p2": {
+   "item_id": "a-071",
+   "parafrase": 2,
+   "chave": "5546edcfba6d629ae8820fa3c953ce4d2636a29366a97b85cca064842ad5f2dc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-072-p0": {
+   "item_id": "a-072",
+   "parafrase": 0,
+   "chave": "45dea567eb3362b9a463b823894f44c0508732d96fadd4799aa6bfc1a32b19a8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-072-p1": {
+   "item_id": "a-072",
+   "parafrase": 1,
+   "chave": "76f762ae1585f1e768aa262b33eb877f0bc9460a96128bc6eaf16f40b95b7f30",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-072-p2": {
+   "item_id": "a-072",
+   "parafrase": 2,
+   "chave": "88582c26ce4e7d46e628b562694da977320e790b23910eb23f06e51b41c123a7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-073-p0": {
+   "item_id": "a-073",
+   "parafrase": 0,
+   "chave": "80cd46f0d1329d4f746a54525dc10d00e6697d9ec31cf41a962530cce9e58a6d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-073-p1": {
+   "item_id": "a-073",
+   "parafrase": 1,
+   "chave": "3a2579c87686aafa662249ab06eabf8e2761e315bc81cbe5001ca75312c68c8b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-073-p2": {
+   "item_id": "a-073",
+   "parafrase": 2,
+   "chave": "cdadb765aa38331d7cdc15c1b7db172b1010411ab9d655461d825f45a6d47613",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-074-p0": {
+   "item_id": "a-074",
+   "parafrase": 0,
+   "chave": "3c068d35b73761f5369606256c28d456baeba1034747dc720f94a76e680a42a1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-074-p1": {
+   "item_id": "a-074",
+   "parafrase": 1,
+   "chave": "3e45a33abab687e5541d2ff8373edfa46b4c53b4f0f5caeb642022582cfa2636",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-074-p2": {
+   "item_id": "a-074",
+   "parafrase": 2,
+   "chave": "834285d1480dade5308539f9a47986823b887b14e483e723941f78f2c33f3ff4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-075-p0": {
+   "item_id": "a-075",
+   "parafrase": 0,
+   "chave": "687f933db8602f91b3bcbedeb22017cbad7a80c791dfd984f228fe2566bb30f0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-075-p1": {
+   "item_id": "a-075",
+   "parafrase": 1,
+   "chave": "b1858453572b6f4353c6d24984da6566688abe7e30af1f1847ae9ebd3603c4a7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-075-p2": {
+   "item_id": "a-075",
+   "parafrase": 2,
+   "chave": "f8925cf0075b027a7d286f73e07a6d115813921cc928357ee7ef3d37a11406c3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-076-p0": {
+   "item_id": "a-076",
+   "parafrase": 0,
+   "chave": "7821308180554c09da1206bc1387774fe88face796641b85312bdd9369590f85",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-076-p1": {
+   "item_id": "a-076",
+   "parafrase": 1,
+   "chave": "fb9c34a899d81b264d719c322f936c23c6382825fbec151298c2b3d2821416b6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-076-p2": {
+   "item_id": "a-076",
+   "parafrase": 2,
+   "chave": "aef154118ab6a080d3402be14656d56ce3409dac11946017d31a117d34d443b2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-077-p0": {
+   "item_id": "a-077",
+   "parafrase": 0,
+   "chave": "d9f9934479540e79fa542fcdd0daf377ea8ef78ecb7983c5aaf4857a8fe18c28",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-077-p1": {
+   "item_id": "a-077",
+   "parafrase": 1,
+   "chave": "368f1e811929a11c24cf569c8858d57b6193f397fcba46309dcf277f2770d016",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-077-p2": {
+   "item_id": "a-077",
+   "parafrase": 2,
+   "chave": "91c1549497049f93b9c4f62d5460a9a6fddf7e0434e448e923d818a3224a85ae",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-078-p0": {
+   "item_id": "a-078",
+   "parafrase": 0,
+   "chave": "871ea44a2c1ea4d95988cf964b87252f045bea6838f8a9dbbcb6b66ec05d1815",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-078-p1": {
+   "item_id": "a-078",
+   "parafrase": 1,
+   "chave": "6e04d29176603209782db8be3a896f8330abd51cfe63013e24998524bb379360",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-078-p2": {
+   "item_id": "a-078",
+   "parafrase": 2,
+   "chave": "7a83c8c0b8c59a72f64493eefafb2d5be61f914c1da5c979301b39ebcdb8b019",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-079-p0": {
+   "item_id": "a-079",
+   "parafrase": 0,
+   "chave": "4a9f7f5777ee881be16661078b71ba1b636edc4662896c83b5b0f03320134553",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-079-p1": {
+   "item_id": "a-079",
+   "parafrase": 1,
+   "chave": "a7843aa248bec1214a2b620619dc6a2109c2c433411756085428af887b5662cf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-079-p2": {
+   "item_id": "a-079",
+   "parafrase": 2,
+   "chave": "03a911f7db0e1b83caa92034b7435e7588d49dbe1af98904d64b2d461ee702f9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-080-p0": {
+   "item_id": "a-080",
+   "parafrase": 0,
+   "chave": "d5702e919b9bf15ebf959e9ac3ac4c92f3bcbf6531fc75482ee3884cd03d610c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-080-p1": {
+   "item_id": "a-080",
+   "parafrase": 1,
+   "chave": "9f731dfe82ef10e9f2e3873c7563c63af303410d546a5cdc812b4fbb37e60366",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "a-080-p2": {
+   "item_id": "a-080",
+   "parafrase": 2,
+   "chave": "1fec2c187671c19502eae9f3b953130b32ce20d15810024c093bf636167e5d64",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-001-p0": {
+   "item_id": "b-001",
+   "parafrase": 0,
+   "chave": "f2916b956a1b67afaeea048bc969e6b2bf4c233bfb3a71d34304a156460b7845",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-001-p1": {
+   "item_id": "b-001",
+   "parafrase": 1,
+   "chave": "942618264583d638643e0f614acdd9b418f523868b7f2c0ea28052ec9bb5c635",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-001-p2": {
+   "item_id": "b-001",
+   "parafrase": 2,
+   "chave": "865bf7a8e9d98d781945d6688a93d5adf6cd1c6387b475a1a540019f72ba9448",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-002-p0": {
+   "item_id": "b-002",
+   "parafrase": 0,
+   "chave": "ecbff801a22f964a59d992cd33fccc8ee9a9283f8196facf8bc73666f514f091",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-002-p1": {
+   "item_id": "b-002",
+   "parafrase": 1,
+   "chave": "dc6026735ae5cc6d9ff83047978cba8c380a95b4d386469ce3e38ce03bb58cfc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-002-p2": {
+   "item_id": "b-002",
+   "parafrase": 2,
+   "chave": "008897294c8fb4c99e5c6b2ab9413fa57c9ecb7673cf1706a8ee58dba3706162",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-003-p0": {
+   "item_id": "b-003",
+   "parafrase": 0,
+   "chave": "24bb23f19f0bb5d1980c487951ee486db83e7cb11d2b61f2a9af6907a9409460",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-003-p1": {
+   "item_id": "b-003",
+   "parafrase": 1,
+   "chave": "124c76082218e54b30a9f694e13a030557f11b0dec48f1d7a9cb321553457d6c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-003-p2": {
+   "item_id": "b-003",
+   "parafrase": 2,
+   "chave": "063f89d2b49409338220dda202a243f5ab0a9ef36a67e71cf0d09b1022cea5b2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-004-p0": {
+   "item_id": "b-004",
+   "parafrase": 0,
+   "chave": "e977b3480d0faf7908984f548b70b27cf4d890c8e26e8ec250392c223776b01e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-004-p1": {
+   "item_id": "b-004",
+   "parafrase": 1,
+   "chave": "9edd66c5699a55183d128a377d1c33d2d0e81f76cfe9aae176edb59c147f7485",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-004-p2": {
+   "item_id": "b-004",
+   "parafrase": 2,
+   "chave": "dd07b0b8ed715d0e24554040bcba67303269d51a59dfb9fcfbf8514e3852923a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-005-p0": {
+   "item_id": "b-005",
+   "parafrase": 0,
+   "chave": "9c54585b0d08c924e75c91225d500f4e221e82c04c53c62b024e1210e8807f3c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-005-p1": {
+   "item_id": "b-005",
+   "parafrase": 1,
+   "chave": "c470251ec1e99661e4f1280009d0080815aca0f21f384a30e6d4a2798496a6a3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-005-p2": {
+   "item_id": "b-005",
+   "parafrase": 2,
+   "chave": "50360550937affce908fdf738de33a6da3f3d1999ed7f0a4510ba6fff8c013c1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-006-p0": {
+   "item_id": "b-006",
+   "parafrase": 0,
+   "chave": "10304fe85f532c5c08b492f1a4f1b423da58ba3a76aa7e5b11d6afa23024c434",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-006-p1": {
+   "item_id": "b-006",
+   "parafrase": 1,
+   "chave": "35019cedf183a88b63366465b3a5c58b8c563438dbbe7c3693a1938833ca48e9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-006-p2": {
+   "item_id": "b-006",
+   "parafrase": 2,
+   "chave": "0fc493d027b561ccef4463f55162ca3bb6bc4f578c7521814e532ad09e454c7f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-007-p0": {
+   "item_id": "b-007",
+   "parafrase": 0,
+   "chave": "f5eec7d711b630155c89d5235c5099eea519092e289d49eecc939fb2ef0157e4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-007-p1": {
+   "item_id": "b-007",
+   "parafrase": 1,
+   "chave": "b9b8a45fca70ccb1ce2d031741f8b2adbfe6105cca9b7e7161531594b81cef61",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-007-p2": {
+   "item_id": "b-007",
+   "parafrase": 2,
+   "chave": "6f6f11b0773bb0dc486ff41c1feef9de19a482bef85e0d650817224f952f9296",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-008-p0": {
+   "item_id": "b-008",
+   "parafrase": 0,
+   "chave": "3c64f892bdda3c00349cea357c22ecc470e590a5fe0df2ec9aba02dde0952b98",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-008-p1": {
+   "item_id": "b-008",
+   "parafrase": 1,
+   "chave": "40fab9a2d20a39968bf669084a0781939e6ac46faf8de69f5d008c0c2df9fd11",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-008-p2": {
+   "item_id": "b-008",
+   "parafrase": 2,
+   "chave": "1eba6f17b0384ecc7aa4ff4e8308c1e554cb984fe6f894626a568e1f003bfec9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-009-p0": {
+   "item_id": "b-009",
+   "parafrase": 0,
+   "chave": "30376b5c9ed82101e74af64e009facf5f88e5c23e2a4066c1318a73dd45ea0c6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-009-p1": {
+   "item_id": "b-009",
+   "parafrase": 1,
+   "chave": "ad8970cfc73d4357d0a438009b270eebc18f5509d38a676a4b9e7f420897daa0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-009-p2": {
+   "item_id": "b-009",
+   "parafrase": 2,
+   "chave": "4131bf09beb9a9ebd5a18d6637a5325a028408e1fd8047109558c5afc932b4d5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-010-p0": {
+   "item_id": "b-010",
+   "parafrase": 0,
+   "chave": "89e2c570f8aeb02168cfdc0ca5fb5e97d6b6d0b34d08fbf88be998337b4a4e78",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-010-p1": {
+   "item_id": "b-010",
+   "parafrase": 1,
+   "chave": "674401b8dfd7b163054c5b7e95ac049eb63d1f163e6e4cbe499b27da41becea7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-010-p2": {
+   "item_id": "b-010",
+   "parafrase": 2,
+   "chave": "f0aacefaa6353478ec4a0e6bda975d4ad0dcdc9ecccf9d87af9be87cbc7ae263",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-011-p0": {
+   "item_id": "b-011",
+   "parafrase": 0,
+   "chave": "a86cde20f00e6e096fcfa0ec8ddf9d3c651fbc35dae23a3538c92186076555e2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-011-p1": {
+   "item_id": "b-011",
+   "parafrase": 1,
+   "chave": "cd6dcaf513d278c8e1d01dae5071f87c30b3d8e64ee8523fc677d0b12391b100",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-011-p2": {
+   "item_id": "b-011",
+   "parafrase": 2,
+   "chave": "33d265041835cb6319f85f2ee859b2b94ae7728e06356430c8529d79baa92d35",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-012-p0": {
+   "item_id": "b-012",
+   "parafrase": 0,
+   "chave": "6a5e87c285d2eb37c187147482a72767babc59fe4d0238ac6e95337d8b946bb7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-012-p1": {
+   "item_id": "b-012",
+   "parafrase": 1,
+   "chave": "fd8a85cd3a0bb189aa54376547869da843778ee970a93ba79738f8b506ece8e2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-012-p2": {
+   "item_id": "b-012",
+   "parafrase": 2,
+   "chave": "a83a44b702c122c9d20b2e65aaac8ea681bda5896c6fe0b242c43902a36abcee",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-013-p0": {
+   "item_id": "b-013",
+   "parafrase": 0,
+   "chave": "564b85d03237f6612d8527f60e3eec0c3e961bf765e1e5003e101b5677b9f64f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-013-p1": {
+   "item_id": "b-013",
+   "parafrase": 1,
+   "chave": "0c12d1a9c8f7583b18f24d33ac6dc4acd3379351761f7debf3dd154ffeb309bc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-013-p2": {
+   "item_id": "b-013",
+   "parafrase": 2,
+   "chave": "722a70f2dd7f0888adeb2c53daa5911047f1c04182d6fd3107d7052ef0fabb07",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-014-p0": {
+   "item_id": "b-014",
+   "parafrase": 0,
+   "chave": "3e40b9d333d7068d7f5c9cc6d470d43c515b22655ef0bd466e6c61acce7d1d59",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-014-p1": {
+   "item_id": "b-014",
+   "parafrase": 1,
+   "chave": "6d90c3a3c6f67faa774f962784ef508e2c5c50090ec87ed0e53cc931d0eaf742",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-014-p2": {
+   "item_id": "b-014",
+   "parafrase": 2,
+   "chave": "2181daff47234616335c205731afbfe4f9230b119692f1c453309b6187b789c2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-015-p0": {
+   "item_id": "b-015",
+   "parafrase": 0,
+   "chave": "bdac64c58f39f897f5431f45d301b6b6fac18c57620dd54a4a0cfbb4d43b1219",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-015-p1": {
+   "item_id": "b-015",
+   "parafrase": 1,
+   "chave": "b7317b458d75759c577be89901267f4217cd189874eac3124534080df82f0498",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-015-p2": {
+   "item_id": "b-015",
+   "parafrase": 2,
+   "chave": "1f7ac8db5e5ee5505672cac34c79ed96777982fa25030da61872ed61da335abe",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-016-p0": {
+   "item_id": "b-016",
+   "parafrase": 0,
+   "chave": "e0f26706d91da1dbe64a1896b4fff8be12ffa414dcb8e7e0dcf8b499692221f9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-016-p1": {
+   "item_id": "b-016",
+   "parafrase": 1,
+   "chave": "3ffc20f814eb520f590fe27cb2d5d48547b447f92ab6c16776f361e8dae64680",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-016-p2": {
+   "item_id": "b-016",
+   "parafrase": 2,
+   "chave": "024f0cb45c466e41a65a9cefb295139ab692b4a6bb4b185b344bd5c02766fb2a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-017-p0": {
+   "item_id": "b-017",
+   "parafrase": 0,
+   "chave": "24592bcc711a9c87e386b1ec079cc835d8200beef7c66e635edec905d40456ba",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-017-p1": {
+   "item_id": "b-017",
+   "parafrase": 1,
+   "chave": "6ab748bb79a075b88c4eb15375c95fb93b536070a1499edd8ac1e66793ecdd78",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-017-p2": {
+   "item_id": "b-017",
+   "parafrase": 2,
+   "chave": "7290d8c4ae012746d8b5fd4f6fec156329034af9b6677d31b91bfae5856345a2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-018-p0": {
+   "item_id": "b-018",
+   "parafrase": 0,
+   "chave": "db30cc78398028075f5af181bd0f1b64be7d9476e8f36fa5b4a196f65ebb8b1c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-018-p1": {
+   "item_id": "b-018",
+   "parafrase": 1,
+   "chave": "e75149010c031fcff40ba3dafc8f0a758729836e70798a5fc82a145152d35472",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-018-p2": {
+   "item_id": "b-018",
+   "parafrase": 2,
+   "chave": "5577f4b645d42d763d5a3cfbf98bc910102c297d662befd6a5cfc56fd7b94595",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-019-p0": {
+   "item_id": "b-019",
+   "parafrase": 0,
+   "chave": "4d4281c04ab5f018d2e34865d1ca4901ea019ecd064a0a5d72678ba7f146db01",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-019-p1": {
+   "item_id": "b-019",
+   "parafrase": 1,
+   "chave": "2355cf22ed553295d76b54128780f1ff1db30b3c03806c4b68a835e4abcbe2bf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-019-p2": {
+   "item_id": "b-019",
+   "parafrase": 2,
+   "chave": "5ec8b606e28e7d1df3e11b5f8e7c82e7ccd19468b8544423a0ffd00916ea5cc8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-020-p0": {
+   "item_id": "b-020",
+   "parafrase": 0,
+   "chave": "f60df6308dcff43322558de02c0db4f985d5bb8ead489ee481d298c49e964530",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-020-p1": {
+   "item_id": "b-020",
+   "parafrase": 1,
+   "chave": "05c302724fbd7df8b822619f77fbbf394a654061a3cce81544d7070cfeb190db",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-020-p2": {
+   "item_id": "b-020",
+   "parafrase": 2,
+   "chave": "089017f00e917dd0558b8239e122bb44f72504e2e54d8e1df951399ef54a3255",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-021-p0": {
+   "item_id": "b-021",
+   "parafrase": 0,
+   "chave": "19fd28581d1a1cb34a470417cece43315e2eced5ab801c032572347553ee3895",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-021-p1": {
+   "item_id": "b-021",
+   "parafrase": 1,
+   "chave": "5d15f404a5b62fc193c673a5a1fce59019c4bbc7a61d2db30351dcea6bb0aaf9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-021-p2": {
+   "item_id": "b-021",
+   "parafrase": 2,
+   "chave": "5706fcecb9e107cdbd9934cd8a3058347310d339619a6804c0b44e260ed377a9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-022-p0": {
+   "item_id": "b-022",
+   "parafrase": 0,
+   "chave": "6efa473eb7a3e23abe4bf82f5845fce75ee2f66b537d3c266c351f8a24300e7e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-022-p1": {
+   "item_id": "b-022",
+   "parafrase": 1,
+   "chave": "af5b76a2f1a43df882bc8414d7062a81f54d1d9dceb98578600628f566f87628",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-022-p2": {
+   "item_id": "b-022",
+   "parafrase": 2,
+   "chave": "6028b2c43574f4563c4e348c588923fb39e7d1a930efc229facf372c90646361",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-023-p0": {
+   "item_id": "b-023",
+   "parafrase": 0,
+   "chave": "db018abd3a6f4237f45599b76d05a6af234585a3758fbbb3c97cec76d30fc9a2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-023-p1": {
+   "item_id": "b-023",
+   "parafrase": 1,
+   "chave": "1080409c0f16a357a87c11f6f9756999910a55ad5169b047d112fafcc3899587",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-023-p2": {
+   "item_id": "b-023",
+   "parafrase": 2,
+   "chave": "dba9d2451e1ae70b1c6c79ce32f3e23764265374cc8ddc6b32065cda0b3d4012",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-024-p0": {
+   "item_id": "b-024",
+   "parafrase": 0,
+   "chave": "799ca33d38ce521259f1e12e02c39fa23ecaacf059b0b107ce07d96bc4c7a6f7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-024-p1": {
+   "item_id": "b-024",
+   "parafrase": 1,
+   "chave": "9c3e6edf39abcc57f2d3b3607b4ec476873169f09dbfc169e1b32183eccfb6be",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-024-p2": {
+   "item_id": "b-024",
+   "parafrase": 2,
+   "chave": "7e24f9a58e35eb3fb1c8b674c55a103706ae9e3260503150e4e13d4a46def7a9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-025-p0": {
+   "item_id": "b-025",
+   "parafrase": 0,
+   "chave": "67b683bfa5d79e8553b977d7b434af285e36404e82ccd180c3d3ae866b6d41e1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-025-p1": {
+   "item_id": "b-025",
+   "parafrase": 1,
+   "chave": "9ba9274e3ec78945ced32a358628f83c07ab2ab7ed674cd45b9f7cfefa29f2a7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-025-p2": {
+   "item_id": "b-025",
+   "parafrase": 2,
+   "chave": "55bceac66f5ee1aadcbe30011e64f1425b30191113350441b2bb43194f88547e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-026-p0": {
+   "item_id": "b-026",
+   "parafrase": 0,
+   "chave": "85da9b138e89a0cac10c36de9bd7f03d92021b051e48a0ee5b46b2e7b06bfdee",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-026-p1": {
+   "item_id": "b-026",
+   "parafrase": 1,
+   "chave": "d0ccf3222bee0898a2007a11b27af04c824d23d20c1bb4331f63d882aa09a8a0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-026-p2": {
+   "item_id": "b-026",
+   "parafrase": 2,
+   "chave": "014164d42ac14e7c7990a3f3689ffa87e55de44174a5e71324bcd91b1413965c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-027-p0": {
+   "item_id": "b-027",
+   "parafrase": 0,
+   "chave": "33cd41d6964fc6e48d156a29960d8240632d22a76ec2cf691de2d33affc29cb7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-027-p1": {
+   "item_id": "b-027",
+   "parafrase": 1,
+   "chave": "57e7f2431e5ad28f0841fdf2c1266e4ace86da667da2a1ba76ce3b0f6606d1da",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-027-p2": {
+   "item_id": "b-027",
+   "parafrase": 2,
+   "chave": "bd7f1e039f0e6306ccd86c445350abcdac8de826795db6e067b84daf8f70c0b7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-028-p0": {
+   "item_id": "b-028",
+   "parafrase": 0,
+   "chave": "97da3d4c0ca68d6b8f0314dc83798864bc40f00b07b8cc06097154562094b50b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-028-p1": {
+   "item_id": "b-028",
+   "parafrase": 1,
+   "chave": "f2930dead644f9be595f8c2925c53b41ad374d20667d7b45c1432a9b13c9fadc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-028-p2": {
+   "item_id": "b-028",
+   "parafrase": 2,
+   "chave": "29bc9480ebb649d78740223c6c35b9164ca095ac3b4375aafd3bd8dc95d48738",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-029-p0": {
+   "item_id": "b-029",
+   "parafrase": 0,
+   "chave": "3017a147287a6145c362486767066f9eb96a99f9de7b47a035d9e125e32d1435",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-029-p1": {
+   "item_id": "b-029",
+   "parafrase": 1,
+   "chave": "9f9d9a2805303c4a5607a6aaa57d62709c8868f7267a85b0807684c51f3c685c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-029-p2": {
+   "item_id": "b-029",
+   "parafrase": 2,
+   "chave": "c1c60181e110e0bbd44aaa42b0d6733d61b234283b6145e1206168e82f9ea8db",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-030-p0": {
+   "item_id": "b-030",
+   "parafrase": 0,
+   "chave": "d8028edfc210ab84682f00e0de06aef6a58d7008e58dc5f4f209f3bb26f7e18d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-030-p1": {
+   "item_id": "b-030",
+   "parafrase": 1,
+   "chave": "fe1314df56531b123a7fb15e2d958e7330353435a4fe33bc032d6a9880c65196",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-030-p2": {
+   "item_id": "b-030",
+   "parafrase": 2,
+   "chave": "a5647ff7f512cade7f142f68091621b825d004dae27ded5bc6c8a7e8d8a3c97b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-031-p0": {
+   "item_id": "b-031",
+   "parafrase": 0,
+   "chave": "6c8244a7094ee92c57d1ef57421f080b962c361e8554102e8e2be1c3ba278dcd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-031-p1": {
+   "item_id": "b-031",
+   "parafrase": 1,
+   "chave": "9e2fd00cad8d595ca4db6457d3171c27374541450dbdea988e415f864c72cfa1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-031-p2": {
+   "item_id": "b-031",
+   "parafrase": 2,
+   "chave": "4b68c3e7786d5c983871f416a2d17227db3d712f5cfb3b51c4b63dc21227d28b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-032-p0": {
+   "item_id": "b-032",
+   "parafrase": 0,
+   "chave": "af0de6a3a75387d9d4da4cf719ba5d2eb0178abef6102194d3527efd83c76d0f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-032-p1": {
+   "item_id": "b-032",
+   "parafrase": 1,
+   "chave": "51a686931b36fe3d61b5cb7a96d229db386101e76d2e2be9c0e8bbe19fac8af2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-032-p2": {
+   "item_id": "b-032",
+   "parafrase": 2,
+   "chave": "63ab3fa77334cb8783aa6e5f63d94e8463ce9395c4a6092b442d8317bdcfa1a4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-033-p0": {
+   "item_id": "b-033",
+   "parafrase": 0,
+   "chave": "a1891d06b6a87165bc74ce4d17c0821015643d9a27585d2908c839602d0d43a4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-033-p1": {
+   "item_id": "b-033",
+   "parafrase": 1,
+   "chave": "6bb5328371fec4bb6534c12ff57ce218032d42b8d3e5fb215b6273da689d171c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-033-p2": {
+   "item_id": "b-033",
+   "parafrase": 2,
+   "chave": "fbcbc5af2e8df57ffedeefa622d842263ea20267e22ba35af5625f971a6b2399",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-034-p0": {
+   "item_id": "b-034",
+   "parafrase": 0,
+   "chave": "03b5cf2db69b08f0ca83a0b94f828384dd05291e3b8c217bcc0da42f17117638",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-034-p1": {
+   "item_id": "b-034",
+   "parafrase": 1,
+   "chave": "3c572fcad394299b87706d6a0fb873d29467b4f8a0304c867d421c3720ff5703",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-034-p2": {
+   "item_id": "b-034",
+   "parafrase": 2,
+   "chave": "893870f5c2fee12c8dc86dbb646bd1e36bff80e6d4e73a20cfb993cf25398f22",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-035-p0": {
+   "item_id": "b-035",
+   "parafrase": 0,
+   "chave": "49c956793507960db8db5fe776e44fe82d47e6f1b0347d54bb4d2b7bc860944e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-035-p1": {
+   "item_id": "b-035",
+   "parafrase": 1,
+   "chave": "d48ea3181cda55d6a84d766b1e800b9f686322a6649b4ce5a37053c502e3e19a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-035-p2": {
+   "item_id": "b-035",
+   "parafrase": 2,
+   "chave": "fa616fb37f3ffac83254864ab497cbfcdb93b496a77099961ec3a74dff682d86",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-036-p0": {
+   "item_id": "b-036",
+   "parafrase": 0,
+   "chave": "f7059af9d04f0f1ebe4bbaf2f3da053029805b49f1e560b41a48f16cf1a75cb5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-036-p1": {
+   "item_id": "b-036",
+   "parafrase": 1,
+   "chave": "c3b3589498960988bfd6bffa8179155dba5317baa9a30511efc2161731b2e06e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-036-p2": {
+   "item_id": "b-036",
+   "parafrase": 2,
+   "chave": "5cb0298cc37de7808a62ad0aea005d29a3129d1772108f90e2aa18ab994bce09",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-037-p0": {
+   "item_id": "b-037",
+   "parafrase": 0,
+   "chave": "85f6b904c6ad08ffdd54bcff0860733806bbd3928be838897bff5ff5910a1cab",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-037-p1": {
+   "item_id": "b-037",
+   "parafrase": 1,
+   "chave": "316675f6f25e05a5e435fb58588ca0b3a7ba2a74aed9938d7e064f4ec40d1262",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-037-p2": {
+   "item_id": "b-037",
+   "parafrase": 2,
+   "chave": "7ac9254804e587677a97ef6ffc7a279b6a3f0314dd86167a03922076c44e102a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-038-p0": {
+   "item_id": "b-038",
+   "parafrase": 0,
+   "chave": "e3565636b12a84f497964ad5d1aa8f71df43a31533603ce544b39b5614ce804e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-038-p1": {
+   "item_id": "b-038",
+   "parafrase": 1,
+   "chave": "6f25ce161df202b11f452ba638a91ca08c8c3fdc3c372e312b6e4865c49d9efe",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-038-p2": {
+   "item_id": "b-038",
+   "parafrase": 2,
+   "chave": "541e2dae91685f7e8f8d9677af93fbbf47de167844e245163c12db66913d1aee",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-039-p0": {
+   "item_id": "b-039",
+   "parafrase": 0,
+   "chave": "682bcd3737e836d5f27bdc2ff84c65597e27c29ef1cefa10e52b1ab6af24965d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-039-p1": {
+   "item_id": "b-039",
+   "parafrase": 1,
+   "chave": "82ef621090c4d72e379c0938e09506742d00f4e2f00858896ee5597fba7158d7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-039-p2": {
+   "item_id": "b-039",
+   "parafrase": 2,
+   "chave": "9d708b34dd923f2873df539d0730232bfaa70cd850c27d6030eb3d12b1759d17",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-040-p0": {
+   "item_id": "b-040",
+   "parafrase": 0,
+   "chave": "6aaa6167cd5d2c5038910d3438a190612495a9214ee29f65c30fee09a3888e81",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-040-p1": {
+   "item_id": "b-040",
+   "parafrase": 1,
+   "chave": "4759c020f62e8ac00d222677488f1b67eab628b06a211f00ce5f76b95a5b410a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-040-p2": {
+   "item_id": "b-040",
+   "parafrase": 2,
+   "chave": "5fc22e8636c9f2f12b820925c43ad849b3d83cbc6b435cf3ccef4232ec2ac0e6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-041-p0": {
+   "item_id": "b-041",
+   "parafrase": 0,
+   "chave": "9c637e5859fb73cfc0d44472a41b9658ad611d546a69223d62c5a732661aaa5c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-041-p1": {
+   "item_id": "b-041",
+   "parafrase": 1,
+   "chave": "e336cbf756ce27829ce2f144669b5523c185aef1f31f8519535166f8d3c9d7d3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-041-p2": {
+   "item_id": "b-041",
+   "parafrase": 2,
+   "chave": "2e51fdfca7090016ab318443765f0badd7cb2386bb79f34873b20522544389bc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-042-p0": {
+   "item_id": "b-042",
+   "parafrase": 0,
+   "chave": "aa6dafe7d85349851d11783f0ccbf96092929c223ae53b5c81438550ca486906",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-042-p1": {
+   "item_id": "b-042",
+   "parafrase": 1,
+   "chave": "1ae91491bfce3063f6ac91f43d71f3e52f9fe22722ce1398bd90a553f80e8f71",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-042-p2": {
+   "item_id": "b-042",
+   "parafrase": 2,
+   "chave": "43e1f04b7326b0860959ee6ecf8692595f51aa28703766f32e1a346547be4d9e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-043-p0": {
+   "item_id": "b-043",
+   "parafrase": 0,
+   "chave": "456b3eb8acb8e2f66cff1e59a324ab9fce20d4d9c595eb063e0fb0aa0b9e08f2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-043-p1": {
+   "item_id": "b-043",
+   "parafrase": 1,
+   "chave": "e8d7ae6da8e6ae97d427e277545d80f785300fd2b96124a81b96576280cbef1c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-043-p2": {
+   "item_id": "b-043",
+   "parafrase": 2,
+   "chave": "6d46f18c9d7fc46aa21b1c3feab83057b3427e9da5b3ddf1ff99f25c41819603",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-044-p0": {
+   "item_id": "b-044",
+   "parafrase": 0,
+   "chave": "d4dbc8d3b3535acd0f763e33f1985b913dfd2bc730027b5e37b528dd4fa92123",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-044-p1": {
+   "item_id": "b-044",
+   "parafrase": 1,
+   "chave": "002c146bee9ba1bd5c3e028bb6068326adfc7494d3090387b0dddf7ab8f1b9e5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-044-p2": {
+   "item_id": "b-044",
+   "parafrase": 2,
+   "chave": "740c8dd5fd1af4facfc9139bcc85c8e82dc0c12cabaf88e7c6874a4bcdf39aba",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-045-p0": {
+   "item_id": "b-045",
+   "parafrase": 0,
+   "chave": "642c4e164b3c0075844a7c875a4bb232ceb1861d3e1700d1eaf0cd35cf64c4bd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-045-p1": {
+   "item_id": "b-045",
+   "parafrase": 1,
+   "chave": "0d89a58c721c809e2ea827329aa8398e52b9872fada36d74ae58a98f08adbbb1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-045-p2": {
+   "item_id": "b-045",
+   "parafrase": 2,
+   "chave": "c897bf36599e2035266e7202fd46574a474f0c7afa49404ec5b2ff84c65c241e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-046-p0": {
+   "item_id": "b-046",
+   "parafrase": 0,
+   "chave": "d4bba78bcf2c9d58c8799dcd929380441f1dd9f25370d3b60733c37f8d9ecec1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-046-p1": {
+   "item_id": "b-046",
+   "parafrase": 1,
+   "chave": "c179cef19cc369715b962b019a1b25a8d6020de86ae6c492e014898d13bc6a23",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-046-p2": {
+   "item_id": "b-046",
+   "parafrase": 2,
+   "chave": "1e9425da6709d110792b96dc0ff53803f63c38a6e9ce8dcc659702a03a3ce00f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-047-p0": {
+   "item_id": "b-047",
+   "parafrase": 0,
+   "chave": "1ac288b148908a16bd3e9d6a55d72b622237a9b6e6df6b4dc2c0b3ebb8bee46f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-047-p1": {
+   "item_id": "b-047",
+   "parafrase": 1,
+   "chave": "9aab291693091cdfcf4d322674f6008f0f1a62e96bf04f7048fc07681f94860c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-047-p2": {
+   "item_id": "b-047",
+   "parafrase": 2,
+   "chave": "87fe5f8111634c3281b458b4403c4c052e411c07abf9b6d7ef215ceee41efa53",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-048-p0": {
+   "item_id": "b-048",
+   "parafrase": 0,
+   "chave": "6eac8074a472b6442509f6399925d5eac5c5b87c2c49d7d35d99e4dd16b32bb8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-048-p1": {
+   "item_id": "b-048",
+   "parafrase": 1,
+   "chave": "700a08ad817a2cbed23805e1aeeb2ffbe38f7538e3564296da83743963bdfd3d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-048-p2": {
+   "item_id": "b-048",
+   "parafrase": 2,
+   "chave": "3625b3f2f1c6c80efe2939e45d8d99aa5f2463d5b83df0c35d122a5e03b777eb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-049-p0": {
+   "item_id": "b-049",
+   "parafrase": 0,
+   "chave": "97222be3557f83736146e6f596bf2313749cff6c817c984f86984bf91a4bb941",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-049-p1": {
+   "item_id": "b-049",
+   "parafrase": 1,
+   "chave": "4634dbf28a14261f6c37af001c438b7e30960b71a6af27430955f5c26ee06827",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-049-p2": {
+   "item_id": "b-049",
+   "parafrase": 2,
+   "chave": "f397d970bd2b8ee38c740bf343e8a69911692300109c91b007c246d1e7ce9bec",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-050-p0": {
+   "item_id": "b-050",
+   "parafrase": 0,
+   "chave": "49678dad6587704818b15060d493efc0176d63806ff08058e533d2aeeda104bf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-050-p1": {
+   "item_id": "b-050",
+   "parafrase": 1,
+   "chave": "2518da3157c6647c4fe01439e3f396c1377d2921c0e7d196762f5ccd183c6ab1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-050-p2": {
+   "item_id": "b-050",
+   "parafrase": 2,
+   "chave": "c4bc28cd850c106bbfd1b9f2e6741fd0087247080a8ce4631ebdf81371234fc6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-051-p0": {
+   "item_id": "b-051",
+   "parafrase": 0,
+   "chave": "2bda426a7b47f5b347e2f3a6db641e9b4609a21d36b1cab442583a2f2fb9068a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-051-p1": {
+   "item_id": "b-051",
+   "parafrase": 1,
+   "chave": "c953c197e7f073000e21eeb2300f23b39bd013ef1a2f14f721888a991227b08f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-051-p2": {
+   "item_id": "b-051",
+   "parafrase": 2,
+   "chave": "1bcb0df2075daeaa04cd52e8f423bac9245e1b2dedd3af3827c90e8049391464",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-052-p0": {
+   "item_id": "b-052",
+   "parafrase": 0,
+   "chave": "84551bfc526b447103d1290d269a9228f40d230d9d61331723b435dcea90a9a9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-052-p1": {
+   "item_id": "b-052",
+   "parafrase": 1,
+   "chave": "fb97ad4fa15471c4c263ff7d1ad5c195f0c4307afa6424c66690636847e1e8bd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-052-p2": {
+   "item_id": "b-052",
+   "parafrase": 2,
+   "chave": "cb692f7d956c44ae7613bfd864e64a84458a3d260b27eecf3e9bcba9beb772f2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-053-p0": {
+   "item_id": "b-053",
+   "parafrase": 0,
+   "chave": "6230b3c88297da2b964ec5570d5cf3e81f432d5d1e02bfd4e8b2ccda3f8d2e4c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-053-p1": {
+   "item_id": "b-053",
+   "parafrase": 1,
+   "chave": "9f229a983345fa2b060c2b29f4e629f4f70819cef031e39606a22826bddb13cf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-053-p2": {
+   "item_id": "b-053",
+   "parafrase": 2,
+   "chave": "1cd5082dac2a6beacb6f78e7e806720fec43c4e71a7c09febee180ca8f552112",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-054-p0": {
+   "item_id": "b-054",
+   "parafrase": 0,
+   "chave": "5e182f380bc672ccf11232bd9e24ba78f27376309884bec4914a59eaba191ff5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-054-p1": {
+   "item_id": "b-054",
+   "parafrase": 1,
+   "chave": "57941b35cab24f06e5f976cdee397e3751f6f1947873f5eac6baea2d56a044d0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-054-p2": {
+   "item_id": "b-054",
+   "parafrase": 2,
+   "chave": "4d67443f2e216c048eabfd70a3fafb0f26ca515c0146e59b86a2a5efc5c750e3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-055-p0": {
+   "item_id": "b-055",
+   "parafrase": 0,
+   "chave": "724dd1efaf65f9b87048c19be6ef866dbb1ab7ec064bac524102fc3b4d14bc21",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-055-p1": {
+   "item_id": "b-055",
+   "parafrase": 1,
+   "chave": "6fe0862f04b2266391c97692f2d9d484cf9ecd60c972c9fbea47c06eaae9372c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-055-p2": {
+   "item_id": "b-055",
+   "parafrase": 2,
+   "chave": "f15d2658ef6112282941c591eeea77cd4197a5456303bbc95edc96876913ff83",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-056-p0": {
+   "item_id": "b-056",
+   "parafrase": 0,
+   "chave": "dc645e19ea10555bf14423220940e2cb35bf34b69aaddde1b3585e2e870db2ae",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-056-p1": {
+   "item_id": "b-056",
+   "parafrase": 1,
+   "chave": "8ed3056781d2a11dd5d659dd2ba3332a31221519d912e0a5b85101f545a38578",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-056-p2": {
+   "item_id": "b-056",
+   "parafrase": 2,
+   "chave": "09c52375e4d1a56a7ee3c5cf266cda57a3f2cba7d9442e9dfe7c5d530342e92b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-057-p0": {
+   "item_id": "b-057",
+   "parafrase": 0,
+   "chave": "d0d4abb8466aecb71ee328b0f1cff79ea3a30bc33c5d3f341e74bf16ea08b06d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-057-p1": {
+   "item_id": "b-057",
+   "parafrase": 1,
+   "chave": "cd4b31324b8bdd053dd894185218bb8640fff1c1519b34aed919c54998379bb1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-057-p2": {
+   "item_id": "b-057",
+   "parafrase": 2,
+   "chave": "28ae63cefa2e8acb5aa87a08e5940b7702704622fd1bfa38e7f3850f4c295ed0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-058-p0": {
+   "item_id": "b-058",
+   "parafrase": 0,
+   "chave": "d5df74b123cfa630d1e554494e520289920b345291c9bcc369366a3a987ff20e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-058-p1": {
+   "item_id": "b-058",
+   "parafrase": 1,
+   "chave": "9a60cc4e93a27e63df6dd0c386c4abe1430f6172376c92d92a5b1febeb7a653e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-058-p2": {
+   "item_id": "b-058",
+   "parafrase": 2,
+   "chave": "4dac8ea60419b208eeb4a7689b3fe6f441280e6d1df4e4ba50b306c3ed170889",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-059-p0": {
+   "item_id": "b-059",
+   "parafrase": 0,
+   "chave": "aa55a698a6ecb753327bbd9e954f5b3b6140cb9464e7936317e525d2bac7f91a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-059-p1": {
+   "item_id": "b-059",
+   "parafrase": 1,
+   "chave": "6a4399deb58e1e39ed78e5cfbe7a9cff2303b203d20baddd95108e23326412b5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-059-p2": {
+   "item_id": "b-059",
+   "parafrase": 2,
+   "chave": "7661b652241bb383f0f9e033ec1b675b56b4e2f0d8c8c1466a37849e78b78ea0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-060-p0": {
+   "item_id": "b-060",
+   "parafrase": 0,
+   "chave": "84785c62da9243f43c71e454d82faebe8c15693ce42cd3b520c4036f3873fb73",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-060-p1": {
+   "item_id": "b-060",
+   "parafrase": 1,
+   "chave": "37439afb6d1f8e6fc555d5af826407c2b00c194d08fbf2e63215644a688a0660",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-060-p2": {
+   "item_id": "b-060",
+   "parafrase": 2,
+   "chave": "e3acfc95f33afcebd37cb2d803c0bbce4084cc0460fdd3b629c87b7c98cf6c40",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-061-p0": {
+   "item_id": "b-061",
+   "parafrase": 0,
+   "chave": "7d3b5296eff52ec3457eef597d023859a9f92a1003540ad6426abdd49bb21d26",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-061-p1": {
+   "item_id": "b-061",
+   "parafrase": 1,
+   "chave": "b0b3e340ce55c659895e2be41154ea5b96c2e99dcb152c4327953ef9a6da48b1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-061-p2": {
+   "item_id": "b-061",
+   "parafrase": 2,
+   "chave": "c953e373c4573092642e646647dad890bc628b6036566980933cacf1014b2156",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-062-p0": {
+   "item_id": "b-062",
+   "parafrase": 0,
+   "chave": "33e83a4901ed0f8391b79398bdad82f908a4c7bfa411e9cb0246b6d0499748aa",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-062-p1": {
+   "item_id": "b-062",
+   "parafrase": 1,
+   "chave": "e6be3f1f35c6d09abfa42ed2aa9dd61b802b02bf47429ec0a17b1678d892a692",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-062-p2": {
+   "item_id": "b-062",
+   "parafrase": 2,
+   "chave": "a0a39ed5f1e6357b1852f1c0d3e7e5e70d8b3ad460a367a00e997f7085535769",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-063-p0": {
+   "item_id": "b-063",
+   "parafrase": 0,
+   "chave": "86d5b96f7e5018d97b34c06912b9a34fd830b7ca894209d07b90ffb7dd22a6e5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-063-p1": {
+   "item_id": "b-063",
+   "parafrase": 1,
+   "chave": "1cb65ad000c2f5845e9f65daabfdb15e5190e61cd2439246a93b2abb74316e92",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-063-p2": {
+   "item_id": "b-063",
+   "parafrase": 2,
+   "chave": "7c42789d243122e26c1feb0caaec50143e5fc9229be84656538f5c65b149f3fb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-064-p0": {
+   "item_id": "b-064",
+   "parafrase": 0,
+   "chave": "4633ae690a65223deb4c00f6958a6bc8120ac2c6540f9be65f998851ec139c17",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-064-p1": {
+   "item_id": "b-064",
+   "parafrase": 1,
+   "chave": "a60a97bdf101e30adccb4092c06b35930d554eabcb0f9e7497346756adb8a6a5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-064-p2": {
+   "item_id": "b-064",
+   "parafrase": 2,
+   "chave": "bb8f4762e8d4772fa8fcfead643be75d7a2b64d45be6eb90bce30954a93125ad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-065-p0": {
+   "item_id": "b-065",
+   "parafrase": 0,
+   "chave": "e6c73d20ea2280b850052129c8ce404a70ee2341bcf56498336f41ae7444e6d1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-065-p1": {
+   "item_id": "b-065",
+   "parafrase": 1,
+   "chave": "04389abe21e157389ed29df3e691568e99d5f07db62b8d63db4e55ba0e6fbfd9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-065-p2": {
+   "item_id": "b-065",
+   "parafrase": 2,
+   "chave": "e5c276d8327b6e71b1a0bb80bcf6359e013e2bff6a6f51eff000d214de2cbf72",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-066-p0": {
+   "item_id": "b-066",
+   "parafrase": 0,
+   "chave": "8c79165882020dbe13775e40f8ad4d8509060044b2e026ba7d0d23b9d7568e60",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-066-p1": {
+   "item_id": "b-066",
+   "parafrase": 1,
+   "chave": "522a81a32f74de9a25664ffa875bf66f79b0f8324daabe76b7262439bb4e86c3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-066-p2": {
+   "item_id": "b-066",
+   "parafrase": 2,
+   "chave": "84cbe5e70c508231e5dd558c5f179833c46215a2b86497c851c4e17917329983",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-067-p0": {
+   "item_id": "b-067",
+   "parafrase": 0,
+   "chave": "b66d3602a8fc05c8b0581589b41dd0e0ad7690e12fb2ad81c2527b74f6897d02",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-067-p1": {
+   "item_id": "b-067",
+   "parafrase": 1,
+   "chave": "86cb193f4356b78ce64386d5645fe288957522e4aade5a5faa356639b5b9c749",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-067-p2": {
+   "item_id": "b-067",
+   "parafrase": 2,
+   "chave": "67b5d6885ae5ed3ebffea65fd35ce3b7857a8a73b8733a500cd176cf4c595510",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-068-p0": {
+   "item_id": "b-068",
+   "parafrase": 0,
+   "chave": "c8d0042012664731258d9e57d058f610992f5da59711f2ffae4a68945cc8913a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-068-p1": {
+   "item_id": "b-068",
+   "parafrase": 1,
+   "chave": "2a5f8d7bd9b339fabc50d6ef6891273d2e524e50b3834e8dfdbab512ceaa2a41",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-068-p2": {
+   "item_id": "b-068",
+   "parafrase": 2,
+   "chave": "067aefd0961fe3348554265f281fc378463214540068f524495e36d17859b696",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-069-p0": {
+   "item_id": "b-069",
+   "parafrase": 0,
+   "chave": "d9ab2514e02696892c6ef422ed88982455bf6ff8d6d24eef2eaa33a49e8d0dd4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-069-p1": {
+   "item_id": "b-069",
+   "parafrase": 1,
+   "chave": "4e9492c73d7becd5504da677725f1a8f6b3eca3cd9407a054a1d1cb0dbc35fc4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-069-p2": {
+   "item_id": "b-069",
+   "parafrase": 2,
+   "chave": "8625ee12b7fcafdc30083c02210bb4e57aea4e0d1bd3ade30465952c4f07d803",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-070-p0": {
+   "item_id": "b-070",
+   "parafrase": 0,
+   "chave": "5a1e0561777de8be209d793b58b19af0994d32f8cf8a51477be1ab83c6856149",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-070-p1": {
+   "item_id": "b-070",
+   "parafrase": 1,
+   "chave": "70d0955a73da74b7a105d64c016199dfa2853daa011ea95f11d9d8ca59df8766",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-070-p2": {
+   "item_id": "b-070",
+   "parafrase": 2,
+   "chave": "984dfdb818092f813482c654d9e50e05d34ef1b81e7899e0a126720c793ea849",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-071-p0": {
+   "item_id": "b-071",
+   "parafrase": 0,
+   "chave": "6faae57e3217eaa56f48a75d6d1b09ba32036704e2356813a74cdaa5962cd341",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-071-p1": {
+   "item_id": "b-071",
+   "parafrase": 1,
+   "chave": "aea41b983dfc195592773c23f9d7d870da27369f47d473f8f50339d268145fa6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-071-p2": {
+   "item_id": "b-071",
+   "parafrase": 2,
+   "chave": "4791bb415c91ecbea131343beb8e761d1609d4be9a45bf78364e0e45d2411e39",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-072-p0": {
+   "item_id": "b-072",
+   "parafrase": 0,
+   "chave": "25e6bebebcc3006cbf0e9610ea9feba7487b05b2c224e456a05bdf29277dbea5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-072-p1": {
+   "item_id": "b-072",
+   "parafrase": 1,
+   "chave": "04e4783331060d1113bbd2a34d9700b24b37b36c932381774fa88d81e655cf40",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-072-p2": {
+   "item_id": "b-072",
+   "parafrase": 2,
+   "chave": "64280cac6b8d532566c034c46939641605785681851a773fa1aa747ce2b6a0bd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-073-p0": {
+   "item_id": "b-073",
+   "parafrase": 0,
+   "chave": "6612e0b8c61ad3bbe56ca74c8b7314a4fb3965bdc68eb8f03d83610e065f5ae4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-073-p1": {
+   "item_id": "b-073",
+   "parafrase": 1,
+   "chave": "a10a7e20f629bbeeb593777eeda7354ae624343e7ca4cef99f42f39c139f680b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-073-p2": {
+   "item_id": "b-073",
+   "parafrase": 2,
+   "chave": "df1ba8e3c3456b4897f30a80e57a2e546058b02d5f93d57452e8696d3cb7a864",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-074-p0": {
+   "item_id": "b-074",
+   "parafrase": 0,
+   "chave": "61fa5026ecd2c35996a566ca4c65b18cfbae61a43838e8268aa034761f5622ec",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-074-p1": {
+   "item_id": "b-074",
+   "parafrase": 1,
+   "chave": "39a0f682b2638181ece9019d7ebf2f461e8e8ea7a195c0c45645e28a20fcb256",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-074-p2": {
+   "item_id": "b-074",
+   "parafrase": 2,
+   "chave": "1d3266b20ea699657e401330af5887f40116ad6572ae35f3e5bc1b193ff75cab",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-075-p0": {
+   "item_id": "b-075",
+   "parafrase": 0,
+   "chave": "be1478d9726fedf38353bc6f351c5c2835c55062475213f523c3c6826e0f2842",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-075-p1": {
+   "item_id": "b-075",
+   "parafrase": 1,
+   "chave": "bb0364a3e048baaaba3eb85f66247401a2af0699bedbf5ab24867c0baf8c4ad3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-075-p2": {
+   "item_id": "b-075",
+   "parafrase": 2,
+   "chave": "cf2c0709df77e5e0cbeeb8ec6409910da2972d200fb13e2ba287be6cb2c04da6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-076-p0": {
+   "item_id": "b-076",
+   "parafrase": 0,
+   "chave": "a2f839e92fa19fea15610a4b049ef49e2b9053f799c7efc76723910118928da5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-076-p1": {
+   "item_id": "b-076",
+   "parafrase": 1,
+   "chave": "6fc57bd61e8253178dd6303149af87eee1a59402669277c618913287291707f7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-076-p2": {
+   "item_id": "b-076",
+   "parafrase": 2,
+   "chave": "91f79e43d0b1489c2dd69f9e852c1c6d69dd7eb221bc9143fd843d4c05d2ccee",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-077-p0": {
+   "item_id": "b-077",
+   "parafrase": 0,
+   "chave": "e36ffa3e2a62baebe1413b959b9c680a355ce3d5b7b2d4b487964828f95d2cad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-077-p1": {
+   "item_id": "b-077",
+   "parafrase": 1,
+   "chave": "63ed7764e894518cc419ac3e905ecda72c9c5f7535c2083bb7bf200e45cc764d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-077-p2": {
+   "item_id": "b-077",
+   "parafrase": 2,
+   "chave": "fcef4ceca1ab4b759c48ee04057dbe4e56d513456bfd0ca9378f472b821ee9bb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-078-p0": {
+   "item_id": "b-078",
+   "parafrase": 0,
+   "chave": "5f3b58a35cd4d42e7dcb656a96a74794479e4550b5852e3751f9c14f26b6890e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-078-p1": {
+   "item_id": "b-078",
+   "parafrase": 1,
+   "chave": "2d523bec6e216296a3241dee223953104740f22c7d257dc601b1ccc5cf2e86a5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-078-p2": {
+   "item_id": "b-078",
+   "parafrase": 2,
+   "chave": "1b65eb375fddca133d7fb17d23dd893a04a41a61841c4d51ef0c77860e5d1e02",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-079-p0": {
+   "item_id": "b-079",
+   "parafrase": 0,
+   "chave": "60942442f000f73aba227e38e8c1364aa2bf9057df4773ec51e105a1ddfaa0b6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-079-p1": {
+   "item_id": "b-079",
+   "parafrase": 1,
+   "chave": "ed34dd2ad2d2369a5815f4cab68565dcd45fa592e87ad6e1f01845ab1a361b77",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-079-p2": {
+   "item_id": "b-079",
+   "parafrase": 2,
+   "chave": "14253f89bcb93055b4d080efc0e70bb4bbccc7bdc4b3ca62715a2bff50b631e1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-080-p0": {
+   "item_id": "b-080",
+   "parafrase": 0,
+   "chave": "7731ce2c87832977d8344c8da6550acc51bcc6949c8b436d4a49d0e6ee2e6d42",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-080-p1": {
+   "item_id": "b-080",
+   "parafrase": 1,
+   "chave": "46508ef434cdb26381535e6ccc7f64fe56ac77fb4ae4c5678e5b19977f8fe0d3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-080-p2": {
+   "item_id": "b-080",
+   "parafrase": 2,
+   "chave": "ee39ebabf27a8c6ac4f8e80ad8808ab196a3c9d25ef32346a9db50bf05977479",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-081-p0": {
+   "item_id": "b-081",
+   "parafrase": 0,
+   "chave": "090edcad390041cc0320ae3506af7a3e7e61a5966fcb244b45bcfcb36834cfe5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-081-p1": {
+   "item_id": "b-081",
+   "parafrase": 1,
+   "chave": "820bc7c98307fc1177aab6aac077d6b6f91a66302a2af5e7e3fb541cecdf563c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-081-p2": {
+   "item_id": "b-081",
+   "parafrase": 2,
+   "chave": "bef0dc5b308251747181cd22318e680ee780fc07e898c770d1aa20677ef5454b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-082-p0": {
+   "item_id": "b-082",
+   "parafrase": 0,
+   "chave": "0f33aaf198a56b5cc3f7e635aad2eac6db465f53101acb683709640e84ba7951",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-082-p1": {
+   "item_id": "b-082",
+   "parafrase": 1,
+   "chave": "c23af2010d4e5f678cdf8a3bd534ee9b7433b7e70f49d7479723e0c6e7555cd0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-082-p2": {
+   "item_id": "b-082",
+   "parafrase": 2,
+   "chave": "56b5d6f543a396bf2ac20a3a84699629972d04467f0ded818cf0014cdc1fc6b0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-083-p0": {
+   "item_id": "b-083",
+   "parafrase": 0,
+   "chave": "e1fdfe4cfded7206e83f352a5169f0eeb538171691fe01acb8d911ae82c26567",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-083-p1": {
+   "item_id": "b-083",
+   "parafrase": 1,
+   "chave": "c489f502d50f6b395aed046a9e992f609cb7f0c33bb1ca318128e89ab0d84364",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-083-p2": {
+   "item_id": "b-083",
+   "parafrase": 2,
+   "chave": "38914c6cf1f6b75c21c72e74bae8822ddc151590df8a79a8437b4014ce8ce551",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-084-p0": {
+   "item_id": "b-084",
+   "parafrase": 0,
+   "chave": "d5aa9c69d2fc2982becb244638dc6a1d47fd269be6aaeb4ecd116608932f805b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-084-p1": {
+   "item_id": "b-084",
+   "parafrase": 1,
+   "chave": "85f0229915aec3c0345f52b1ff92c1a435277a9e9213d9b8794a9b72b803f1ab",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-084-p2": {
+   "item_id": "b-084",
+   "parafrase": 2,
+   "chave": "23c57e17363797715f1ee24d2b374f896eacb1b41577ca88326d8b4782e58c2e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-085-p0": {
+   "item_id": "b-085",
+   "parafrase": 0,
+   "chave": "db824ca64e157503a86b3be425d3ef732d09514354c065d0f3b319e3730de0ae",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-085-p1": {
+   "item_id": "b-085",
+   "parafrase": 1,
+   "chave": "ea25cc30a4fd40e5b044eb8e3235d2e3b06ed1a298e0ce275138fff15feed840",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-085-p2": {
+   "item_id": "b-085",
+   "parafrase": 2,
+   "chave": "06a7bb3521f925984b9baa197df5c77473778741dd0db30477f9a7e010827231",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-086-p0": {
+   "item_id": "b-086",
+   "parafrase": 0,
+   "chave": "932ab7f190b937adc6d73b06076c8b5af1aab7aa2316cd49451ddb5c72bad107",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-086-p1": {
+   "item_id": "b-086",
+   "parafrase": 1,
+   "chave": "972e7f0a90503fb99e7fb0432291f53d733646be3e50d4b88adfb9f2515b94c9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-086-p2": {
+   "item_id": "b-086",
+   "parafrase": 2,
+   "chave": "b9a49e43d3f46f4cbdd36cf61a55b658d70be4f17eced000b1d62fa6b551eb3c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-087-p0": {
+   "item_id": "b-087",
+   "parafrase": 0,
+   "chave": "97677f3024a959f8dede94c19e0631ac2587e820f90868408341964f4d24ce2c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-087-p1": {
+   "item_id": "b-087",
+   "parafrase": 1,
+   "chave": "20389036dfb76e942ffb9ff87aef729f87a29f6768add8a07c520a3afafd6c0e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-087-p2": {
+   "item_id": "b-087",
+   "parafrase": 2,
+   "chave": "55e266e1044a8a6bd99946f43698f507411c79395bb04fced33a97b7fcf913df",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-088-p0": {
+   "item_id": "b-088",
+   "parafrase": 0,
+   "chave": "43690d2e6efdb3f8d08d2d350b111bce3fe5f43cdf1810d7fe2840fbc167d753",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-088-p1": {
+   "item_id": "b-088",
+   "parafrase": 1,
+   "chave": "78482599e7f072c09a1d94f586cfd7d4afe0b3a7d8d12c3c6f5cbfa124975be7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-088-p2": {
+   "item_id": "b-088",
+   "parafrase": 2,
+   "chave": "1fbddbe115ea272a1c062685489f35187dab53039b9e5d22debfb09be124e19e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-089-p0": {
+   "item_id": "b-089",
+   "parafrase": 0,
+   "chave": "d9689cc7c20e78682a5215044dd49e6d2f05b42d0bce5fffc8566b622e01f59e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-089-p1": {
+   "item_id": "b-089",
+   "parafrase": 1,
+   "chave": "a65fab53c120fea676f31b6be6f7551df1555d3a76da6902d285c804c96af23d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-089-p2": {
+   "item_id": "b-089",
+   "parafrase": 2,
+   "chave": "d0301110eb68096b036199c19a48700db99a95bbc673e78339dd4b186b47ffd3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-090-p0": {
+   "item_id": "b-090",
+   "parafrase": 0,
+   "chave": "ceb4c028adb768069e549d861a03344662a2d587b986cfbf168c6c5c20e63e49",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-090-p1": {
+   "item_id": "b-090",
+   "parafrase": 1,
+   "chave": "7777647e833ae29e67b22f4db169f9d35e8a04a1dac1d0a50da0056ad130be98",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-090-p2": {
+   "item_id": "b-090",
+   "parafrase": 2,
+   "chave": "b01d71bdcd299a34f6e61df3cc18089a355bb1a8b3e7eb74ec894be99ed56258",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-091-p0": {
+   "item_id": "b-091",
+   "parafrase": 0,
+   "chave": "fd669952744ef068cec80df2bc1a15ff600f05c4b5725a5316470487e610c319",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-091-p1": {
+   "item_id": "b-091",
+   "parafrase": 1,
+   "chave": "0c18e66b5bd7fff0133c943cf3fa89e913d482369d66ae212f92a66499fe1731",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-091-p2": {
+   "item_id": "b-091",
+   "parafrase": 2,
+   "chave": "ecd695317251e36af0e6f0154c5ccee9095f5026ffc74a8b0806425263dc29e0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-092-p0": {
+   "item_id": "b-092",
+   "parafrase": 0,
+   "chave": "c6105e7b6201999aa147e66d23c0b82a3ca6c343e2e6bad6d8e0d65cacd66368",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-092-p1": {
+   "item_id": "b-092",
+   "parafrase": 1,
+   "chave": "9926650f3a226844bf28b8642447b0056b29ac910f7a4f8067ff3394936316a8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-092-p2": {
+   "item_id": "b-092",
+   "parafrase": 2,
+   "chave": "8bef09f37731e234256b700574f48f43b67eacebf8964cacc21ee9bb70dc2964",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-093-p0": {
+   "item_id": "b-093",
+   "parafrase": 0,
+   "chave": "0bdb7dd5ee809c1c8be0965efb14b72d87c5265fac6520af1a54d1a83e307e9e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-093-p1": {
+   "item_id": "b-093",
+   "parafrase": 1,
+   "chave": "4b77f8dbe992867f9061ff2a1d1a0ea0bb2781cb97d70ef79bff89762361479b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-093-p2": {
+   "item_id": "b-093",
+   "parafrase": 2,
+   "chave": "e0fb9fc264195a2a0784bae541cd0f694545367494f4be4f9fbab1efc8b1972a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-094-p0": {
+   "item_id": "b-094",
+   "parafrase": 0,
+   "chave": "61d208d0b75a303eabb2d64546b7d4e1115c03352f7ef5eee75c30b8b70c9694",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-094-p1": {
+   "item_id": "b-094",
+   "parafrase": 1,
+   "chave": "f341dadea2dbf4960de60ae74177d783fedac3c3cc640ac1bce9ccf943eee189",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-094-p2": {
+   "item_id": "b-094",
+   "parafrase": 2,
+   "chave": "5d3c42b17139160ed48fa5933efa5601889435454c33d89bf5c0275b2776fea1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-095-p0": {
+   "item_id": "b-095",
+   "parafrase": 0,
+   "chave": "9f705df6c363c2e91c94b41355023c3145dcddf1e8a8c51a01eedcf48a3c5388",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-095-p1": {
+   "item_id": "b-095",
+   "parafrase": 1,
+   "chave": "0efcd19fa8113aee05902f0f0a0f6385a38c981b59e792648857043bc2107405",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-095-p2": {
+   "item_id": "b-095",
+   "parafrase": 2,
+   "chave": "32f3af7169e34378b9767eccaf7d5afd7c5f195f7b3d05695f319df5f06864b0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-096-p0": {
+   "item_id": "b-096",
+   "parafrase": 0,
+   "chave": "636641059e85da30df941e66a67f0f04ba4ab698a715f8e3df7e787a07ebe1a8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-096-p1": {
+   "item_id": "b-096",
+   "parafrase": 1,
+   "chave": "c27b38e685c07c9aec465e5f8e14662e370cd7acfcc510cddc33f628ac0ee763",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-096-p2": {
+   "item_id": "b-096",
+   "parafrase": 2,
+   "chave": "9e58318460337f833277ebb561184568472f3dda84127c8f08ed5ae4bb689209",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-097-p0": {
+   "item_id": "b-097",
+   "parafrase": 0,
+   "chave": "60d4474b6f9a38985cff003d2f04d3f051a7a02841c99428f332f95970431e5a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-097-p1": {
+   "item_id": "b-097",
+   "parafrase": 1,
+   "chave": "01720ea7b760bc262804fd16d8dc054337320094ade3d6cc8bd4cb4e317b0a30",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-097-p2": {
+   "item_id": "b-097",
+   "parafrase": 2,
+   "chave": "8f039bebd7cb89310d5106cfd360a776c7616188dae7903b0ee2f3ec7a4bf5e8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-098-p0": {
+   "item_id": "b-098",
+   "parafrase": 0,
+   "chave": "2a6b44299b55d8a423927a6f1e981d6a8c973999d396dd39491c3f1ecad17c1d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-098-p1": {
+   "item_id": "b-098",
+   "parafrase": 1,
+   "chave": "19efa93739857b051c85431494e6b38edb3f966313a9cce813edb158db2dc5d1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-098-p2": {
+   "item_id": "b-098",
+   "parafrase": 2,
+   "chave": "03f502475ea810ba767e18fa333a1bd41f14637f9c5393a714db35cd56558b0e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-099-p0": {
+   "item_id": "b-099",
+   "parafrase": 0,
+   "chave": "3dec9c851739679bd51fa833e5dedad6e9eabe7bf278eeeabc347a619393cdcf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-099-p1": {
+   "item_id": "b-099",
+   "parafrase": 1,
+   "chave": "38f665c5111268b0edc5b61320c35527d17536af9605cee7970c99357c471302",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-099-p2": {
+   "item_id": "b-099",
+   "parafrase": 2,
+   "chave": "2df3d45241723c4ad27aeeed84f88f9f960a5c4ff91ac57899a568cba57583f6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-100-p0": {
+   "item_id": "b-100",
+   "parafrase": 0,
+   "chave": "c91044b917c1baf0a73eb965dea6c15dcc3c367c7263b73a259744df3c4faab8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-100-p1": {
+   "item_id": "b-100",
+   "parafrase": 1,
+   "chave": "8377b2c5d2033cf228f0aba45969d2212709b78924dba4fe44e944b03e030b61",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-100-p2": {
+   "item_id": "b-100",
+   "parafrase": 2,
+   "chave": "737eed0cd22d1345fa451a688a4b2184c09e9d568fc79c8042a2fad84410e654",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-101-p0": {
+   "item_id": "b-101",
+   "parafrase": 0,
+   "chave": "012e3c217a2989fa5095934eb4b54964197b7096d90ea9bb1a77eca7c7c5d0a9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-101-p1": {
+   "item_id": "b-101",
+   "parafrase": 1,
+   "chave": "46a4bc6e335d2b0961a7e83914fd100600f2e6e9e8b13ce78db31768a9de3d5a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-101-p2": {
+   "item_id": "b-101",
+   "parafrase": 2,
+   "chave": "f0c0272bb6cdbe3e8429f714861797ed0f562569d437d263acc4a6b95a0393da",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-102-p0": {
+   "item_id": "b-102",
+   "parafrase": 0,
+   "chave": "6ee592caaaae1245c19f51078f01759889c86b5cf7e852ba363041ed05aa8ea3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-102-p1": {
+   "item_id": "b-102",
+   "parafrase": 1,
+   "chave": "74e58ebbb69f2ca65d6cabdfb59eaa72edd6734dc72f538695c680ae963bc45c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-102-p2": {
+   "item_id": "b-102",
+   "parafrase": 2,
+   "chave": "08f6dd7f86054ba236070638589df409535ce743aac8c5b31566c0504785665a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-103-p0": {
+   "item_id": "b-103",
+   "parafrase": 0,
+   "chave": "521783ca1b8fc4b28015ffa10d190b203120bbb23a7c7402726f3d0fb31ba567",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-103-p1": {
+   "item_id": "b-103",
+   "parafrase": 1,
+   "chave": "1c7ec408e96d09babfbd8f9ebf3c5241f38e3a0dc5c87d44d37ca5a38e148350",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-103-p2": {
+   "item_id": "b-103",
+   "parafrase": 2,
+   "chave": "f711afe9aaf83122960daf53671ea242d306a8515e9ceae7ef1abcb6591d41af",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-104-p0": {
+   "item_id": "b-104",
+   "parafrase": 0,
+   "chave": "3640fb6c06601daa51bf964951bf83cec33d02f7fd079627cb898d1f1ce05aa5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-104-p1": {
+   "item_id": "b-104",
+   "parafrase": 1,
+   "chave": "16fc019874790573e07e3347d0403e1edd3a41b556fefde7729ba86a0df859b6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-104-p2": {
+   "item_id": "b-104",
+   "parafrase": 2,
+   "chave": "9a5cf7df830c920a35c6b067e497794ec523f2e02578de02c7a6a40e422ad7d1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-105-p0": {
+   "item_id": "b-105",
+   "parafrase": 0,
+   "chave": "0bfc1aca850fdd1826740baef028d31839f01adecb676950822fa008e47a16c3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-105-p1": {
+   "item_id": "b-105",
+   "parafrase": 1,
+   "chave": "9a9c6229ba3a6e5f25def579d74c7cde99383cebc20a3dfa0880e808ba25df88",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-105-p2": {
+   "item_id": "b-105",
+   "parafrase": 2,
+   "chave": "ff95d13b99d0baad2012955bccc863c13f0d2bcd8941284c00bea4706c5fdb5e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-106-p0": {
+   "item_id": "b-106",
+   "parafrase": 0,
+   "chave": "bb3b54bcdb2eab42e46687770f0123511cf549165a04c99ac1ba3ebf7ded9ebf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-106-p1": {
+   "item_id": "b-106",
+   "parafrase": 1,
+   "chave": "d61086b026db58079341e17586bb40d475ac4cd11e608e634719b8766fc1476a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-106-p2": {
+   "item_id": "b-106",
+   "parafrase": 2,
+   "chave": "7e99ea0beaefd7e86a04271342a85b4d3c9bbc0754376d714186b04291da554d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-107-p0": {
+   "item_id": "b-107",
+   "parafrase": 0,
+   "chave": "004fd4361759d63ed93b283a087219c5d612ebdb75801a10b9b4d374d0c198b4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-107-p1": {
+   "item_id": "b-107",
+   "parafrase": 1,
+   "chave": "9c972ab90e2fba99b8e4bc1f7581f178b6af1b1fae35da38ce2a06879ad5f1ec",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-107-p2": {
+   "item_id": "b-107",
+   "parafrase": 2,
+   "chave": "21e414280cd9d997d9bb8339e76f59843d843c6bcb37711c5aef6449f1b04741",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-108-p0": {
+   "item_id": "b-108",
+   "parafrase": 0,
+   "chave": "e1b4c51dc301fe6a17a4345d47861a711fb981ace5e7d9c3461cb3a634b05827",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-108-p1": {
+   "item_id": "b-108",
+   "parafrase": 1,
+   "chave": "08f6f9cf7a4bfd89a45e572dbcaa13f0c9c66335579582ff3cd9973922dbdd05",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-108-p2": {
+   "item_id": "b-108",
+   "parafrase": 2,
+   "chave": "e88474b64725261807007eaa8d5364f3e3802bfad50f17d68fa8c2f47dea03a4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-109-p0": {
+   "item_id": "b-109",
+   "parafrase": 0,
+   "chave": "bb44a85bff0fb21b99af997af0addc52ffc9db3b2e421f4a8b59a94a994787da",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-109-p1": {
+   "item_id": "b-109",
+   "parafrase": 1,
+   "chave": "6f7ddfbd8e70e969013c50eb92f4289932b337b9a6069188d326b2def2f1a857",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-109-p2": {
+   "item_id": "b-109",
+   "parafrase": 2,
+   "chave": "aa511edf9e7fc90bcfab6671b780f2b3c30226cb8741b0d7bfdaf29bfe3c0cef",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-110-p0": {
+   "item_id": "b-110",
+   "parafrase": 0,
+   "chave": "7dc9f5bbf91ac322a67067696087eace6ad9defc015cd1ac85b6df26c857de57",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-110-p1": {
+   "item_id": "b-110",
+   "parafrase": 1,
+   "chave": "c98c67042ffb03b83f13805aca6c0ca0b19fd96af15793afecc984b83d27795a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-110-p2": {
+   "item_id": "b-110",
+   "parafrase": 2,
+   "chave": "93240660899386686b69cee7593b9345bbb552c03581a42edffc8a0e420644cd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-111-p0": {
+   "item_id": "b-111",
+   "parafrase": 0,
+   "chave": "0c2970f7c3f48c09a3ba8826d5d68a9bc7663dcb782b8b16b42f0449404d4ea0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-111-p1": {
+   "item_id": "b-111",
+   "parafrase": 1,
+   "chave": "458d467821963e04919a48f531a5263fc39fdd6dea377e2fe77de9b2666dfb2a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-111-p2": {
+   "item_id": "b-111",
+   "parafrase": 2,
+   "chave": "feebf082fea61fecde339178c6d7bb8da6b623ba91bbf829bd8414051ba365ce",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-112-p0": {
+   "item_id": "b-112",
+   "parafrase": 0,
+   "chave": "e95227cbfa32b9b23c18d40a6746a7dd43cddafd493ee180ff5baa07f17bc9ad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-112-p1": {
+   "item_id": "b-112",
+   "parafrase": 1,
+   "chave": "9f7e9ac324d895d1055c155ccd8ef00f7bb662e1f06f1944e5868c39269fc9c2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-112-p2": {
+   "item_id": "b-112",
+   "parafrase": 2,
+   "chave": "c74453d9c4cf58f93ec9109c99e5f07c2bb3e8004db3c63b7d5b14c6ac556b04",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-113-p0": {
+   "item_id": "b-113",
+   "parafrase": 0,
+   "chave": "29dea6127d6dc558ee01d6edc6dfbe1b428010ca7719e2faace87396c9e16907",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-113-p1": {
+   "item_id": "b-113",
+   "parafrase": 1,
+   "chave": "1f170acb13d281af98461ea1a2caf1e9910dccb0a53dc3efd2a3ab32a0ab1347",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-113-p2": {
+   "item_id": "b-113",
+   "parafrase": 2,
+   "chave": "ebf5f99e14a31bccfed0924ec08f820ebe4ff0665b95336cc3d0fec2840cc7b0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-114-p0": {
+   "item_id": "b-114",
+   "parafrase": 0,
+   "chave": "26599580e33566d3ff384c78bf1fba7d55fdf4457729cbddab9724cbf8d8dc83",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-114-p1": {
+   "item_id": "b-114",
+   "parafrase": 1,
+   "chave": "2c54b372d7e78e77ae900dcbdc0c397af4cd68f5cb9339760df9d86a89eda77b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-114-p2": {
+   "item_id": "b-114",
+   "parafrase": 2,
+   "chave": "17d9def55676acd6b801c2a1bec3d341514cda4a483ebfb7f04b63ca10665153",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-115-p0": {
+   "item_id": "b-115",
+   "parafrase": 0,
+   "chave": "378843610efc04d0b90bc1a9dd1af27d537629c4f24a84f70d900a7183b87d02",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-115-p1": {
+   "item_id": "b-115",
+   "parafrase": 1,
+   "chave": "4faa6de1ddb7f6cf61eb7d6a26d3f78d3e007069f3679b56c392931674ca05b5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-115-p2": {
+   "item_id": "b-115",
+   "parafrase": 2,
+   "chave": "4cfeb7fa353ae2fa4b3b5d6af8e3f8402fadca957a0401ea2921b65f30ce65c9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-116-p0": {
+   "item_id": "b-116",
+   "parafrase": 0,
+   "chave": "a9378f5d68ebb7e2816ce1f8b55ccc7c508526fb22aac0ac5c0fee7721312794",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-116-p1": {
+   "item_id": "b-116",
+   "parafrase": 1,
+   "chave": "e6565f53ef5cc8f81e1eb89043cfefc9ca1f30a777a9c6c7233c1a1831648aad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-116-p2": {
+   "item_id": "b-116",
+   "parafrase": 2,
+   "chave": "4cfaf2ffc6f12131e653321a93f00fb91187a57513de5978a483b89698cccb4d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-117-p0": {
+   "item_id": "b-117",
+   "parafrase": 0,
+   "chave": "070ec88476bb9a05378b26631d9b50f0bcbf69271da9ec68a8fde6345a6f072a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-117-p1": {
+   "item_id": "b-117",
+   "parafrase": 1,
+   "chave": "f3c3e5d60796de43cddf1c776b0f219533884305be1ca4e66e9f49543c5210c5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-117-p2": {
+   "item_id": "b-117",
+   "parafrase": 2,
+   "chave": "5dd4fec18a04ae01c8814fb71634d7067731bf2d7f29b12b4b7f79e713cfbb9d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-118-p0": {
+   "item_id": "b-118",
+   "parafrase": 0,
+   "chave": "2714be408d36410d79e37b3d851475a6738fc77ae0672e0613ebe938078809d8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-118-p1": {
+   "item_id": "b-118",
+   "parafrase": 1,
+   "chave": "f055bab94d4690d8dd7a7b749fe40dc7e98e6ac363a96f3b276bc592d66eb37f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-118-p2": {
+   "item_id": "b-118",
+   "parafrase": 2,
+   "chave": "03adbfb920507cabee17b8ef3cb35b822b322fc66caafb8ef443bc5cef7b5b6f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-119-p0": {
+   "item_id": "b-119",
+   "parafrase": 0,
+   "chave": "70630b1be520c4b56b9ee2544da6e452ac750ae2623239ebe7dc11cb88032173",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-119-p1": {
+   "item_id": "b-119",
+   "parafrase": 1,
+   "chave": "e64a749085b37a3b1f33a57a70cae316ba3ae87ae2402d3c40a0d5c3670b4854",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-119-p2": {
+   "item_id": "b-119",
+   "parafrase": 2,
+   "chave": "1414be9ac24d242c7001f3ceb9c173b4d913edce568307877cb3c2c82d1d1850",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-120-p0": {
+   "item_id": "b-120",
+   "parafrase": 0,
+   "chave": "8c565d5621376132b79d812f658a9f53e186174a024c419176b2e97b3c7476c6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-120-p1": {
+   "item_id": "b-120",
+   "parafrase": 1,
+   "chave": "9fc26ac878c42240ce8af9dc3d0f310698f3d5944005f258ab2fefa7e8ec6f7f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "b-120-p2": {
+   "item_id": "b-120",
+   "parafrase": 2,
+   "chave": "441307910acd56ef9a92e54e2ee5089466948004b547c2d0f2bfac5c639941d7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-001-p0": {
+   "item_id": "c-001",
+   "parafrase": 0,
+   "chave": "e2922189e5107b45fbbd55cb04129587e3366384763849d35ecf939aa6541e54",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-001-p1": {
+   "item_id": "c-001",
+   "parafrase": 1,
+   "chave": "4224a0a6cb851178f57850e938d0a85e85c85a76397146c860b62475ae54f25f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-001-p2": {
+   "item_id": "c-001",
+   "parafrase": 2,
+   "chave": "8162ecd064f5cb6d213959a7483d98728d2bb07875ca8359ddc07016a701e222",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-002-p0": {
+   "item_id": "c-002",
+   "parafrase": 0,
+   "chave": "d9b8a49f599cfea862aa5e828e2be2c6af60ebf07bde44ce4057179e69264e0e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-002-p1": {
+   "item_id": "c-002",
+   "parafrase": 1,
+   "chave": "53552cc8abba371d92e071ef3c9a9bc1d395d7e5f221eeaa7b7851dee7da59f7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-002-p2": {
+   "item_id": "c-002",
+   "parafrase": 2,
+   "chave": "df7f3bea740008d4e5c5d2f959144be7115c54d9090fef03fea42df001cb9666",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-003-p0": {
+   "item_id": "c-003",
+   "parafrase": 0,
+   "chave": "2119abd0c898edf16ecf2e42d7992ab4b5ef4a112d0a742dc7cf583b9f0af6ea",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-003-p1": {
+   "item_id": "c-003",
+   "parafrase": 1,
+   "chave": "0dc389fb62b8ca4338a9667b73bfbcfab6edd684671721ffa87bf6064c1c777f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-003-p2": {
+   "item_id": "c-003",
+   "parafrase": 2,
+   "chave": "02045769b1db2e3c453092ac6581582b3180f0ff7a554367ba1d968730c024a5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-004-p0": {
+   "item_id": "c-004",
+   "parafrase": 0,
+   "chave": "b4df1c8b43134d3adf1430ae858a1d6ca87694f76c1f5dcb6337f6069f78b5da",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-004-p1": {
+   "item_id": "c-004",
+   "parafrase": 1,
+   "chave": "ab6223eadd2699c0e90e2e66554d7b559042a5041eb3da7f0977edfdf54f892b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-004-p2": {
+   "item_id": "c-004",
+   "parafrase": 2,
+   "chave": "2a1d5120c3940fcb6d59c5226ad745f604de60ae4588b392a0fb84e1068a5cf4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-005-p0": {
+   "item_id": "c-005",
+   "parafrase": 0,
+   "chave": "12961ebe19e7adf051ff508a434b397cccd8f70c9b81db3214a7057452189afd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-005-p1": {
+   "item_id": "c-005",
+   "parafrase": 1,
+   "chave": "1ed843fff38ba0ceb14d7d0ff93efaf4693a7ca3c3bc6a27f4249fbb2c6ebf3c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-005-p2": {
+   "item_id": "c-005",
+   "parafrase": 2,
+   "chave": "118df466b69f0a81addb97e3c98bf45485f488c797f0473c8a1df5a7e2020d91",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-006-p0": {
+   "item_id": "c-006",
+   "parafrase": 0,
+   "chave": "08dcac3efa9883b612afefdf42d34b23f8d8a1cce0937e27ca585872ab1f1169",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-006-p1": {
+   "item_id": "c-006",
+   "parafrase": 1,
+   "chave": "adbab13f7982c62e87d3683b9bcecbe39ecef0998197a457eaa412c48bf0ced9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-006-p2": {
+   "item_id": "c-006",
+   "parafrase": 2,
+   "chave": "ba7ea21c9ad318abb9bf781fe7815f17c3acf53638c1c381cc232c2c0ded77bb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-007-p0": {
+   "item_id": "c-007",
+   "parafrase": 0,
+   "chave": "381ce1ae46f575e8c03c92b5079a85c670a402846c0e7b2e65cece32b3a9497a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-007-p1": {
+   "item_id": "c-007",
+   "parafrase": 1,
+   "chave": "007e37c02b692f9b7235173ec4774d48ab5d350ebed138c3d17667d5cda9425c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-007-p2": {
+   "item_id": "c-007",
+   "parafrase": 2,
+   "chave": "de63dc02ba336db694787775b6e810f2d53a2f219bceff118863c7f873f27c74",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-008-p0": {
+   "item_id": "c-008",
+   "parafrase": 0,
+   "chave": "330854dcbebc814d0d7c973b8b92e157ca18b7683666e142102f33459c14d403",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-008-p1": {
+   "item_id": "c-008",
+   "parafrase": 1,
+   "chave": "37e4a72ad521175d369fcb8aa7b8ec8b8ed82068134fb8a1d2a40babab8f14b3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-008-p2": {
+   "item_id": "c-008",
+   "parafrase": 2,
+   "chave": "1a3b8e5196a02e058942ebe4077acc2744be1400edc6a5f4863e843e9b27ad13",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-009-p0": {
+   "item_id": "c-009",
+   "parafrase": 0,
+   "chave": "c736b0bfa00b0097cae98b71c19b4214076155cf2f6d2c2287316be366b23b4d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-009-p1": {
+   "item_id": "c-009",
+   "parafrase": 1,
+   "chave": "57eaf4eec04cb240222eda93690e4c124ccdaddcda73a5e2a9ff504e8e458bf2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-009-p2": {
+   "item_id": "c-009",
+   "parafrase": 2,
+   "chave": "bdeb003d4f6aae675bce594c54e3c2dad022dcd41389f9a4d882de4024521d94",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-010-p0": {
+   "item_id": "c-010",
+   "parafrase": 0,
+   "chave": "dbb5312ff5540f1496dd47da34d108e192cfae03c07ae57bf28863aaed83739e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-010-p1": {
+   "item_id": "c-010",
+   "parafrase": 1,
+   "chave": "63cf48a95746e0110921da28f1d28f191085402943274d50ec08aed040eaf242",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-010-p2": {
+   "item_id": "c-010",
+   "parafrase": 2,
+   "chave": "3bd43304bed3db1d3b3edd0168448c7080a46b22e7647f68f65cdf92275e7be2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-011-p0": {
+   "item_id": "c-011",
+   "parafrase": 0,
+   "chave": "2250c1103ba7730972b96b772cb18fc10497b16b00ab278e17a5133da265a4b9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-011-p1": {
+   "item_id": "c-011",
+   "parafrase": 1,
+   "chave": "b89459a1979daf22f071f5dc82e24bd573e371d3398d8ce0d55a0634061779a1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-011-p2": {
+   "item_id": "c-011",
+   "parafrase": 2,
+   "chave": "0469a13e9a18294fdf8c2352d4a8d6324f306e40d51597e28daba7bbabbb32ae",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-012-p0": {
+   "item_id": "c-012",
+   "parafrase": 0,
+   "chave": "c350c594c8c91c201b89e675bd8168292f2cd99832f77c37354e37aa16677d55",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-012-p1": {
+   "item_id": "c-012",
+   "parafrase": 1,
+   "chave": "b77cf002a2614d4bf22fc53d2cc497f5c10592fdfd0a656b4787ff2bc1105296",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-012-p2": {
+   "item_id": "c-012",
+   "parafrase": 2,
+   "chave": "ea97280f6a7bca77e2d1790a3b6777114088358a625f7189a2a007aeaf14862b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-013-p0": {
+   "item_id": "c-013",
+   "parafrase": 0,
+   "chave": "3d8b896f01f0f758201928f35ce2f08bcd44d91534b3da5521feacdfcbe1280e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-013-p1": {
+   "item_id": "c-013",
+   "parafrase": 1,
+   "chave": "450d2d0f0110d1dc662e3352b36c5e20f10f0f91a9f31c2e1f2fc634052e1086",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-013-p2": {
+   "item_id": "c-013",
+   "parafrase": 2,
+   "chave": "f1bf1dfebec9f8943cab1517b52e2b3e0c7ef0d402e0bb9043185c406dae6b2b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-014-p0": {
+   "item_id": "c-014",
+   "parafrase": 0,
+   "chave": "f162c7385c163fed3c61840dc2e74a88997a1a19e061f69fc3d0a6c36ac4aba9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-014-p1": {
+   "item_id": "c-014",
+   "parafrase": 1,
+   "chave": "c9cdff28885ee485d9b9358e1de75e4840a64ab6d9d1ea1e16d6c45f8f0bef32",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-014-p2": {
+   "item_id": "c-014",
+   "parafrase": 2,
+   "chave": "e6a7fa16ebb080e31b3a2846504d8202c68ba0ff75d2340f0ef0482263822653",
+   "lote": 1,
+   "situacao": "ok"
+  },
+  "c-015-p0": {
+   "item_id": "c-015",
+   "parafrase": 0,
+   "chave": "41c6b78fbc35085c83cb2549a98997588e20ffa1ea1cbd1043abe9e9b17cad3e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-015-p1": {
+   "item_id": "c-015",
+   "parafrase": 1,
+   "chave": "c17d809e7a4fdf4ba8e19a319f2cecceb7cda2082fa4f53985052b8643c1d75c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-015-p2": {
+   "item_id": "c-015",
+   "parafrase": 2,
+   "chave": "86ad2105c69999462f21e3d72743d09cf3ac04c16187be5156c09fe4729410f5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-016-p0": {
+   "item_id": "c-016",
+   "parafrase": 0,
+   "chave": "e691ba0dcfad5ea0e52128ca525bf1d794fe0d99641bd91e0b3a49ba4158e1e0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-016-p1": {
+   "item_id": "c-016",
+   "parafrase": 1,
+   "chave": "ad963daf6e44a6a88256eaf1654677f2a02649da4603bc0e100a54b868392104",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-016-p2": {
+   "item_id": "c-016",
+   "parafrase": 2,
+   "chave": "dc81fc75be73aa74a00af8b15abb43d2449df574a7fb310b2060e024661ccb72",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-017-p0": {
+   "item_id": "c-017",
+   "parafrase": 0,
+   "chave": "dbefaee66f47575decd17da5235da363006bd85d8056a3ebda435d26065be39d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-017-p1": {
+   "item_id": "c-017",
+   "parafrase": 1,
+   "chave": "2981cea4d7a2c9b5ed6c64ef544f0c36ea2c15025df6473997112fe94ce75e88",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-017-p2": {
+   "item_id": "c-017",
+   "parafrase": 2,
+   "chave": "d232e989044e5850f28f94f1783f32d0ef81382a8c89c96777482c5aca400257",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-018-p0": {
+   "item_id": "c-018",
+   "parafrase": 0,
+   "chave": "21562c19c73fbf1b3509c9325ba65969d2a4925d96ca4f3d95438469dc181c7b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-018-p1": {
+   "item_id": "c-018",
+   "parafrase": 1,
+   "chave": "45226e9e3e9e7db4f5d36f3ad5efed2e839b2c7ed30c8b3f893183cf8b665444",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-018-p2": {
+   "item_id": "c-018",
+   "parafrase": 2,
+   "chave": "3c9da5486ae90b6de3d00b5f0aa10f920eeefc845037b27502a7122494a47646",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-019-p0": {
+   "item_id": "c-019",
+   "parafrase": 0,
+   "chave": "c0a931f381707f8e228d5bf507b24a85f6401b432ac85966dc3b3e9fe39ac2cd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-019-p1": {
+   "item_id": "c-019",
+   "parafrase": 1,
+   "chave": "ef99564f324287eb6688fb9409063d73785a7ac4e501e994c2057ffe8dffd602",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-019-p2": {
+   "item_id": "c-019",
+   "parafrase": 2,
+   "chave": "e2de8df83a1f8153de868870647ea8c26f91bcfaaaf240736e59f3ced163b26f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-020-p0": {
+   "item_id": "c-020",
+   "parafrase": 0,
+   "chave": "ff1b03ab563ad5ef211841c33f6df92b9e2069ffd3be2cd7811cb791d721b1dc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-020-p1": {
+   "item_id": "c-020",
+   "parafrase": 1,
+   "chave": "1b0e7bf3cdba2dfe4dbbe1d7a7fa1244192282935886b7b887cd4db3c3e55376",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-020-p2": {
+   "item_id": "c-020",
+   "parafrase": 2,
+   "chave": "3e4e98ce69c3c6cc34ce01a3f8003df8c3449eb7ea434e4ac6632fea605872a4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-021-p0": {
+   "item_id": "c-021",
+   "parafrase": 0,
+   "chave": "fefac70f99787233b07b60e920018852100dcafe38bb8ea811d15cacd0865147",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-021-p1": {
+   "item_id": "c-021",
+   "parafrase": 1,
+   "chave": "854063d9de7a1398b8cec85085f86918605d535dcf68837c2881b99ae150669d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-021-p2": {
+   "item_id": "c-021",
+   "parafrase": 2,
+   "chave": "3ea52113aae14ce7db8bd78758f5e8b0be152b24d47e1dc570a59b6b1473ced6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-022-p0": {
+   "item_id": "c-022",
+   "parafrase": 0,
+   "chave": "ad21c1cfe1944699298347cae123ede6e0a6079815cdf17f06aac83d71d3103d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-022-p1": {
+   "item_id": "c-022",
+   "parafrase": 1,
+   "chave": "b2c8d97d54e9e37841c46469e0bbbc9dc8d0120e2b27aa5568d485b19667db80",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-022-p2": {
+   "item_id": "c-022",
+   "parafrase": 2,
+   "chave": "15f9b6720d15e66e3488d52ce33a6079fec27b743a715c6b0617b0b68bb01612",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-023-p0": {
+   "item_id": "c-023",
+   "parafrase": 0,
+   "chave": "95a82635b258fbe9aeec701637f95b251075e7bdad4dc6f63b89299983078387",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-023-p1": {
+   "item_id": "c-023",
+   "parafrase": 1,
+   "chave": "537c5415aa379db7bd72c5da01081329a98986dbeb46c258f50bf8bddde5f5da",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-023-p2": {
+   "item_id": "c-023",
+   "parafrase": 2,
+   "chave": "62619750facaeaa2baad7d74382da5649ff202b54dfc5814f6103e95c0d8d603",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-024-p0": {
+   "item_id": "c-024",
+   "parafrase": 0,
+   "chave": "b3e63bc390660338e8134b37e4d20903756fd5588b0e0890e8367f0efff10c98",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-024-p1": {
+   "item_id": "c-024",
+   "parafrase": 1,
+   "chave": "c67f003db0c18fcf9bc41c298f80bf1487a75bdec3fdccfad557667ea485459d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-024-p2": {
+   "item_id": "c-024",
+   "parafrase": 2,
+   "chave": "012aa7b372c61f8d392ec24b6b37b0440243ad6171f28d9a6a703e134d798b8a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-025-p0": {
+   "item_id": "c-025",
+   "parafrase": 0,
+   "chave": "9c71011a808f07e7b9d000090b2d056fdcba276d1ee41835e2d17ed537803b8a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-025-p1": {
+   "item_id": "c-025",
+   "parafrase": 1,
+   "chave": "e10ecad2445e362df6c1fd1badf6e546c9b039fc3a69748bbe4f778d81124091",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-025-p2": {
+   "item_id": "c-025",
+   "parafrase": 2,
+   "chave": "0ca50a72a2dc8c42b4918fe1b7ae13e21bce695e54e43521dc3e635874f1224d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-026-p0": {
+   "item_id": "c-026",
+   "parafrase": 0,
+   "chave": "84d491ea009921054e69b90dc37b3b9c7abe578a9fc76d2aa600289e5a9182fa",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-026-p1": {
+   "item_id": "c-026",
+   "parafrase": 1,
+   "chave": "dd69a4813b31001a2d9b371ae168517708b01c7eab83e07949e3cfed44bb7a0b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-026-p2": {
+   "item_id": "c-026",
+   "parafrase": 2,
+   "chave": "f1f5924c1b98bccb4d760ab0066d3b1843d56cff3bf405cf1b6bacc1a24daf14",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-027-p0": {
+   "item_id": "c-027",
+   "parafrase": 0,
+   "chave": "a565e64ddef6276b1913c9fb5793850b996a0a7db6eb5e95b0c1935a54cddcbe",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-027-p1": {
+   "item_id": "c-027",
+   "parafrase": 1,
+   "chave": "cdbcc7816b67162265fe5a2242487bf2f842add947d29c1295471031cddeb978",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-027-p2": {
+   "item_id": "c-027",
+   "parafrase": 2,
+   "chave": "ad6c0db51778a0378b916b51e3f6dfbd18723c8ff64eb7fee21013ec704f9562",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-028-p0": {
+   "item_id": "c-028",
+   "parafrase": 0,
+   "chave": "563c0b6b07076868e8f0538c8af82d81cb046bca94ad7b4c3b336dda55e0a5fd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-028-p1": {
+   "item_id": "c-028",
+   "parafrase": 1,
+   "chave": "3acb378c7559f28b719a1660b9919202bed6970a4bd85c183250076db9c4db6e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-028-p2": {
+   "item_id": "c-028",
+   "parafrase": 2,
+   "chave": "d6264dad62914cbeb5a70654693c1a2c2a55289c0dcb4273ed672d9d8c11466b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-029-p0": {
+   "item_id": "c-029",
+   "parafrase": 0,
+   "chave": "750490e538b51dd50d3cdf41a5c8a1c64092229ded2a83f08988deeb889601b0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-029-p1": {
+   "item_id": "c-029",
+   "parafrase": 1,
+   "chave": "22dc5f3a5b1b7cff8bbe3cf8d57ad46698bf0ca7ef6c7450ff5f8c22e6d44cfb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-029-p2": {
+   "item_id": "c-029",
+   "parafrase": 2,
+   "chave": "18a06d960dbf6299824a060fe75fda9a18ce7a65ae53233e5ead7a7914b32d72",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-030-p0": {
+   "item_id": "c-030",
+   "parafrase": 0,
+   "chave": "17a6556089e5170f40336a9be0883d0d02d05d393614d184eee8c461e38bba5d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-030-p1": {
+   "item_id": "c-030",
+   "parafrase": 1,
+   "chave": "fe0dd93a45afca7b60f33f6185f18c7e721eddaa66294862c8053ef5f08e1491",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-030-p2": {
+   "item_id": "c-030",
+   "parafrase": 2,
+   "chave": "1c886f7319b371c5548a8e7f8f48828811310eba1f0812a83e7d6d784c8396e2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-031-p0": {
+   "item_id": "c-031",
+   "parafrase": 0,
+   "chave": "f8c6494f430a889f9f501ffac2fbb119fe2feb6fb7e616b9c1104c3f678562cc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-031-p1": {
+   "item_id": "c-031",
+   "parafrase": 1,
+   "chave": "defc14d08a5d329b0b16518c6811596ad339c73abf80c85aca22a937475bfc7c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-031-p2": {
+   "item_id": "c-031",
+   "parafrase": 2,
+   "chave": "919a90f270a580b816d71391b0cee54379b8f2e7763a66f22bf3445649447806",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-032-p0": {
+   "item_id": "c-032",
+   "parafrase": 0,
+   "chave": "91bf5c7a8206f885049117e2bfd8c6ade0dde4e1c39148513c1aa30d398cb0c9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-032-p1": {
+   "item_id": "c-032",
+   "parafrase": 1,
+   "chave": "e2b850dfe5c9541794f36146c4578fd8dee53bf8f11af7ef1ee8321c53ae48d2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-032-p2": {
+   "item_id": "c-032",
+   "parafrase": 2,
+   "chave": "fba5c7061f62133971c6a75a950606c10817b5cdecb516a5f47c4699592fd80e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-033-p0": {
+   "item_id": "c-033",
+   "parafrase": 0,
+   "chave": "1a9b00186250ad00797311a6d53cc8ce10ef057980c24c2f0e216c5ee28e535c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-033-p1": {
+   "item_id": "c-033",
+   "parafrase": 1,
+   "chave": "9a179045120d5af17faa1cba7a58d627ba82c837c1555358ebd44d02223495a5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-033-p2": {
+   "item_id": "c-033",
+   "parafrase": 2,
+   "chave": "8ae69c6e4d95d176a4aae83110204af164df77b3f969209e15f41417c6589cee",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-034-p0": {
+   "item_id": "c-034",
+   "parafrase": 0,
+   "chave": "e2a393655f73de7b727e4cf3472c8740ec9b45a8390984fbdfe7e59d5c2334f3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-034-p1": {
+   "item_id": "c-034",
+   "parafrase": 1,
+   "chave": "d570cf41d13c255729f02f7bda328cc160c3e643c99be5e64ea769113e4d532b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-034-p2": {
+   "item_id": "c-034",
+   "parafrase": 2,
+   "chave": "59b90f27a1bd2d87a76b476409d9de2d44c74c9e8ec262206066deced2a6ba2e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-035-p0": {
+   "item_id": "c-035",
+   "parafrase": 0,
+   "chave": "13f513319a7cadf2c1a8eb3c113c3f157890e0a9e4b4d2516c411f6c8a124780",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-035-p1": {
+   "item_id": "c-035",
+   "parafrase": 1,
+   "chave": "f2261380752890049dcd104c899fbfef4e89776da7f0c5db47314232f1496088",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-035-p2": {
+   "item_id": "c-035",
+   "parafrase": 2,
+   "chave": "cf9ef89b53eda670e059ecb650f34cad2804e1034873e073e33b0490e3f541f0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-036-p0": {
+   "item_id": "c-036",
+   "parafrase": 0,
+   "chave": "002b3dd38c32985c3a5284afe1c019fce5b065ebe885fcb79fa48bb180683f52",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-036-p1": {
+   "item_id": "c-036",
+   "parafrase": 1,
+   "chave": "95e1267277d4490eb72eeb796081d56e61c7bb76743aa44da8779d506a9b363b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-036-p2": {
+   "item_id": "c-036",
+   "parafrase": 2,
+   "chave": "ab8d8b669ff7d58560dac18921ad2fe04030651cd07ec5de039fdaf4a94c479b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-037-p0": {
+   "item_id": "c-037",
+   "parafrase": 0,
+   "chave": "85dd96268290c4d6c0b1c90a8aa640cd4d6f087cada4ccd04fa08dd893db1862",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-037-p1": {
+   "item_id": "c-037",
+   "parafrase": 1,
+   "chave": "3e58fd4433c271822a6d959d5294f81ab8a96eb9c5ad1bb384e648d5d7bcb55c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-037-p2": {
+   "item_id": "c-037",
+   "parafrase": 2,
+   "chave": "6158482032ff4e44b28b3549fddbd0e63b3e40913a9294a97b20467736c5c287",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-038-p0": {
+   "item_id": "c-038",
+   "parafrase": 0,
+   "chave": "f8d58dc7a7b4f203b3055cb46a9b28453526d2bdfed2ebb7c91fec1e159bfacf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-038-p1": {
+   "item_id": "c-038",
+   "parafrase": 1,
+   "chave": "e738bdcf884fbea8906081d0e726a27e310708e0f60fca4a15b126ffa84ad0c9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-038-p2": {
+   "item_id": "c-038",
+   "parafrase": 2,
+   "chave": "8f13f61e66c5349ad7302bb6a2d7cd0449bfd3645346ef91ed2900fc10b28418",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-039-p0": {
+   "item_id": "c-039",
+   "parafrase": 0,
+   "chave": "2fe8d630e29a95cb0d88f961c3faf8e260735f469cfa847b10bdc706a5881d07",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-039-p1": {
+   "item_id": "c-039",
+   "parafrase": 1,
+   "chave": "73558bcb25bb71bdfd592503e3544bf181f1fd7e68f09d583147b0caa0655d6d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-039-p2": {
+   "item_id": "c-039",
+   "parafrase": 2,
+   "chave": "6fbb565169e40e5b4983277415523c162adce6c0c4c8126c1f18a1772bb38e27",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-040-p0": {
+   "item_id": "c-040",
+   "parafrase": 0,
+   "chave": "bebd97d0ecfbb9e5174f268733e250d8a6cb5621a548f4978f5c67100580fef8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-040-p1": {
+   "item_id": "c-040",
+   "parafrase": 1,
+   "chave": "ed6ded4234201f330d3a858958a3f444a41534cfce0f53772c3c85861095dfd6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "c-040-p2": {
+   "item_id": "c-040",
+   "parafrase": 2,
+   "chave": "2d5a3cad544fe241d3cdcd7cf5d42bba3de15310382708a156e661dd9375700c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-001-p0": {
+   "item_id": "d-001",
+   "parafrase": 0,
+   "chave": "f9949fc4a11f6d936571b6ceaf17e25568d63b3b4d36ef2c6b261995c3ba8a90",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-001-p1": {
+   "item_id": "d-001",
+   "parafrase": 1,
+   "chave": "584197fabce1034fa669cb57568ac1b601f55a00b564a1576d2b06590707dd95",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-001-p2": {
+   "item_id": "d-001",
+   "parafrase": 2,
+   "chave": "42661c64785fb302b7948342cfd34831e017541d6c84660bb7ab69b3023c45e6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-002-p0": {
+   "item_id": "d-002",
+   "parafrase": 0,
+   "chave": "e35e66c1bbea3f442d607788cede3e198265ef2ce4861f0d45f06dfb250090cb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-002-p1": {
+   "item_id": "d-002",
+   "parafrase": 1,
+   "chave": "9e5be94440aa28f8bf88987ae7069c6427768ff821b3b55975fede6898f0aad7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-002-p2": {
+   "item_id": "d-002",
+   "parafrase": 2,
+   "chave": "5a90e3497e5d542226f6cb0935e03830ef64c68bbb6a5b0af1e7b9e9a164acbf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-003-p0": {
+   "item_id": "d-003",
+   "parafrase": 0,
+   "chave": "af76864828f7c9ec1f4e9ca7cda10d1ee6ceb277322725561d2b65c42e51ec0f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-003-p1": {
+   "item_id": "d-003",
+   "parafrase": 1,
+   "chave": "b82ba1283b01e06bc9a862a9db34abae02a0b090421ad2c1f80ac817d232b7f7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-003-p2": {
+   "item_id": "d-003",
+   "parafrase": 2,
+   "chave": "caca9c26211a7b6b718fcf7497037b58194d3d7f1fa5a4654ada8ee9481664a3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-004-p0": {
+   "item_id": "d-004",
+   "parafrase": 0,
+   "chave": "79db6c9fbf11ddf908284a27f6f4488ed81ffc80445b529c846ad3ec433e0283",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-004-p1": {
+   "item_id": "d-004",
+   "parafrase": 1,
+   "chave": "1284869eb26937db26223e44736f3e26bcfa9a7d4b4eb68bf58013f158cdad8b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-004-p2": {
+   "item_id": "d-004",
+   "parafrase": 2,
+   "chave": "0b663fab6496bb1ab44628dedddcc84a2ec576bbb2d82389334dc1b8bae27a40",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-005-p0": {
+   "item_id": "d-005",
+   "parafrase": 0,
+   "chave": "fef94dd46c5501d8b522af2c99575ef3a59fa97de802d2190c9113bb80573040",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-005-p1": {
+   "item_id": "d-005",
+   "parafrase": 1,
+   "chave": "e1d3fa6fe5e8a4dc198a43086bf3036c69745bf29a43867530dbb9ff9eac346b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-005-p2": {
+   "item_id": "d-005",
+   "parafrase": 2,
+   "chave": "11061798c7e2603d4369fac2997c5cd2129d138405ebe145e66b534262a21b0a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-006-p0": {
+   "item_id": "d-006",
+   "parafrase": 0,
+   "chave": "7bd04e35b532594ab027243cd2e726cc67915f1af9b1074e920197b308a226ad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-006-p1": {
+   "item_id": "d-006",
+   "parafrase": 1,
+   "chave": "60943fa3f396eb0582944d159451dd727938c42a560cf1bd9cf6be13b2695e39",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-006-p2": {
+   "item_id": "d-006",
+   "parafrase": 2,
+   "chave": "3106db216ce051a050beaa1603585b4f7ec2e3dc1c4f435b4d02c79eb582e238",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-007-p0": {
+   "item_id": "d-007",
+   "parafrase": 0,
+   "chave": "607e2ae19020f85205d3148dddbfe59deabe761d6a8449be6fc9a9bfc8f1c42f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-007-p1": {
+   "item_id": "d-007",
+   "parafrase": 1,
+   "chave": "d9687db8ddc6ab2b177402095d56f0bb0212b59681b49a459a286ca7b400d8e7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-007-p2": {
+   "item_id": "d-007",
+   "parafrase": 2,
+   "chave": "a1488332b3edd0e2d210a815a57ef8c6e8ea3986ea4d7766e097e81d71d94182",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-008-p0": {
+   "item_id": "d-008",
+   "parafrase": 0,
+   "chave": "daa23cad9d34408e904a5ef257265b762628454c8f2124036b42573c54c7b5c1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-008-p1": {
+   "item_id": "d-008",
+   "parafrase": 1,
+   "chave": "be9a232b039aac960a6de03969c0b0fa0942dacbb59864f0158741d1ae4113a2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-008-p2": {
+   "item_id": "d-008",
+   "parafrase": 2,
+   "chave": "ab363dd9df0f426938bab465c94848fabede330ce47a620b129575d39f5e7170",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-009-p0": {
+   "item_id": "d-009",
+   "parafrase": 0,
+   "chave": "6804aca1f4b3486674f692ecdb6e9e00afd9ea115e9deb2441c5f36773ebe9e6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-009-p1": {
+   "item_id": "d-009",
+   "parafrase": 1,
+   "chave": "d523131e9314dc2bf227f39150861c6c026cb6ab3bc2100e971691998252e333",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-009-p2": {
+   "item_id": "d-009",
+   "parafrase": 2,
+   "chave": "9266155b542cb067da991c4fc6dc6e1d9ad1ef6d096eaf94272cfcaee721f6ef",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-010-p0": {
+   "item_id": "d-010",
+   "parafrase": 0,
+   "chave": "684b87993b0150971311f7b3c3e1b5158886237e0e7dcdcfd98022303a100052",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-010-p1": {
+   "item_id": "d-010",
+   "parafrase": 1,
+   "chave": "c9c8d628d80f07d5186c1db4543b78042fd6f28c0ed4e3b10c2d121476c4a4bc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-010-p2": {
+   "item_id": "d-010",
+   "parafrase": 2,
+   "chave": "5c2f62a00b110c7741b76cb5dab5192325e3b7fe07ae6210c3db6f4397e717bc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-011-p0": {
+   "item_id": "d-011",
+   "parafrase": 0,
+   "chave": "06f2b82c255e31a63b94407057ead6d6a18c6c67ceddd16cf8dd11789a9092c3",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-011-p1": {
+   "item_id": "d-011",
+   "parafrase": 1,
+   "chave": "7a730756bfeb830ac127b358c3e6509265811d3d1f74f7939f3bf2058634fa38",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-011-p2": {
+   "item_id": "d-011",
+   "parafrase": 2,
+   "chave": "7e126170773f1b29ffe74a5ddc4173e8464c4687d21e9f4b3321bbfca16a814f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-012-p0": {
+   "item_id": "d-012",
+   "parafrase": 0,
+   "chave": "edebf6ac7d608b6fc525a41517a70550567b02b60ef53f0b164705605d98c94b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-012-p1": {
+   "item_id": "d-012",
+   "parafrase": 1,
+   "chave": "d483faa47767bab1601948213bf1222e5d42bcf45eaa2ac5960af1d58eb0e0a5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-012-p2": {
+   "item_id": "d-012",
+   "parafrase": 2,
+   "chave": "6d2e6e97bc63c83242820f38a3f522c29e37a6c7f5c3fcacb87beafff6dd3efa",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-013-p0": {
+   "item_id": "d-013",
+   "parafrase": 0,
+   "chave": "4aeada01d56ea4a57e19263513b3ffe8a4125b2fa32d0154e7323f643b4361a8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-013-p1": {
+   "item_id": "d-013",
+   "parafrase": 1,
+   "chave": "361df9224f034bc62ac8ee67f647d394815e11c9aff662e8d346e56e99b49916",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-013-p2": {
+   "item_id": "d-013",
+   "parafrase": 2,
+   "chave": "ca3c6b91e6852bf4d011336e752f785a06378aad03b07d5b3ed20373e2c96f8d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-014-p0": {
+   "item_id": "d-014",
+   "parafrase": 0,
+   "chave": "cc457d8e762b863c49159a63e7e9274060e30e082b916e99dcfa2d246e5a15f7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-014-p1": {
+   "item_id": "d-014",
+   "parafrase": 1,
+   "chave": "5848f065bce14d77ce651ea9c9aeb569dae5d69d6f9277a08ed1939772593b84",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-014-p2": {
+   "item_id": "d-014",
+   "parafrase": 2,
+   "chave": "8990581559d17946a0f7a0b9e4f7406c9735498cb42f0a6856045e0285c498ad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-015-p0": {
+   "item_id": "d-015",
+   "parafrase": 0,
+   "chave": "fb2fe2eb3387253e4f3bd1de5a1b3550cd803054b7df2d426da39a6348b8926e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-015-p1": {
+   "item_id": "d-015",
+   "parafrase": 1,
+   "chave": "fbff67159601db2995218a57ba8d534839b3b593e28160825f95a85a0783a6be",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-015-p2": {
+   "item_id": "d-015",
+   "parafrase": 2,
+   "chave": "6befd06b4bfc3c265b67215da6cf8b4250c4b836658b5202a90ea9c3796e19d8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-016-p0": {
+   "item_id": "d-016",
+   "parafrase": 0,
+   "chave": "10a3e3ae25056a5fc5145e1886c47f07af57e123ed83aff3ce8646e883557c18",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-016-p1": {
+   "item_id": "d-016",
+   "parafrase": 1,
+   "chave": "34640367c5edff323a08325e4c0132a58c15e7e0f66367d0fe1b80782cd32875",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-016-p2": {
+   "item_id": "d-016",
+   "parafrase": 2,
+   "chave": "03eedf7fb14864c980599fa2c1d3134bb0247af53fd38c89994adb4eabc0cbcd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-017-p0": {
+   "item_id": "d-017",
+   "parafrase": 0,
+   "chave": "796582aeab71e2e2b8c280ecde929d526f82b427410387d1bea8240ace830f02",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-017-p1": {
+   "item_id": "d-017",
+   "parafrase": 1,
+   "chave": "852d186c5b96a1f9568c78bd65113dc347a6b14479caa0000b7b76a8648ea44a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-017-p2": {
+   "item_id": "d-017",
+   "parafrase": 2,
+   "chave": "388d6347902da17111d1e8b1356c2892f76af5e46da56a3b60a8426841a9ad8b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-018-p0": {
+   "item_id": "d-018",
+   "parafrase": 0,
+   "chave": "421fbf982b5857dd6f22763c24d38f4c8453397a31264f67e72d2c8537fbd255",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-018-p1": {
+   "item_id": "d-018",
+   "parafrase": 1,
+   "chave": "57e313378ff33ce5dab2655051fa34b01e7d09c9f7b7fbee51ad35e7ad0d4436",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-018-p2": {
+   "item_id": "d-018",
+   "parafrase": 2,
+   "chave": "c01e58be6fdca5ee56e0260ebd47dafe62d9ee2589667ed4831daaabe8562996",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-019-p0": {
+   "item_id": "d-019",
+   "parafrase": 0,
+   "chave": "781cb8c1c55c15eb078e41d1da6ffac8642c6cff9bf0dcd7fb854abc072a9904",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-019-p1": {
+   "item_id": "d-019",
+   "parafrase": 1,
+   "chave": "313eadbe7c424b06c64c772e914960d28450eaa4cd29b94464346e113bd743e5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-019-p2": {
+   "item_id": "d-019",
+   "parafrase": 2,
+   "chave": "0b86c115404cf01bcccfbdbf2f9ff6d6a50183092e56097a6991b26a77080573",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-020-p0": {
+   "item_id": "d-020",
+   "parafrase": 0,
+   "chave": "3e5092d91693a0acd322437522a7d94c22cf49b1b150f1dc92dd8bee07065b7c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-020-p1": {
+   "item_id": "d-020",
+   "parafrase": 1,
+   "chave": "94be4ebdf98f5bff6d1258ebeaca61ad39f81e986c07f8aa67ac4628f5664f78",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-020-p2": {
+   "item_id": "d-020",
+   "parafrase": 2,
+   "chave": "92192d77c1623cd33a79d1480ea5a453244e16fabdcecb00b37fa07c8b0429d7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-021-p0": {
+   "item_id": "d-021",
+   "parafrase": 0,
+   "chave": "e78d6a98e907fa3b0ab39ba5c930a93336b3c408e8ffdfc8de440d555cdb6053",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-021-p1": {
+   "item_id": "d-021",
+   "parafrase": 1,
+   "chave": "818620e1c7890fe1c37f2442c71dd10506d03d94a634621225db77ee6c44d363",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-021-p2": {
+   "item_id": "d-021",
+   "parafrase": 2,
+   "chave": "975c4222ce0f8b1a9f48897f8473bd847feec5b98540ec14da3ff856147276ff",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-022-p0": {
+   "item_id": "d-022",
+   "parafrase": 0,
+   "chave": "17799440a83062dfcadd568218d04ea41dfaf008a9dfd774bd6bb49063f7e1da",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-022-p1": {
+   "item_id": "d-022",
+   "parafrase": 1,
+   "chave": "c3150f12728646e95c65230a33f29e0d73a25706979cd1edad3eed678d8caa07",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-022-p2": {
+   "item_id": "d-022",
+   "parafrase": 2,
+   "chave": "bae2b2f4dde11f349f13eab25a72696d23ba6d5e2f982afd68014a88a8a3ff35",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-023-p0": {
+   "item_id": "d-023",
+   "parafrase": 0,
+   "chave": "7e19fa64ae1af938cc932de1eeecea228930880a09d68710cfd5a8585871a107",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-023-p1": {
+   "item_id": "d-023",
+   "parafrase": 1,
+   "chave": "80635f72f61fae11e165fb929f5ac645eaea290b616773de32bac966cc60bfd7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-023-p2": {
+   "item_id": "d-023",
+   "parafrase": 2,
+   "chave": "18158d222d459cdd526eeccb69dbcfba05587f85c5ac6da7a0428d66dc7c1a86",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-024-p0": {
+   "item_id": "d-024",
+   "parafrase": 0,
+   "chave": "aca2b89aeb835956a7916bfcab8beb746e852295147d2ae600425907e63294a6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-024-p1": {
+   "item_id": "d-024",
+   "parafrase": 1,
+   "chave": "591bdd0242f8a0fa55de5dd5f60edb0c9a519971e42b44b477f49de6a79ec218",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-024-p2": {
+   "item_id": "d-024",
+   "parafrase": 2,
+   "chave": "a1802848e2904191d7d0aa0b38b3da43fb5b4700f2a0d1ccfcad9dbdde3516ff",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-025-p0": {
+   "item_id": "d-025",
+   "parafrase": 0,
+   "chave": "470b458ce4813d3e3da1a5c1dc80f150076f51973e41cafe051bbf18bb1eedc1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-025-p1": {
+   "item_id": "d-025",
+   "parafrase": 1,
+   "chave": "0ae5adc6e8cd8a27e7700b19449507e1f2ed0192ded2fec4aa9633ad3bcce235",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-025-p2": {
+   "item_id": "d-025",
+   "parafrase": 2,
+   "chave": "a91fc38aa9777e3c2afc694e30853e5f2d22fb014da902259f48ab62bd134fb7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-026-p0": {
+   "item_id": "d-026",
+   "parafrase": 0,
+   "chave": "f39e003c1145300f0914971c4cb7ca2ad3ea4b1a16fa09af806191a808382485",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-026-p1": {
+   "item_id": "d-026",
+   "parafrase": 1,
+   "chave": "231545c01692a244e389b9ccca81850c91968ce8299df06b196d1995ac8baa3a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-026-p2": {
+   "item_id": "d-026",
+   "parafrase": 2,
+   "chave": "f70d3b90ec3a79569ed30c03cf0dc198428bcca9fd5f6efbacc75804fa007352",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-027-p0": {
+   "item_id": "d-027",
+   "parafrase": 0,
+   "chave": "1a84d3c175f221f909535d01e58d7283778cc9e9dd8084624ce9cd0918f30835",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-027-p1": {
+   "item_id": "d-027",
+   "parafrase": 1,
+   "chave": "940c220849091b3bcebaae62810f2f23cc4855e72c0100e75a94c2e1f4ec3861",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-027-p2": {
+   "item_id": "d-027",
+   "parafrase": 2,
+   "chave": "7c52511ed46e39f60a07f744f71d2ffc23835f54db04e1cb0d58dc3884ff7318",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-028-p0": {
+   "item_id": "d-028",
+   "parafrase": 0,
+   "chave": "e14615937383ae3f2a9edc183bb7936cb1114b445437afdb35e5ffa77dea9390",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-028-p1": {
+   "item_id": "d-028",
+   "parafrase": 1,
+   "chave": "379f6125fa588fa6a942b32fd9d50e1750a1c93ac1d32fb0a3bcfe86d8a579be",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-028-p2": {
+   "item_id": "d-028",
+   "parafrase": 2,
+   "chave": "e6bdb4d99a4a87836a651f8067aeee8b6f52e3c7244f415f9e527eebc062319d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-029-p0": {
+   "item_id": "d-029",
+   "parafrase": 0,
+   "chave": "ac085453f88c42f933c626578ac644497e209829e70dbcf60d2ed92b92ef9b4c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-029-p1": {
+   "item_id": "d-029",
+   "parafrase": 1,
+   "chave": "0f1239b4dcf5f794a3034ac97c6486f5a417d8a593d3e35c5aeb1e76280bfb89",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-029-p2": {
+   "item_id": "d-029",
+   "parafrase": 2,
+   "chave": "6d95f5003630fb0530c7edd858c09a9eef3292ce0cbda1aa904a7c3040f6e213",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-030-p0": {
+   "item_id": "d-030",
+   "parafrase": 0,
+   "chave": "36112629e0332f05f16f553dddda94c24b0ad5020f7d8b06c394d5b28927060a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-030-p1": {
+   "item_id": "d-030",
+   "parafrase": 1,
+   "chave": "73759c4f54548cb28aa85c399417cd7a887942321a564304c7387885988bbc8f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-030-p2": {
+   "item_id": "d-030",
+   "parafrase": 2,
+   "chave": "2d34ae8f7587980656dd9600832d5ccd0466d7cf75b8c4214ba940b3db4a93c1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-031-p0": {
+   "item_id": "d-031",
+   "parafrase": 0,
+   "chave": "f51f972fd0c4ba4382c0985b8fb079c095c9c21047bb6fdd71075681d0444574",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-031-p1": {
+   "item_id": "d-031",
+   "parafrase": 1,
+   "chave": "35bac8376c41fe7f90315d76ffe105cbf24ed0d90b5d7473be54855d607fec75",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-031-p2": {
+   "item_id": "d-031",
+   "parafrase": 2,
+   "chave": "22b8471141a6e382ab2171e0660cf0cc17e78313c318c805f1efd3d9e86a834d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-032-p0": {
+   "item_id": "d-032",
+   "parafrase": 0,
+   "chave": "cc9df55a81445ea22625ab9350bb651e88bde8c844402d51c4fa6f44d55b7152",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-032-p1": {
+   "item_id": "d-032",
+   "parafrase": 1,
+   "chave": "c84cd83a3a17ca7a416a54d163b7a31b59119ed55b18f50e8d7e54bc4af2813b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-032-p2": {
+   "item_id": "d-032",
+   "parafrase": 2,
+   "chave": "1b75b3d7de9e8e37e6ddc682d74cb624dd962d3a45fc383fe47900de33b22ed2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-033-p0": {
+   "item_id": "d-033",
+   "parafrase": 0,
+   "chave": "ae12b371faf7577adda05a4d1407b64fd8e8529cb42f3728711f5325adf5b941",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-033-p1": {
+   "item_id": "d-033",
+   "parafrase": 1,
+   "chave": "e6573c392b10f5f9cf89afc740e12ee2029c53ebcaf6c4aeec3a32d3375ab782",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-033-p2": {
+   "item_id": "d-033",
+   "parafrase": 2,
+   "chave": "337c1a33de2eaab814c6e6e9405a448d3e4bd7caa4d7e2515e584795811b6c78",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-034-p0": {
+   "item_id": "d-034",
+   "parafrase": 0,
+   "chave": "9d3d23b0634f30b401a55831f5268e9fb3a7a435cd113e7443b4522780c8418c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-034-p1": {
+   "item_id": "d-034",
+   "parafrase": 1,
+   "chave": "b2c4f75484963209d8b9b6697595c89b7d44b9a7d75692a2949f6aa95d864fdc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-034-p2": {
+   "item_id": "d-034",
+   "parafrase": 2,
+   "chave": "2fb90758e769cd2a9bf8b238150da46a9b72719f8aecccc8d99128316baf4aab",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-035-p0": {
+   "item_id": "d-035",
+   "parafrase": 0,
+   "chave": "83f1987e2413f783858de6e943def64232ac08192220f83c937ef59d2dc057fc",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-035-p1": {
+   "item_id": "d-035",
+   "parafrase": 1,
+   "chave": "a1962337fef94485f03af3817e57e3276f11609751c7712f69fbb1c2580c4d0f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-035-p2": {
+   "item_id": "d-035",
+   "parafrase": 2,
+   "chave": "17a0ef42e1b95cdca0999673b8523712407fc6c439df2320603306f0919e9bb8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-036-p0": {
+   "item_id": "d-036",
+   "parafrase": 0,
+   "chave": "ed5922df097b7d1bbc527632198347e47dbae5bac7b44ea36dd9c637cba3f52e",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-036-p1": {
+   "item_id": "d-036",
+   "parafrase": 1,
+   "chave": "6e51cd6f264dc93f0e52d231e8998c639e686a58d101f73f8de530397b512dc6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-036-p2": {
+   "item_id": "d-036",
+   "parafrase": 2,
+   "chave": "a69efa5e04665b99bfcc06dadc4c5b180efeaeffb17be0e6ffa0cdfbb886c304",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-037-p0": {
+   "item_id": "d-037",
+   "parafrase": 0,
+   "chave": "04d37373560627f4a3142b7ac4f5c41beb1f6c7d73d5df89a9128bc0a58a0ddb",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-037-p1": {
+   "item_id": "d-037",
+   "parafrase": 1,
+   "chave": "c921d62ee34dce02800ec81f553a2512b74c712da168ed2b615987f5514572bd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-037-p2": {
+   "item_id": "d-037",
+   "parafrase": 2,
+   "chave": "8fc1758f8125b0afd5f19292269994a58a37973620ee505f5b58a3c2e5f45505",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-038-p0": {
+   "item_id": "d-038",
+   "parafrase": 0,
+   "chave": "071b3ad113679b191d03ecab7c360e889e94bec540ba777d747fb44b6a1107a0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-038-p1": {
+   "item_id": "d-038",
+   "parafrase": 1,
+   "chave": "f46422cbb57d9bfd208a031199d975c9c928182fb83aa3392e91481642e980a2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-038-p2": {
+   "item_id": "d-038",
+   "parafrase": 2,
+   "chave": "0613a6afcb6d415b39f7be1d574746fc9f80ffdda4ff4c14904fb221d53aa16c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-039-p0": {
+   "item_id": "d-039",
+   "parafrase": 0,
+   "chave": "0bf314f6218a0271f2a9f81804004e85397dac06879c60eb188f6782f918ed66",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-039-p1": {
+   "item_id": "d-039",
+   "parafrase": 1,
+   "chave": "0c82da29608dc8220d7e30ad95ca14d3bef26540f9610f85923ac50e73f1d73b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-039-p2": {
+   "item_id": "d-039",
+   "parafrase": 2,
+   "chave": "319bcf207925b2f13db1a767e5844a3c1f7fd48ed1ac9d6b683ee7ffab209118",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-040-p0": {
+   "item_id": "d-040",
+   "parafrase": 0,
+   "chave": "3c9a1369ee6a519c325c414fd2f99782e698e4baea307a48bddd49513bea98af",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-040-p1": {
+   "item_id": "d-040",
+   "parafrase": 1,
+   "chave": "b4af18d24c2a6d0d78fb7d20329ef896f545d7fe4351063a2b174cfec28b979f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-040-p2": {
+   "item_id": "d-040",
+   "parafrase": 2,
+   "chave": "52cf21af4449924114d16f789ed6d4ef2410c5a35b71ed327123557cfcf35e46",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-041-p0": {
+   "item_id": "d-041",
+   "parafrase": 0,
+   "chave": "a7997aba7982cd632c4329cefe9f466b869ab33a2d89865824325038bcce37a8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-041-p1": {
+   "item_id": "d-041",
+   "parafrase": 1,
+   "chave": "725b4575637eb110d21a29935f783ec2ca80d6a942e0462ab81f1a8c273317f4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-041-p2": {
+   "item_id": "d-041",
+   "parafrase": 2,
+   "chave": "f5e8da3100c4bb53da30a9930adde01037a3d3a03fc809daeea0592ac2c18f84",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-042-p0": {
+   "item_id": "d-042",
+   "parafrase": 0,
+   "chave": "3dd345be46fe3e129af6ec206891a8d38d7436ea9bfcf40bff80652d355565c1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-042-p1": {
+   "item_id": "d-042",
+   "parafrase": 1,
+   "chave": "242739a2d7f53547b725d35546648c29615fb4405c5047deaeb167eb9673805f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-042-p2": {
+   "item_id": "d-042",
+   "parafrase": 2,
+   "chave": "1b53ad9b9dd64c7c051d1fc561adcb6392302c87d7b5132c3c04a1a17fa61d91",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-043-p0": {
+   "item_id": "d-043",
+   "parafrase": 0,
+   "chave": "a942c86d9a908c9eb28cb59855f478290f6d1d5eeef369d7277c58d96ca02491",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-043-p1": {
+   "item_id": "d-043",
+   "parafrase": 1,
+   "chave": "238f0615fbbc970352df45c1663b8ef738a608761a3ca8a66d715087b3107bac",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-043-p2": {
+   "item_id": "d-043",
+   "parafrase": 2,
+   "chave": "7b8a3e2ca048144691c3d524d3a2808600444f1a3a9088ad6f8765047611f9ad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-044-p0": {
+   "item_id": "d-044",
+   "parafrase": 0,
+   "chave": "91d66a85d7b0fd5b5aabed6e9e21569c94ca8e5a1b29ce62157822aa43b568e7",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-044-p1": {
+   "item_id": "d-044",
+   "parafrase": 1,
+   "chave": "b9e16beb58df1de82ab80c1117b1df1132f72a8f9d8469d56653177bfee22102",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-044-p2": {
+   "item_id": "d-044",
+   "parafrase": 2,
+   "chave": "23ee3e7dd79c3d12ad470b092b645b04bb75e949d85d4fc9fde7637ea5336cad",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-045-p0": {
+   "item_id": "d-045",
+   "parafrase": 0,
+   "chave": "ffefbe629522e28baf3678b52beac1edf20add208213888aede86f8e8d288fc0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-045-p1": {
+   "item_id": "d-045",
+   "parafrase": 1,
+   "chave": "7f2727c7541bcb194f5f2801976539581498df95693fc3d89231ed864a7436c1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-045-p2": {
+   "item_id": "d-045",
+   "parafrase": 2,
+   "chave": "c0a39289a93245db9fa10ceeaab5363d782e3db1bfcaaaf4007bd7f1862f8e79",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-046-p0": {
+   "item_id": "d-046",
+   "parafrase": 0,
+   "chave": "d02c73456b7537f4cbc3e35ca326a1a8d1d42b23680681457b5c0e4dbd5ca9a6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-046-p1": {
+   "item_id": "d-046",
+   "parafrase": 1,
+   "chave": "d834bc4f2d71bdcb7f8b99973140e3e3765c18578b0aec7e922f93b6a7b1fedd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-046-p2": {
+   "item_id": "d-046",
+   "parafrase": 2,
+   "chave": "19cf006230009387c64e378167ccb18976bef0d5066296ff24a583834c9261e4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-047-p0": {
+   "item_id": "d-047",
+   "parafrase": 0,
+   "chave": "c970717aa51b7fe5d900a12f8edf1a3d0ddfb6fe36b188d026cb97b6d8111242",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-047-p1": {
+   "item_id": "d-047",
+   "parafrase": 1,
+   "chave": "fdbcdab8ac55cf3e2d4ae638424d0bcd316a10b59b17799ce796f6bbe1e6c206",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-047-p2": {
+   "item_id": "d-047",
+   "parafrase": 2,
+   "chave": "e90dc074ab09a647b1922aec8a42faf94555d7b345ca4e306dfddd92eb24a53f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-048-p0": {
+   "item_id": "d-048",
+   "parafrase": 0,
+   "chave": "2a5014de51a649dcb82ba6662badf4e05cfe069475da6252529a40f199f8fe20",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-048-p1": {
+   "item_id": "d-048",
+   "parafrase": 1,
+   "chave": "f78e5b0e4c55b5c74d95d7461cd6ea9917c87e4b89ecdbb032c947252ec9d8c9",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-048-p2": {
+   "item_id": "d-048",
+   "parafrase": 2,
+   "chave": "f78d4a8fa039738d94e35ded48afd5bbe60084b951438e2a9266a8b86baabec6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-049-p0": {
+   "item_id": "d-049",
+   "parafrase": 0,
+   "chave": "5fba0cc51cb57bb48ce97e69379103c8af885c4efd7df73154c3adbbe293a1ea",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-049-p1": {
+   "item_id": "d-049",
+   "parafrase": 1,
+   "chave": "0ea85c2f0436ddd6e3808afbb603bb20f581fdd080adac2ebda17091663d7fbf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-049-p2": {
+   "item_id": "d-049",
+   "parafrase": 2,
+   "chave": "b6437a5fa0fdea3605a84a5a887d1a9bb16a6fa3317e2992dd93152a64ef1314",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-050-p0": {
+   "item_id": "d-050",
+   "parafrase": 0,
+   "chave": "94f4a19c6e09148fbfd617b6961774e57b74fcd420d9b1fd2950f97bd4813fe4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-050-p1": {
+   "item_id": "d-050",
+   "parafrase": 1,
+   "chave": "88db9561922c1c7ba91c5b5c71474dea9e18630811b37a5f98c880e7dcf12228",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "d-050-p2": {
+   "item_id": "d-050",
+   "parafrase": 2,
+   "chave": "a584cb5ad8bae387c1096f94836e00bc1dc9f36d4cb8313b6c14d405d6469f3a",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-001-p0": {
+   "item_id": "esp-001",
+   "parafrase": 0,
+   "chave": "6fd65fd10b60e8097f29505c29f266b309bea429856a9c653b3b1541c3a58e12",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-001-p1": {
+   "item_id": "esp-001",
+   "parafrase": 1,
+   "chave": "cce40d2064c13b44756a2003db3223261fb544cd4de64e5ead550278185e1482",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-001-p2": {
+   "item_id": "esp-001",
+   "parafrase": 2,
+   "chave": "2b7bc00f7377cfd6263602c3410f3b99ceee3eb8dda04115e1717ef540bc8291",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-002-p0": {
+   "item_id": "esp-002",
+   "parafrase": 0,
+   "chave": "d3174fda1f23649842ddeb02d3f4a08c93ff0193166827fb8bf83ea575c2ec82",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-002-p1": {
+   "item_id": "esp-002",
+   "parafrase": 1,
+   "chave": "bf13369956f8dd83084bffa756fdfe20a66a0fd800e77d3741728cca6e9a209f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-002-p2": {
+   "item_id": "esp-002",
+   "parafrase": 2,
+   "chave": "7800f945c8bc51c3c0df86f9aba6631e416bcc8f83313a5f365e339f0b612b74",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-003-p0": {
+   "item_id": "esp-003",
+   "parafrase": 0,
+   "chave": "395744e623a21b5753ff75ef6304a15754fe5a27aff0f074f06cc62c71e5698c",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-003-p1": {
+   "item_id": "esp-003",
+   "parafrase": 1,
+   "chave": "84711438dd69f9173eb429e5c084a246ba7e6f4f6d6e117fb1fa224408225c44",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-003-p2": {
+   "item_id": "esp-003",
+   "parafrase": 2,
+   "chave": "34e3e8ef6653be4ca272dea0b1f03d1510921db7e9caa7cb8435d7881c32bdb8",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-004-p0": {
+   "item_id": "esp-004",
+   "parafrase": 0,
+   "chave": "72b2e36717b6cd12150239df50b29785bed6bf8d9e84a01a2f418531accb6bfd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-004-p1": {
+   "item_id": "esp-004",
+   "parafrase": 1,
+   "chave": "3bbe17c90d0f551e5a2a6fedd78591aabdac911d3e69d846f932f29c6d599a15",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-004-p2": {
+   "item_id": "esp-004",
+   "parafrase": 2,
+   "chave": "26e4e8836d4ce81213efcfb1ecadc8c1b11f51406c8f81ceaff90cf40ba34bb4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-005-p0": {
+   "item_id": "esp-005",
+   "parafrase": 0,
+   "chave": "b3338851030f93e4496c2b331549fa5aba86cdd77f613883146b0e8de6375a14",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-005-p1": {
+   "item_id": "esp-005",
+   "parafrase": 1,
+   "chave": "cd3b09a1add7c91b4aa3ad365353d67f06a21b4a2c5210e29887d6f636244e9d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-005-p2": {
+   "item_id": "esp-005",
+   "parafrase": 2,
+   "chave": "0d34e4da223e5bc0b007ecad5cffcc3a96216958dc5366794de9b978f5ba4766",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-006-p0": {
+   "item_id": "esp-006",
+   "parafrase": 0,
+   "chave": "3dfa004d2680b76722128860c77102139ddc5d88dec6a2b6962ae078871f7c0d",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-006-p1": {
+   "item_id": "esp-006",
+   "parafrase": 1,
+   "chave": "b712e1cb0880aff4bb32fb00acc42ae7d8e80514d3b851de3a7b983e66c2bae0",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-006-p2": {
+   "item_id": "esp-006",
+   "parafrase": 2,
+   "chave": "8b8a4b299d2dfa46f541fdb32088ba4ebc4bd5e82b4442b37479ee4e4029cbd6",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-007-p0": {
+   "item_id": "esp-007",
+   "parafrase": 0,
+   "chave": "48fc212db23ad31ce89ebf3239951bb03493adc46eb687d85a0037ce26f0c0e1",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-007-p1": {
+   "item_id": "esp-007",
+   "parafrase": 1,
+   "chave": "0a3926c0deb274afb92915e94d19d7b570881ea09beec3f891063f7d937e1c9f",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-007-p2": {
+   "item_id": "esp-007",
+   "parafrase": 2,
+   "chave": "779a3cef27c9a7151d0bd38f08c5249bf3716100cb5bee14dc9cae5205f72368",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-008-p0": {
+   "item_id": "esp-008",
+   "parafrase": 0,
+   "chave": "a8f870522fbc41a5ca7f795e1ccfc19f46d8afe46107a67542b2f165d387c5b2",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-008-p1": {
+   "item_id": "esp-008",
+   "parafrase": 1,
+   "chave": "c9654d15632e6962138b3e53321238be77bfcd1f0214828985894297c2f0bf36",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-008-p2": {
+   "item_id": "esp-008",
+   "parafrase": 2,
+   "chave": "1f1a5e5732e5fa12f7ad34e333a42d55abfeab4e1eb210c3eea008342f4f11e5",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-009-p0": {
+   "item_id": "esp-009",
+   "parafrase": 0,
+   "chave": "24aafadf6225d7060b303a32fd3556fa190c50d62a664d0522f56bb284302ddf",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-009-p1": {
+   "item_id": "esp-009",
+   "parafrase": 1,
+   "chave": "c5680179c3464f90e487777a5b22a228efc134bef644caa2296919a4049ee03b",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-009-p2": {
+   "item_id": "esp-009",
+   "parafrase": 2,
+   "chave": "d678d524daa5bb3333f7a1db427bad3c0d64308559db69111c4004483c6ea0c4",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-010-p0": {
+   "item_id": "esp-010",
+   "parafrase": 0,
+   "chave": "ec095cfa693af02250a497f89c543b768eca1a862ef9669e8fdb8df8291a8a33",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-010-p1": {
+   "item_id": "esp-010",
+   "parafrase": 1,
+   "chave": "ad6e106a6b3391902a839a19591d8f5356ccce65320eee8cb82721e7b0aa13dd",
+   "lote": 0,
+   "situacao": "ok"
+  },
+  "esp-010-p2": {
+   "item_id": "esp-010",
+   "parafrase": 2,
+   "chave": "fa7c168e536d904c2adfecba1f6c6ed577f1762078a9a400ac97227956f7c606",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}

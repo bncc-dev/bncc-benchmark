@@ -1,0 +1,3426 @@
+{
+ "rodada": "smoke-batch-2026-11",
+ "execucoes": [
+  {
+   "executado_em": "2026-11-24T16:42:43.381Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-11-24T16:47:52.254Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-11-24T16:52:53.226Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-11-24T16:57:54.130Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-11-24T17:02:55.580Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-11-24T17:07:56.579Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-11-24T17:12:57.566Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-11-24T17:17:58.566Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "executado_em": "2026-11-24T17:22:59.568Z",
+   "modo": "seco",
+   "harness_commit": "d3a2f2a",
+   "flags": {
+    "itens": "itens/itens-v1.json",
+    "limite": 1,
+    "parafrases": 1,
+    "concorrencia": 5,
+    "max_tokens_flag": 1024,
+    "aceitar_antivexame_pendente": false,
+    "execucao": "batch",
+    "batch_reenviar_falhas": false
+   },
+   "dataset_versao": "dados-2026.07",
+   "itens_versao": "v1",
+   "modelos": [
+    {
+     "id": "gpt-62-astra",
+     "def": {
+      "id": "gpt-62-astra",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-astra",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.006124,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:24.312Z",
+        "coletado_em": "2026-11-24T16:42:44.516Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gpt-62-sol",
+     "def": {
+      "id": "gpt-62-sol",
+      "maxTokensPadrao": 8192,
+      "provedor": "openai-compat",
+      "modelo": "gpt-6.2-sol",
+      "envKey": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "parametroMaxTokens": "max_completion_tokens",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "openai"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.002766,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batch_6b05bd45a3b881909bfe5aa9a16d24f6",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:25.957Z",
+        "coletado_em": "2026-11-24T16:42:45.476Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "fable-5-2",
+     "def": {
+      "id": "fable-5-2",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-fable-5-2",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 8,
+       "saida": 40
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.018136,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.455Z",
+        "coletado_em": "2026-11-24T16:42:46.471Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "opus-5-5",
+     "def": {
+      "id": "opus-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-opus-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009118,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01XvC9zJw7amgctaKrgdd5kV",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:27.929Z",
+        "coletado_em": "2026-11-24T16:42:47.222Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "sonnet-5-5",
+     "def": {
+      "id": "sonnet-5-5",
+      "maxTokensPadrao": 8192,
+      "provedor": "anthropic",
+      "modelo": "claude-sonnet-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 2,
+       "saida": 10
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.009089,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_016nPB2vb54MHBCbRuavs7CW",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:28.422Z",
+        "coletado_em": "2026-11-24T16:42:47.848Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "haiku-5-5",
+     "def": {
+      "id": "haiku-5-5",
+      "maxTokensPadrao": 4096,
+      "provedor": "anthropic",
+      "modelo": "claude-haiku-5-5",
+      "envKey": "ANTHROPIC_API_KEY",
+      "semTemperatura": true,
+      "precos": {
+       "entrada": 0.1,
+       "saida": 0.5
+      },
+      "batch": {
+       "api": "anthropic"
+      },
+      "suportaGrounded": true
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.000263,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "msgbatch_01BypRPyrV4CgiTheVqU2q3T",
+        "geracao": 1,
+        "max_tokens": 4096,
+        "submetido_em": "2026-11-24T16:37:28.918Z",
+        "coletado_em": "2026-11-24T16:42:48.558Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-neon",
+     "def": {
+      "id": "gemini-4-neon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-neon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 3,
+       "saida": 15
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.010897,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/8rfpa5q3iludh9p4hk9xu1uw44d13drf0zdy",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:32.661Z",
+        "coletado_em": "2026-11-24T16:42:49.881Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-hydrogen",
+     "def": {
+      "id": "gemini-4-hydrogen",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-hydrogen",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 1.5,
+       "saida": 7.5
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.005462,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/ukhamqvk2yq56xk14c60fkuan6tk1uuo1u1h",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:35.120Z",
+        "coletado_em": "2026-11-24T16:42:50.847Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "gemini-4-carbon",
+     "def": {
+      "id": "gemini-4-carbon",
+      "maxTokensPadrao": 8192,
+      "provedor": "google",
+      "modelo": "gemini-4-carbon",
+      "envKey": "GEMINI_API_KEY",
+      "precos": {
+       "entrada": 4,
+       "saida": 20
+      },
+      "batch": {
+       "api": "google"
+      },
+      "suportaGrounded": false
+     },
+     "resultado": {
+      "registros": 1,
+      "chamadas_novas": 1,
+      "do_cache": 0,
+      "custo_usd": 0.008934,
+      "incompletas": 0,
+      "lotes": [
+       {
+        "id": "batches/qxuyk0zsmc5iu87d1g41kezq3dufisfvg8ot",
+        "geracao": 1,
+        "max_tokens": 8192,
+        "submetido_em": "2026-11-24T16:37:37.656Z",
+        "coletado_em": "2026-11-24T16:42:51.690Z",
+        "contagens": {
+         "total": 1,
+         "concluidos": 1,
+         "falhos": 0
+        }
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "avaliacoes": []
+}

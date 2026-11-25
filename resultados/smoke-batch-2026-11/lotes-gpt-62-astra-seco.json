@@ -1,0 +1,46 @@
+{
+ "versao": 1,
+ "modelo": "gpt-62-astra",
+ "modo": "seco",
+ "api": "openai",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 1,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "batch_6b05bd43c64c819080adfa8891e3e15b",
+    "extras": {
+     "input_file_id": "file-TNsmgKrMLTd1eGLPgiwfGA",
+     "output_file_id": "file-7nSriibwN9u1uQdAzYBGAr"
+    }
+   },
+   "submetido_em": "2026-11-24T16:37:24.312Z",
+   "ultimo_estado": {
+    "em": "2026-11-24T16:42:43.898Z",
+    "bruto": "completed",
+    "contagens": {
+     "total": 1,
+     "concluidos": 1,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-11-24T16:42:44.516Z"
+  }
+ ],
+ "pedidos": {
+  "a-001-p0": {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "chave": "fd59f7f644b35070a4e087f46c8d6b955254c7b6acd9cf75e3cc47679052fafa",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}

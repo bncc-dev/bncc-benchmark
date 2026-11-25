@@ -1,0 +1,45 @@
+{
+ "versao": 1,
+ "modelo": "fable-5-2",
+ "modo": "seco",
+ "api": "anthropic",
+ "flags": {
+  "itens": "itens/itens-v1.json",
+  "itens_versao": "v1",
+  "limite": 1,
+  "parafrases": 1,
+  "max_tokens_flag": 1024
+ },
+ "lotes": [
+  {
+   "geracao": 1,
+   "max_tokens": 8192,
+   "remoto": {
+    "id": "msgbatch_01P62z1pgRjvfWoPvcyeBPgu",
+    "extras": {
+     "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_01P62z1pgRjvfWoPvcyeBPgu/results"
+    }
+   },
+   "submetido_em": "2026-11-24T16:37:27.455Z",
+   "ultimo_estado": {
+    "em": "2026-11-24T16:42:46.107Z",
+    "bruto": "ended",
+    "contagens": {
+     "total": 1,
+     "concluidos": 1,
+     "falhos": 0
+    }
+   },
+   "coletado_em": "2026-11-24T16:42:46.471Z"
+  }
+ ],
+ "pedidos": {
+  "a-001-p0": {
+   "item_id": "a-001",
+   "parafrase": 0,
+   "chave": "9a1ac62ac0415232209184d65e93a36974664ffb862c6d752dbb7e3472a27329",
+   "lote": 0,
+   "situacao": "ok"
+  }
+ }
+}

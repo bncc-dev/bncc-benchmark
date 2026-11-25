@@ -84,6 +84,13 @@ código (ex.: EF01AR01, porque Arte no Fundamental numera por blocos de anos).
   D13.2).
 - Respostas cortadas pelo teto ganham uma segunda tentativa com o dobro do
   orçamento; o custo real fica nos tokens registrados.
+- Resposta que continua cortada depois da segunda tentativa, ou que o
+  provedor bloqueia ou devolve com erro (`finish_reason` diferente do fim
+  normal), é julgada `resposta_invalida`. Ela fica **fora dos denominadores**
+  das taxas e da nota, e a contagem por modelo sai no campo `cortados` do
+  leaderboard. Um modelo com muitas respostas inválidas é medido numa amostra
+  menor, e a release declara a fração. O teto não é ajustado depois da
+  bateria para recuperar essas respostas (`DECISOES.md` D13.4).
 
 ## Julgamento
 

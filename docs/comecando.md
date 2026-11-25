@@ -41,7 +41,7 @@ Os artefatos saem em `resultados/<rodada>/`: respostas brutas em JSONL, julgamen
 
 - **Retomada por cache**: execução interrompida pode ser reinvocada com o mesmo comando; respostas já obtidas não são refeitas.
 - **Execução em lote**: modelos com `batch` no registro (OpenAI, Anthropic e Google pela rota direta) aceitam `--execucao batch`, que submete os pedidos à Batch API da empresa por metade do preço. O comando não espera: submete e sai com código 2; rode-o de novo para consultar e coletar (a fila leva de minutos a horas, no máximo 24 h). Só no modo seco. Para esperar sem ficar de olho: `until pnpm executar --rodada r --modelos m --execucao batch; do sleep 600; done`.
-- **Custo**: a rodada smoke acima custa centavos. A bateria oficial completa (17 modelos × 300 itens × repetições) custou ~US$ 115 — não rode sem querer.
+- **Custo**: a rodada smoke acima custa centavos. A bateria oficial completa (23 modelos × 300 itens × 3 paráfrases, em nov/2026) custou cerca de US$ 179 de execução, mais cerca de US$ 5 de juiz. Não rode sem querer.
 
 ## O que NÃO fazer
 

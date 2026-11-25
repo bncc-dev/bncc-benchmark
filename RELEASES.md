@@ -16,6 +16,101 @@ anunciando a release anterior como a mais recente, que é o primeiro lugar
 onde a maioria das pessoas olha. Alterou qualquer julgamento depois? Número
 novo, nunca sobrescrever.
 
+## v0.4.0 · nov/2026 · 13 vagas renovadas, mesma régua da v0.3.0
+
+Quarta medição de referência e segunda da série iniciada na v0.3.0: 20.700
+respostas, 23 modelos. Bateria executada em 24-25/nov/2026.
+
+- **Rodada**: `oficial-seca-2026-11`, modo seco. **20.700 respostas, 23
+  modelos, todos com a bateria completa** (900 chamadas cada: 300 itens × 3
+  paráfrases). Coleta de 24/nov 14h22 a 25/nov 2h30 (horário de Brasília).
+- **Mesma régua da v0.3.0, então a série continua.** Mesmo banco `itens-v1`,
+  mesmo dataset dados-2026.07, mesma rubrica-v3 com avaliador v3, mesmo juiz
+  haiku-bedrock (8.074 julgamentos na trilha, US$ 4,78), mesmas rotas diretas
+  e o mesmo uso de lote. Pela D11 é MINOR. As notas são comparáveis com a
+  v0.3.0 **vaga a vaga só onde o modelo é o mesmo** (D13.1).
+- **A medição se manteve estável.** Os cinco modelos que continuaram no
+  elenco variaram no máximo 1,9 ponto contra setembro: muse-spark-13 79,4 →
+  77,5, deepseek-pro 54,3 → 52,8 (com troca de rota, ver abaixo),
+  sonnet-bedrock 29,9 → 30,9, qwen-38-flash 29,9 → 30,0 e haiku-bedrock 28,2
+  → 28,7. É a faixa de variação natural entre rodadas.
+- **Líderes empatados**: gemini-4-neon (96,92) e gpt-62-astra (96,91), os dois
+  com 92% de fidelidade ao texto oficial e nenhuma aceitação de código
+  inventado. A diferença é de centésimos e não deve ser lida como ordem. Logo
+  atrás vêm gemini-4-carbon (96,2), fable-5-2 (96,0, a maior fidelidade da
+  rodada, 98%) e gpt-62-sol (95,5). **Lanterna**: haiku-bedrock (28,7).
+  Agregados verificados por CI.
+- **Elenco (23)**: as 13 vagas em que a empresa lançou modelo novo trocaram
+  de modelo, com id novo (D13.1). gpt-6-astra → gpt-62-astra, gpt-luna →
+  gpt-6-luna, fable-5-1 → fable-5-2, opus-5 → opus-5-5, sonnet-5 →
+  sonnet-5-5, gemini-pro → gemini-4-neon, gemini-38-flash →
+  gemini-4-hydrogen, grok-46 → grok-47, kimi-k3 → kimi-k31-pro,
+  deepseek-flash-41 → deepseek-flash-41-1017 (snapshot novo por baixo do mesmo
+  alias, D12 regra 3), qwen-38-max-0902 → qwen-4-max, sabia-4 → s5 e
+  sabiazinho-4 → s5-nano. Todos os 13 sucessores tiveram nota maior que o
+  antecessor, de +2,2 (gpt-62-astra) a +42,0 (sonnet-5-5). Nessas vagas a
+  diferença mede a troca de modelo, não a evolução de um mesmo modelo.
+  **Mantidos (5)**: deepseek-pro, qwen-38-flash, muse-spark-13,
+  sonnet-bedrock e haiku-bedrock. **Entrantes (5)**: haiku-5-5, gpt-62-sol,
+  gemini-4-carbon, muse-wonder e muse-ember.
+- **Saiu do elenco (D13.4)**: qwen-plus, por latência, decidido antes da
+  bateria. No smoke de 24/nov ele levou cerca de 186 s por chamada, contra
+  cerca de 48 s em setembro, e não há Qwen Plus mais novo para a vaga. A nota
+  dele na v0.3.0 foi 32,1. A entrada do registro fica para reprodução.
+- **Rotas (D15)**: 17 modelos pela API direta da empresa (OpenAI, Anthropic,
+  Google, xAI, Moonshot, Meta, Maritaca), 4 via OpenRouter e 2 via Bedrock.
+  **deepseek-pro trocou de provedor (D15.1)**: a Fireworks deixou de servir o
+  `-0813`, e ele passou a ser servido pela Together, mesmo snapshot e mesmo
+  preço, quantização não informada. O id não muda (D15 regra 2), mas a
+  comparação com a v0.3.0 carrega essa ressalva. deepseek-flash-41-1017 segue
+  na Fireworks (900 de 900), e os Qwen no provedor Alibaba via OpenRouter.
+- **Execução em lote em 10 modelos** (gpt-62-astra, gpt-62-sol, gpt-6-luna,
+  fable-5-2, opus-5-5, sonnet-5-5, haiku-5-5, gemini-4-neon,
+  gemini-4-carbon, gemini-4-hydrogen). Os lotes da Anthropic voltaram em menos
+  de 1 hora, contra cerca de 12 horas por lote em setembro. O do gpt-6-luna
+  levou cerca de 12 horas, quase metade delas parado nos últimos 31 pedidos.
+- **Condições de execução declaradas (D13.2)**: s5 e s5-nano rodaram sem
+  `temperature`, porque a API da Maritaca só aceita o valor padrão (1);
+  s5-nano tem teto de 32.768 tokens, porque a 16.384 truncava com resposta
+  vazia no smoke; gemini-4-hydrogen aceita o parâmetro mas ignora a
+  temperatura; kimi-k31-pro só aceita temperatura 1, como o kimi-k3. Claude 5
+  e gpt-6.x seguem sem `temperature`, como na v0.3.0.
+- **muse-ember mediu-se numa amostra menor.** 105 das 900 respostas (11,7%)
+  saíram vazias, porque o modelo gastou os 16.384 tokens do orçamento
+  raciocinando, mesmo depois da escalada automática (A 32, B 21, C 15, D 37).
+  Essas respostas são `resposta_invalida` e ficam fora das taxas (METODOLOGIA).
+  A nota dele (35,0) é calculada sobre as 795 restantes. O teto não foi
+  ajustado depois da bateria (D13.4).
+- **Respostas inválidas**: 275 de 20.700 (1,3%), no campo `cortados`. Além do
+  muse-ember, as maiores contagens são qwen-38-flash (38, eram 10 em
+  setembro), s5 (27), muse-spark-13 (21) e deepseek-flash-41-1017 (19). Houve
+  28 bloqueios por `RECITATION` no Google (gemini-4-hydrogen 10,
+  gemini-4-neon 9, gemini-4-carbon 9), 19 deles na tarefa C, e 6 respostas
+  vazias com `finish_reason: error` (deepseek-pro 3 e qwen-4-max 3).
+- **Tarefa A**: das 6.072 respostas, 817 são abstenções e 171 são negações,
+  161 delas de Computação 2022. Na v0.3.0 foram 476 e 207.
+- **Custo do resultado publicado**: US$ 179,07 de execução. Os mais caros:
+  muse-wonder (52,02), kimi-k31-pro (29,59), grok-47 (12,86) e fable-5-2
+  (12,76). Os mais baratos: gpt-6-luna (0,12), haiku-5-5 (0,25) e
+  haiku-bedrock (0,52). **gemini-4-carbon** aparece a preço de lista
+  (US$ 4/20 por milhão de tokens, em vigor a partir de 01/dez), US$ 8,37; a
+  rodada foi faturada no preço promocional de 2/10, cerca de metade. O juiz
+  custou US$ 4,78.
+- **Achados operacionais**: créditos pré-pagos acabaram no meio da bateria na
+  Meta, no Google e na Maritaca. O Google sem crédito responde
+  "Precondition check failed" na submissão de lote, e não um erro de
+  cobrança. A chave da Maritaca tem teto de cerca de 128 mil tokens
+  compartilhado entre os modelos, então s5 e s5-nano só fecharam rodando um
+  de cada vez, com uma chamada por vez. O muse-wonder teve uma chamada de 17
+  minutos.
+- **Comparabilidade**: mesma régua da v0.3.0. Cache novo (D12): o de setembro
+  foi arquivado em `cache-2026-09/`.
+- **Errata dos gráficos da v0.2.0 e da v0.3.0**: o subtítulo dos SVGs de
+  dispersão estava fixo no código desde julho e dizia "17 modelos · rodada
+  oficial-seca-2026-07 … os outros 12" nas duas releases. Os pontos e os
+  números estavam certos. Os quatro arquivos foram regerados com o subtítulo
+  correto, o que pela D11 não exige versão nova, porque é artefato derivado.
+
 ## v0.3.0 · 19/set/2026 · rotas diretas, execução em lote, série recomeça
 
 Terceira medição de referência: 17.100 respostas, 19 modelos. Bateria

@@ -3,7 +3,7 @@
 [![Validação](https://github.com/bncc-dev/bncc-benchmark/actions/workflows/validacao.yml/badge.svg)](https://github.com/bncc-dev/bncc-benchmark/actions/workflows/validacao.yml)
 [![Dados: CC BY 4.0](https://img.shields.io/badge/dados-CC%20BY%204.0-lightgrey.svg)](LICENSE-DADOS.md)
 [![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-green.svg)](LICENSE-CODIGO.md)
-[![Release: v0.3.0](https://img.shields.io/badge/release-v0.3.0-blue.svg)](RELEASES.md)
+[![Release: v0.4.0](https://img.shields.io/badge/release-v0.4.0-blue.svg)](RELEASES.md)
 
 Benchmark público de alucinação de LLMs sobre a BNCC (Base Nacional Comum
 Curricular). Mede, com metodologia aberta e dados brutos publicados, quanto os
@@ -11,77 +11,70 @@ modelos de linguagem inventam códigos e textos da BNCC quando respondem sem
 acesso à fonte estruturada, e quanto o problema desaparece com grounding via
 bncc.dev (MCP e API).
 
-A rodada `oficial-seca-2026-09` mediu **19 modelos × 900 respostas cada**, e as
-17.100 respostas cruas estão neste repositório, uma a uma.
+A rodada `oficial-seca-2026-11` mediu **23 modelos × 900 respostas cada**, e as
+20.700 respostas cruas estão neste repositório, uma a uma.
 
 ## Resultados
 
 Pergunte a um LLM o texto exato de uma habilidade da BNCC, sem dar acesso à
-fonte. A taxa de respostas fiéis ao texto oficial vai de **88% a 3%**,
+fonte. A taxa de respostas fiéis ao texto oficial vai de **98% a 1%**,
 dependendo do modelo.
 
 | # | Modelo | Nota | Texto fiel | Aceitou código falso |
 |---|---|---|---|---|
-| 1 | GPT-6 Astra · OpenAI | 94,7 | 88% | 3% |
-| 2 | Claude Fable 5.1 · Anthropic | 81,8 | 80% | 0% |
-| 3 | Muse Spark 1.3 · Meta | 79,4 | 73% | 10% |
-| 4 | Gemini 3.1 Pro · Google | 78,0 | 67% | 3% |
-| 5 | Claude Opus 5 · Anthropic | 76,8 | 71% | 4% |
+| 1 | Gemini 4 Neon · Google | 96,9 | 92% | 0% |
+| 2 | GPT-6.2 Astra · OpenAI | 96,9 | 92% | 0% |
+| 3 | Gemini 4 Carbon · Google | 96,2 | 89% | 0% |
+| 4 | Claude Fable 5.2 · Anthropic | 96,0 | 98% | 1% |
+| 5 | GPT-6.2 Sol · OpenAI | 95,5 | 92% | 0% |
 
 *Nota* é a média de cinco dimensões (reconhecer códigos reais, recusar falsos,
 fidelidade do texto, lookup inverso e citação correta em geração aberta).
 *Texto fiel* é a fração de respostas que reproduzem a habilidade oficial na
 tarefa A. *Aceitou código falso* é a fração de códigos inexistentes — e
 verificados como inexistentes também fora da BNCC — que o modelo afirmou
-existir.
+existir. Os dois primeiros estão empatados, separados por centésimos.
 
-Os 19 modelos, todas as métricas e os exemplos estão em
+Os 23 modelos, todas as métricas e os exemplos estão em
 [`resultados/`](resultados/) e no leaderboard em [bncc.dev](https://bncc.dev).
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="resultados/oficial-seca-2026-09/site/dispersao-v0.3.0-escuro.svg">
-  <img alt="Dispersão dos 19 modelos: fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul. GPT-6 Astra aparece isolado no alto, com 88% de fidelidade e apenas 3% de aceitação de códigos falsos; Claude Fable 5.1 fica ao lado dele, com 80% de fidelidade e nenhuma aceitação; GPT-5.6 Luna tem fidelidade alta (76%) mas aceita 42% dos falsos; a maioria dos modelos se aglomera na faixa abaixo de 25% de fidelidade." src="resultados/oficial-seca-2026-09/site/dispersao-v0.3.0-claro.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/oficial-seca-2026-11/site/dispersao-v0.4.0-escuro.svg">
+  <img alt="Dispersão dos 23 modelos. Fidelidade ao texto oficial no eixo vertical, aceitação de códigos inventados no horizontal. Os cinco melhores por nota estão destacados em azul e formam um grupo no canto superior esquerdo, todos com 89% a 98% de fidelidade e no máximo 1% de aceitação de códigos falsos. GPT-6 Luna tem fidelidade alta (83%) mas aceita 22% dos falsos. A maior parte dos outros modelos fica abaixo de 30% de fidelidade, e alguns aceitam mais de um terço dos códigos inventados." src="resultados/oficial-seca-2026-11/site/dispersao-v0.4.0-claro.svg">
 </picture>
 
 Duas leituras que o ranking sozinho não dá. **Acertar o texto e recusar
-invenções são habilidades distintas** — por isso os pontos se espalham em vez
-de formar uma diagonal. GPT-5.6 Luna e Claude Fable 5.1 reproduzem o texto
-oficial com fidelidade parecida (76% e 80%), mas o primeiro aceita 42% dos
-códigos inventados e o segundo, nenhum. E **não acertar não é tudo igual**: na
-tarefa de transcrever uma habilidade, o benchmark separa quem inventa texto,
-quem nega que o código exista e quem recusa responder. Claude Sonnet 5 e
-Claude Haiku 4.5 têm nota baixa, mas recusam 36% e 37% das perguntas em vez
-de inventar; Qwen 3.8 Flash, com nota parecida, inventa em 86%. A nota premia
-quem acerta; as outras taxas saem lado a lado.
+invenções são habilidades distintas**, por isso os pontos se espalham em vez
+de formar uma diagonal. GPT-6 Luna e Claude Fable 5.2 reproduzem bem o texto
+oficial (83% e 98%), mas o primeiro aceita 22% dos códigos inventados e o
+segundo, 1%. E **não acertar não é tudo igual**. Na tarefa de transcrever uma
+habilidade, o benchmark separa quem inventa texto, quem nega que o código
+exista e quem recusa responder. Claude Haiku 5.5 e Claude Haiku 4.5 têm nota
+baixa, mas recusam 68% e 39% das perguntas em vez de inventar. Qwen 3.8 Flash,
+com nota parecida, inventa em 88%. A nota premia quem acerta, e as outras
+taxas saem lado a lado.
 
 O gráfico é gerado a partir do leaderboard publicado
 (`pnpm exportar-grafico`), não desenhado à mão: ele não tem como divergir dos
 números da tabela.
 
-## Por que esta rodada recomeça a série
+## O que mudou desde setembro
 
-A rodada de setembro (v0.3.0) mudou três coisas ao mesmo tempo: passou a
-chamar **as APIs diretas de cada empresa** em vez de um agregador, passou a
-usar **execução em lote** em sete modelos, e renovou sete vagas do elenco.
-Por isso **as notas não são comparáveis com a v0.2.0**, e o leaderboard
-recomeça aqui como a primeira fotografia da série nova (ver `DECISOES.md`
-D15 e a entrada da release).
+A rodada de novembro (v0.4.0) usa a mesma régua da de setembro (v0.3.0).
+São os mesmos 300 itens, o mesmo juiz, a mesma rubrica e as mesmas rotas
+diretas. Por isso as duas podem ser comparadas, vaga a vaga, onde o modelo é
+o mesmo.
 
-A rota direta não muda a régua, e isso foi medido: nos mesmos 300 itens, os
-modelos que trocaram de rota concordaram com a medição anterior entre 79% e
-90% dos vereditos, dentro da faixa dos que **não** trocaram (86% a 98%). O
-que a rota direta muda é a fidelidade do que chega ao modelo: pelo agregador,
-parâmetros como temperatura eram traduzidos em silêncio, e o benchmark não
-tinha como saber.
+Esses cinco modelos repetidos mostram que a medição é estável. Nenhum variou
+mais de 1,9 ponto. Muse Spark 1.3 foi de 79,4 para 77,5, Claude Sonnet 4.6 de
+29,9 para 30,9 e Qwen 3.8 Flash de 29,9 para 30,0.
 
-Esta release também corrigiu a rubrica do juiz. Até a v0.2.0, um modelo que
-recusava responder, ou que negava que o código existisse, era contado como se
-tivesse inventado texto. Nesta rodada são 476 recusas e 207 negações em 5.016
-respostas — e 195 dessas negações são de Computação: vários modelos afirmam
-que "CO" não é componente da BNCC, porque não conhecem o complemento de 2022.
-A correção derrubou pela metade a taxa de alucinação dos modelos que recusam,
-quase sem mexer no ranking. As releases anteriores não são reescritas, e a
-ressalva está em [`RELEASES.md`](RELEASES.md).
+O que mudou foram os modelos. Em 13 vagas a empresa lançou um modelo novo, e
+todos os 13 tiveram nota maior que o antecessor. As maiores subidas foram do
+Claude Sonnet 5.5 (de 30,8 para 72,7), do Qwen 4 Max (de 41,2 para 73,6) e do
+Grok 4.7 (de 47,9 para 75,0). Cinco modelos entraram, e o Qwen 3.7 Plus saiu
+por ficar lento demais para a rodada. A lista completa, com as condições de
+cada modelo, está em [`RELEASES.md`](RELEASES.md).
 
 Metodologia completa em [`METODOLOGIA.md`](METODOLOGIA.md), decisões de desenho
 numeradas em [`DECISOES.md`](DECISOES.md), composição de cada release em
