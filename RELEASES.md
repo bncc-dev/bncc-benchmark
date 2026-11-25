@@ -16,7 +16,7 @@ anunciando a release anterior como a mais recente, que é o primeiro lugar
 onde a maioria das pessoas olha. Alterou qualquer julgamento depois? Número
 novo, nunca sobrescrever.
 
-## v0.4.0 · nov/2026 · 13 vagas renovadas, mesma régua da v0.3.0
+## v0.4.0 · 25/nov/2026 · 13 vagas renovadas, mesma régua da v0.3.0
 
 Quarta medição de referência e segunda da série iniciada na v0.3.0: 20.700
 respostas, 23 modelos. Bateria executada em 24-25/nov/2026.
