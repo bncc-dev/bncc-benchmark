@@ -294,6 +294,30 @@ medição numa release seguinte, sem custo repetido.
 
 Decisão de 16/ago/2026, durante a rodada `oficial-seca-2026-08`.
 
+### Emenda D13.4 (25/nov/2026) · Saída antes da bateria e teto congelado depois dela
+
+Dois casos da rodada `oficial-seca-2026-11` que as regras acima não cobriam.
+
+1. **Um modelo pode sair do elenco antes da bateria**, por latência ou custo
+   medidos no smoke, desde que a decisão venha antes da primeira chamada
+   oficial e sem olhar resultado novo. A saída é nomeada na entrada da
+   release, com o motivo e o número que a sustentou, e a entrada do registro
+   fica para reprodução. Caso real: `qwen-plus`, com cerca de 186 s por
+   chamada no smoke de 24/nov contra cerca de 48 s em setembro e sem
+   sucessor para a vaga. Racional: a D13.3 evita viés de seleção depois do
+   resultado; tirar antes, por um critério operacional declarado, não tem
+   esse viés.
+2. **Condição de execução não muda depois da bateria por causa do
+   resultado.** Respostas cortadas mesmo após a escalada automática ficam
+   como `resposta_invalida`, fora das taxas (METODOLOGIA), e a fração delas é
+   declarada na release. Subir o teto de um modelo depois de ver a nota seria
+   ajustar a régua ao resultado, o mesmo viés que a D13.3 evita. Ajustes de
+   teto valem para a rodada seguinte, decididos no smoke (D13.2). Caso real:
+   `muse-ember`, com 105 de 900 respostas vazias por esgotar 16.384 tokens
+   raciocinando. A nota dele é calculada sobre as 795 restantes.
+
+Decisão do time em 24 e 25/nov/2026.
+
 ## D14 · Grounded é estudo de intervenção, não leaderboard
 
 A rodada grounded (modelo conectado ao `mcp.bncc.dev`, prevista em D9 e
@@ -521,3 +545,14 @@ leaderboard e acrescenta a execução em lote.
 
 Decisão do time em 16/set/2026, a partir dos smokes de rota direta e de
 batch do mesmo dia.
+
+### Emenda D15.1 (24/nov/2026) · DeepSeek V4 Pro pela Together
+
+No smoke de 24/nov a Fireworks deixou de servir o `deepseek-v4-pro-0813`
+(404 no OpenRouter). O `deepseek-pro` passou a ser servido pela Together, via
+OpenRouter, com o mesmo snapshot e o mesmo preço. A Together não informa a
+quantização. Pela regra 2 o id não muda, e a troca é declarada na release
+v0.4.0. A primeira parte da DeepSeek segue vetada pelas configurações de
+privacidade da conta, então o `deepseek` que aparece na ordem de provedores
+dos DeepSeek Flash é inerte. Nas rodadas de setembro e novembro, 100% das
+chamadas deles foram servidas pela Fireworks. Decisão do time em 24/nov/2026.

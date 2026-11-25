@@ -23,10 +23,12 @@ nota à mão, o check reprova.
 ## Origem das respostas
 
 As respostas foram produzidas por modelos de terceiros, chamados pelas rotas
-registradas em cada `manifesto.json`. A rodada `oficial-seca-2026-07` cobre
-**15.300 respostas de 17 modelos**, coletadas entre **15 e 16 de julho de
-2026**, por rotas diretas de provedor (OpenAI, Anthropic, Google, xAI, Moonshot,
-Alibaba, Maritaca), Amazon Bedrock e Fireworks. A versão exata de cada modelo
+registradas em cada `manifesto.json`. Cada rodada oficial tem a sua data de
+coleta, o elenco e as rotas descritos na entrada correspondente de
+`RELEASES.md`. A mais recente, `oficial-seca-2026-11`, cobre **20.700 respostas
+de 23 modelos**, coletadas entre **24 e 25 de novembro de 2026**, pelas APIs
+diretas das empresas (OpenAI, Anthropic, Google, xAI, Moonshot, Meta,
+Maritaca), pelo OpenRouter (DeepSeek e Qwen) e pelo Amazon Bedrock. A versão exata de cada modelo
 está no campo `versao_modelo` de cada linha — não no nome do arquivo, que usa
 apelidos internos do elenco.
 

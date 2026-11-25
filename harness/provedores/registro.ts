@@ -413,7 +413,7 @@ export const MODELOS: Record<string, DefModelo> = {
   //   kimi-k3→kimi-k31-pro · deepseek-flash-41→deepseek-flash-41-1017 ·
   //   qwen-38-max-0902→qwen-4-max · sabia-4→s5 · sabiazinho-4→s5-nano.
   // Entrantes: haiku-5-5, gpt-62-sol, gemini-4-carbon, muse-wonder, muse-ember.
-  // Preços conferidos em 24/nov/2026; tetos de tokens a conferir no smoke.
+  // Preços conferidos em 24/nov/2026; tetos de tokens confirmados no smoke do mesmo dia.
   // ---------------------------------------------------------------------
 
   // OpenAI direta. Os 6.x rejeitam temperature/top_p; tools só pela
@@ -452,7 +452,7 @@ export const MODELOS: Record<string, DefModelo> = {
     envKey: 'OPENAI_API_KEY',
     baseUrl: 'https://api.openai.com/v1',
     parametroMaxTokens: 'max_completion_tokens',
-    semTemperatura: true, // doc não diz; a família 6.x rejeita. Conferir no smoke
+    semTemperatura: true, // doc não diz; a família 6.x rejeita. Confirmado no smoke de 24/nov
     precos: { entrada: 0.1, saida: 0.5 },
     batch: { api: 'openai' },
     suportaGrounded: false,
@@ -547,7 +547,7 @@ export const MODELOS: Record<string, DefModelo> = {
     modelo: 'grok-4.7', // set/2026, sucessor do grok-4.6
     envKey: 'XAI_API_KEY',
     baseUrl: 'https://api.x.ai/v1',
-    contagemRaciocinio: 'fora-da-saida', // como no 4.6; conferir no smoke
+    contagemRaciocinio: 'fora-da-saida', // como no 4.6; confirmado no smoke de 24/nov
     precos: { entrada: 2, saida: 6 },
     suportaGrounded: true,
   },
@@ -590,6 +590,10 @@ export const MODELOS: Record<string, DefModelo> = {
 
   // DeepSeek via OpenRouter, mesma política do deepseek-flash-41. O alias
   // deepseek-flash passou a servir o 1017 em 17/out: id novo (D12 regra 3).
+  // O 'deepseek' na ordem é inerte: a primeira parte está vetada nas
+  // configurações de privacidade da conta OpenRouter (D15 regra 1), então
+  // quem serve é a Fireworks (900 de 900 em oficial-seca-2026-11). A ordem
+  // fica como está porque o corpo da requisição faz parte da chave de cache.
   'deepseek-flash-41-1017': {
     id: 'deepseek-flash-41-1017',
     maxTokensPadrao: 4096,
